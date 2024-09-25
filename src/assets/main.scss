@@ -58,6 +58,31 @@ button {
   flex-direction: row;
   justify-content: center;
 }
+
+.r-more-btn-c,
+.r-more-btn-w {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.673rem;
+  text-align: right;
+  color: #444444;
+  background-color: #def1ff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  padding: 1rem 3rem;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: #fff;
+  }
+}
+.r-more-btn-w {
+  background-color: #fff !important;
+  &:hover {
+    background-color: #def1ff !important;
+  }
+}
+
 .text-b-1 {
   font-family: "Rubik", sans-serif;
   color: #0477be;
