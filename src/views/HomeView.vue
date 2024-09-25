@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div style="position: absolute; top: 0; left: 0">
+    <div style="width: 100vw !important; height: auto">
       <carousel :items-to-show="1" :wrap-around="true" :transition="500">
         <slide v-for="(slide, i) in slides" :key="i">
           <div style="position: relative">
@@ -20,26 +20,11 @@
         </template>
       </carousel>
     </div>
-    <div class="bg-info">
-      <svg
-        class="arrow"
-        xmlns="http://www.w3.org/2000/svg"
-        width="100"
-        height="50"
-        viewBox="0 0 100 50"
-      >
-        <polygon
-          points="10,25 50,5 50,20 90,20 90,30 50,30 50,45"
-          fill="black"
-        />
-      </svg>
-    </div>
   </main>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
 const slides = ref([
@@ -90,9 +75,6 @@ const slides = ref([
 
 .carousel__prev,
 .carousel__next {
-  box-sizing: content-box;
-  border: 5px solid white;
-  background-color: yellow !important;
 }
 
 .carousel__slide--active ~ .carousel__slide {
@@ -114,6 +96,7 @@ const slides = ref([
   transform: rotateY(0) scale(1.1);
 }
 
+// arrow icons test
 .arrow {
   animation: moveArrow 0.5s linear infinite;
 }
@@ -129,5 +112,4 @@ const slides = ref([
     transform: translateX(0);
   }
 }
-// l/
 </style>

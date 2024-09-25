@@ -1,4 +1,6 @@
 import "./assets/main.scss";
+import "./assets/media-queries.scss";
+import "vue3-carousel/dist/carousel.css";
 
 // bootstrap
 import "bootstrap/dist/css/bootstrap.css";
