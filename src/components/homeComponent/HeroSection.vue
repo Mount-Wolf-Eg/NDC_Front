@@ -22,6 +22,7 @@
         <pagination class="custom-pagination" />
       </template>
     </carousel>
+
     <div class="navigation-btns">
       <button @click="next">
         <span>
@@ -180,8 +181,8 @@ const slides = ref([
 <style lang="scss" scoped>
 .slide-1 {
   font-family: "Rubik", sans-serif !important;
-  right: 10%;
-  top: 35%;
+  right: 15%;
+  top: 20%;
   width: 25%;
 
   .title {
@@ -239,64 +240,10 @@ const slides = ref([
 .navigation-btns {
   position: absolute;
   left: 0;
-  top: 30%;
+  top: 60%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 5rem;
-}
-
-.arrow1 {
-  animation: moveArrow1 0.8s linear infinite;
-}
-
-.arrow2 {
-  animation: moveArrow2 0.8s linear infinite;
-}
-
-.arrow3 {
-  animation: moveArrow3 0.8s linear infinite;
-}
-
-@keyframes moveArrow1 {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(10px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveArrow2 {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(15px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveArrow3 {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(20px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
 }
 </style>

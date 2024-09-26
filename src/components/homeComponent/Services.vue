@@ -116,7 +116,6 @@
               </clipPath>
             </defs>
           </svg>
-
           <p class="serv-head">قطاع تطوير البرمجيات والتسويق الالكتروني</p>
           <p class="serv-body">
             لوريم إيبسوم طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم
@@ -124,6 +123,7 @@
           </p>
           <button class="r-more-btn-w">شاهد المزيد</button>
         </div>
+
         <div>
           <svg
             style="width: 10.4rem; height: 10.4rem"
@@ -173,7 +173,6 @@
               </clipPath>
             </defs>
           </svg>
-
           <p class="serv-head">قطاع تطوير البرمجيات والتسويق الالكتروني</p>
           <p class="serv-body">
             لوريم إيبسوم طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم
@@ -181,6 +180,7 @@
           </p>
           <button class="r-more-btn-w">شاهد المزيد</button>
         </div>
+
         <div>
           <svg
             style="width: 10.4rem; height: 10.5rem"
@@ -218,7 +218,6 @@
               </clipPath>
             </defs>
           </svg>
-
           <p class="serv-head">قطاع تطوير البرمجيات والتسويق الالكتروني</p>
           <p class="serv-body">
             لوريم إيبسوم طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم
@@ -226,6 +225,7 @@
           </p>
           <button class="r-more-btn-w">شاهد المزيد</button>
         </div>
+
         <div>
           <svg
             style="width: 10.4rem; height: 10.4rem"
@@ -287,7 +287,6 @@
               </clipPath>
             </defs>
           </svg>
-
           <p class="serv-head">قطاع تطوير البرمجيات والتسويق الالكتروني</p>
           <p class="serv-body">
             لوريم إيبسوم طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم
@@ -320,6 +319,7 @@
 }
 
 .serv-card {
+  height: 40rem;
   div {
     width: 34.8rem;
     height: 37.2rem;
@@ -330,6 +330,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border-radius: 12px;
+    transition: all 0.2s step-start;
+    &:hover {
+      background-color: #fff;
+      border-radius: 12px;
+      height: 40rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    &:hover .r-more-btn-w {
+      background-color: #eee !important;
+    }
   }
 
   .serv-head {

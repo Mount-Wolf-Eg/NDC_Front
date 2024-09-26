@@ -3,7 +3,6 @@
     class="pb-0 mb-0"
     style="
       z-index: 999;
-      border-bottom: 1px solid #fff;
       margin-top: 2rem;
       position: absolute;
       top: 0;
@@ -11,8 +10,8 @@
       width: 100% !important;
     "
   >
-    <nav class="container-cust navbar navbar-expand-sm">
-      <div class="w-100">
+    <nav class="navbar navbar-expand-sm" style="border-bottom: 1px solid #fff">
+      <div class="container-cust">
         <button
           class="navbar-toggler"
           type="button"

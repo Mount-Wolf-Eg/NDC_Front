@@ -70,16 +70,18 @@ button {
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-  padding: 1rem 3rem;
+  padding: 1rem 5rem;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: #fff;
+    background-color: #0477be;
+    color: #fff;
   }
 }
 .r-more-btn-w {
   background-color: #fff !important;
   &:hover {
-    background-color: #def1ff !important;
+    color: #0477be !important;
+    font-weight: bold;
   }
 }
 
@@ -106,6 +108,10 @@ button {
   line-height: 3.838rem !important;
   text-align: right;
   cursor: pointer;
+  transition: all 0.05s ease-in;
+  &:hover {
+    border-bottom: 0.5rem solid #7aaf44;
+  }
 }
 
 // footer
@@ -144,4 +150,59 @@ button {
   line-height: 3.454rem;
   text-align: right;
   color: #fff;
+}
+
+// slider buttons
+.arrow1 {
+  animation: moveArrow1 0.8s linear infinite;
+}
+
+.arrow2 {
+  animation: moveArrow2 0.8s linear infinite;
+}
+
+.arrow3 {
+  animation: moveArrow3 0.8s linear infinite;
+}
+
+@keyframes moveArrow1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveArrow2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveArrow3 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
