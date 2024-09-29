@@ -13,6 +13,16 @@ const router = createRouter({
       name: "about",
       component: () => import("@/views/AboutUs.vue"),
     },
+    {
+      path: "/packages",
+      name: "packages",
+      component: () => import("@/views/Packages.vue"),
+    },
+    {
+      path: "/join",
+      name: "join",
+      component: () => import("@/views/JoinUs.vue"),
+    },
   ],
 });
 

@@ -119,8 +119,18 @@
               >
                 من نحن
               </li>
-              <li class="nav-item nav-route">الباقات</li>
-              <li class="nav-item nav-route">توظيف</li>
+              <li
+                class="nav-item nav-route"
+                @click="router.push({ name: 'packages' })"
+              >
+                الباقات
+              </li>
+              <li
+                class="nav-item nav-route"
+                @click="router.push({ name: 'join' })"
+              >
+                توظيف
+              </li>
               <li class="nav-item nav-route">المدونة</li>
               <li class="nav-item dropdown">
                 <span
