@@ -3,13 +3,9 @@
     class="pb-0 mb-0"
     :style="{
       backgroundColor: route.name === 'home' ? '' : '#0477BE',
-      zIndex: 999,
-      paddingTop: '2rem',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
+      position: route.name === 'home' ? 'absolute' : 'sticky',
     }"
+    style="z-index: 999; padding-top: 2rem; top: 0; left: 0; width: 100%"
   >
     <nav class="navbar navbar-expand-sm" style="border-bottom: 1px solid #fff">
       <div class="container-cust">
@@ -131,7 +127,12 @@
               >
                 توظيف
               </li>
-              <li class="nav-item nav-route">المدونة</li>
+              <li
+                class="nav-item nav-route"
+                @click="router.push({ name: 'blog' })"
+              >
+                المدونة
+              </li>
               <li class="nav-item dropdown">
                 <span
                   class="nav-link dropdown-toggle nav-route"
@@ -142,10 +143,13 @@
                 >
                   الخدمات
                 </span>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">service0</a></li>
-                  <li><a class="dropdown-item" href="#">service1</a></li>
-                  <li><a class="dropdown-item" href="#">service2</a></li>
+                <ul class="dropdown-menu" style="text-align: inherit">
+                  <li class="dropdown-item">
+                    إعادة تأهيل وتطوير مراكز التدريب
+                  </li>
+                  <li class="dropdown-item">قطاع خدمات التدريب</li>
+                  <li class="dropdown-item">قطاع الاستشارات المالية</li>
+                  <li class="dropdown-item">المزيد</li>
                 </ul>
               </li>
             </ul>
@@ -240,7 +244,23 @@ const setLanguage = (lan) => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.dropdown-menu {
+  // width: 20rem;
+  .dropdown-item {
+    width: fit-content;
+    color: #000;
+    padding: 1rem;
+    font-size: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      color: #7aaf44;
+      background-color: #79af4417;
+    }
+  }
+}
+</style>
 <!-- <button @click="setLanguage('ar'), ($i18n.locale = `ar`)">ar</button>
 <button @click="setLanguage('en'), ($i18n.locale = `en`)">en</button> -->
 <!-- const setLanguage = (lang) => {

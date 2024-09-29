@@ -33,7 +33,7 @@
                 <div style="position: relative;">
 
                     <img src="/src/assets/images/package1.jpg" alt="package img" />
-                    <button class="r-more-btn-w" style="position: absolute;left: 10px ;bottom: 10px;">تواصل
+                    <button @click="router.push({name:'contact'})" class="r-more-btn-w" style="position: absolute;left: 10px ;bottom: 10px;">تواصل
                         معنا</button>
                 </div>
 
@@ -42,7 +42,7 @@
             <div class="package-info">
                 <div style="position: relative;">
                     <img src="/src/assets/images/package2.jpg" alt="package img" />
-                    <button class="r-more-btn-w" style="position: absolute;left: 10px ;bottom: 10px;">تواصل
+                    <button  @click="router.push({name:'contact'})"  class="r-more-btn-w" style="position: absolute;left: 10px ;bottom: 10px;">تواصل
                         معنا</button>
                 </div>
 
@@ -103,7 +103,7 @@
                 </span>
                 <div style="position: relative;">
                     <img src="/src/assets/images/package3.jpg" alt="package img" />
-                    <button class="r-more-btn-w" style="position: absolute;left: 10px ;bottom: 10px;">تواصل
+                    <button  @click="router.push({name:'contact'})" class="r-more-btn-w" style="position: absolute;left: 10px ;bottom: 10px;">تواصل
                         معنا</button>
                 </div>
             </div>
@@ -111,7 +111,11 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router';
+const router=useRouter()
+
+  </script>
 
 <style lang="scss" scoped>
 .package-sec {

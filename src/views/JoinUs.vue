@@ -188,7 +188,7 @@
           font-size: 1.6rem;
           font-weight: 700;
           line-height: 3rem;
-          background-color: #def1ff;
+          background-color: #f6f7ff;
           color: #0477be;
           width: 10.5rem;
           height: 3.9rem;

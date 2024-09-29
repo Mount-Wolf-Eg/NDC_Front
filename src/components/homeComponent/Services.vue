@@ -32,7 +32,9 @@
           الوطنية والدولية.
         </p>
 
-        <button class="r-more-btn-c">شاهد المزيد</button>
+        <button class="r-more-btn-c" @click="router.push({ name: 'about' })">
+          شاهد المزيد
+        </button>
       </div>
       <img
         src="/src/assets/images/float-img.jpg"
@@ -121,7 +123,12 @@
             لوريم إيبسوم طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم
             بشكل شائع لتوضيح .
           </p>
-          <button class="r-more-btn-w">شاهد المزيد</button>
+          <button
+            class="r-more-btn-w"
+            @click="router.push({ name: 'service' })"
+          >
+            شاهد المزيد
+          </button>
         </div>
 
         <div>
@@ -299,7 +306,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+</script>
 
 <style lang="scss" scoped>
 .float-info {
