@@ -1,14 +1,15 @@
 <template>
   <div
     class="pb-0 mb-0"
-    style="
-      z-index: 999;
-      margin-top: 2rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100% !important;
-    "
+    :style="{
+      backgroundColor: route.name === 'home' ? '' : '#0477BE',
+      zIndex: 999,
+      paddingTop: '2rem',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+    }"
   >
     <nav class="navbar navbar-expand-sm" style="border-bottom: 1px solid #fff">
       <div class="container-cust">
@@ -106,8 +107,18 @@
               class="navbar-nav my-2 my-lg-0 navbar-nav-scroll gap-5 d-flex flex-row justify-content-end align-items-center"
               style="--bs-scroll-height: 100px; flex: 1"
             >
-              <li class="nav-item nav-route">الرئيسية</li>
-              <li class="nav-item nav-route">من نحن</li>
+              <li
+                class="nav-item nav-route"
+                @click="router.push({ name: 'home' })"
+              >
+                الرئيسية
+              </li>
+              <li
+                class="nav-item nav-route"
+                @click="router.push({ name: 'about' })"
+              >
+                من نحن
+              </li>
               <li class="nav-item nav-route">الباقات</li>
               <li class="nav-item nav-route">توظيف</li>
               <li class="nav-item nav-route">المدونة</li>
@@ -200,7 +211,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
+import { onMounted, ref } from "vue";
+
+const router = useRouter();
+const route = useRoute();
+
 const lang = ref("EN");
 const setLanguage = (lan) => {
   if (lan == "ar") {
