@@ -129,7 +129,6 @@ button {
     text-align: right;
     border-bottom: 3px solid #fff;
     width: fit-content;
-    padding-inline-end: 3rem;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
   }
@@ -141,6 +140,7 @@ button {
     text-align: right;
   }
 }
+
 .sec-footer {
   background-color: #0477be;
 }
@@ -151,6 +151,7 @@ button {
   line-height: 3.454rem;
   text-align: right;
   color: #fff;
+  padding: 0 3rem;
 }
 
 // slider buttons

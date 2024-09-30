@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="first-footer">
-      <div class="container-cust flex-row justify-content-between py-5">
+      <div
+        class="container-cust d-flex footer-list align-items-center justify-content-between py-5"
+      >
         <div class="flex-col align-items-cente justify-content-start">
           <svg
             style="width: 11.6rem; height: 7.8rem"
@@ -97,13 +99,19 @@
             </svg>
           </span>
         </div>
-        <div>
+
+        <div
+          class="flex-col align-items-cente justify-content-start align-items-sm-start"
+        >
           <p class="footer-route">أنواع الباقات</p>
           <p class="footer-sub-route">الباقة الأساسية للاعتماد</p>
           <p class="footer-sub-route">الباقة القياسية للاعتماد</p>
           <p class="footer-sub-route">الباقة المميزه للأعتماد</p>
         </div>
-        <div>
+
+        <div
+          class="flex-col align-items-cente justify-content-start align-items-sm-start"
+        >
           <p class="footer-route">الخدمات</p>
           <p class="footer-sub-route">قطاع إعادة تأهيل وتطوير مراكز التدريب</p>
           <p class="footer-sub-route">قطاع خدمات التدريب</p>
@@ -112,14 +120,18 @@
             قطاع تطوير البرمجيات والتسويق الالكتروني
           </p>
         </div>
-        <div>
+        <div
+          class="flex-col align-items-cente justify-content-start align-items-sm-start"
+        >
           <p class="footer-route">استكشف</p>
           <p class="footer-sub-route">من نحن</p>
           <p class="footer-sub-route">المدونة</p>
           <p class="footer-sub-route">المدونة</p>
           <p class="footer-sub-route">اتصل بنا</p>
         </div>
-        <div>
+        <div
+          class="flex-col align-items-cente justify-content-start align-items-sm-start"
+        >
           <p class="footer-route">تواصل معنا</p>
           <p class="footer-sub-route">
             لمزيد من المعلومات حول خدماتنا أو لمناقشة
@@ -172,11 +184,13 @@
         </div>
       </div>
     </div>
-    <div class="sec-footer flex-row gap-4 align-items-center">
+
+    <div
+      class="sec-footer d-flex flex-row flex-wrap gap-3 py-3 align-items-center justify-content-center"
+    >
       <button class="footer-item">الشروط والأحكام</button>
       <button class="footer-item">سياية الخصوصية</button>
-      <button class="footer-item">جميع الحقوق محفوظة لـMOUNT WOLF</button>
-      <button class="footer-item">2024</button>
+      <button class="footer-item">2024 جميع الحقوق محفوظة لـMOUNT WOLF</button>
     </div>
   </div>
 </template>

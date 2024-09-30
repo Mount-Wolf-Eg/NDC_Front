@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pb-0 mb-0"
+    class="pb-0 mb-0 mx-5"
     :style="{
       backgroundColor: route.name === 'home' ? '' : '#0477BE',
       position: route.name === 'home' ? 'absolute' : 'sticky',
@@ -8,24 +8,9 @@
     style="z-index: 999; padding-top: 2rem; top: 0; left: 0; width: 100%"
   >
     <nav class="navbar navbar-expand-sm" style="border-bottom: 1px solid #fff">
-      <button
-        style="margin-inline-start: auto"
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span
-          class="navbar-toggler-icon"
-          style="color: #fff !important; fill: #fff !important"
-        ></span>
-      </button>
       <div class="container-cust">
         <span class="row">
-          <router-link to="/" class="navbar-brand col-1 col-sm-3">
+          <router-link to="/" class="navbar-brand col-3">
             <div
               class="flex-row justify-content-start"
               style="margin-inline-end: auto"
@@ -258,6 +243,21 @@
           </div>
         </span>
       </div>
+      <button
+        style="margin-inline-start: auto"
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span
+          class="navbar-toggler-icon"
+          style="color: #fff !important; fill: #fff !important"
+        ></span>
+      </button>
     </nav>
   </div>
 </template>
@@ -265,7 +265,7 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useRoute } from "vue-router";
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 
 const router = useRouter();
 const route = useRoute();
@@ -280,6 +280,18 @@ const setLanguage = (lan) => {
       (lang.value = "EN");
   }
 };
+
+const wdth = ref("");
+onMounted(() => {
+  wdth.value = computed(() => window.innerWidth);
+});
+
+watch(
+  () => wdth.value,
+  (newVal) => {
+    console.log(newVal);
+  }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -298,11 +310,8 @@ const setLanguage = (lan) => {
     }
   }
 }
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
 </style>
-<!-- <button @click="setLanguage('ar'), ($i18n.locale = `ar`)">ar</button>
-<button @click="setLanguage('en'), ($i18n.locale = `en`)">en</button> -->
-<!-- const setLanguage = (lang) => {
-    lang == "ar"
-    ? document.querySelector("html").setAttribute("dir", "rtl")
-    : document.querySelector("html").setAttribute("dir", "ltr");
-}; -->

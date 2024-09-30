@@ -35,11 +35,6 @@
               <img :src="slide.icon" alt="supply icon" style="width: 100%" />
             </div>
           </Slide>
-
-          <!-- <template #addons>
-            <Navigation />
-            <Pagination />
-          </template> -->
         </Carousel>
       </div>
     </div>
