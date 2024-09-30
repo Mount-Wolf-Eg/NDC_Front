@@ -163,7 +163,6 @@
         </span>
 
         <div class="cust-carousel">
-          <!-- :items-to-show="5" -->
           <carousel
             :wrap-around="true"
             :transition="500"
@@ -182,10 +181,6 @@
                 </div>
               </div>
             </slide>
-
-            <template #addons>
-              <!-- <pagination class="custom-pagination" /> -->
-            </template>
           </carousel>
 
           <div class="d-flex flex-row mx-auto mt-5" style="gap: 10rem">
@@ -297,8 +292,8 @@ const slides = ref([
 
 const breakpoints = ref({
   // 700px and up
-  700: {
-    itemsToShow: 3.5,
+  0: {
+    itemsToShow: 1,
     snapAlign: "center",
   },
   // 1024 and up

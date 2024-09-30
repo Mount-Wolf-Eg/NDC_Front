@@ -23,7 +23,7 @@
       </div>
 
       <div class="join-cards" style="width: 88%; margin: 0 auto">
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -38,7 +38,7 @@
             <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -53,7 +53,7 @@
             <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -68,7 +68,7 @@
             <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -83,7 +83,7 @@
             <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -98,7 +98,7 @@
             <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -113,7 +113,7 @@
             <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -128,7 +128,7 @@
             <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
-        <div class="join-card">
+        <div class="join-card" @click="router.push({ name: 'joinForm' })">
           <img
             src="/src/assets/joinUs/join-cardImg.jpg"
             style="width: 100%; height: auto"
@@ -148,7 +148,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+</script>
 
 <style lang="scss" scoped>
 .join-us {

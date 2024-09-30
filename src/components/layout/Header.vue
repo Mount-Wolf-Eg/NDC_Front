@@ -8,23 +8,24 @@
     style="z-index: 999; padding-top: 2rem; top: 0; left: 0; width: 100%"
   >
     <nav class="navbar navbar-expand-sm" style="border-bottom: 1px solid #fff">
+      <button
+        style="margin-inline-start: auto"
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span
+          class="navbar-toggler-icon"
+          style="color: #fff !important; fill: #fff !important"
+        ></span>
+      </button>
       <div class="container-cust">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span
-            class="navbar-toggler-icon"
-            style="color: #fff !important; fill: #fff !important"
-          ></span>
-        </button>
         <span class="row">
-          <router-link to="/" class="navbar-brand col-3">
+          <router-link to="/" class="navbar-brand col-1 col-sm-3">
             <div
               class="flex-row justify-content-start"
               style="margin-inline-end: auto"
@@ -144,12 +145,49 @@
                   الخدمات
                 </span>
                 <ul class="dropdown-menu" style="text-align: inherit">
-                  <li class="dropdown-item">
+                  <li
+                    class="dropdown-item"
+                    @click="
+                      router.push({
+                        name: 'service',
+                        query: { service: 'rehabilitation' },
+                      })
+                    "
+                  >
                     إعادة تأهيل وتطوير مراكز التدريب
                   </li>
-                  <li class="dropdown-item">قطاع خدمات التدريب</li>
-                  <li class="dropdown-item">قطاع الاستشارات المالية</li>
-                  <li class="dropdown-item">المزيد</li>
+                  <li
+                    class="dropdown-item"
+                    @click="
+                      router.push({
+                        name: 'service',
+                        query: { service: 'training' },
+                      })
+                    "
+                  >
+                    قطاع خدمات التدريب
+                  </li>
+                  <li
+                    class="dropdown-item"
+                    @click="
+                      router.push({
+                        name: 'service',
+                        query: { service: 'finance' },
+                      })
+                    "
+                  >
+                    قطاع الاستشارات المالية
+                  </li>
+                  <li
+                    class="dropdown-item"
+                    @click="
+                      router.push({
+                        name: 'serviceCards',
+                      })
+                    "
+                  >
+                    المزيد
+                  </li>
                 </ul>
               </li>
             </ul>

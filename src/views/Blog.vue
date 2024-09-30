@@ -1,7 +1,11 @@
 <template>
   <div class="blog mx-auto">
     <div class="flex-col mx-auto" style="width: 90%">
-      <img src="/src/assets/blog/blog.jpg" alt="blog iamge" />
+      <img
+        src="/src/assets/blog/blog.jpg"
+        style="width: 100%"
+        alt="blog iamge"
+      />
       <div
         class="blog-btns w-100 py-5 px-4 flex-row justify-content-start gap-3"
       >

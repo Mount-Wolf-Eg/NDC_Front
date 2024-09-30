@@ -1,47 +1,11 @@
 <template>
-  <div
-    style="
-      position: relative;
-      height: 86.9rem;
-      background-color: #def1ff;
-      border-top: 1.2rem solid #0477be;
-    "
-  >
-    <div
-      class="float-info d-flex flex-row justify-content-between align-items-start mx-auto"
-      style="
-        border-radius: 12px;
-        padding: 4rem;
-        gap: 5rem;
-        width: 70%;
-        background-color: white;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -35%);
-      "
-    >
-      <div>
-        <h3 class="float-head mb-5">
-          شركة التوثيق الوطني هي شركة استشارية رائدة في المملكة العربية السعودية
-        </h3>
-
-        <p class="float-body mb-5">
-          شركة استشارية رائدة ، متخصصة في تقديم حلول شاملة للاعتمادات والشهادات
-          المهنية. نتميز بتوفير خدمات مخصصة لدعم الشركات ومراكز التدريب
-          والمؤسسات التعليمية في تحقيق أعلى معايير الجودة والامتثال للوائح
-          الوطنية والدولية.
-        </p>
-
-        <button class="r-more-btn-c" @click="router.push({ name: 'about' })">
-          شاهد المزيد
-        </button>
-      </div>
-      <img
-        src="/src/assets/images/float-img.jpg"
-        alt="business img "
-        style="width: 66.2rem"
-      />
-    </div>
+  <div>
+    <img
+      src="/src/assets/about_image/aboutimg.jpg"
+      style="width: 100%; height: auto"
+      alt="service image"
+      class="mb-5"
+    />
     <div
       class="container-cust h-100 text-center"
       style="
@@ -347,22 +311,6 @@ const router = useRouter();
 </script>
 
 <style lang="scss" scoped>
-.float-info {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  .float-head {
-    font-size: 3.2rem;
-    font-weight: 700;
-    line-height: 4.9rem;
-    text-align: right;
-  }
-  .float-body {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 3.6rem;
-    text-align: right;
-  }
-}
-
 .serv-card {
   height: 40rem;
   div {

@@ -1,5 +1,21 @@
 <template>
   <div class="join-cards" style="margin: 3rem auto">
+    <div class="join-card" @click="router.push({ name: 'blogDetails' })">
+      <img
+        src="/src/assets/blog/blogCard.jpg"
+        style="width: 100%; height: auto"
+        alt="blog image"
+      />
+      <span class="px-1">
+        <p class="join-card-title">اسم القسم رقم واحد</p>
+        <p class="join-card-text">
+          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
+          مع خطط فعّالة
+        </p>
+        <p class="join-card-date">August 20, 2022</p>
+      </span>
+    </div>
+
     <div class="join-card">
       <img
         src="/src/assets/blog/blogCard.jpg"
@@ -15,6 +31,7 @@
         <p class="join-card-date">August 20, 2022</p>
       </span>
     </div>
+
     <div class="join-card">
       <img
         src="/src/assets/blog/blogCard.jpg"
@@ -30,6 +47,7 @@
         <p class="join-card-date">August 20, 2022</p>
       </span>
     </div>
+
     <div class="join-card">
       <img
         src="/src/assets/blog/blogCard.jpg"
@@ -45,6 +63,7 @@
         <p class="join-card-date">August 20, 2022</p>
       </span>
     </div>
+
     <div class="join-card">
       <img
         src="/src/assets/blog/blogCard.jpg"
@@ -60,6 +79,7 @@
         <p class="join-card-date">August 20, 2022</p>
       </span>
     </div>
+
     <div class="join-card">
       <img
         src="/src/assets/blog/blogCard.jpg"
@@ -75,6 +95,7 @@
         <p class="join-card-date">August 20, 2022</p>
       </span>
     </div>
+
     <div class="join-card">
       <img
         src="/src/assets/blog/blogCard.jpg"
@@ -90,21 +111,7 @@
         <p class="join-card-date">August 20, 2022</p>
       </span>
     </div>
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
-        </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
+
     <div class="join-card">
       <img
         src="/src/assets/blog/blogCard.jpg"
@@ -123,7 +130,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+</script>
 
 <style lang="scss" scoped>
 .join-cards {

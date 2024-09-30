@@ -60,7 +60,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import RehabilitationTab from "@/components/service/RehabilitationTab.vue";
 import Training from "@/components/service/Training.vue";
@@ -68,6 +68,32 @@ import Finance from "@/components/service/Finance.vue";
 import Development from "@/components/service/Development.vue";
 const currentSlide = ref(1);
 const route = useRoute();
+onMounted(() => {
+  route.query.service == "rehabilitation"
+    ? (currentSlide.value = 1)
+    : route.query.service == "training"
+    ? (currentSlide.value = 2)
+    : route.query.service == "finance"
+    ? (currentSlide.value = 3)
+    : route.query.service == "development"
+    ? (currentSlide.value = 4)
+    : (currentSlide.value = 1);
+});
+
+watch(
+  () => route.query.service,
+  () => {
+    route.query.service == "rehabilitation"
+      ? (currentSlide.value = 1)
+      : route.query.service == "training"
+      ? (currentSlide.value = 2)
+      : route.query.service == "finance"
+      ? (currentSlide.value = 3)
+      : route.query.service == "development"
+      ? (currentSlide.value = 4)
+      : (currentSlide.value = 1);
+  }
+);
 </script>
 
 <style lang="scss" scoped>
