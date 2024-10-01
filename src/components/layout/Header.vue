@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pb-0 mb-0 mx-5"
+    class="pb-0 mb-0"
     :style="{
       backgroundColor: route.name === 'home' ? '' : '#0477BE',
       position: route.name === 'home' ? 'absolute' : 'sticky',
@@ -84,6 +84,7 @@
               </span>
             </div>
           </router-link>
+
           <div class="collapse navbar-collapse row col-8" id="navbarScroll">
             <ul
               class="navbar-nav my-2 my-lg-0 navbar-nav-scroll gap-5 d-flex flex-row justify-content-end align-items-center"
@@ -282,16 +283,6 @@ const setLanguage = (lan) => {
 };
 
 const wdth = ref("");
-onMounted(() => {
-  wdth.value = computed(() => window.innerWidth);
-});
-
-watch(
-  () => wdth.value,
-  (newVal) => {
-    console.log(newVal);
-  }
-);
 </script>
 
 <style lang="scss" scoped>
