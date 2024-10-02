@@ -351,7 +351,7 @@
     <!-- second -->
     <div class="common-ques">
       <div
-        class="float-info d-flex flex-row justify-content-between align-items-start mx-auto"
+        class="float-ques d-flex flex-row justify-content-between align-items-start mx-auto"
         style="
           border-radius: 12px;
           padding: 4rem 2rem;
@@ -519,6 +519,7 @@ const breakpoints = ref({
     }
   }
   .common-ques {
+    position: relative;
     background-color: #def1ff;
     width: 100%;
     height: 42.3rem;

@@ -10,10 +10,18 @@
         class="partner-card my-5 d-flex align-items-center justify-content-center gap-5"
       >
         <div class="card">
-          <img src="/src/assets/images/partner2.png" alt="partner logo" />
+          <img
+            src="/src/assets/images/partner2.png"
+            style="width: 100%"
+            alt="partner logo"
+          />
         </div>
         <div class="card">
-          <img src="/src/assets/images/partner1.png" alt="mount wolf logo" />
+          <img
+            src="/src/assets/images/partner1.png"
+            style="width: 100%"
+            alt="mount wolf logo"
+          />
         </div>
       </div>
     </div>
@@ -24,18 +32,21 @@
         عبر مختلف معايير الاعتماد، بما في ذلك على سبيل المثال:
       </p>
       <div class="supplies-slider container-cust">
-        <Carousel
-          :items-to-show="9"
-          :wrap-around="true"
-          :autoplay="1000"
-          :transition="500"
-        >
-          <Slide v-for="(slide, i) in slides" :key="i">
-            <div class="carousel__item">
-              <img :src="slide.icon" alt="supply icon" style="width: 100%" />
-            </div>
-          </Slide>
-        </Carousel>
+        <div class="sup-carousel">
+          <Carousel
+            :items-to-show="9"
+            :wrap-around="true"
+            :autoplay="1000"
+            :transition="500"
+          >
+            <Slide v-for="(slide, i) in slides" :key="i">
+              <div class="carousel__item">
+                <img :src="slide.icon" alt="supply icon" style="width: 100%" />
+              </div>
+            </Slide>
+          </Carousel>
+        </div>
+        <MainResource></MainResource>
       </div>
     </div>
   </div>
@@ -44,13 +55,7 @@
 <script setup>
 import { ref } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-const currentSlide = ref(0);
-const next = () => {
-  currentSlide.value++;
-};
-const prev = () => {
-  currentSlide.value--;
-};
+import MainResource from "./MainResource.vue";
 
 const slides = ref([
   {
@@ -108,7 +113,7 @@ const slides = ref([
         background-color: #f2f2f2;
         border-radius: 12px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        width: 41.4rem;
+        width: 40rem;
         height: 19.5rem;
         display: flex;
         justify-content: center;

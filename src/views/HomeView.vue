@@ -4,8 +4,8 @@
     <Services></Services>
     <Packages></Packages>
     <Customer></Customer>
-    <!--   <Questions></Questions>
-      <Partners></Partners> -->
+    <Questions></Questions>
+    <Partners></Partners>
   </main>
 </template>
 
