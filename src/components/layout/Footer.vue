@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="first-footer">
-      <div
-        class="container-cust d-flex footer-list align-items-center justify-content-between py-5"
-      >
+      <div class="container-cust d-flex footer-list" style="padding: 7rem 0">
         <div class="flex-col align-items-cente justify-content-start">
           <svg
             style="width: 11.6rem; height: 7.8rem"
@@ -185,12 +183,16 @@
       </div>
     </div>
 
-    <div
-      class="sec-footer d-flex flex-row flex-wrap gap-3 py-3 align-items-center justify-content-center"
-    >
-      <button class="footer-item">الشروط والأحكام</button>
-      <button class="footer-item">سياية الخصوصية</button>
-      <button class="footer-item">2024 جميع الحقوق محفوظة لـMOUNT WOLF</button>
+    <div class="sec-footer">
+      <div
+        class="w-50 mx-auto d-flex flex-row flex-wrap gap-3 py-3 align-items-center justify-content-center"
+      >
+        <button class="footer-item">الشروط والأحكام</button>
+        <button class="footer-item">سياية الخصوصية</button>
+        <button class="footer-item">
+          2024 جميع الحقوق محفوظة لـMOUNT WOLF
+        </button>
+      </div>
     </div>
   </div>
 </template>

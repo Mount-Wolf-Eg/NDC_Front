@@ -2,13 +2,20 @@
   <div class="customer-sec">
     <div style="position: relative">
       <img
+        class="customer-img"
         src="/src/assets/images/customrbg.jpg"
         alt="customer image"
-        style="width: 100%"
+        style="width: 100%; height: 100%"
       />
-      <div class="img-bg w-100">
+      <img
+        src="/src/assets/images/customerResponsive.jpg"
+        alt="customer image"
+        style="width: 100%; height: 100%"
+        class="customer-img-resp"
+      />
+      <div class="img-bg">
         <div
-          class="container-cust d-flex flex-row justify-content-between align-items-center"
+          class="container-cust d-flex flex-row flex-wrap justify-content-between align-items-center"
         >
           <div class="cust-card">
             <svg
@@ -171,9 +178,13 @@
             :breakpoints="breakpoints"
           >
             <slide v-for="(slide, i) in slides" :key="i">
-              <div class="slide-border">
+              <div class="slide-border mx-3">
                 <div class="slide-card">
-                  <img :src="slide.img" alt="user image" />
+                  <img
+                    :src="slide.img"
+                    style="width: 11.3rem; height: 11.3rem"
+                    alt="user image"
+                  />
                   <p class="slide-card-title">{{ slide.title }}</p>
                   <p class="slide-card-body">
                     {{ slide.bdy }}
@@ -308,6 +319,9 @@ const breakpoints = ref({
 .customer-sec {
   border-top: 8px solid #7aaf44;
   border-bottom: 8px solid #7aaf44;
+  .customer-img-resp {
+    display: none;
+  }
   .img-bg {
     display: flex;
     justify-content: center;
@@ -369,10 +383,11 @@ const breakpoints = ref({
       }
     }
     .cust-carousel {
+      background-attachment: red;
       width: 90%;
+      overflow: hidden;
       margin: 5rem 0;
       .slide-border {
-        margin: 0 1rem;
         border: 1px solid #0477be;
         padding: 0.5rem;
         border-radius: 2.4rem;

@@ -1,27 +1,88 @@
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 325px) {
+@media only screen and (max-width: 450px) {
   html {
-    font-size: 25% !important;
+    font-size: 15% !important;
   }
+
+  // hero section
+  .navigation-btns {
+    display: none !important;
+  }
+  .hero-carousel-text {
+    display: none;
+  }
+
+  // service section
+  .r-more-btn-c {
+    width: 100%;
+    font-size: 2.4rem;
+  }
+  .float-info {
+    flex-direction: column-reverse !important;
+    bottom: 0;
+  }
+  .serv-card-item {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 7rem;
+  }
+
+  // package section
+  .package-card {
+    display: none !important;
+  }
+  .resp-tap {
+    display: block;
+  }
+  .r-more-btn-w {
+    text-align: center;
+  }
+  // customer
+  .customer-sec {
+    border-bottom: none !important;
+  }
+  .customer-img {
+    display: none !important;
+  }
+  .customer-img-resp {
+    display: block !important;
+  }
+
+  .img-bg {
+    .cust-card {
+      min-width: 105px;
+      flex-basis: 20%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center !important;
+
+      svg {
+        min-width: 60px;
+        min-height: 62px;
+      }
+      .cust-text {
+        font-size: 8px !important;
+        line-height: 7.2rem !important;
+      }
+    }
+  }
+  .customer-open {
+    display: none;
+  }
+
   // footer
   .footer-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
-}
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 576px) {
-  html {
-    font-size: 15% !important;
-  }
-  .container-custom {
-    width: 100%;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5rem;
   }
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 450px) {
   html {
     font-size: 19% !important;
   }

@@ -244,7 +244,7 @@
           </div>
         </span>
       </div>
-      <button
+      <!-- <button
         style="margin-inline-start: auto"
         class="navbar-toggler"
         type="button"
@@ -258,7 +258,7 @@
           class="navbar-toggler-icon"
           style="color: #fff !important; fill: #fff !important"
         ></span>
-      </button>
+      </button> -->
     </nav>
   </div>
 </template>
@@ -281,28 +281,6 @@ const setLanguage = (lan) => {
       (lang.value = "EN");
   }
 };
-
-const wdth = ref("");
 </script>
 
-<style lang="scss" scoped>
-.dropdown-menu {
-  // width: 20rem;
-  .dropdown-item {
-    width: fit-content;
-    color: #000;
-    padding: 1rem;
-    font-size: 1.2rem;
-    width: 100%;
-    cursor: pointer;
-    &:hover {
-      color: #7aaf44;
-      background-color: #79af4417;
-    }
-  }
-}
-.navbar-nav {
-  display: flex;
-  flex-direction: row;
-}
-</style>
+<style lang="scss" scoped></style>
