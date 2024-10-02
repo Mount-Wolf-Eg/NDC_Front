@@ -124,7 +124,7 @@ const slides = ref([
   }
   .supplies {
     background-color: #def1ff;
-    padding: 10 rem 0;
+    padding: 10rem 0;
     .supplies-title {
       font-size: 3.2rem;
       font-weight: 700;
