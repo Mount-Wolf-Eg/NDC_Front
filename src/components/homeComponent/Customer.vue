@@ -168,7 +168,7 @@
             النص.
           </p>
         </span>
-        <div style="width: 95%">
+        <div style="width: 90%">
           <div class="cust-carousel">
             <carousel
               :wrap-around="true"
@@ -417,6 +417,12 @@ const breakpoints = ref({
             font-weight: 700;
             line-height: 3.07rem;
             text-align: center;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            line-clamp: 5;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           &:hover {
             background-color: #0477be;

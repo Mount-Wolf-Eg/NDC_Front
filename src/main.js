@@ -10,6 +10,13 @@ import { createI18n } from "vue-i18n";
 import ar from "./locale/AR.json";
 import en from "./locale/EN.json";
 
+// chart
+import VueApexCharts from "vue3-apexcharts";
+
+// toastification
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
@@ -28,8 +35,10 @@ const i18n = createI18n({
 
 app.use(createPinia());
 app.use(router);
+app.use(Toast);
 app.use(i18n);
-
+// charts
+app.use(VueApexCharts);
 // bootstrap
 import "bootstrap";
 

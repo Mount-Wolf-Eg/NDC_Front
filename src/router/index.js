@@ -83,6 +83,23 @@ const router = createRouter({
         title: "All Services",
       },
     },
+    {
+      path: "/Terms&Conditions",
+      name: "TermsConditions",
+      component: () =>
+        import("@/components/websiteInfo/TermsAndConditions.vue"),
+      meta: {
+        title: "Terms & Conditions",
+      },
+    },
+    {
+      path: "/Privacy&Policy",
+      name: "PrivacyPolicy",
+      component: () => import("@/components/websiteInfo/PrivacyAndPolicy.vue"),
+      meta: {
+        title: "Privacy & Policy",
+      },
+    },
 
     {
       path: "/:pathMatch(.*)*",

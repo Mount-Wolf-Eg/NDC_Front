@@ -187,8 +187,18 @@
       <div
         class="w-50 mx-auto d-flex flex-row flex-wrap gap-3 py-3 align-items-center justify-content-center"
       >
-        <button class="footer-item">الشروط والأحكام</button>
-        <button class="footer-item">سياية الخصوصية</button>
+        <button
+          class="footer-item"
+          @click="router.push({ name: 'TermsConditions' })"
+        >
+          الشروط والأحكام
+        </button>
+        <button
+          class="footer-item"
+          @click="router.push({ name: 'PrivacyPolicy' })"
+        >
+          سياية الخصوصية
+        </button>
         <button class="footer-item">
           2024 جميع الحقوق محفوظة لـMOUNT WOLF
         </button>
@@ -197,6 +207,15 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.first-footer {
+  p {
+    cursor: pointer;
+  }
+}
+</style>

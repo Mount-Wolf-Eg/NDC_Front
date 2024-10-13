@@ -12,14 +12,14 @@
         <div class="card">
           <img
             src="/src/assets/images/partner2.png"
-            style="width: 100%"
+            style="width: 60%"
             alt="partner logo"
           />
         </div>
         <div class="card">
           <img
             src="/src/assets/images/partner1.png"
-            style="width: 100%"
+            style="width: 60%"
             alt="mount wolf logo"
           />
         </div>
@@ -111,14 +111,15 @@ const slides = ref([
     .partner-card {
       .card {
         background-color: #f2f2f2;
-        border-radius: 12px;
+        border-radius: 1.2rem;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        width: 40rem;
-        height: 19.5rem;
+        width: 30rem;
+        height: 10rem;
         display: flex;
         justify-content: center;
         align-items: center;
         border: none;
+        padding: 1rem;
       }
     }
   }
