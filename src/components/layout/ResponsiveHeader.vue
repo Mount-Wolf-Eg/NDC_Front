@@ -1,5 +1,12 @@
 <template>
-  <div class="responsive-nav">
+  <div
+    class="responsive-nav"
+    :style="{
+      backgroundColor: route.name === 'home' ? '' : '#0477BE',
+      position: route.name === 'home' ? 'absolute' : 'sticky',
+    }"
+    style="z-index: 999; padding-top: 2rem; top: 0; left: 0; width: 100%"
+  >
     <div class="nav px-5">
       <div
         class="flex-row justify-content-start"
@@ -177,6 +184,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+
 const showNavMenu = ref(false);
 const show = ref(false);
 </script>

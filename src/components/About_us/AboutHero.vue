@@ -63,6 +63,7 @@
             position: absolute;
             top: 10%;
             left: 50%;
+            width: 80%;
             transform: translatex(-50%);
           "
         />
@@ -74,24 +75,25 @@
 
       <div class="flex-row vission-card p-5">
         <div
-          class="vission-img d-flex justify-content-center align-items-center"
-          style="flex: 1"
+          class="vission-img d-flex justify-content-center gap-5 align-items-center"
+          style="width: 50%"
         >
           <img
             src="/src/assets/about_image/Rectangle 123.jpg"
             alt="about image"
+            style="width: 100%; border-radius: 16px"
           />
         </div>
-        <div class="vission-text flex-col align-items-start" style="flex: 1">
+        <div class="vission-text flex-col align-items-start" style="width: 50%">
           <p class="v-text">رؤيــتــنــا</p>
-          <p class="v-text-body w-75">
+          <p class="v-text-body w-75 mx-auto">
             أن نكون الشريك الأكثر ثقة وابتكارًا في مجال استشارات الاعتماد،
             واضعين معايير جديدة للتميز في الجودة للمؤسسات التدريبية والتعليمية
             على مستوى العالم.
           </p>
         </div>
       </div>
-      <div class="flex-row gap-5">
+      <div class="flex-row flex-wrap flex-md-nowrap gap-5">
         <div class="flex-col vission-card p-5">
           <div class="vission-text flex-col align-items-start" style="flex: 1">
             <p class="v-text">مهمتنا</p>
@@ -110,6 +112,7 @@
             <img
               src="/src/assets/about_image/Rectangle 123.jpg"
               alt="about image"
+              style="width: 100%"
             />
           </div>
         </div>
@@ -131,6 +134,7 @@
             <img
               src="/src/assets/about_image/Rectangle 123.jpg"
               alt="about image"
+              style="width: 100%"
             />
           </div>
         </div>
@@ -458,8 +462,11 @@
         font-size: 2.4rem;
         font-weight: 700;
         color: #444444;
-        line-height: 3.6rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
       }
+
       .v-text-body {
         font-size: 3.2rem;
         font-weight: 700;
