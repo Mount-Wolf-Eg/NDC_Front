@@ -4,14 +4,26 @@ import { mainStore } from "./mainStore";
 import axiosInstance from "./axios_instance";
 
 export const useSlidersStore = defineStore("sliderStore", {
-  state: () => ({}),
+  state: () => ({
+    headerSliders: [],
+    testimonialsSliders: [],
+    successMetrics: [],
+    achievementsSliders: [],
+    partnersSliders: [],
+    mainResources: [],
+  }),
   actions: {
     // all admins
     async getAllSliders() {
       await axiosInstance
-        .get(`${mainStore().apiLink}/admin/slider/all`)
+        .get(`${mainStore().apiLink}/admin/slider/showSlidersTypes`)
         .then((res) => {
-          // console.log(res.data.data);
+          this.headerSliders = res.data.data.header_slider;
+          this.testimonialsSliders = res.data.data.testimonials;
+          this.successMetrics = res.data.data.success_metrics;
+          this.achievementsSliders = res.data.data.achievements;
+          this.partnersSliders = res.data.data.partners;
+          this.mainResources = res.data.data.main_resources;
         })
         .catch((err) => {
           mainStore().showAlert(
@@ -22,34 +34,5 @@ export const useSlidersStore = defineStore("sliderStore", {
           );
         });
     },
-    // async doExportVendors() {
-    //   let result;
-    //   await axiosInstance
-    //     .get(`${mainStore().apiLink}/admin/export`, {})
-    //     .then((res) => {
-    //       result = res;
-    //       console.log(res.data.data);
-    //       const blob = new Blob([res.data.data], {
-    //         type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    //       });
-
-    //       const link = document.createElement("a");
-    //       link.href = URL.createObjectURL(blob);
-    //       link.download = "Vendors-list.xlsx";
-
-    //       document.body.appendChild(link);
-    //       link.click();
-
-    //       document.body.removeChild(link);
-    //     })
-    //     .catch((err) => {
-    //       mainStore().showAlert(
-    //         Object.values(err.response.data.errors)[0][0]
-    //           ? Object.values(err.response.data.errors)[0][0]
-    //           : "Something went wrong, please try again",
-    //         2
-    //       );
-    //     });
-    // },
   },
 });

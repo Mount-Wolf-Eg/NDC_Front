@@ -6,18 +6,14 @@
       :transition="500"
       v-model="currentSlide"
     >
-      <slide v-for="(slide, i) in slides" :key="i">
-        <div style="width: 100%">
-          <img :src="slide.img" style="width: 100%" alt="slide image" />
-          <div
-            :class="`${slide.styl}`"
-            class="hero-carousel-text"
-            style="position: absolute"
-          >
+      <slide v-for="(slide, i) in hero" :key="i">
+        <div>
+          <img :src="slide.image" style="width: 100%" alt="slide image" />
+          <div class="hero-carousel-text slide-1" style="position: absolute">
             <p class="title">
               {{ slide.title }}
             </p>
-            <p class="bdy">{{ slide.bdy }}</p>
+            <p class="bdy">{{ slide.description }}</p>
           </div>
         </div>
       </slide>
@@ -195,31 +191,35 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
 const currentSlide = ref(0);
 const next = () => {
-  currentSlide.value++;
-};
-const prev = () => {
-  currentSlide.value--;
+  if (currentSlide.value == props.hero.length - 2) {
+    currentSlide.value = 0;
+  } else {
+    currentSlide.value++;
+  }
 };
 
-const slides = ref([
-  {
-    img: `/src/assets/banner/banner1.jpg`,
-    title: "حلول التدريب",
-    bdy: "تدرب لتحقيق النجاح باستخدام حلول التدريب ذات المستوى العالمي، وتنمية الخبرة في مختلف الصناعات.",
-    styl: "slide-1",
+const prev = () => {
+  if (currentSlide.value == 0) {
+    currentSlide.value = props.hero.length - 2;
+  } else {
+    currentSlide.value--;
+  }
+};
+
+const props = defineProps({
+  hero: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: true,
   },
-  {
-    img: `/src/assets/banner/banner2.jpg`,
-    title: "حلول الاعتماد",
-    bdy: "مسارات الاعتماد المخصصة، وضمان الامتثال السلس والاعتراف العالمي.  ",
-    styl: "slide-1",
-  },
-]);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -243,6 +243,12 @@ const slides = ref([
     line-height: 4.9rem;
     text-align: right;
     color: #fff;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

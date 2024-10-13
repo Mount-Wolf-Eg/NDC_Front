@@ -8,6 +8,7 @@ export const useStaticPagesStore = defineStore("staticPages", {
     aboutUs: [],
     privacyPolicy: [],
     termsConditions: [],
+    allServices: [],
   }),
   actions: {
     // all admins
@@ -18,7 +19,6 @@ export const useStaticPagesStore = defineStore("staticPages", {
           this.aboutUs = res.data.data.find((e) => e.id == 1);
           this.termsConditions = res.data.data.find((e) => e.id == 2);
           this.privacyPolicy = res.data.data.find((e) => e.id == 3);
-          console.log(this.privacyPolicy);
         })
         .catch((err) => {
           mainStore().showAlert(
@@ -29,34 +29,20 @@ export const useStaticPagesStore = defineStore("staticPages", {
           );
         });
     },
-    // async doExportVendors() {
-    //   let result;
-    //   await axiosInstance
-    //     .get(`${mainStore().apiLink}/admin/export`, {})
-    //     .then((res) => {
-    //       result = res;
-    //       console.log(res.data.data);
-    //       const blob = new Blob([res.data.data], {
-    //         type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    //       });
-
-    //       const link = document.createElement("a");
-    //       link.href = URL.createObjectURL(blob);
-    //       link.download = "Vendors-list.xlsx";
-
-    //       document.body.appendChild(link);
-    //       link.click();
-
-    //       document.body.removeChild(link);
-    //     })
-    //     .catch((err) => {
-    //       mainStore().showAlert(
-    //         Object.values(err.response.data.errors)[0][0]
-    //           ? Object.values(err.response.data.errors)[0][0]
-    //           : "Something went wrong, please try again",
-    //         2
-    //       );
-    //     });
-    // },
+    async getAllServices() {
+      await axiosInstance
+        .get(`${mainStore().apiLink}/admin/Services/all`)
+        .then((res) => {
+          this.allServices = res.data.data;
+        })
+        .catch((err) => {
+          mainStore().showAlert(
+            Object.values(err.response.data.errors)[0][0]
+              ? Object.values(err.response.data.errors)[0][0]
+              : "Something went wrong, please try again",
+            2
+          );
+        });
+    },
   },
 });
