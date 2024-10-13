@@ -131,11 +131,44 @@
         </svg>
         <div class="nav-content mx-auto">
           <ul class="nav-list list-unstyled">
-            <li class="nav-list-item">الرئيسية</li>
-            <li class="nav-list-item">من نحن</li>
-            <li class="nav-list-item">الباقات</li>
-            <li class="nav-list-item">توظيف</li>
-            <li class="nav-list-item">المدونة</li>
+            <li
+              class="nav-list-item"
+              @click="
+                router.push({ name: 'home' }), (showNavMenu = !showNavMenu)
+              "
+            >
+              الرئيسية
+            </li>
+            <li
+              class="nav-list-item"
+              @click="
+                router.push({ name: 'about' }), (showNavMenu = !showNavMenu)
+              "
+            >
+              من نحن
+            </li>
+            <li
+              class="nav-list-item"
+              @click="router.push({ name: 'packages' })"
+            >
+              الباقات
+            </li>
+            <li
+              class="nav-list-item"
+              @click="
+                router.push({ name: 'join' }), (showNavMenu = !showNavMenu)
+              "
+            >
+              توظيف
+            </li>
+            <li
+              class="nav-list-item"
+              @click="
+                router.push({ name: 'blog' }), (showNavMenu = !showNavMenu)
+              "
+            >
+              المدونة
+            </li>
             <li class="nav-list-item">
               <ul class="nav-list d-flex flex-column gap-5">
                 <button
@@ -147,17 +180,53 @@
                   الخدمات
                 </button>
                 <ul id="demo" class="collapse">
-                  <li class="nav-sub-item pb-4 text-center fs-1">
-                    إعادة تأهيل وتطوير مراكز التدريب إعادة تأهيل وتطوير مراكز
-                    التدريب
+                  <li
+                    class="nav-sub-item pb-4 text-center fs-1"
+                    @click="
+                      router.push({
+                        name: 'service',
+                        query: { service: 'rehabilitation' },
+                      }),
+                        (showNavMenu = !showNavMenu)
+                    "
+                  >
+                    إعادة تأهيل وتطوير مراكز التدريب
                   </li>
-                  <li class="nav-sub-item pb-4 text-center fs-1">
-                    إعادة تأهيل وتطوير مراكز التدريب قطاع خدمات التدريب
+                  <li
+                    class="nav-sub-item pb-4 text-center fs-1"
+                    @click="
+                      router.push({
+                        name: 'service',
+                        query: { service: 'training' },
+                      }),
+                        (showNavMenu = !showNavMenu)
+                    "
+                  >
+                    قطاع خدمات التدريب
                   </li>
-                  <li class="nav-sub-item pb-4 text-center fs-1">
-                    قطاع خدمات التدريب قطاع الاستشارات المالية
+                  <li
+                    class="nav-sub-item pb-4 text-center fs-1"
+                    @click="
+                      router.push({
+                        name: 'service',
+                        query: { service: 'finance' },
+                      }),
+                        (showNavMenu = !showNavMenu)
+                    "
+                  >
+                    قطاع الاستشارات المالية
                   </li>
-                  <li class="nav-sub-item pb-4 text-center fs-1">المزيد</li>
+                  <li
+                    class="nav-sub-item pb-4 text-center fs-1"
+                    @click="
+                      router.push({
+                        name: 'serviceCards',
+                      }),
+                        (showNavMenu = !showNavMenu)
+                    "
+                  >
+                    المزيد
+                  </li>
                 </ul>
               </ul>
             </li>
@@ -184,8 +253,9 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
+const router = useRouter();
 
 const showNavMenu = ref(false);
 const show = ref(false);
