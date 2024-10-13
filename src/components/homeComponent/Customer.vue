@@ -168,78 +168,79 @@
             النص.
           </p>
         </span>
-
-        <div class="cust-carousel">
-          <carousel
-            :wrap-around="true"
-            :transition="500"
-            :autoplay="1000"
-            v-model="currentSlide"
-            :breakpoints="breakpoints"
-          >
-            <slide v-for="(slide, i) in slides" :key="i">
-              <div class="slide-border mx-3">
-                <div class="slide-card">
-                  <img
-                    :src="slide.img"
-                    style="width: 11.3rem; height: 11.3rem"
-                    alt="user image"
-                  />
-                  <p class="slide-card-title">{{ slide.title }}</p>
-                  <p class="slide-card-body">
-                    {{ slide.bdy }}
-                  </p>
+        <div style="width: 95%">
+          <div class="cust-carousel">
+            <carousel
+              :wrap-around="true"
+              :transition="500"
+              :autoplay="1000"
+              v-model="currentSlide"
+              :breakpoints="breakpoints"
+            >
+              <slide v-for="(slide, i) in slides" :key="i">
+                <div class="slide-border mx-3">
+                  <div class="slide-card">
+                    <img
+                      :src="slide.img"
+                      style="width: 11.3rem; height: 11.3rem"
+                      alt="user image"
+                    />
+                    <p class="slide-card-title">{{ slide.title }}</p>
+                    <p class="slide-card-body">
+                      {{ slide.bdy }}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </slide>
-          </carousel>
+              </slide>
+            </carousel>
 
-          <div class="d-flex flex-row mx-auto mt-5" style="gap: 10rem">
-            <button
-              class="nav-btn"
-              @click="next"
-              style="
-                border-radius: 50%;
-                background-color: #fff;
-                width: 3.4rem;
-                height: 3.4rem;
-              "
-            >
-              <svg
-                style="width: 0.8rem; height: 1.2rem"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <div class="d-flex flex-row mx-auto mt-5" style="gap: 10rem">
+              <button
+                class="nav-btn"
+                @click="next"
+                style="
+                  border-radius: 50%;
+                  background-color: #fff;
+                  width: 3.4rem;
+                  height: 3.4rem;
+                "
               >
-                <path
-                  d="M2 -5.24537e-07L8 6L2 12L0.6 10.6L5.2 6L0.600001 1.4L2 -5.24537e-07Z"
-                  fill="#000"
-                />
-              </svg>
-            </button>
-            <button
-              class="nav-btn"
-              @click="prev"
-              style="
-                border-radius: 50%;
-                width: 3.4rem;
-                height: 3.4rem;
-                transform: scaleX(-1);
-                background-color: #fff;
-              "
-            >
-              <svg
-                style="width: 0.8rem; height: 1.2rem"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  style="width: 0.8rem; height: 1.2rem"
+                  viewBox="0 0 8 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 -5.24537e-07L8 6L2 12L0.6 10.6L5.2 6L0.600001 1.4L2 -5.24537e-07Z"
+                    fill="#000"
+                  />
+                </svg>
+              </button>
+              <button
+                class="nav-btn"
+                @click="prev"
+                style="
+                  border-radius: 50%;
+                  width: 3.4rem;
+                  height: 3.4rem;
+                  transform: scaleX(-1);
+                  background-color: #fff;
+                "
               >
-                <path
-                  d="M2 -5.24537e-07L8 6L2 12L0.6 10.6L5.2 6L0.600001 1.4L2 -5.24537e-07Z"
-                  fill="#000"
-                />
-              </svg>
-            </button>
+                <svg
+                  style="width: 0.8rem; height: 1.2rem"
+                  viewBox="0 0 8 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 -5.24537e-07L8 6L2 12L0.6 10.6L5.2 6L0.600001 1.4L2 -5.24537e-07Z"
+                    fill="#000"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
