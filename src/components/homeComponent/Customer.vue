@@ -38,7 +38,7 @@
             النص.
           </p>
         </span>
-        <div style="width: 90%">
+        <div style="width: 100%; overflow: hidden">
           <div class="cust-carousel">
             <carousel
               :wrap-around="true"
@@ -47,24 +47,27 @@
               v-model="currentSlide"
               :breakpoints="breakpoints"
             >
-              <slide v-for="(slide, i) in slides" :key="i">
+              <slide v-for="(slide, i) in testimonials" :key="i">
                 <div class="slide-border mx-3">
                   <div class="slide-card">
                     <img
-                      :src="slide.img"
+                      :src="slide.image"
                       style="width: 11.3rem; height: 11.3rem"
                       alt="user image"
                     />
                     <p class="slide-card-title">{{ slide.title }}</p>
                     <p class="slide-card-body">
-                      {{ slide.bdy }}
+                      {{ slide.description }}
                     </p>
                   </div>
                 </div>
               </slide>
             </carousel>
 
-            <div class="d-flex flex-row mx-auto mt-5" style="gap: 10rem">
+            <div
+              class="d-flex flex-row mx-auto mt-5"
+              style="gap: 10rem; direction: rtl !important"
+            >
               <button
                 class="nav-btn"
                 @click="next"
@@ -129,49 +132,6 @@ const prev = () => {
   currentSlide.value--;
 };
 
-const slides = ref([
-  {
-    img: `/src/assets/images/user1.png`,
-    title: "ابو صالح الجعفري",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-  {
-    img: `/src/assets/images/user2.png`,
-    title: "محمد الغامدي ",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-  {
-    img: `/src/assets/images/user3.png`,
-    title: "ابو صالح الجعفري",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-  {
-    img: `/src/assets/images/user4.png`,
-    title: "محمد الغامدي ",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-  {
-    img: `/src/assets/images/user1.png`,
-    title: "محمد الغامدي ",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-  {
-    img: `/src/assets/images/user2.png`,
-    title: "محمد الغامدي ",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-  {
-    img: `/src/assets/images/user3.png`,
-    title: "منصور محمد",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-  {
-    img: `/src/assets/images/user4.png`,
-    title: "ابو صالح الجعفري",
-    bdy: "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم .",
-  },
-]);
-
 const props = defineProps({
   metrics: {
     type: Object,
@@ -180,14 +140,14 @@ const props = defineProps({
     },
     Required: true,
   },
+  testimonials: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: true,
+  },
 });
-
-watch(
-  () => props.metrics,
-  (newValue) => {
-    console.log("metrics", newValue);
-  }
-);
 
 const breakpoints = ref({
   // 700px and up

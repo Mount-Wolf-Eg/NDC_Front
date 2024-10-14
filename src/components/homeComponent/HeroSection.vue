@@ -23,7 +23,7 @@
       </template>
     </carousel>
 
-    <div class="navigation-btns">
+    <div class="navigation-btns" style="direction: rtl !important">
       <button @click="next" style="position: relative; width: 50%">
         <svg
           class="arrow1"

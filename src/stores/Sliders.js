@@ -11,6 +11,7 @@ export const useSlidersStore = defineStore("sliderStore", {
     achievementsSliders: [],
     partnersSliders: [],
     mainResources: [],
+    allQuestions: [],
   }),
   actions: {
     // all admins
@@ -24,6 +25,21 @@ export const useSlidersStore = defineStore("sliderStore", {
           this.achievementsSliders = res.data.data.achievements;
           this.partnersSliders = res.data.data.partners;
           this.mainResources = res.data.data.main_resources;
+        })
+        .catch((err) => {
+          mainStore().showAlert(
+            Object.values(err.response.data.errors)[0][0]
+              ? Object.values(err.response.data.errors)[0][0]
+              : "Something went wrong, please try again",
+            2
+          );
+        });
+    },
+    async getAllQuestions() {
+      await axiosInstance
+        .get(`${mainStore().apiLink}/admin/faqs/show`)
+        .then((res) => {
+          this.allQuestions = res.data.data;
         })
         .catch((err) => {
           mainStore().showAlert(

@@ -1,6 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import MainLayout from "./components/layout/MainLayout.vue";
+import { onMounted } from "vue";
+onMounted(() => {
+  if (sessionStorage.getItem("lang") == null)
+    sessionStorage.setItem("lang", "en");
+});
 </script>
 
 <template>

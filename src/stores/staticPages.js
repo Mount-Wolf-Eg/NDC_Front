@@ -29,6 +29,7 @@ export const useStaticPagesStore = defineStore("staticPages", {
           );
         });
     },
+
     async getAllServices() {
       await axiosInstance
         .get(`${mainStore().apiLink}/admin/Services/all`)

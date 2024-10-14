@@ -111,10 +111,48 @@
           class="flex-col align-items-cente justify-content-start align-items-sm-start"
         >
           <p class="footer-route">الخدمات</p>
-          <p class="footer-sub-route">قطاع إعادة تأهيل وتطوير مراكز التدريب</p>
-          <p class="footer-sub-route">قطاع خدمات التدريب</p>
-          <p class="footer-sub-route">قطاع الاستشارات المالية</p>
-          <p class="footer-sub-route">
+          <p
+            class="footer-sub-route"
+            @click="
+              router.push({
+                name: 'service',
+                query: { service: 'rehabilitation' },
+              })
+            "
+          >
+            إعادة تأهيل وتطوير مراكز التدريب
+          </p>
+          <p
+            class="footer-sub-route"
+            @click="
+              router.push({
+                name: 'service',
+                query: { service: 'training' },
+              })
+            "
+          >
+            قطاع خدمات التدريب
+          </p>
+          <p
+            class="footer-sub-route"
+            @click="
+              router.push({
+                name: 'service',
+                query: { service: 'finance' },
+              })
+            "
+          >
+            قطاع الاستشارات المالية
+          </p>
+          <p
+            class="footer-sub-route"
+            @click="
+              router.push({
+                name: 'service',
+                query: { service: 'development  ' },
+              })
+            "
+          >
             قطاع تطوير البرمجيات والتسويق الالكتروني
           </p>
         </div>

@@ -7,9 +7,14 @@
     </p>
 
     <div class="package-card">
-      <div class="package-info">
+      <div
+        class="package-info"
+        v-for="(packag, i) in packages"
+        :key="i"
+        :style="`${i % 2 === 0 ? 'flex-direction: row-reverse' : ''}`"
+      >
         <span class="package-card-body w-100" style="flex: 1">
-          <p class="package-card-title">الباقة الأساسية للاعتماد</p>
+          <p class="package-card-title">{{ packag.name }}</p>
           <div
             class="card d-flex flex-row justify-content-start align-items-start w-100"
             style="gap: 4rem"
@@ -17,18 +22,23 @@
             <span>
               <p class="card-title">الخدمات المشمولة:</p>
               <ul class="card-list">
-                <li>تقييم أولي وتحليل الفجوات.</li>
-                <li>تطوير خريطة طريق الاعتماد.</li>
-                <li>دعم أساسي لإعداد الوثائق.</li>
-                <li>-تحديثات منتظمة والتواصل مع هيئة الاعتماد.</li>
+                <li
+                  v-for="(ser, j) in replaceData(packag.included_services)"
+                  :key="j"
+                >
+                  {{ ser }}
+                </li>
               </ul>
             </span>
             <span>
               <p class="card-title">الفئة المستهدفة :</p>
               <ul class="card-list">
-                <li style="list-style: none">مراكز التدريب الصغيرة</li>
-                <li style="list-style: none">والمتوسطة التي تسعى</li>
-                <li style="list-style: none">للحصول على الاعتماد لأول مرة.</li>
+                <li
+                  v-for="(ser, j) in replaceData(packag.target_group)"
+                  :key="j"
+                >
+                  {{ ser }}
+                </li>
               </ul>
             </span>
           </div>
@@ -48,99 +58,7 @@
           </button>
         </div>
       </div>
-
-      <div class="package-info">
-        <div style="position: relative; flex: 1">
-          <img
-            src="/src/assets/images/package2.jpg"
-            style="width: 100%"
-            alt="package img"
-          />
-          <button
-            @click="router.push({ name: 'contact' })"
-            class="r-more-btn-w"
-            style="position: absolute; left: 10px; bottom: 10px"
-          >
-            تواصل معنا
-          </button>
-        </div>
-        <span class="package-card-body w-100 p-5" style="flex: 1">
-          <p class="package-card-title">الباقة القياسية للاعتماد</p>
-          <div
-            class="card d-flex flex-row justify-content-start align-items-start w-100"
-            style="gap: 4rem"
-          >
-            <span>
-              <p class="card-title">الخدمات المشمولة:</p>
-              <ul class="card-list">
-                <li>جميع الخدمات من الباقة الأساسية</li>
-                <li>إعداد شامل للوثائق</li>
-                <li>تدريب مخصص للموظفين على معايير الاعتماد</li>
-                <li>التنسيق مع هيئات الاعتماد نيابةً عن مركز التدريب</li>
-                <li>تدقيقات متوسطة العملية لضمان الامتثال</li>
-              </ul>
-            </span>
-            <span>
-              <p class="card-title">الفئة المستهدفة :</p>
-              <ul class="card-list">
-                <li style="list-style: none">
-                  مراكز التدريب المتوسطة التي لديها احتياجات أكثر تعقيدًا أو
-                  تتطلب اعتمادات متعددة.
-                </li>
-              </ul>
-            </span>
-          </div>
-        </span>
-      </div>
-
-      <div class="package-info">
-        <span class="package-card-body w-100" style="flex: 1">
-          <p class="package-card-title">الباقة المميزة للاعتماد</p>
-          <div
-            class="card d-flex flex-row justify-content-start align-items-start w-100"
-            style="gap: 4rem"
-          >
-            <span>
-              <p class="card-title">الخدمات المشمولة:</p>
-              <ul class="card-list">
-                <li>جميع الخدمات من الباقة القياسية</li>
-                <li>تمثيل كامل كممثل مُعتمد لمركز التدريب</li>
-                <li>جلسات استشارية مخصصة مع خبراء في المجال</li>
-                <li>
-                  دعم بعد الاعتماد، بما في ذلك التحقق المستمر من الامتثال وخدمات
-                  إعادة الاعتماد
-                </li>
-                <li>تسريع عملية الاعتماد</li>
-              </ul>
-            </span>
-            <span>
-              <p class="card-title">الفئة المستهدفة :</p>
-              <ul class="card-list">
-                <li style="list-style: none">
-                  مراكز التدريب الكبيرة أو تلك التي تستهدف الحصول على اعتمادات
-                </li>
-                <li style="list-style: none">مرموقة متعددة</li>
-              </ul>
-            </span>
-          </div>
-        </span>
-        <div style="position: relative; flex: 1">
-          <img
-            src="/src/assets/images/package3.jpg"
-            style="width: 100%"
-            alt="package img"
-          />
-          <button
-            @click="router.push({ name: 'contact' })"
-            class="r-more-btn-w"
-            style="position: absolute; left: 10px; bottom: 10px"
-          >
-            تواصل معنا
-          </button>
-        </div>
-      </div>
     </div>
-
     <!-- responsive packages -->
     <div class="resp-tap">
       <PackagesResponsive></PackagesResponsive>
@@ -149,9 +67,30 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import PackagesResponsive from "./PackagesResponsive.vue";
+import { computed, onMounted, watch } from "vue";
 const router = useRouter();
+const props = defineProps({
+  packages: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: true,
+  },
+});
+
+const replaceData = (ser) => {
+  return JSON.parse(ser.replace(/'/g, '"'));
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+ul {
+  li {
+    list-style: none !important;
+  }
+}
+</style>

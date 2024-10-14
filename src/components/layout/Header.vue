@@ -272,13 +272,29 @@ const router = useRouter();
 const route = useRoute();
 
 const lang = ref("EN");
+onMounted(() => {
+  if (sessionStorage.getItem("lang").toUpperCase()) {
+    lang.value = sessionStorage.getItem("lang").toUpperCase();
+    if (lang.value == "AR") {
+      document.querySelector("html").setAttribute("dir", "rtl"),
+        sessionStorage.setItem("lang", "ar");
+    } else {
+      document.querySelector("html").setAttribute("dir", "ltr"),
+        sessionStorage.setItem("lang", "en");
+    }
+  }
+});
 const setLanguage = (lan) => {
   if (lan == "ar") {
     document.querySelector("html").setAttribute("dir", "rtl"),
-      (lang.value = "AR");
+      sessionStorage.setItem("lang", "ar");
+    lang.value = "AR";
+    window.location.reload();
   } else {
     document.querySelector("html").setAttribute("dir", "ltr"),
-      (lang.value = "EN");
+      sessionStorage.setItem("lang", "en");
+    lang.value = "EN";
+    window.location.reload();
   }
 };
 </script>

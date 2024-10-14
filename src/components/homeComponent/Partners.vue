@@ -9,19 +9,8 @@
       <div
         class="partner-card my-5 d-flex align-items-center justify-content-center gap-5"
       >
-        <div class="card">
-          <img
-            src="/src/assets/images/partner2.png"
-            style="width: 60%"
-            alt="partner logo"
-          />
-        </div>
-        <div class="card">
-          <img
-            src="/src/assets/images/partner1.png"
-            style="width: 60%"
-            alt="mount wolf logo"
-          />
+        <div class="card" v-for="(partner, i) in partners" :key="i">
+          <img :src="partner.image" style="width: 60%" :alt="partner.Ifsah" />
         </div>
       </div>
     </div>
@@ -39,9 +28,13 @@
             :autoplay="1000"
             :transition="500"
           >
-            <Slide v-for="(slide, i) in slides" :key="i">
+            <Slide v-for="(slide, i) in resources" :key="i">
               <div class="carousel__item">
-                <img :src="slide.icon" alt="supply icon" style="width: 100%" />
+                <img
+                  :src="slide.image"
+                  :alt="slides.title"
+                  style="width: 100%"
+                />
               </div>
             </Slide>
           </Carousel>
@@ -53,7 +46,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import MainResource from "./MainResource.vue";
 
@@ -68,6 +61,23 @@ const slides = ref([
   { icon: "/src/assets/images/supply6.png" },
   { icon: "/src/assets/images/supply7.png" },
 ]);
+
+const props = defineProps({
+  partners: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: true,
+  },
+  resources: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: true,
+  },
+});
 
 // const breakpoints = ref({
 //   // 700px and up

@@ -2,10 +2,16 @@
   <main>
     <HeroSection :hero="headerSliders"></HeroSection>
     <Services :about="aboutUs" :services="allServices"></Services>
-    <Packages></Packages>
-    <Customer :metrics="successMetrics"></Customer>
-    <Questions></Questions>
-    <Partners></Partners>
+    <Packages :packages="allPackages"></Packages>
+    <Customer
+      :metrics="successMetrics"
+      :testimonials="testimonialsSliders"
+    ></Customer>
+    <Questions
+      :achievements="achievementsSliders"
+      :questions="allQuestions"
+    ></Questions>
+    <Partners :partners="partnersSliders" :resources="mainResources"></Partners>
   </main>
 </template>
 
@@ -20,7 +26,10 @@ import Partners from "@/components/homeComponent/Partners.vue";
 
 import { useSlidersStore } from "@/stores/Sliders";
 import { useStaticPagesStore } from "@/stores/staticPages";
+import { usePackagesStore } from "@/stores/packagesStore";
 import { storeToRefs } from "pinia";
+const { aboutUs, allServices } = storeToRefs(useStaticPagesStore());
+const { allPackages } = storeToRefs(usePackagesStore());
 const {
   headerSliders,
   testimonialsSliders,
@@ -28,12 +37,16 @@ const {
   achievementsSliders,
   partnersSliders,
   mainResources,
+  allQuestions,
 } = storeToRefs(useSlidersStore());
-const { aboutUs, allServices } = storeToRefs(useStaticPagesStore());
 onMounted(async () => {
-  await useSlidersStore().getAllSliders();
-  await useStaticPagesStore().getAllStatics();
-  await useStaticPagesStore().getAllServices();
+  Promise.all([
+    await useSlidersStore().getAllSliders(),
+    await useStaticPagesStore().getAllStatics(),
+    await useStaticPagesStore().getAllServices(),
+    await useSlidersStore().getAllQuestions(),
+    await usePackagesStore().getAllPackages(),
+  ]);
 });
 </script>
 
