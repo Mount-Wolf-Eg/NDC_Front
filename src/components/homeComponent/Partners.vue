@@ -11,7 +11,7 @@
       >
         <div
           class="card"
-          v-for="(partner, i) in partners"
+          v-for="(partner, i) in partners.slice(0, 4)"
           :key="i"
           style="width: 30rem; overflow: hidden"
         >

@@ -17,7 +17,11 @@
         <div
           class="container-cust d-flex flex-row flex-wrap justify-content-between align-items-center"
         >
-          <div class="cust-card" v-for="(metric, j) in metrics" :key="j">
+          <div
+            class="cust-card"
+            v-for="(metric, j) in metrics.slice(-5)"
+            :key="j"
+          >
             <!-- style="width: 6rem; height: 6rem" -->
             <img :src="metric.image" alt="metric img" />
 

@@ -11,7 +11,11 @@
         style="position: absolute; top: 20%; left: 0; width: 100%"
         class="container-cust d-flex justify-content-center align-items-center"
       >
-        <div class="cust-card" v-for="(achiev, i) in achievements" :key="i">
+        <div
+          class="cust-card"
+          v-for="(achiev, i) in achievements.slice(-5)"
+          :key="i"
+        >
           <img
             :src="achiev.image"
             style="width: 4rem; height: 4.2rem"
