@@ -9,8 +9,13 @@
       <div
         class="partner-card my-5 d-flex align-items-center justify-content-center gap-5"
       >
-        <div class="card" v-for="(partner, i) in partners" :key="i">
-          <img :src="partner.image" style="width: 60%" :alt="partner.Ifsah" />
+        <div
+          class="card"
+          v-for="(partner, i) in partners"
+          :key="i"
+          style="width: 30rem; overflow: hidden"
+        >
+          <img :src="partner.image" :alt="partner.Ifsah" />
         </div>
       </div>
     </div>
