@@ -4,7 +4,7 @@ import MainLayout from "./components/layout/MainLayout.vue";
 import { onMounted } from "vue";
 onMounted(() => {
   if (sessionStorage.getItem("lang") == null)
-    sessionStorage.setItem("lang", "en");
+    sessionStorage.setItem("lang", "ar");
 });
 </script>
 
