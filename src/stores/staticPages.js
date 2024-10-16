@@ -9,6 +9,7 @@ export const useStaticPagesStore = defineStore("staticPages", {
     privacyPolicy: [],
     termsConditions: [],
     allServices: [],
+    singleService: [],
   }),
   actions: {
     // all admins
@@ -35,6 +36,21 @@ export const useStaticPagesStore = defineStore("staticPages", {
         .get(`${mainStore().apiLink}/admin/Services/all`)
         .then((res) => {
           this.allServices = res.data.data;
+        })
+        .catch((err) => {
+          mainStore().showAlert(
+            Object.values(err.response.data.errors)[0][0]
+              ? Object.values(err.response.data.errors)[0][0]
+              : "Something went wrong, please try again",
+            2
+          );
+        });
+    },
+    async getSingleService(data) {
+      await axiosInstance
+        .post(`${mainStore().apiLink}/admin/Services/one`, data)
+        .then((res) => {
+          this.singleService = res.data.data;
         })
         .catch((err) => {
           mainStore().showAlert(

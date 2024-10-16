@@ -19,11 +19,14 @@
         >
           <div
             class="cust-card"
-            v-for="(metric, j) in metrics.slice(-5)"
+            v-for="(metric, j) in metrics.slice(-4)"
             :key="j"
           >
-            <!-- style="width: 6rem; height: 6rem" -->
-            <img :src="metric.image" alt="metric img" />
+            <img
+              :src="metric.image"
+              style="width: 10rem; height: 10rem"
+              alt="metric img"
+            />
 
             <p class="cust-text">
               {{ metric.title }}

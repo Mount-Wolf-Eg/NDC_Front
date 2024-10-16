@@ -3,29 +3,18 @@
     <div
       class="d-flex flex-row gap-5 flex-wrap justify-content-center align-items-center"
     >
-      <img src="/src/assets/images/supply1.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply2.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply3.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply4.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply5.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply6.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply1.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply2.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply3.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply4.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply5.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply6.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply1.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply2.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply3.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply4.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply5.png" class="resourc-img" alt="" />
-      <img src="/src/assets/images/supply6.png" class="resourc-img" alt="" />
+      <div v-for="(img, j) in mainResources" :key="j">
+        <img :src="img.image" class="resourc-img" alt="" />
+      </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useSlidersStore } from "@/stores/Sliders";
+import { storeToRefs } from "pinia";
+const { mainResources } = storeToRefs(useSlidersStore());
+</script>
 
 <style lang="scss" scoped>
 .main-resource {

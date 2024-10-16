@@ -44,11 +44,7 @@
           </div>
         </span>
         <div style="position: relative; flex: 1">
-          <img
-            src="/src/assets/images/package1.jpg"
-            style="width: 100%"
-            alt="package img"
-          />
+          <img :src="packag.image" style="width: 100%" alt="package img" />
           <button
             @click="router.push({ name: 'contact' })"
             class="r-more-btn-w"
@@ -59,18 +55,16 @@
         </div>
       </div>
     </div>
-    <!-- responsive packages -->
     <div class="resp-tap">
-      <PackagesResponsive></PackagesResponsive>
+      <PackagesResponsive :packagesRes="props.packages"></PackagesResponsive>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { useRouter } from "vue-router";
-import PackagesResponsive from "./PackagesResponsive.vue";
-import { computed, onMounted, watch } from "vue";
+import PackagesResponsive from "@/components/homeComponent/PackagesResponsive.vue";
+import { watch } from "vue";
 const router = useRouter();
 const props = defineProps({
   packages: {

@@ -10,46 +10,29 @@
         class="service-btns w-100 py-5 px-4 flex-row justify-content-center gap-5"
       >
         <button
+          v-for="(service, i) in allServices"
+          :key="i"
           class="service-btn"
-          @click="currentSlide = 1"
-          :class="`${currentSlide == 1 ? 'active' : ''}`"
+          @click="
+            router.push({
+              name: 'service',
+              query: { service: service.id },
+            }),
+              (currentSlide = service.id)
+          "
+          :class="`${currentSlide == service.id ? 'active' : ''}`"
         >
-          إعادة تأهيل وتطوير مراكز التدريب
-        </button>
-        <button
-          class="service-btn"
-          @click="currentSlide = 2"
-          :class="`${currentSlide == 2 ? 'active' : ''}`"
-        >
-          قطاع خدمات التدريب
-        </button>
-        <button
-          class="service-btn"
-          @click="currentSlide = 3"
-          :class="`${currentSlide == 3 ? 'active' : ''}`"
-        >
-          قطاع الاستشارات المالية
-        </button>
-        <button
-          class="service-btn"
-          @click="currentSlide = 4"
-          :class="`${currentSlide == 4 ? 'active' : ''}`"
-        >
-          تطوير البرمجيات والتسويق الالكتروني
-        </button>
-        <button
-          class="service-btn"
-          @click="currentSlide = 5"
-          :class="`${currentSlide == 5 ? 'active' : ''}`"
-        >
-          اسم القسم رقم واحد
+          {{ service.name }}
         </button>
       </div>
       <div class="tabs w-100">
         <transition name="fade">
-          <RehabilitationTab v-if="currentSlide == 1"></RehabilitationTab>
+          <singleServicePage :service="singleService"></singleServicePage>
         </transition>
-        <transition name="fade">
+        <!-- <transition name="fade">
+          <RehabilitationTab></RehabilitationTab>
+        </transition> -->
+        <!-- <transition name="fade">
           <Training v-if="currentSlide == 2"></Training>
         </transition>
         <transition name="fade">
@@ -57,7 +40,7 @@
         </transition>
         <transition name="fade">
           <Development v-if="currentSlide == 4"></Development>
-        </transition>
+        </transition> -->
       </div>
     </div>
   </div>
@@ -65,37 +48,30 @@
 
 <script setup>
 import { onMounted, ref, watch } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
+import singleServicePage from "@/components/service/singleServicePage.vue";
 import RehabilitationTab from "@/components/service/RehabilitationTab.vue";
 import Training from "@/components/service/Training.vue";
 import Finance from "@/components/service/Finance.vue";
 import Development from "@/components/service/Development.vue";
 const currentSlide = ref(1);
 const route = useRoute();
-onMounted(() => {
-  route.query.service == "rehabilitation"
-    ? (currentSlide.value = 1)
-    : route.query.service == "training"
-    ? (currentSlide.value = 2)
-    : route.query.service == "finance"
-    ? (currentSlide.value = 3)
-    : route.query.service == "development"
-    ? (currentSlide.value = 4)
-    : (currentSlide.value = 1);
+const router = useRouter();
+
+import { useStaticPagesStore } from "@/stores/staticPages";
+const { allServices, singleService } = storeToRefs(useStaticPagesStore());
+
+onMounted(async () => {
+  await useStaticPagesStore().getSingleService({ id: route.query.service });
+  currentSlide.value = route.query.service;
 });
 
 watch(
   () => route.query.service,
-  () => {
-    route.query.service == "rehabilitation"
-      ? (currentSlide.value = 1)
-      : route.query.service == "training"
-      ? (currentSlide.value = 2)
-      : route.query.service == "finance"
-      ? (currentSlide.value = 3)
-      : route.query.service == "development"
-      ? (currentSlide.value = 4)
-      : (currentSlide.value = 1);
+  async () => {
+    currentSlide.value = route.query.service;
+    await useStaticPagesStore().getSingleService({ id: route.query.service });
   }
 );
 </script>

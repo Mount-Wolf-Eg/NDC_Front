@@ -4,7 +4,7 @@ const axiosInstance = axios.create({
   timeout: 5000,
   headers: {
     "Content-Type": "multipart/form-data;",
-    lang: sessionStorage.getItem("lang"),
+    lang: sessionStorage.getItem("lang") || "ar",
   },
 });
 axiosInstance.interceptors.response.use(

@@ -42,7 +42,9 @@ const {
 onMounted(async () => {
   Promise.all([
     await useSlidersStore().getAllSliders(),
+
     await useStaticPagesStore().getAllStatics(),
+
     await useStaticPagesStore().getAllServices(),
     await useSlidersStore().getAllQuestions(),
     await usePackagesStore().getAllPackages(),

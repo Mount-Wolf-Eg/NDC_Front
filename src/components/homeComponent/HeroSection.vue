@@ -196,7 +196,7 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
 const currentSlide = ref(0);
 const next = () => {
-  if (currentSlide.value == props.hero.length - 2) {
+  if (currentSlide.value == props.hero.length - 1) {
     currentSlide.value = 0;
   } else {
     currentSlide.value++;
@@ -205,7 +205,7 @@ const next = () => {
 
 const prev = () => {
   if (currentSlide.value == 0) {
-    currentSlide.value = props.hero.length - 2;
+    currentSlide.value = props.hero.length - 1;
   } else {
     currentSlide.value--;
   }

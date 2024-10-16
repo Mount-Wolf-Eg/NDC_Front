@@ -7,39 +7,43 @@
       v-model="currentSlide"
       :breakpoints="breakpoints"
     >
-      <slide v-for="(slide, i) in slides" :key="i">
+      <slide v-for="(slide, i) in packagesRes" :key="i">
         <div class="package-info-respon">
-          <img :src="slide.img" alt="slide img" style="width: 100%" />
+          <img :src="slide.image" alt="slide img" style="width: 100%" />
 
           <div
             style="width: 100%"
             class="d-flex flex-column align-items-center justify-content-center"
           >
-            <p class="res-head">{{ slide.head }}</p>
+            <p class="res-head">{{ slide.name }}</p>
 
             <div>
               <div class="res-box">
-                <p class="res-box-title">{{ slide.services[0].title }}</p>
-                <ul
-                  class="res-box-list"
-                  v-for="(serv, j) in slide.services[0].list"
-                  :key="j"
-                >
-                  <li style="list-style: none">{{ serv }}</li>
+                <p class="res-box-title">الخدمات المشمولة:</p>
+                <ul class="res-box-list">
+                  <li
+                    v-for="(ser, j) in replaceData(slide.included_services)"
+                    :key="j"
+                    style="list-style: none"
+                  >
+                    {{ ser }}
+                  </li>
                 </ul>
               </div>
 
               <div class="res-box">
-                <p class="res-box-title">{{ slide.target[0].title }}</p>
-                <ul
-                  class="res-box-list"
-                  v-for="(tar, k) in slide.target[0].list"
-                  :key="k"
-                >
-                  <li style="list-style: none">{{ tar }}</li>
+                <p class="res-box-title">الفئة المستهدفة :</p>
+                <ul class="res-box-list" style="list-style: none">
+                  <li
+                    v-for="(ser, j) in replaceData(slide.target_group)"
+                    :key="j"
+                  >
+                    {{ ser }}
+                  </li>
                 </ul>
               </div>
             </div>
+
             <button
               @click="router.push({ name: 'contact' })"
               class="r-more-btn-w w-75"
@@ -55,10 +59,12 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { watch } from "vue";
 const router = useRouter();
 import { ref } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 const currentSlide = ref(0);
+
 const slides = ref([
   {
     head: "الباقة الأساسية للاعتماد",
@@ -136,6 +142,16 @@ const slides = ref([
   },
 ]);
 
+const props = defineProps({
+  packagesRes: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: true,
+  },
+});
+
 const breakpoints = ref({
   // 700px and up
   0: {
@@ -148,6 +164,10 @@ const breakpoints = ref({
     snapAlign: "center",
   },
 });
+
+const replaceData = (ser) => {
+  return JSON.parse(ser.replace(/'/g, '"'));
+};
 </script>
 
 <style lang="scss" scoped></style>

@@ -222,58 +222,33 @@
           class="flex-col align-items-cente justify-content-start align-items-sm-start"
         >
           <p class="footer-route">أنواع الباقات</p>
-          <p class="footer-sub-route">الباقة الأساسية للاعتماد</p>
-          <p class="footer-sub-route">الباقة القياسية للاعتماد</p>
-          <p class="footer-sub-route">الباقة المميزه للأعتماد</p>
+
+          <p
+            class="footer-sub-route"
+            v-for="(pack, i) in allPackages"
+            v-on:seeking=""
+          >
+            {{ pack.name }}
+          </p>
         </div>
 
         <div
           class="flex-col align-items-cente justify-content-start align-items-sm-start"
         >
           <p class="footer-route">الخدمات</p>
+
           <p
+            v-for="(service, i) in allServices.slice(-4)"
+            :key="i"
             class="footer-sub-route"
             @click="
               router.push({
                 name: 'service',
-                query: { service: 'rehabilitation' },
+                query: { service: service.id },
               })
             "
           >
-            إعادة تأهيل وتطوير مراكز التدريب
-          </p>
-          <p
-            class="footer-sub-route"
-            @click="
-              router.push({
-                name: 'service',
-                query: { service: 'training' },
-              })
-            "
-          >
-            قطاع خدمات التدريب
-          </p>
-          <p
-            class="footer-sub-route"
-            @click="
-              router.push({
-                name: 'service',
-                query: { service: 'finance' },
-              })
-            "
-          >
-            قطاع الاستشارات المالية
-          </p>
-          <p
-            class="footer-sub-route"
-            @click="
-              router.push({
-                name: 'service',
-                query: { service: 'development  ' },
-              })
-            "
-          >
-            قطاع تطوير البرمجيات والتسويق الالكتروني
+            {{ service.name }}
           </p>
         </div>
         <div
@@ -384,6 +359,18 @@ const router = useRouter();
 import { storeToRefs } from "pinia";
 import { useSettingsStore } from "@/stores/settings";
 const { allContacts } = storeToRefs(useSettingsStore());
+
+import { useStaticPagesStore } from "@/stores/staticPages";
+import { usePackagesStore } from "@/stores/packagesStore";
+import { onMounted } from "vue";
+const { allServices } = storeToRefs(useStaticPagesStore());
+const { allPackages } = storeToRefs(usePackagesStore());
+onMounted(async () => {
+  Promise.all([
+    await useStaticPagesStore().getAllServices(),
+    await usePackagesStore().getAllPackages(),
+  ]);
+});
 </script>
 
 <style lang="scss" scoped>

@@ -15,7 +15,11 @@
           :key="i"
           style="width: 30rem; overflow: hidden"
         >
-          <img :src="partner.image" :alt="partner.Ifsah" />
+          <img
+            :src="partner.image"
+            style="width: 50%; height: 50%"
+            :alt="partner.Ifsah"
+          />
         </div>
       </div>
     </div>
@@ -38,7 +42,7 @@
                 <img
                   :src="slide.image"
                   :alt="slides.title"
-                  style="width: 100%"
+                  style="width: 100%; max-width: 5vw"
                 />
               </div>
             </Slide>

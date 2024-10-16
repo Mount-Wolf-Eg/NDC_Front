@@ -70,7 +70,7 @@
               @click="
                 router.push({
                   name: 'service',
-                  query: { service: 'rehabilitation' },
+                  query: { service: serv.id },
                 })
               "
             >

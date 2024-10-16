@@ -25,8 +25,7 @@
           نبذه عنا
         </p>
         <p class="bdy">
-          شركة التوثيق الوطني هي شركة استشارية رائدة في المملكة العربية
-          السعودية، متخصصة في تقديم حلول شاملة للاعتمادات والشهادات المهنية.
+          {{ aboutUs.title }}
         </p>
         <p
           style="
@@ -36,18 +35,7 @@
             text-align: right;
           "
         >
-          نتميز بتوفير خدمات مخصصة لدعم الشركات ومراكز التدريب والمؤسسات
-          التعليمية في تحقيق أعلى معايير الجودة والامتثال للوائح الوطنية
-          والدولية. نقدم لعملائنا استشارات شاملة في مجال الاعتمادات، بما في ذلك
-          شهادات الأيزو، لضمان تلبية المتطلبات الصارمة للهيئات المحلية
-          والعالمية. بفضل فريقنا من الخبراء وشبكتنا الواسعة من الشركاء
-          الاستراتيجيين، نعمل على تحسين الكفاءة التشغيلية وتعزيز النمو التجاري
-          لعملائنا. كما نقدم خدمات استشارية متخصصة في قطاع التدريب، حيث نغطي
-          أكثر من 40 مجالًا صناعيًا ونوفر أكثر من 20 اعتمادًا مهنيًا ودوليًا. من
-          خلال تأهيل شركائنا وإعادة هيكلتهم، نضمن توافقهم مع أحدث الممارسات في
-          هذا القطاع الحيوي. تلتزم شركة التوثيق الوطني بمساعدة عملائها على
-          البقاء في الطليعة من خلال حلول مبتكرة ومخصصة تلبي احتياجاتهم وتحقق
-          طموحاتهم.
+          {{ aboutUs.content }}
         </p>
       </div>
       <div class="img-sec">
@@ -57,13 +45,13 @@
           alt="bg image"
         />
         <img
-          src="/src/assets/about_image/about.jpg"
+          :src="aboutUs.image"
           alt="about img"
           style="
             position: absolute;
-            top: 10%;
+            top: 20%;
             left: 50%;
-            width: 80%;
+            width: 100%;
             transform: translatex(-50%);
           "
         />
@@ -424,7 +412,16 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useStaticPagesStore } from "@/stores/staticPages";
+import { onMounted } from "vue";
+import { storeToRefs } from "pinia";
+const { aboutUs } = storeToRefs(useStaticPagesStore());
+
+onMounted(async () => {
+  await useStaticPagesStore().getAllStatics();
+});
+</script>
 
 <style lang="scss" scoped>
 .about-hero {

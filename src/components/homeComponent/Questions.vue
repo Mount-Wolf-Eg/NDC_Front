@@ -13,12 +13,12 @@
       >
         <div
           class="cust-card"
-          v-for="(achiev, i) in achievements.slice(-5)"
+          v-for="(achiev, i) in achievements.slice(-4)"
           :key="i"
         >
           <img
             :src="achiev.image"
-            style="width: 4rem; height: 4.2rem"
+            style="width: 10rem; height: 10rem"
             alt="achivement icon"
           />
 
