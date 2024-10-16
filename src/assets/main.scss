@@ -498,3 +498,12 @@ button {
     transform: translateX(0);
   }
 }
+
+.err-border {
+  border: 1px solid red !important;
+}
+.err-msg {
+  color: red;
+  padding: 0;
+  font-size: 12px;
+}
