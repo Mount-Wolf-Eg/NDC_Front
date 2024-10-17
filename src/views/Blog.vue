@@ -8,58 +8,21 @@
       />
       <div
         class="blog-btns w-100 py-5 px-4 flex-row justify-content-start gap-3"
+        style="overflow-x: auto"
       >
         <button
+          v-for="(blog, i) in allblogs"
+          :key="i"
           class="blog-btn"
-          @click="currentSlide = 1"
-          :class="`${currentSlide == 1 ? 'active' : ''}`"
+          @click="currentSlide = blog.id"
+          :class="`${currentSlide == blog.id ? 'active' : ''}`"
         >
-          اسم القسم رقم واحد
-        </button>
-        <button
-          class="blog-btn"
-          @click="currentSlide = 2"
-          :class="`${currentSlide == 2 ? 'active' : ''}`"
-        >
-          اسم القسم رقم واحد
-        </button>
-        <button
-          class="blog-btn"
-          @click="currentSlide = 3"
-          :class="`${currentSlide == 3 ? 'active' : ''}`"
-        >
-          اسم القسم رقم واحد
-        </button>
-        <button
-          class="blog-btn"
-          @click="currentSlide = 4"
-          :class="`${currentSlide == 4 ? 'active' : ''}`"
-        >
-          اسم القسم رقم واحد
-        </button>
-        <button
-          class="blog-btn"
-          @click="currentSlide = 5"
-          :class="`${currentSlide == 5 ? 'active' : ''}`"
-        >
-          اسم القسم رقم واحد
+          {{ blog.name }}
         </button>
       </div>
       <div class="tabs w-100">
         <transition name="fade">
-          <BlogTab v-if="currentSlide == 1"></BlogTab>
-        </transition>
-        <transition name="fade">
-          <BlogTab v-if="currentSlide == 2"></BlogTab>
-        </transition>
-        <transition name="fade">
-          <BlogTab v-if="currentSlide == 3"></BlogTab>
-        </transition>
-        <transition name="fade">
-          <BlogTab v-if="currentSlide == 4"></BlogTab>
-        </transition>
-        <transition name="fade">
-          <BlogTab v-if="currentSlide == 5"></BlogTab>
+          <BlogTab :postCard="postsByBlog"></BlogTab>
         </transition>
       </div>
     </div>
@@ -67,9 +30,27 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref, watch } from "vue";
+import { useBlogStore } from "@/stores/blogStore";
 import BlogTab from "@/components/blog/BlogTab.vue";
+import { storeToRefs } from "pinia";
+import { useRoute, useRouter } from "vue-router";
+const route = useRoute();
+const router = useRouter();
 const currentSlide = ref(1);
+const { allblogs, postsByBlog } = storeToRefs(useBlogStore());
+
+onMounted(async () => {
+  await useBlogStore().getAllBlogs();
+  currentSlide.value = allblogs.value[0].id;
+});
+
+watch(
+  () => currentSlide.value,
+  async (newVal) => {
+    await useBlogStore().getPostsByCategory({ category_id: newVal });
+  }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -81,13 +62,16 @@ const currentSlide = ref(1);
     line-height: 3.6rem;
     text-align: right;
     color: #121212;
-    width: 27.2rem;
+    // width: 27.2rem;
+    width: fit-content;
+    padding: 0 0.5rem;
     height: 5.6rem;
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #0477be;
+    // border: 1px solid #0477be;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
   .active {
     background-color: #def1ff;

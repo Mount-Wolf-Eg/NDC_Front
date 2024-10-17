@@ -6,6 +6,7 @@
         style="width: 100%"
         alt="blog iamge"
       />
+
       <div
         class="service-btns w-100 py-5 px-4 flex-row justify-content-center gap-5"
       >
@@ -25,22 +26,11 @@
           {{ service.name }}
         </button>
       </div>
+
       <div class="tabs w-100">
         <transition name="fade">
           <singleServicePage :service="singleService"></singleServicePage>
         </transition>
-        <!-- <transition name="fade">
-          <RehabilitationTab></RehabilitationTab>
-        </transition> -->
-        <!-- <transition name="fade">
-          <Training v-if="currentSlide == 2"></Training>
-        </transition>
-        <transition name="fade">
-          <Finance v-if="currentSlide == 3"></Finance>
-        </transition>
-        <transition name="fade">
-          <Development v-if="currentSlide == 4"></Development>
-        </transition> -->
       </div>
     </div>
   </div>
@@ -51,10 +41,6 @@ import { onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 import singleServicePage from "@/components/service/singleServicePage.vue";
-import RehabilitationTab from "@/components/service/RehabilitationTab.vue";
-import Training from "@/components/service/Training.vue";
-import Finance from "@/components/service/Finance.vue";
-import Development from "@/components/service/Development.vue";
 const currentSlide = ref(1);
 const route = useRoute();
 const router = useRouter();

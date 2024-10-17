@@ -5,11 +5,14 @@ import LoadingPage from "./views/LoadingPage.vue";
 import { onMounted, ref } from "vue";
 import { useSlidersStore } from "./stores/Sliders";
 import { storeToRefs } from "pinia";
-const { start } = storeToRefs(useSlidersStore());
-
+const start = ref(false);
 onMounted(() => {
   if (sessionStorage.getItem("lang") == null)
     sessionStorage.setItem("lang", "ar");
+
+  setTimeout(() => {
+    start.value = true;
+  }, 500);
 });
 </script>
 

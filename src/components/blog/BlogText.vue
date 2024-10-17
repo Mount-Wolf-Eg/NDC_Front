@@ -127,7 +127,7 @@
                 :autoplay="1000"
                 :wrap-around="true"
                 :transition="500"
-                v-model="currentSlide"
+                v-model="currentCard"
                 :breakpoints="breakpoints"
               >
                 <slide v-for="(slide, i) in 20" :key="i">
@@ -190,14 +190,26 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-const currentSlide = ref(0);
+import { useBlogStore } from "@/stores/blogStore";
+import { useRoute } from "vue-router";
+import { storeToRefs } from "pinia";
+
+const route = useRoute();
+const currentCard = ref(0);
+const { post } = storeToRefs(useBlogStore());
+
+onMounted(async () => {
+  await useBlogStore().getPost({ id: route.query.post });
+  console.log(post.value);
+});
+
 const next = () => {
-  currentSlide.value++;
+  currentCard.value++;
 };
 const prev = () => {
-  currentSlide.value--;
+  currentCard.value--;
 };
 
 const breakpoints = ref({

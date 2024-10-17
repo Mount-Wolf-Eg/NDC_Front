@@ -1,138 +1,48 @@
 <template>
   <div class="join-cards" style="margin: 3rem auto">
-    <div class="join-card" @click="router.push({ name: 'blogDetails' })">
+    <div
+      class="join-card"
+      v-for="(blog, i) in postCard"
+      :key="i"
+      @click="router.push({ name: 'blogDetails', query: { post: blog.id } })"
+    >
       <img
-        src="/src/assets/blog/blogCard.jpg"
         style="width: 100%; height: auto"
         alt="blog image"
+        :src="blog.image"
       />
       <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
+        <p class="join-card-title" style="overflow: hidden">{{ blog.name }}</p>
+        <p class="join-card-text" style="overflow: hidden">
+          {{ blog.description }}
         </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
-
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
+        <p class="join-card-date">
+          {{ moment(new Date(blog.created_at)).format("DD-MM-YYYY") }}
         </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
-
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
-        </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
-
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
-        </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
-
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
-        </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
-
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
-        </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
-
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
-        </p>
-        <p class="join-card-date">August 20, 2022</p>
-      </span>
-    </div>
-
-    <div class="join-card">
-      <img
-        src="/src/assets/blog/blogCard.jpg"
-        style="width: 100%; height: auto"
-        alt="blog image"
-      />
-      <span class="px-1">
-        <p class="join-card-title">اسم القسم رقم واحد</p>
-        <p class="join-card-text">
-          الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية تتماشى
-          مع خطط فعّالة
-        </p>
-        <p class="join-card-date">August 20, 2022</p>
       </span>
     </div>
   </div>
 </template>
 
 <script setup>
+import moment from "moment";
+import { watch } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
+
+const props = defineProps({
+  postCard: {
+    type: Object,
+    default: () => ({}),
+    Required: true,
+  },
+});
+watch(
+  () => props.postCard,
+  () => {
+    console.log(props.postCard[0].image);
+  }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -154,7 +64,9 @@ const router = useRouter();
     width: 41.4rem;
     height: 50.2rem;
     .join-card-title {
-      width: 16.2rem;
+      // width: 16.2rem;
+      width: fit-content;
+      padding: 0 0.5rem;
       height: 3.9rem;
 
       font-size: 1.6rem;
