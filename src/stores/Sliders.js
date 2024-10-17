@@ -12,6 +12,7 @@ export const useSlidersStore = defineStore("sliderStore", {
     partnersSliders: [],
     mainResources: [],
     allQuestions: [],
+    start: false,
   }),
   actions: {
     // all admins
@@ -19,6 +20,7 @@ export const useSlidersStore = defineStore("sliderStore", {
       await axiosInstance
         .get(`${mainStore().apiLink}/admin/slider/showSlidersTypes`)
         .then((res) => {
+          this.start = true;
           this.headerSliders = res.data.data.header_slider;
           this.testimonialsSliders = res.data.data.testimonials;
           this.successMetrics = res.data.data.success_metrics;
@@ -33,6 +35,7 @@ export const useSlidersStore = defineStore("sliderStore", {
               : "Something went wrong, please try again",
             2
           );
+          this.start = false;
         });
     },
     async getAllQuestions() {
