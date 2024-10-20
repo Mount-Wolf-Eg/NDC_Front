@@ -52,7 +52,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/blog-details",
+      path: "/blog/blog-details",
       name: "blogDetails",
       component: () => import("@/components/blog/BlogText.vue"),
       meta: {

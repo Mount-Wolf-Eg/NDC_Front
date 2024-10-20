@@ -1,25 +1,30 @@
 <template>
   <div class="join-cards" style="margin: 3rem auto">
-    <div
-      class="join-card"
-      v-for="(blog, i) in postCard"
-      :key="i"
-      @click="router.push({ name: 'blogDetails', query: { post: blog.id } })"
-    >
-      <img
-        style="width: 100%; height: auto"
-        alt="blog image"
-        :src="blog.image"
-      />
-      <span class="px-1">
-        <p class="join-card-title" style="overflow: hidden">{{ blog.name }}</p>
-        <p class="join-card-text" style="overflow: hidden">
-          {{ blog.description }}
-        </p>
-        <p class="join-card-date">
-          {{ moment(new Date(blog.created_at)).format("DD-MM-YYYY") }}
-        </p>
-      </span>
+    <div v-for="(blog, i) in postCard" :key="i">
+      <div
+        class="join-card"
+        v-if="blog.category_posts"
+        v-for="(post, j) in blog.category_posts"
+        :key="j"
+        @click="router.push({ name: 'blogDetails', query: { post: blog.id } })"
+      >
+        <img
+          style="width: 100%; height: auto; overflow: hidden"
+          alt="blog image"
+          :src="post.image"
+        />
+        <span class="px-1">
+          <p class="join-card-title" style="overflow: hidden">
+            {{ post.name }}
+          </p>
+          <p class="join-card-text" style="overflow: hidden">
+            {{ post.description }}
+          </p>
+          <p class="join-card-date">
+            {{ moment(new Date(post.created_at)).format("DD-MM-YYYY") }}
+          </p>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -37,12 +42,6 @@ const props = defineProps({
     Required: true,
   },
 });
-watch(
-  () => props.postCard,
-  () => {
-    console.log(props.postCard[0].image);
-  }
-);
 </script>
 
 <style lang="scss" scoped>
@@ -62,6 +61,7 @@ watch(
     align-items: start;
     justify-content: space-between;
     width: 41.4rem;
+    max-height: 50.2rem;
     height: 50.2rem;
     .join-card-title {
       // width: 16.2rem;

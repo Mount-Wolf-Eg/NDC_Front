@@ -4,21 +4,37 @@
       <img src="/src/assets/joinUs/join-card.jpg" alt="blog iamge" />
       <div class="container-cust">
         <p class="head">اسم الوظيفة</p>
-        <p class="job-title">مهندس مدني</p>
-        <p class="job-desc">
-          هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم
-          تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص.
-          إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس
-          هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في هذا النص. بينما
-          تعمل بعض مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار
+        <p class="job-title">{{ job.title }}</p>
+        <p class="job-desc">{{ job.description }}</p>
+        <p class="foot">
+          {{ moment(new Date(job?.created_at)).format("DD-MM-YYYY") }}
         </p>
-        <p class="foot">August 20, 2022</p>
       </div>
 
       <div class="join-form w-100">
         <div class="contact-form w-50 mx-auto">
           <div class="flex-row gap-4">
             <div class="flex-col gap-3" style="flex: 1">
+              <!-- <span
+          class="d-flex flex-column algin-items-center justify-content-center"
+        >
+          <input
+            class="form-inpt mb-4"
+            type="text"
+            placeholder="اكتب البريد الاكتروني"
+            v-model="formData.email"
+            :appear="checkErrName(['email']) ? 'err-border' : ''"
+          />
+          <span
+            class="center-row justify-content-start"
+            style="margin-top: -1rem; margin-bottom: 1rem"
+            v-for="(err, i) in validationObj.$errors"
+            :key="i"
+            ><span v-if="err.$property == 'email'" class="err-msg">
+              {{ err.$message }}
+            </span></span
+          >
+        </span> -->
               <input class="form-inpt" type="text" placeholder="الاسم" />
               <input
                 class="form-inpt"
@@ -42,7 +58,64 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { useCareersStore } from "@/stores/careersStore";
+import { storeToRefs } from "pinia";
+// validation
+// import useVuelidator from "@vuelidate/core";
+// import { required, minLength, maxLength, email } from "@vuelidate/validators";
+// required.$message = "Field is required";
+
+import moment from "moment";
+
+const route = useRoute();
+const router = useRouter();
+const { job } = storeToRefs(useCareersStore());
+onMounted(async () => {
+  await useCareersStore().getJobDetails({ id: route.query.job });
+  if (job.value.length == 0) router.push({ name: "join" });
+});
+
+// const formData = ref({
+//   name: "",
+//   email: "",
+//   message: "",
+// });
+
+// const validationRules = ref({
+//   name: { required, minLength: minLength(3), maxLength: maxLength(50) },
+//   message: { required, minLength: minLength(10), maxLength: maxLength(500) },
+//   email: { required, email },
+// });
+
+// const checkErrName = (key) => {
+//   return validationObj.value.$errors.find((err) => err.$property == key);
+// };
+
+// const validationObj = useVuelidator(validationRules, formData);
+
+// const contacForm = async () => {
+//   isLoading.value = true;
+//   const result = await validationObj.value.$validate();
+//   if (result) {
+//     const res = await contactUsForm().sendMessage({
+//       name: formData.value.name,
+//       email: formData.value.email,
+//       message: formData.value.message,
+//     });
+//     if (res) {
+//       formData.value = {
+//         name: "",
+//         email: "",
+//         message: "",
+//       };
+//     }
+//     validationObj.value.$reset();
+//     document.getElementById("cont-form").reset();
+//   }
+//   isLoading.value = false;
+// };
 </script>
 
 <style lang="scss" scoped>

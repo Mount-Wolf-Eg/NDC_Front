@@ -23,124 +23,23 @@
       </div>
 
       <div class="join-cards" style="width: 88%; margin: 0 auto">
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
+        <div
+          v-for="(job, i) in allCareers"
+          :key="i"
+          class="join-card"
+          @click="router.push({ name: 'joinForm', query: { job: job.id } })"
+        >
+          <img :src="job?.image" style="width: 100%; height: auto" alt="" />
           <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
-            <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
+            <p class="join-card-title" style="overflow: hidden">
+              {{ job.title }}
             </p>
-            <p class="join-card-date">August 20, 2022</p>
-          </span>
-        </div>
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
-          <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
             <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
+              {{ job.description }}
             </p>
-            <p class="join-card-date">August 20, 2022</p>
-          </span>
-        </div>
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
-          <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
-            <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
+            <p class="join-card-date">
+              {{ moment(new Date(job?.created_at)).format("DD-MM-YYYY") }}
             </p>
-            <p class="join-card-date">August 20, 2022</p>
-          </span>
-        </div>
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
-          <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
-            <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
-            </p>
-            <p class="join-card-date">August 20, 2022</p>
-          </span>
-        </div>
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
-          <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
-            <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
-            </p>
-            <p class="join-card-date">August 20, 2022</p>
-          </span>
-        </div>
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
-          <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
-            <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
-            </p>
-            <p class="join-card-date">August 20, 2022</p>
-          </span>
-        </div>
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
-          <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
-            <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
-            </p>
-            <p class="join-card-date">August 20, 2022</p>
-          </span>
-        </div>
-        <div class="join-card" @click="router.push({ name: 'joinForm' })">
-          <img
-            src="/src/assets/joinUs/join-cardImg.jpg"
-            style="width: 100%; height: auto"
-            alt=""
-          />
-          <span class="px-1">
-            <p class="join-card-title">اسم الوظيفة</p>
-            <p class="join-card-text">
-              الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات تجارية
-              تتماشى مع خطط فعّالة
-            </p>
-            <p class="join-card-date">August 20, 2022</p>
           </span>
         </div>
       </div>
@@ -150,6 +49,17 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { useCareersStore } from "@/stores/careersStore";
+import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
+const { allCareers } = storeToRefs(useCareersStore());
+
+import moment from "moment";
+
+onMounted(async () => {
+  await useCareersStore().getAllCareers();
+  console.log(allCareers.value);
+});
 const router = useRouter();
 </script>
 
@@ -193,7 +103,7 @@ const router = useRouter();
           line-height: 3rem;
           background-color: #f6f7ff;
           color: #0477be;
-          width: 10.5rem;
+          max-width: 70%;
           height: 3.9rem;
           text-align: center;
           line-height: 3.9rem;
@@ -203,6 +113,12 @@ const router = useRouter();
           font-weight: 700;
           line-height: 3.6rem;
           color: #181a2a;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .join-card-date {
           font-size: 1.4rem;

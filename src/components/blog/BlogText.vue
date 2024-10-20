@@ -10,91 +10,31 @@
         <div
           class="blog-info flex-col align-items-center justify-content-between pt-5 pb-3"
         >
-          <p class="blog-info-title text-center">اسم القسم رقم واحد</p>
-          <p class="blog-info-body">
-            الاستشارات المالية <br />
-            نساعد عملاءنا في تطوير استراتيجيات تجارية <br />
-            تتماشى مع خطط فعّالة
+          <p class="blog-info-title text-center">{{ post.category?.name }}</p>
+          <p class="blog-info-body w-75">
+            {{ post?.title }}
           </p>
-          <p class="blog-info-foot text-center">August 20, 2022</p>
+          <p class="blog-info-foot text-center">
+            {{ moment(new Date(post?.created_at)).format("DD-MM-YYYY") }}
+          </p>
         </div>
       </div>
       <div class="blog-text w-100 row px-3" style="margin: 15rem auto 5rem">
-        <div class="col blog-body px-3">
-          لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل
-          وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم
-          ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة
-          مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب
-          بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على
-          هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد
-          الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق
-          "ليتراسيت" (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر
-          مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر"
-          (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.لوريم
-          إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس
-          المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم
-          ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة
-          مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب
-          بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على
-          هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد
-          الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق
-          "ليتراسيت" (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر
-          مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر"
-          (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.لوريم
-          إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس
-          المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم
-          ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة
-          مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب
-          بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على
-          هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد
-          الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق
-          "ليتراسيت" (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر
-          مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر"
-          (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.لوريم
-          إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس
-          المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم
-          ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة
-          مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب
-          بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على
-          هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد
-          الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق
-          "ليتراسيت" (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر
-          مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر"
-          (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.لوريم
-          إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس
-          المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم
-          ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة
-          مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب
-          بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على
-          هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد
-          الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق
-          "ليتراسيت" (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر
-          مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر"
-          (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.لوريم
-          إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس
-          المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم
-          ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة
-          مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب
-          بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على
-          هذا النص، بل انه حتى صار مستخدماً وبشكله الأصلي في الطباعة والتنضيد
-          الإلكتروني. انتشر بشكل كبير في ستينيّات هذا القرن مع إصدار رقائق
-          "ليتراسيت" (Letraset) البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر
-          مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر"
-          (Aldus PageMaker) والتي حوت أيضاً على نسخ من نص لوريم إيبسوم.
-        </div>
+        <div class="col blog-body px-3">{{ post.content }}</div>
         <div class="col-3">
-          <img
-            src="/src/assets/blog/blogImg.jpg"
-            alt="blog image"
-            style="width: 100%"
-          />
+          <img :src="post?.image" alt="blog image" style="width: 100%" />
         </div>
       </div>
       <img
+        :src="post.category?.image"
+        alt="blog iamge"
+        style="width: auto; height: 100%; margin: 5rem 0"
+      />
+      <!-- <img
         src="/src/assets/blog/blogheader.jpg"
         alt="blog iamge"
         style="width: 100%; margin: 5rem 0"
-      />
+      /> -->
       <div class="blog-latest w-100">
         <p class="blog-latest-info">نشر مؤخرا</p>
         <div class="blog-slider">
@@ -122,7 +62,7 @@
               </svg>
             </button>
 
-            <div style="width: 95%; margin: 5rem">
+            <div style="width: 90%; margin: 5rem">
               <carousel
                 :autoplay="1000"
                 :wrap-around="true"
@@ -131,24 +71,34 @@
                 :breakpoints="breakpoints"
               >
                 <slide v-for="(slide, i) in 20" :key="i">
-                  <div
-                    class="join-card"
-                    @click="router.push({ name: 'blogDetails' })"
-                  >
-                    <img
-                      src="/src/assets/blog/blogCard.jpg"
-                      style="width: 100%; height: auto"
-                      alt="blog image"
-                    />
+                  <div v-for="(blog, i) in postsByBlog" :key="i">
                     <div
-                      class="px-1 flex-column align-items-center justify-content-center"
+                      class="join-card"
+                      v-if="blog.category_posts"
+                      v-for="(post, j) in blog.category_posts"
+                      :key="j"
+                      @click="chagnePost(blog.id)"
                     >
-                      <p class="join-card-title">اسم القسم رقم واحد</p>
-                      <p class="join-card-text">
-                        الاستشارات المالية: نساعد عملاءنا في تطوير استراتيجيات
-                        تجارية تتماشى مع خطط فعّالة
-                      </p>
-                      <p class="join-card-date">August 20, 2022</p>
+                      <img
+                        style="width: 100%; height: auto; overflow: hidden"
+                        alt="blog image"
+                        :src="post.image"
+                      />
+                      <span class="px-1">
+                        <p class="join-card-title" style="overflow: hidden">
+                          {{ post.name }}
+                        </p>
+                        <p class="join-card-text" style="overflow: hidden">
+                          {{ post.description }}
+                        </p>
+                        <p class="join-card-date">
+                          {{
+                            moment(new Date(post.created_at)).format(
+                              "DD-MM-YYYY"
+                            )
+                          }}
+                        </p>
+                      </span>
                     </div>
                   </div>
                 </slide>
@@ -190,19 +140,23 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onBeforeMount, onMounted, ref } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { useBlogStore } from "@/stores/blogStore";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 
-const route = useRoute();
-const currentCard = ref(0);
-const { post } = storeToRefs(useBlogStore());
+import moment from "moment";
 
-onMounted(async () => {
+const route = useRoute();
+const router = useRouter();
+const currentCard = ref(0);
+const { post, postsByBlog } = storeToRefs(useBlogStore());
+
+onBeforeMount(async () => {
   await useBlogStore().getPost({ id: route.query.post });
-  console.log(post.value);
+  if (post.value.length == 0) router.push({ name: "blog" });
+  await useBlogStore().getPostsByCategory({ category_id: 1 });
 });
 
 const next = () => {
@@ -224,6 +178,13 @@ const breakpoints = ref({
     snapAlign: "center",
   },
 });
+
+const chagnePost = (id) => {
+  router.push({
+    name: "blogDetails",
+    query: { post: id },
+  });
+};
 </script>
 
 <style lang="scss" scoped>
