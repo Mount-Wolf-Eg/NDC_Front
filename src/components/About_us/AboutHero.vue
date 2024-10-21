@@ -67,30 +67,25 @@
           style="width: 50%"
         >
           <img
-            src="/src/assets/about_image/Rectangle 123.jpg"
-            alt="about image"
+            :src="ourVission.image"
+            alt="ourvission image"
             style="width: 100%; border-radius: 16px"
           />
         </div>
         <div class="vission-text flex-col align-items-start" style="width: 50%">
-          <p class="v-text">رؤيــتــنــا</p>
-          <p class="v-text-body w-75 mx-auto">
-            أن نكون الشريك الأكثر ثقة وابتكارًا في مجال استشارات الاعتماد،
-            واضعين معايير جديدة للتميز في الجودة للمؤسسات التدريبية والتعليمية
-            على مستوى العالم.
+          <p class="v-text mx-5">رؤيــتــنــا</p>
+          <p class="v-text-body mx-5" style="height: 50rem; overflow: auto">
+            {{ ourVission.content }}
           </p>
         </div>
       </div>
+
       <div class="flex-row flex-wrap flex-md-nowrap gap-5">
         <div class="flex-col vission-card p-5">
           <div class="vission-text flex-col align-items-start" style="flex: 1">
             <p class="v-text">مهمتنا</p>
-            <p class="v-text-body w-75">
-              مهمتنا هي تمكين المنظمات من خلال تقديم خدمات استشارية عالية
-              المستوى في مجال الاعتماد، والتي ترتقي بمعاييرها التشغيلية، وتعزز
-              مصداقيتها في السوق، وتدعم النمو المستدام. نسعى لبناء شراكات طويلة
-              الأمد مع عملائنا، مرشدينهم في كل خطوة من عملية الاعتماد بنزاهة
-              وخبرة والتزام بالتميز.
+            <p class="v-text-body" style="height: 50rem; overflow: auto">
+              {{ ourMission.content }}
             </p>
           </div>
           <div
@@ -98,32 +93,25 @@
             style="flex: 1"
           >
             <img
-              src="/src/assets/about_image/Rectangle 123.jpg"
+              :src="ourMission.image"
               alt="about image"
               style="width: 100%"
             />
           </div>
         </div>
+
         <div class="flex-col vission-card p-5">
           <div class="vission-text flex-col align-items-start" style="flex: 1">
             <p class="v-text">أهدفنا</p>
-            <p class="v-text-body w-75">
-              هدفنا هو توسيع خدماتنا عبر منطقة الشرق الأوسط وشمال أفريقيا لنصبح
-              اسمًا رائدًا في مجال استشارات الاعتماد. كما نسعى إلى الابتكار
-              المستمر في عروض خدماتنا لضمان تلبية احتياجات السوق المتغيرة، مع
-              بناء شبكة قوية من الشركاء الاستراتيجيين التي تعزز تقديم خدماتنا
-              ونتائج عملائنا.
+            <p class="v-text-body" style="height: 50rem; overflow: auto">
+              {{ ourGoals.content }}
             </p>
           </div>
           <div
             class="vission-img d-flex justify-content-center align-items-center"
             style="flex: 1"
           >
-            <img
-              src="/src/assets/about_image/Rectangle 123.jpg"
-              alt="about image"
-              style="width: 100%"
-            />
+            <img :src="ourGoals.image" alt="about image" style="width: 100%" />
           </div>
         </div>
       </div>
@@ -416,7 +404,9 @@
 import { useStaticPagesStore } from "@/stores/staticPages";
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
-const { aboutUs } = storeToRefs(useStaticPagesStore());
+const { aboutUs, ourGoals, ourMission, ourVission } = storeToRefs(
+  useStaticPagesStore()
+);
 
 onMounted(async () => {
   await useStaticPagesStore().getAllStatics();

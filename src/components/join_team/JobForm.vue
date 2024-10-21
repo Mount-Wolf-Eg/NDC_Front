@@ -228,7 +228,6 @@ const sendApplication = async () => {
   isLoading.value = true;
   const result = await validationObj.value.$validate();
   if (result) {
-    console.log("ddddddddddddddddd");
     const res = await useCareersStore().sendJobApplication({
       name: formData.value.name,
       email: formData.value.email,

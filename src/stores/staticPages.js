@@ -8,6 +8,9 @@ export const useStaticPagesStore = defineStore("staticPages", {
     aboutUs: [],
     privacyPolicy: [],
     termsConditions: [],
+    ourGoals: [],
+    ourMission: [],
+    ourVission: [],
     allServices: [],
     singleService: [],
   }),
@@ -20,6 +23,10 @@ export const useStaticPagesStore = defineStore("staticPages", {
           this.aboutUs = res.data.data.find((e) => e.id == 1);
           this.termsConditions = res.data.data.find((e) => e.id == 2);
           this.privacyPolicy = res.data.data.find((e) => e.id == 3);
+
+          this.ourVission = res.data.data.find((e) => e.id == 4);
+          this.ourMission = res.data.data.find((e) => e.id == 5);
+          this.ourGoals = res.data.data.find((e) => e.id == 6);
         })
         .catch((err) => {
           mainStore().showAlert(
