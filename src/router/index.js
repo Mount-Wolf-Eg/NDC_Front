@@ -28,7 +28,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/join",
+      path: "/join-us",
       name: "join",
       component: () => import("@/views/JoinUs.vue"),
       meta: {
@@ -36,7 +36,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/join-form",
+      path: "/careers/join-form",
       name: "joinForm",
       component: () => import("@/components/join_team/JobForm.vue"),
       meta: {

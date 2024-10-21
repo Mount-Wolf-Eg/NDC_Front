@@ -39,5 +39,23 @@ export const useCareersStore = defineStore("careerStore", {
           );
         });
     },
+    async sendJobApplication(data) {
+      let result;
+      await axiosInstance
+        .post(`${mainStore().apiLink}/admin/CareersApplications/store`, data)
+        .then((res) => {
+          result = res;
+        })
+        .catch((err) => {
+          mainStore().showAlert(
+            Object.values(err.response.data.errors)[0][0]
+              ? Object.values(err.response.data.errors)[0][0]
+              : "Something went wrong, please try again",
+            2
+          );
+          result = false;
+        });
+      return result;
+    },
   },
 });

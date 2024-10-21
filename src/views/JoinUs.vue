@@ -58,7 +58,6 @@ import moment from "moment";
 
 onMounted(async () => {
   await useCareersStore().getAllCareers();
-  console.log(allCareers.value);
 });
 const router = useRouter();
 </script>

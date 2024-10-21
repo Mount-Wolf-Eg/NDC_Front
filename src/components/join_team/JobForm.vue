@@ -1,7 +1,11 @@
 <template>
   <div class="join">
     <div class="flex-col my-5 mx-auto" style="width: 90%">
-      <img src="/src/assets/joinUs/join-card.jpg" alt="blog iamge" />
+      <img
+        :src="job.image"
+        style="width: 100%; max-height: 50rem; height: auto"
+        alt="blog iamge"
+      />
       <div class="container-cust">
         <p class="head">اسم الوظيفة</p>
         <p class="job-title">{{ job.title }}</p>
@@ -11,48 +15,135 @@
         </p>
       </div>
 
-      <div class="join-form w-100">
+      <form
+        @submit.prevent="sendApplication()"
+        id="addForm"
+        class="join-form w-100"
+      >
         <div class="contact-form w-50 mx-auto">
           <div class="flex-row gap-4">
             <div class="flex-col gap-3" style="flex: 1">
-              <!-- <span
-          class="d-flex flex-column algin-items-center justify-content-center"
-        >
-          <input
-            class="form-inpt mb-4"
-            type="text"
-            placeholder="اكتب البريد الاكتروني"
-            v-model="formData.email"
-            :appear="checkErrName(['email']) ? 'err-border' : ''"
-          />
-          <span
-            class="center-row justify-content-start"
-            style="margin-top: -1rem; margin-bottom: 1rem"
-            v-for="(err, i) in validationObj.$errors"
-            :key="i"
-            ><span v-if="err.$property == 'email'" class="err-msg">
-              {{ err.$message }}
-            </span></span
-          >
-        </span> -->
-              <input class="form-inpt" type="text" placeholder="الاسم" />
-              <input
-                class="form-inpt"
-                type="email"
-                placeholder="اكتب البريد الاكتروني"
-              />
-              <input class="form-inpt" type="text" placeholder="سنة التخرج " />
+              <span class="w-100">
+                <InptField
+                  v-model="formData.name"
+                  :holder="'Name'"
+                  :appear="checkErrName(['name']) ? 'err-border' : ''"
+                ></InptField>
+                <span
+                  class="center-row justify-content-start"
+                  style="margin-top: -1rem; margin-bottom: 1rem"
+                  v-for="(err, i) in validationObj.$errors"
+                  :key="i"
+                  ><span v-if="err.$property == 'name'" class="err-msg">
+                    {{ err.$message }}
+                  </span></span
+                >
+              </span>
+              <span class="w-100">
+                <InptField
+                  v-model="formData.email"
+                  :holder="'Email'"
+                  :appear="checkErrName(['email']) ? 'err-border' : ''"
+                ></InptField>
+                <span
+                  class="center-row justify-content-start"
+                  style="margin-top: -1rem; margin-bottom: 1rem"
+                  v-for="(err, i) in validationObj.$errors"
+                  :key="i"
+                  ><span v-if="err.$property == 'email'" class="err-msg">
+                    {{ err.$message }}
+                  </span></span
+                >
+              </span>
+              <span class="w-100">
+                <InptField
+                  v-model="formData.graduationYear"
+                  :holder="'Graduation Year'"
+                  :appear="checkErrName(['graduationYear']) ? 'err-border' : ''"
+                ></InptField>
+                <span
+                  class="center-row justify-content-start"
+                  style="margin-top: -1rem; margin-bottom: 1rem"
+                  v-for="(err, i) in validationObj.$errors"
+                  :key="i"
+                  ><span
+                    v-if="err.$property == 'graduationYear'"
+                    class="err-msg"
+                  >
+                    {{ err.$message }}
+                  </span></span
+                >
+              </span>
             </div>
+
             <div class="flex-col gap-3" style="flex: 1">
-              <input class="form-inpt" type="text" placeholder="المؤهل" />
-              <input class="form-inpt" type="text" placeholder="رقم التلفون" />
-              <input class="form-inpt" type="text" placeholder="اضافة فايل" />
+              <span class="w-100">
+                <InptField
+                  v-model="formData.qualification"
+                  :holder="'Qualification'"
+                  :appear="checkErrName(['qualification']) ? 'err-border' : ''"
+                ></InptField>
+                <span
+                  class="center-row justify-content-start"
+                  style="margin-top: -1rem; margin-bottom: 1rem"
+                  v-for="(err, i) in validationObj.$errors"
+                  :key="i"
+                  ><span
+                    v-if="err.$property == 'qualification'"
+                    class="err-msg"
+                  >
+                    {{ err.$message }}
+                  </span></span
+                >
+              </span>
+              <span class="w-100">
+                <InptField
+                  v-model="formData.phone"
+                  :holder="'phone'"
+                  :appear="checkErrName(['phone']) ? 'err-border' : ''"
+                ></InptField>
+                <span
+                  class="center-row justify-content-start"
+                  style="margin-top: -1rem; margin-bottom: 1rem"
+                  v-for="(err, i) in validationObj.$errors"
+                  :key="i"
+                  ><span v-if="err.$property == 'phone'" class="err-msg">
+                    {{ err.$message }}
+                  </span></span
+                >
+              </span>
+              <!-- role -->
+              <span class="w-100 mt-3">
+                <UploadeFile @fileData="formData.cvFile = $event"></UploadeFile>
+                <img
+                  v-if="formData.cvFile"
+                  class="mt-3"
+                  :src="formData.cvFile"
+                  alt=""
+                  style="max-width: 10rem; border-radius: 7px"
+                />
+                <span
+                  class="center-row justify-content-start"
+                  style="margin-top: -1rem; margin-bottom: 1rem"
+                  v-for="(err, i) in validationObj.$errors"
+                  :key="i"
+                  ><span v-if="err.$property == 'cvFile'" class="err-msg">
+                    {{ err.$message }}
+                  </span></span
+                >
+              </span>
             </div>
           </div>
 
-          <button class="send-btn my-5 w-100">ارسال</button>
+          <button v-if="!isLoading" type="submit" class="send-btn my-5 w-100">
+            ارسال
+          </button>
+          <button v-else class="send-btn my-5 w-100">
+            <div class="spinner-grow me-3" role="status"></div>
+            <span> Loading...</span>
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>
@@ -62,10 +153,8 @@ import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useCareersStore } from "@/stores/careersStore";
 import { storeToRefs } from "pinia";
-// validation
-// import useVuelidator from "@vuelidate/core";
-// import { required, minLength, maxLength, email } from "@vuelidate/validators";
-// required.$message = "Field is required";
+import InptField from "@/reusables/inputs/InptField.vue";
+import UploadeFile from "@/reusables/inputs/UploadeFile.vue";
 
 import moment from "moment";
 
@@ -77,45 +166,85 @@ onMounted(async () => {
   if (job.value.length == 0) router.push({ name: "join" });
 });
 
-// const formData = ref({
-//   name: "",
-//   email: "",
-//   message: "",
-// });
+import useVuelidator from "@vuelidate/core";
+import {
+  required,
+  minLength,
+  maxLength,
+  email,
+  integer,
+} from "@vuelidate/validators";
+required.$message = "Field is required";
 
-// const validationRules = ref({
-//   name: { required, minLength: minLength(3), maxLength: maxLength(50) },
-//   message: { required, minLength: minLength(10), maxLength: maxLength(500) },
-//   email: { required, email },
-// });
+const isLoading = ref(false);
+const formData = ref({
+  name: "",
+  email: "",
+  phone: "",
+  cvFile: "",
+  graduationYear: "",
+  qualification: "",
+});
 
-// const checkErrName = (key) => {
-//   return validationObj.value.$errors.find((err) => err.$property == key);
-// };
+const validationRules = ref({
+  name: { required, minLength: minLength(3), maxLength: maxLength(100) },
+  email: { required, minLength: minLength(3), maxLength: maxLength(50), email },
+  phone: {
+    required,
+    minLength: minLength(7),
+    maxLength: maxLength(20),
+    integer,
+  },
+  cvFile: { required },
+  graduationYear: {
+    required,
+    length: 4,
+    integer,
+  },
+  qualification: {
+    required,
+    minLength: minLength(3),
+    maxLength: maxLength(50),
+  },
+});
+const checkErrName = (key) => {
+  return validationObj.value.$errors.find((err) => err.$property == key);
+};
+const validationObj = useVuelidator(validationRules, formData);
+const resetFormData = () => {
+  formData.value = {
+    name: "",
+    email: "",
+    phone: "",
+    cvFile: "",
+    graduationYear: "",
+    qualification: "",
+  };
+  validationObj.value.$reset();
+  document.getElementById("addForm").reset();
+};
 
-// const validationObj = useVuelidator(validationRules, formData);
-
-// const contacForm = async () => {
-//   isLoading.value = true;
-//   const result = await validationObj.value.$validate();
-//   if (result) {
-//     const res = await contactUsForm().sendMessage({
-//       name: formData.value.name,
-//       email: formData.value.email,
-//       message: formData.value.message,
-//     });
-//     if (res) {
-//       formData.value = {
-//         name: "",
-//         email: "",
-//         message: "",
-//       };
-//     }
-//     validationObj.value.$reset();
-//     document.getElementById("cont-form").reset();
-//   }
-//   isLoading.value = false;
-// };
+const sendApplication = async () => {
+  isLoading.value = true;
+  const result = await validationObj.value.$validate();
+  if (result) {
+    console.log("ddddddddddddddddd");
+    const res = await useCareersStore().sendJobApplication({
+      name: formData.value.name,
+      email: formData.value.email,
+      mobile: formData.value.phone,
+      career_id: route.query.job,
+      graduation_year: formData.value.graduationYear,
+      academic_qualification: formData.value.qualification,
+      cv_file: formData.value.cvFile,
+      job_name: job.value.title,
+    });
+    if (res) {
+      resetFormData();
+    }
+  }
+  isLoading.value = false;
+};
 </script>
 
 <style lang="scss" scoped>
