@@ -11,6 +11,8 @@ export const useSlidersStore = defineStore("sliderStore", {
     achievementsSliders: [],
     partnersSliders: [],
     mainResources: [],
+    ourValues: [],
+
     allQuestions: [],
     start: false,
   }),
@@ -27,6 +29,7 @@ export const useSlidersStore = defineStore("sliderStore", {
           this.achievementsSliders = res.data.data.achievements;
           this.partnersSliders = res.data.data.partners;
           this.mainResources = res.data.data.main_resources;
+          this.ourValues = res.data.data.our_values;
         })
         .catch((err) => {
           mainStore().showAlert(

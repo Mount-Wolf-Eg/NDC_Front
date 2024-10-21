@@ -13,7 +13,7 @@ export const useSettingsStore = defineStore("settingStore", {
       await axiosInstance
         .get(`${mainStore().apiLink}/admin/Settings/all`)
         .then((res) => {
-          this.allContacts = res.data.data[0].settings;
+          this.allContacts = res.data.data.settings;
         })
         .catch((err) => {
           mainStore().showAlert(
