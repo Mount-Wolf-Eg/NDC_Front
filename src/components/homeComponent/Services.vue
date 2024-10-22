@@ -26,7 +26,7 @@
             شاهد المزيد
           </button>
         </div>
-        <div style="flex: 1; background-color: red">
+        <div style="flex: 1">
           <img
             v-if="about.image"
             :src="about.image"

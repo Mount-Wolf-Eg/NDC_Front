@@ -3,7 +3,11 @@
     <div class="first-footer">
       <div class="container-cust d-flex footer-list" style="padding: 7rem 0">
         <div class="flex-col align-items-cente justify-content-start">
-          <img :src="allContacts.logo" alt="website logo" />
+          <img
+            :src="allContacts.logo"
+            alt="website logo"
+            style="width: 15.6rem; height: auto"
+          />
 
           <!-- <svg
             style="width: 11.6rem; height: 7.8rem"

@@ -24,10 +24,7 @@
               <span>
                 <p class="card-title">الخدمات المشمولة:</p>
                 <ul class="card-list">
-                  <li
-                    v-for="(ser, j) in replaceData(packag.included_services)"
-                    :key="j"
-                  >
+                  <li v-for="(ser, j) in packag.included_services" :key="j">
                     {{ ser }}
                   </li>
                 </ul>
@@ -35,10 +32,7 @@
               <span>
                 <p class="card-title">الفئة المستهدفة :</p>
                 <ul class="card-list">
-                  <li
-                    v-for="(ser, j) in replaceData(packag.target_group)"
-                    :key="j"
-                  >
+                  <li v-for="(ser, j) in packag.target_group" :key="j">
                     {{ ser }}
                   </li>
                 </ul>
@@ -78,9 +72,9 @@ onMounted(async () => {
   await usePackagesStore().getAllPackages();
 });
 
-const replaceData = (ser) => {
-  return JSON.parse(ser.replace(/'/g, '"'));
-};
+// const replaceData = (ser) => {
+//   return JSON.parse(ser.replace(/'/g, '"'));
+// };
 </script>
 
 <style lang="scss" scoped>

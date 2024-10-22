@@ -22,7 +22,7 @@
                 <p class="res-box-title">الخدمات المشمولة:</p>
                 <ul class="res-box-list">
                   <li
-                    v-for="(ser, j) in replaceData(slide.included_services)"
+                    v-for="(ser, j) in slide.included_services"
                     :key="j"
                     style="list-style: none"
                   >
@@ -34,10 +34,7 @@
               <div class="res-box">
                 <p class="res-box-title">الفئة المستهدفة :</p>
                 <ul class="res-box-list" style="list-style: none">
-                  <li
-                    v-for="(ser, j) in replaceData(slide.target_group)"
-                    :key="j"
-                  >
+                  <li v-for="(ser, j) in slide.target_group" :key="j">
                     {{ ser }}
                   </li>
                 </ul>
@@ -165,9 +162,9 @@ const breakpoints = ref({
   },
 });
 
-const replaceData = (ser) => {
-  return JSON.parse(ser.replace(/'/g, '"'));
-};
+// const replaceData = (ser) => {
+//   return JSON.parse(ser.replace(/'/g, '"'));
+// };
 </script>
 
 <style lang="scss" scoped></style>
