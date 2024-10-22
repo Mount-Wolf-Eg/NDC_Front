@@ -15,7 +15,11 @@
               class="flex-row justify-content-start"
               style="margin-inline-end: auto"
             >
-              <img :src="allContacts.logo" alt="website logo" />
+              <img
+                :src="allContacts.logo"
+                alt="website logo"
+                style="width: 20rem; height: auto"
+              />
             </div>
           </router-link>
 

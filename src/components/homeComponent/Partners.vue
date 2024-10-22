@@ -11,13 +11,13 @@
       >
         <div
           class="card"
-          v-for="(partner, i) in partners.slice(0, 4)"
+          v-for="(partner, i) in partners.slice(-3)"
           :key="i"
           style="width: 30rem; overflow: hidden"
         >
           <img
             :src="partner.image"
-            style="width: 50%; height: 50%"
+            style="width: auto; height: 100%"
             :alt="partner.Ifsah"
           />
         </div>

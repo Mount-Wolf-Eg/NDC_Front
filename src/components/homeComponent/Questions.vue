@@ -12,18 +12,22 @@
         class="container-cust d-flex justify-content-center align-items-center"
       >
         <div
-          class="cust-card"
+          class="cust-card m-0 p-0"
           v-for="(achiev, i) in achievements.slice(-4)"
           :key="i"
         >
-          <img
-            :src="achiev.image"
-            style="width: 10rem; height: 10rem"
-            alt="achivement icon"
-          />
+          <div
+            class="w-100 d-flex flex-column align-items-center justify-content-center"
+          >
+            <img
+              :src="achiev.image"
+              style="width: 15rem; height: 15rem"
+              alt="achivement icon"
+            />
 
-          <p class="cust-text m-0 text-center">{{ achiev.description }}+</p>
-          <p class="cust-text text-center w-75">{{ achiev.title }}</p>
+            <p class="cust-text m-0 text-center">{{ achiev.description }}+</p>
+            <p class="cust-text text-center w-75">{{ achiev.title }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -40,6 +44,7 @@
           position: absolute;
           left: 50%;
           transform: translate(-50%, -35%);
+          bottom: 0;
         "
       >
         <div style="width: 100%">
@@ -180,9 +185,11 @@ const breakpoints = ref({
     height: 100%;
     background-color: #07439c;
     mix-blend-mode: multiply;
+
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
   }
   .cust-card {
     display: flex;

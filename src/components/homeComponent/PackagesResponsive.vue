@@ -9,7 +9,11 @@
     >
       <slide v-for="(slide, i) in packagesRes" :key="i">
         <div class="package-info-respon">
-          <img :src="slide.image" alt="slide img" style="width: 100%" />
+          <img
+            :src="slide.image"
+            alt="slide img"
+            style="height: 100%; width: auto; margin-bottom: 2rem"
+          />
 
           <div
             style="width: 100%"

@@ -19,13 +19,18 @@
   }
   .float-info {
     flex-direction: column-reverse !important;
-    bottom: 0;
+    bottom: 50%;
   }
   .serv-card-item {
-    width: 80%;
-    margin: 0 auto;
-    justify-content: space-between;
-    gap: 7rem;
+    // flex-direction: column !important;
+    flex-wrap: wrap !important;
+
+    .s-card {
+      width: 50% !important;
+    }
+  }
+  .float-ques {
+    bottom: -30% !important;
   }
 
   // package section
@@ -87,6 +92,16 @@
     justify-content: center !important;
     align-items: center !important;
     gap: 5rem;
+  }
+  .footer-route {
+    font-size: 5rem !important;
+  }
+  .footer-sub-route {
+    font-size: 4rem !important;
+    margin-bottom: 2rem;
+  }
+  .footer-logo {
+    width: 40rem !important;
   }
 }
 

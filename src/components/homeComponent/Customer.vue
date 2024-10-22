@@ -10,12 +10,12 @@
       <img
         src="/src/assets/images/customerResponsive.jpg"
         alt="customer image"
-        style="width: 100%; height: 100%"
+        style="width: 100%; height: 100%; max-height: 100rem"
         class="customer-img-resp"
       />
       <div class="img-bg">
         <div
-          class="container-cust d-flex flex-row flex-wrap justify-content-between align-items-center"
+          class="container-cust w-100 d-flex flex-row flex-wrap justify-content-between align-items-center"
         >
           <div
             class="cust-card"
@@ -24,7 +24,7 @@
           >
             <img
               :src="metric.image"
-              style="width: 10rem; height: 10rem"
+              style="width: 15rem; height: 15rem"
               alt="metric img"
             />
 

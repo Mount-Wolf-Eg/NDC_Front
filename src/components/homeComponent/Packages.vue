@@ -13,10 +13,13 @@
         :key="i"
         :style="`${i % 2 === 0 ? 'flex-direction: row-reverse' : ''}`"
       >
-        <span class="package-card-body w-100" style="flex: 1">
+        <div
+          class="package-card-body d-flex flex-column align-items-start justify-content-between h-100"
+          style="flex: 1"
+        >
           <p class="package-card-title">{{ packag.name }}</p>
           <div
-            class="card d-flex flex-row justify-content-start align-items-start w-100"
+            class="card d-flex flex-row justify-content-start align-items-start w-100 h-100"
             style="gap: 4rem"
           >
             <span>
@@ -36,9 +39,14 @@
               </ul>
             </span>
           </div>
-        </span>
-        <div style="position: relative; flex: 1">
-          <img :src="packag.image" style="width: 100%" alt="package img" />
+        </div>
+
+        <div style="position: relative; flex: 1; height: 100%">
+          <img
+            :src="packag.image"
+            style="height: 100%; width: auto"
+            alt="package img"
+          />
           <button
             @click="router.push({ name: 'contact' })"
             class="r-more-btn-w"
