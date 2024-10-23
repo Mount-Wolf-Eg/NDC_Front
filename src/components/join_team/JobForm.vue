@@ -7,7 +7,7 @@
         alt="blog iamge"
       />
       <div class="container-cust">
-        <p class="head">اسم الوظيفة</p>
+        <p class="head">{{ $t("job-name") }}</p>
         <p class="job-title">{{ job.title }}</p>
         <p class="job-desc">{{ job.description }}</p>
         <p class="foot">
@@ -20,7 +20,7 @@
         id="addForm"
         class="join-form w-100"
       >
-        <div class="contact-form w-50 mx-auto">
+        <div class="contact-form mx-auto w-75">
           <div class="flex-row gap-4">
             <div class="flex-col gap-3" style="flex: 1">
               <span class="w-100">
@@ -136,7 +136,7 @@
           </div>
 
           <button v-if="!isLoading" type="submit" class="send-btn my-5 w-100">
-            ارسال
+            {{ $t("send") }}
           </button>
           <button v-else class="send-btn my-5 w-100">
             <div class="spinner-grow me-3" role="status"></div>

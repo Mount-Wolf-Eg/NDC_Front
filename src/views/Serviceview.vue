@@ -8,7 +8,7 @@
       />
 
       <div
-        class="service-btns w-100 py-5 px-4 flex-row justify-content-center gap-5"
+        class="service-btns w-100 py-5 px-4 flex-row justify-content-start flex-wrap gap-5"
       >
         <button
           v-for="(service, i) in allServices"

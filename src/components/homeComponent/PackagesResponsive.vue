@@ -8,22 +8,22 @@
       :breakpoints="breakpoints"
     >
       <slide v-for="(slide, i) in packagesRes" :key="i">
-        <div class="package-info-respon">
+        <div class="package-info-respon h-100">
           <img
             :src="slide.image"
             alt="slide img"
-            style="height: 100%; width: auto; margin-bottom: 2rem"
+            style="height: auto; width: 100%; margin-bottom: 2rem"
           />
 
           <div
             style="width: 100%"
-            class="d-flex flex-column align-items-center justify-content-center"
+            class="h-100 d-flex flex-column align-items-center justify-content-between gap-5"
           >
             <p class="res-head">{{ slide.name }}</p>
 
-            <div>
+            <div class="w-100" style="flex: 1 !important">
               <div class="res-box">
-                <p class="res-box-title">الخدمات المشمولة:</p>
+                <p class="res-box-title">{{ $t("included-services") }}:</p>
                 <ul class="res-box-list">
                   <li
                     v-for="(ser, j) in slide.included_services"
@@ -36,7 +36,7 @@
               </div>
 
               <div class="res-box">
-                <p class="res-box-title">الفئة المستهدفة :</p>
+                <p class="res-box-title">{{ $t("target-group") }}:</p>
                 <ul class="res-box-list" style="list-style: none">
                   <li v-for="(ser, j) in slide.target_group" :key="j">
                     {{ ser }}
@@ -49,7 +49,7 @@
               @click="router.push({ name: 'contact' })"
               class="r-more-btn-w w-75"
             >
-              تواصل معنا
+              {{ $t("contact") }}
             </button>
           </div>
         </div>
@@ -65,83 +65,6 @@ const router = useRouter();
 import { ref } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 const currentSlide = ref(0);
-
-const slides = ref([
-  {
-    head: "الباقة الأساسية للاعتماد",
-    services: [
-      {
-        title: "الخدمات المشمولة:",
-        list: [
-          "تقييم أولي وتحليل الفجوات.",
-          "تطوير خريطة طريق الاعتماد.",
-          "دعم أساسي لإعداد الوثائق.",
-          "تحديثات منتظمة والتواصل مع هيئة الاعتماد.",
-        ],
-      },
-    ],
-    target: [
-      {
-        title: "الفئة المستهدفة :",
-        list: [
-          "مراكز التدريب الصغيرة",
-          "والمتوسطة التي تسعى",
-          "للحصول على الاعتماد لأول مرة.",
-        ],
-      },
-    ],
-    img: "/src/assets/images/package1.jpg",
-  },
-  {
-    head: "الباقة القياسية للاعتماد",
-    services: [
-      {
-        title: "الخدمات المشمولة:",
-        list: [
-          "جميع الخدمات من الباقة الأساسية",
-          "إعداد شامل للوثائق",
-          "تدريب مخصص للموظفين على معايير الاعتماد",
-          "التنسيق مع هيئات الاعتماد نيابةً عن مركز التدريب",
-          "تدقيقات متوسطة العملية لضمان الامتثال",
-        ],
-      },
-    ],
-    target: [
-      {
-        title: "الفئة المستهدفة :",
-        list: [
-          "مراكز التدريب المتوسطة التي لديها احتياجات أكثر تعقيدًاأو تتطلب اعتمادات متعددة.",
-        ],
-      },
-    ],
-    img: "/src/assets/images/package2.jpg",
-  },
-  {
-    head: "الباقة المميزة للاعتماد",
-    services: [
-      {
-        title: "الخدمات المشمولة:",
-        list: [
-          "جميع الخدمات من الباقة القياسية",
-          "تمثيل كامل كممثل مُعتمد لمركز التدريب",
-          "جلسات استشارية مخصصة مع خبراء في المجال",
-          "دعم بعد الاعتماد، بما في ذلك التحقق المستمر من الامتثال وخدمات إعادة الاعتماد",
-          "تسريع عملية الاعتماد",
-        ],
-      },
-    ],
-    target: [
-      {
-        title: "الفئة المستهدفة :",
-        list: [
-          "مراكز التدريب الكبيرة أو تلك التي تستهدف الحصول على اعتمادات",
-          "مرموقة متعددة",
-        ],
-      },
-    ],
-    img: "/src/assets/images/package3.jpg",
-  },
-]);
 
 const props = defineProps({
   packagesRes: {

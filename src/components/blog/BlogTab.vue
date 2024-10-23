@@ -1,6 +1,10 @@
 <template>
   <div class="join-cards" style="margin: 3rem auto">
-    <div v-for="(blog, i) in postCard" :key="i">
+    <div
+      v-for="(blog, i) in postCard"
+      :key="i"
+      class="d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
+    >
       <div
         class="join-card"
         v-if="blog.category_posts"
@@ -8,14 +12,25 @@
         :key="j"
         @click="router.push({ name: 'blogDetails', query: { post: blog.id } })"
       >
-        <img
-          style="width: 100%; height: auto; overflow: hidden"
-          alt="blog image"
-          :src="post.image"
-        />
-        <span class="px-1">
+        <div
+          style="
+            overflow: hidden;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+          "
+        >
+          <img alt="blog image" style="height: 100%" :src="post.image" />
+        </div>
+
+        <span
+          class="px-1 d-flex flex-column justify-content-between algin-items-start"
+          style="flex: 1"
+        >
           <p class="join-card-title" style="overflow: hidden">
-            {{ post.name }}
+            {{ post.title }}
           </p>
           <p class="join-card-text" style="overflow: hidden">
             {{ post.description }}
@@ -54,7 +69,7 @@ const props = defineProps({
   .join-card {
     margin-bottom: 3rem;
     border: 1px solid #444444;
-    border-radius: 24px;
+    border-radius: 2.4rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;

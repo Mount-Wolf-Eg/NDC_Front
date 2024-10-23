@@ -3,15 +3,14 @@
     style="
       min-height: 86.9rem;
       background-color: #def1ff;
-      border-top: 1.2rem solid #0477be;
       display: flex;
       flex-direction: column;
     "
   >
-    <div style="position: relative; height: 40rem">
-      <div class="float-info mx-auto d-flex flex-row gap-0 h-100">
+    <div style="position: relative; min-height: 40rem">
+      <div class="float-info mx-auto gap-0 h-100">
         <div
-          class="flex-col d-flex flex-column justify-content-between align-items-center"
+          class="d-flex flex-column justify-content-between align-items-start h-100 bg-inf"
           style="flex: 1"
         >
           <h3 class="float-head mb-5">
@@ -26,7 +25,7 @@
             class="r-more-btn-c text-center"
             @click="router.push({ name: 'about' })"
           >
-            شاهد المزيد
+            {{ $t("see-more") }}
           </button>
         </div>
 
@@ -43,7 +42,7 @@
             v-if="about.image"
             :src="about.image"
             alt="business img "
-            style="height: 100%; width: auto"
+            style="height: 100%; width: auto; object-fit: cover"
           />
         </div>
       </div>
@@ -62,22 +61,23 @@
           margin-bottom: 2rem;
         "
       >
-        الخدمات
+        {{ $t("services") }}
       </h4>
       <div class="serv-card w-100">
         <div class="serv-card-item">
-          <div class="s-card" v-for="(serv, i) in services" :key="i">
+          <div class="s-card col" v-for="(serv, i) in services" :key="i">
             <img
-              style="width: 10.4rem; min-width: 20rem; height: auto"
+              style="width: 10.4rem; min-width: 10rem; height: auto"
               :src="serv.image"
               alt="service img"
             />
             <p class="serv-head">{{ serv.name }}</p>
-            <p class="serv-body">
+            <p class="serv-body w-100">
               {{ serv.description }}
             </p>
             <button
               class="r-more-btn-w"
+              style="white-space: nowrap"
               @click="
                 router.push({
                   name: 'service',
@@ -85,7 +85,7 @@
                 })
               "
             >
-              شاهد المزيد
+              {{ $t("see-more") }}
             </button>
           </div>
         </div>

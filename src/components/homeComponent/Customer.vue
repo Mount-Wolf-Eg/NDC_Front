@@ -10,12 +10,12 @@
       <img
         src="/src/assets/images/customerResponsive.jpg"
         alt="customer image"
-        style="width: 100%; height: 100%; max-height: 100rem"
+        style="width: 100%; height: auto; max-height: 80rem"
         class="customer-img-resp"
       />
       <div class="img-bg">
         <div
-          class="container-cust w-100 d-flex flex-row flex-wrap justify-content-between align-items-center"
+          class="container-cust d-flex flex-row flex-nowrap achieve justify-content-between align-items-center"
         >
           <div
             class="cust-card"
@@ -24,7 +24,7 @@
           >
             <img
               :src="metric.image"
-              style="width: 15rem; height: 15rem"
+              style="width: 7rem; height: auto"
               alt="metric img"
             />
 
@@ -35,15 +35,11 @@
         </div>
       </div>
     </div>
-    <div class="customer-open">
+    <div class="customer-open" v-if="props.testimonials.length">
       <div class="pt-5">
         <span class="container-cust">
-          <h3 class="cust-head">أراء العملاء</h3>
-          <p class="cust-body">
-            هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية
-            تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى
-            النص.
-          </p>
+          <h3 class="cust-head">{{ $t("testimonials") }}</h3>
+          <p class="cust-body">{{ $t("testimonials-body") }}</p>
         </span>
         <div style="width: 100%; overflow: hidden">
           <div class="cust-carousel">

@@ -7,8 +7,8 @@ import "bootstrap/dist/css/bootstrap.css";
 
 // language
 import { createI18n } from "vue-i18n";
-import ar from "./locale/AR.json";
-import en from "./locale/EN.json";
+import AR from "./locale/AR.json";
+import EN from "./locale/EN.json";
 
 // chart
 import VueApexCharts from "vue3-apexcharts";
@@ -24,12 +24,12 @@ import App from "./App.vue";
 import router from "./router";
 
 const app = createApp(App);
-
+let lang = sessionStorage.getItem("lang");
 const i18n = createI18n({
-  locale: "en",
+  locale: lang,
   messages: {
-    en: en,
-    ar: ar,
+    en: EN,
+    ar: AR,
   },
 });
 
@@ -39,6 +39,7 @@ app.use(Toast);
 app.use(i18n);
 // charts
 app.use(VueApexCharts);
+
 // bootstrap
 import "bootstrap";
 

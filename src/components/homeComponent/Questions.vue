@@ -21,18 +21,20 @@
           >
             <img
               :src="achiev.image"
-              style="width: 15rem; height: 15rem"
+              style="width: 8rem; height: auto"
               alt="achivement icon"
             />
 
-            <p class="cust-text m-0 text-center">{{ achiev.description }}+</p>
+            <p class="cust-text m-0 text-center" v-if="achiev.description">
+              {{ achiev.description }}+
+            </p>
             <p class="cust-text text-center w-75">{{ achiev.title }}</p>
           </div>
         </div>
       </div>
     </div>
     <!-- second -->
-    <div class="common-ques">
+    <div class="common-ques" v-if="props.questions.length">
       <div
         class="float-ques d-flex flex-row justify-content-between align-items-start mx-auto"
         style="
@@ -44,11 +46,11 @@
           position: absolute;
           left: 50%;
           transform: translate(-50%, -35%);
-          bottom: 0;
+          bottom: -15%;
         "
       >
         <div style="width: 100%">
-          <h3 class="float-head mb-5">الأسئله الشائعة</h3>
+          <h3 class="float-head mb-5">{{ $t("common-faq") }}</h3>
           <div>
             <div
               class="d-flex flex-row align-items-center"
@@ -134,7 +136,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 const currentSlide = ref(0);
 const next = () => {

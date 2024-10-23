@@ -32,31 +32,31 @@
                 class="nav-item nav-route"
                 @click="router.push({ name: 'home' })"
               >
-                الرئيسية
+                {{ $t("home") }}
               </li>
               <li
                 class="nav-item nav-route"
                 @click="router.push({ name: 'about' })"
               >
-                من نحن
+                {{ $t("about") }}
               </li>
               <li
                 class="nav-item nav-route"
                 @click="router.push({ name: 'packages' })"
               >
-                الباقات
+                {{ $t("packages") }}
               </li>
               <li
                 class="nav-item nav-route"
                 @click="router.push({ name: 'join' })"
               >
-                توظيف
+                {{ $t("join") }}
               </li>
               <li
                 class="nav-item nav-route"
                 @click="router.push({ name: 'blog' })"
               >
-                المدونة
+                {{ $t("blog") }}
               </li>
               <li class="nav-item dropdown">
                 <span
@@ -66,7 +66,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  الخدمات
+                  {{ $t("services") }}
                 </span>
                 <ul class="dropdown-menu" style="text-align: inherit">
                   <li
@@ -90,7 +90,7 @@
                       })
                     "
                   >
-                    المزيد
+                    {{ $t("more") }}
                   </li>
                 </ul>
               </li>
@@ -110,21 +110,11 @@
                   {{ lang }}
                 </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a
-                      @click="setLanguage('ar'), ($i18n.locale = `ar`)"
-                      class="dropdown-item"
-                      href="#"
-                      >AR</a
-                    >
+                  <li @click="setLanguage('ar'), ($i18n.locale = 'ar')">
+                    <a class="dropdown-item" href="#">AR</a>
                   </li>
-                  <li>
-                    <a
-                      @click="setLanguage('en'), ($i18n.locale = `en`)"
-                      class="dropdown-item"
-                      href="#"
-                      >En</a
-                    >
+                  <li @click="setLanguage('en'), ($i18n.locale = 'en')">
+                    <a class="dropdown-item" href="#">En</a>
                   </li>
                 </ul>
               </li>

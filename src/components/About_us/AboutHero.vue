@@ -5,8 +5,11 @@
       alt="about us"
       style="width: 100%; height: auto"
     />
-    <div class="about-hint container-cust">
-      <div class="text-sec">
+
+    <div
+      class="about-hint container-cust d-flex flex-column-reverse flex-column flex-sm-row justify-content-between align-items-start"
+    >
+      <div class="text-sec w-50">
         <p
           style="
             font-size: 2.4rem;
@@ -22,7 +25,7 @@
             padding: 0 1rem;
           "
         >
-          نبذه عنا
+          {{ $t("about-us") }}
         </p>
         <p class="bdy">
           {{ aboutUs.title }}
@@ -39,7 +42,7 @@
           {{ aboutUs.content }}
         </p>
       </div>
-      <div class="img-sec">
+      <div class="img-sec w-50">
         <img
           src="/src/assets/about_image/bgimg.png"
           style="width: 100%; height: auto"
@@ -50,31 +53,33 @@
           alt="about img"
           style="
             position: absolute;
-            top: 20%;
+            top: 0%;
             left: 50%;
             width: 100%;
+            height: auto;
             transform: translatex(-50%);
           "
         />
       </div>
     </div>
-    <!-- vission -->
-    <div class="vission flex-col gap-5 container-cust">
-      <!-- first -->
 
-      <div class="flex-row vission-card p-5">
+    <div class="vission flex-col gap-5 container-cust">
+      <div class="flex-row vission-card p-5 w-100">
         <div
           class="vission-img d-flex justify-content-center gap-5 align-items-center"
-          style="width: 50%"
+          style="width: 100%"
         >
           <img
             :src="ourVission.image"
             alt="ourvission image"
-            style="width: 100%; border-radius: 16px"
+            style="width: 100%; height: auto; border-radius: 16px"
           />
         </div>
-        <div class="vission-text flex-col align-items-start" style="width: 50%">
-          <p class="v-text mx-5">رؤيــتــنــا</p>
+        <div
+          class="vission-text flex-col align-items-start"
+          style="width: 100%"
+        >
+          <p class="v-text mx-5">{{ $t("vission") }}</p>
           <p
             class="v-text-body mx-5"
             style="height: 50rem; overflow: auto; cursor: pointer"
@@ -84,10 +89,15 @@
         </div>
       </div>
 
-      <div class="flex-row flex-wrap flex-md-nowrap gap-5">
-        <div class="flex-col vission-card p-5">
-          <div class="vission-text flex-col align-items-start" style="flex: 1">
-            <p class="v-text">مهمتنا</p>
+      <div
+        class="flex-row flex-wrap flex-md-nowrap gap-5 w-100 d-flex flex-column flex-sm-row"
+      >
+        <div class="flex-col vission-card p-5 w-100">
+          <div
+            class="vission-text flex-col align-items-start w-100"
+            style="flex: 1"
+          >
+            <p class="v-text">{{ $t("mission") }}</p>
             <p
               class="v-text-body"
               style="height: 50rem; overflow: auto; cursor: pointer"
@@ -107,9 +117,12 @@
           </div>
         </div>
 
-        <div class="flex-col vission-card p-5">
-          <div class="vission-text flex-col align-items-start" style="flex: 1">
-            <p class="v-text">أهدفنا</p>
+        <div class="flex-col vission-card p-5 w-100">
+          <div
+            class="vission-text flex-col align-items-start w-100"
+            style="flex: 1"
+          >
+            <p class="v-text">{{ $t("goals") }}</p>
             <p
               class="v-text-body"
               style="height: 50rem; overflow: auto; cursor: pointer"
@@ -125,13 +138,12 @@
           </div>
         </div>
       </div>
-
-      <!-- second -->
     </div>
+
     <!-- our values -->
     <div class="values">
-      <p class="v-text">قيمنا</p>
-      <div class="value-sec container-cust">
+      <p class="v-text">{{ $t("values") }}</p>
+      <div class="value-sec container-cust w-100">
         <!-- v -card  -->
         <div
           style="border: 1px solid #0477be; border-radius: 16px"
@@ -210,7 +222,7 @@ onMounted(async () => {
         font-weight: 700;
         color: #444444;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center !important;
         align-items: center;
       }
 
@@ -239,8 +251,10 @@ onMounted(async () => {
       font-size: 2.4rem;
       font-weight: 700;
       color: #444444;
-      line-height: 3.6rem;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .value-sec {
       gap: 3rem;

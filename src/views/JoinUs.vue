@@ -7,18 +7,9 @@
     />
     <div class="join-sec mx-auto">
       <div class="container-cust">
-        <p class="join-title">انضم للعائلة</p>
+        <p class="join-title">{{ $t("join-family") }}</p>
         <p class="join-text">
-          هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم
-          تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص.
-          إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس
-          هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في هذا النص. بينما
-          تعمل بعض مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع
-          من نص لوريم إيبسوم نفسه عدة مرات بما تتطلبه الحاجة، فأن البعض الأخر
-          يستخدم كلمات من قاموس يحوي على أكثر من 200 كلمة لا تينية، مضاف إليها
-          مجموعة من الجمل النموذجية، لتكوين نص لوريم إيبسوم ذو شكل منطقي قريب
-          إلى النص الحقيقي. وبالتالي يكون النص الناتح خالي من التكرار، أو أي
-          كلمات أو عبارات غير لائقة أو ما شابه.
+          {{ $t("join-family-desc") }}
         </p>
       </div>
 
@@ -27,10 +18,11 @@
           v-for="(job, i) in allCareers"
           :key="i"
           class="join-card"
+          style="overflow: hidden"
           @click="router.push({ name: 'joinForm', query: { job: job.id } })"
         >
           <img :src="job?.image" style="width: 100%; height: auto" alt="" />
-          <span class="px-1">
+          <span class="p-3">
             <p class="join-card-title" style="overflow: hidden">
               {{ job.title }}
             </p>
@@ -88,8 +80,7 @@ const router = useRouter();
       .join-card {
         margin-bottom: 3rem;
         border: 1px solid #444444;
-        border-radius: 24px;
-        padding: 1rem;
+        border-radius: 2.4rem;
         display: flex;
         flex-direction: column;
         align-items: start;

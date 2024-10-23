@@ -1,11 +1,14 @@
 <template>
   <div>
-    <img src="/src/assets/packages/package.jpg" alt="package image" />
+    <img
+      src="/src/assets/packages/package.jpg"
+      style="width: 100%"
+      alt="package image"
+    />
     <div class="container-cust package-sec">
-      <h3 class="package-head">الباقــات</h3>
+      <h3 class="package-head">{{ $t("packages") }}</h3>
       <p class="package-body">
-        تلك الباقات مُصممة خصيصًا للسوق السعودي، بما يتماشى مع هدفنا في أن نصبح
-        الممثل المُعتمد لمراكز التدريب في تعاملاتهم مع هيئات الاعتماد.
+        {{ $t("package-desc") }}
       </p>
 
       <div class="package-card">
@@ -22,7 +25,7 @@
               style="gap: 4rem"
             >
               <span>
-                <p class="card-title">الخدمات المشمولة:</p>
+                <p class="card-title">{{ $t("included-services") }} :</p>
                 <ul class="card-list">
                   <li v-for="(ser, j) in packag.included_services" :key="j">
                     {{ ser }}
@@ -30,7 +33,7 @@
                 </ul>
               </span>
               <span>
-                <p class="card-title">الفئة المستهدفة :</p>
+                <p class="card-title">{{ $t("target-group") }} :</p>
                 <ul class="card-list">
                   <li v-for="(ser, j) in packag.target_group" :key="j">
                     {{ ser }}
@@ -46,7 +49,7 @@
               class="r-more-btn-w"
               style="position: absolute; left: 10px; bottom: 10px"
             >
-              تواصل معنا
+              {{ $t("contact") }}
             </button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 <template>
-  <div style="height: auto; position: relative; overflow: hidden">
+  <div style="height: auto; width: 100%; position: relative; overflow: hidden">
     <carousel
       :items-to-show="1"
       :wrap-around="true"
@@ -7,8 +7,22 @@
       v-model="currentSlide"
     >
       <slide v-for="(slide, i) in hero" :key="i">
-        <div>
-          <img :src="slide.image" style="width: 100%" alt="slide image" />
+        <div
+          class="hero-carousel-img"
+          style="
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #def1ff;
+          "
+        >
+          <div style="border-bottom: 1.2rem solid #0477be">
+            <img
+              :src="slide.image"
+              style="width: 100%; height: 100%"
+              alt="slide image"
+            />
+          </div>
           <div class="hero-carousel-text slide-1" style="position: absolute">
             <p class="title">
               {{ slide.title }}
@@ -19,7 +33,7 @@
       </slide>
 
       <template #addons>
-        <pagination class="custom-pagination d-none d-sm-block" />
+        <pagination class="custom-pagination d-none d-sm-flex" />
       </template>
     </carousel>
 

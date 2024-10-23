@@ -19,7 +19,10 @@
           </p>
         </div>
       </div>
-      <div class="blog-text w-100 row px-3" style="margin: 15rem auto 5rem">
+      <div
+        class="blog-text w-100 row px-3 d-flex flex-column-reverse flex-md-row align-items-center align-items-md-start"
+        style="margin: 15rem auto 5rem"
+      >
         <div class="col blog-body px-3">{{ post.content }}</div>
         <div class="col-3">
           <img :src="post?.image" alt="blog image" style="width: 100%" />
@@ -36,7 +39,7 @@
         style="width: 100%; margin: 5rem 0"
       /> -->
       <div class="blog-latest w-100">
-        <p class="blog-latest-info">نشر مؤخرا</p>
+        <p class="blog-latest-info">{{ $t("Recent-published") }}</p>
         <div class="blog-slider">
           <div class="d-flex flex-row align-items-center">
             <button
@@ -64,29 +67,47 @@
 
             <div style="width: 90%; margin: 5rem">
               <carousel
-                :autoplay="1000"
                 :wrap-around="true"
+                :autoplay="1000"
                 :transition="500"
                 v-model="currentCard"
                 :breakpoints="breakpoints"
               >
                 <slide v-for="(slide, i) in 20" :key="i">
-                  <div v-for="(blog, i) in postsByBlog" :key="i">
+                  <div
+                    v-for="(blog, i) in postsByBlog"
+                    :key="i"
+                    class="d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
+                  >
                     <div
-                      class="join-card"
+                      class="join-card p-0"
                       v-if="blog.category_posts"
                       v-for="(post, j) in blog.category_posts"
                       :key="j"
                       @click="chagnePost(blog.id)"
                     >
-                      <img
-                        style="width: 100%; height: auto; overflow: hidden"
-                        alt="blog image"
-                        :src="post.image"
-                      />
-                      <span class="px-1">
+                      <div
+                        style="
+                          overflow: hidden;
+                          flex: 1;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          width: 100%;
+                        "
+                      >
+                        <img
+                          alt="blog image"
+                          style="height: 100%"
+                          :src="post.image"
+                        />
+                      </div>
+                      <span
+                        class="w-75 mx-auto px-1 d-flex flex-column justify-content-between algin-items-start"
+                        style="flex: 1"
+                      >
                         <p class="join-card-title" style="overflow: hidden">
-                          {{ post.name }}
+                          {{ post.title }}
                         </p>
                         <p class="join-card-text" style="overflow: hidden">
                           {{ post.description }}
@@ -174,7 +195,7 @@ const breakpoints = ref({
   },
   // 1024 and up
   1024: {
-    itemsToShow: 5,
+    itemsToShow: 3,
     snapAlign: "center",
   },
 });

@@ -143,9 +143,10 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   border-radius: 1.2rem;
-  padding: 4rem;
+  padding: 3rem;
   gap: 5rem;
   width: 70%;
   background-color: white;
@@ -174,9 +175,8 @@ button {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     .s-card {
-      width: 34.8rem;
-      width: 100rem;
       min-height: 45rem;
       padding: 2.8rem 3rem;
       opacity: 0px;
@@ -253,9 +253,9 @@ button {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-
+      flex-wrap: wrap;
       .package-card-body {
-        padding: 0 5rem;
+        padding: 2rem 5rem;
 
         .package-card-title {
           font-size: 2.4rem;
@@ -422,7 +422,7 @@ button {
     font-weight: 700;
     line-height: 3.6rem;
     text-align: right;
-    border-bottom: 3px solid #fff;
+    // border-bottom: 3px solid #fff;
     width: fit-content;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
@@ -432,7 +432,6 @@ button {
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 3.454rem;
-    text-align: right;
   }
 }
 

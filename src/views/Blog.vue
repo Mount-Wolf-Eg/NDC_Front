@@ -7,7 +7,7 @@
         alt="blog iamge"
       />
       <div
-        class="blog-btns w-100 py-5 px-4 flex-row justify-content-start gap-3"
+        class="blog-btns w-100 py-5 px-4 flex-row flex-wrap justify-content-start gap-4"
         style="overflow-x: auto"
       >
         <button
@@ -65,7 +65,7 @@ watch(
     // width: 27.2rem;
     width: fit-content;
     padding: 0 0.5rem;
-    height: 5.6rem;
+    // height: 5.6rem;
     border-radius: 12px;
     display: flex;
     justify-content: center;

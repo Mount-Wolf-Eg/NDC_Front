@@ -1,7 +1,7 @@
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 348px) {
   html {
-    font-size: 15% !important;
+    font-size: 20% !important;
   }
 
   // hero section
@@ -21,14 +21,7 @@
     flex-direction: column-reverse !important;
     bottom: 50%;
   }
-  .serv-card-item {
-    // flex-direction: column !important;
-    flex-wrap: wrap !important;
 
-    .s-card {
-      width: 50% !important;
-    }
-  }
   .float-ques {
     bottom: -30% !important;
   }
@@ -55,6 +48,9 @@
   }
 
   .img-bg {
+    .achieve {
+      flex-wrap: wrap !important;
+    }
     .cust-card {
       min-width: 105px;
       flex-basis: 20%;
@@ -101,12 +97,12 @@
     margin-bottom: 2rem;
   }
   .footer-logo {
-    width: 40rem !important;
+    width: 30rem !important;
   }
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 350px) {
   html {
     font-size: 19% !important;
   }

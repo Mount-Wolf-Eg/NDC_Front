@@ -1,8 +1,13 @@
 <template>
   <div>
-    <div class="first-footer">
-      <div class="container-cust d-flex footer-list" style="padding: 7rem 0">
-        <div class="flex-col align-items-cente justify-content-start">
+    <div class="first-footer w-100 px-5">
+      <div
+        class="container-cust d-flex footer-list gap-5"
+        style="padding: 7rem 1rem; width: 100%"
+      >
+        <div
+          class="flex-col align-items-center justify-content-center align-items-sm-start"
+        >
           <img
             class="footer-logo"
             :src="allContacts.logo"
@@ -10,7 +15,7 @@
             style="width: 15.6rem; height: auto"
           />
 
-          <span class="flex-row mt-4 gap-5 align-items-center w-100">
+          <span class="flex-row mt-4 gap-5 align-items-center w-75">
             <div class="d-flex gap-4 align-items-center">
               <!-- fb -->
               <a v-if="allContacts.facebook" :href="allContacts.facebook">
@@ -138,57 +143,66 @@
           </span>
         </div>
 
-        <div
-          class="flex-col align-items-cente justify-content-start align-items-sm-start"
-        >
-          <p class="footer-route">أنواع الباقات</p>
-
-          <p
-            class="footer-sub-route"
-            v-for="(pack, i) in allPackages"
-            v-on:seeking=""
-          >
-            {{ pack.name }}
+        <div class="d-flex flex-column justify-content-start w-50">
+          <p class="footer-route w-100 d-flex">
+            {{ $t("packages-type") }}
           </p>
+          <ul class="d-flex flex-column algin-items-start gap-2">
+            <li
+              class="footer-sub-route"
+              v-for="(pack, i) in allPackages"
+              v-on:seeking=""
+            >
+              {{ pack.name }}
+            </li>
+          </ul>
         </div>
 
-        <div
-          class="flex-col align-items-cente justify-content-start align-items-sm-start"
-        >
-          <p class="footer-route">الخدمات</p>
-
-          <p
-            v-for="(service, i) in allServices.slice(-4)"
-            :key="i"
-            class="footer-sub-route"
-            @click="
-              router.push({
-                name: 'service',
-                query: { service: service.id },
-              })
-            "
-          >
-            {{ service.name }}
+        <div class="d-flex flex-column justify-content-start w-75">
+          <p class="footer-route d-flex w-100">
+            {{ $t("services") }}
           </p>
+          <ul
+            class="d-flex flex-column algin-items-start justify-content-start gap-2"
+          >
+            <li
+              v-for="(service, i) in allServices.slice(-4)"
+              :key="i"
+              class="footer-sub-route"
+              @click="
+                router.push({
+                  name: 'service',
+                  query: { service: service.id },
+                })
+              "
+            >
+              {{ service.name }}
+            </li>
+          </ul>
         </div>
-        <div
-          class="flex-col align-items-cente justify-content-start align-items-sm-start"
-        >
-          <p class="footer-route">استكشف</p>
-          <p class="footer-sub-route">من نحن</p>
-          <p class="footer-sub-route">المدونة</p>
-          <p class="footer-sub-route">المدونة</p>
-          <p class="footer-sub-route">اتصل بنا</p>
+
+        <div class="d-flex flex-column justify-content-start w-75">
+          <ul
+            class="d-flex flex-column algin-items-start justify-content-start gap-2 w-100"
+          >
+            <li class="footer-route d-flex align-items-center w-100">
+              {{ $t("explore") }}
+            </li>
+            <li class="footer-sub-route">{{ $t("about") }}</li>
+            <li class="footer-sub-route">{{ $t("blog") }}</li>
+            <li class="footer-sub-route">{{ $t("blog") }}</li>
+            <li class="footer-sub-route">{{ $t("contact") }}</li>
+          </ul>
         </div>
-        <div
-          class="flex-col align-items-cente justify-content-start align-items-sm-start"
-        >
-          <p class="footer-route">تواصل معنا</p>
+        <div class="d-flex flex-column justify-content-start w-100">
+          <p class="footer-route w-100 d-flex align-items-center">
+            {{ $t("contact") }}
+          </p>
           <p class="footer-sub-route">
-            لمزيد من المعلومات حول خدماتنا أو لمناقشة
+            {{ $t("more-info") }}
           </p>
-          <p class="footer-sub-route">كيف بإمكاننا مساعدة مؤسستك في تحقيق</p>
-          <p class="footer-sub-route">أهداف الاعتماد، يرجى التواصل معنا:</p>
+          <p class="footer-sub-route">{{ $t("more-info-help") }}</p>
+          <p class="footer-sub-route">{{ $t("more-help") }}:</p>
 
           <a
             v-if="allContacts.mainNumber"
@@ -253,20 +267,24 @@
       <div
         class="w-50 mx-auto d-flex flex-row flex-wrap gap-3 py-3 align-items-center justify-content-center"
       >
+        <!-- v-if="termsConditions" -->
         <button
+          v-if="false"
           class="footer-item"
           @click="router.push({ name: 'TermsConditions' })"
         >
-          الشروط والأحكام
+          {{ $t("terms") }}
         </button>
+        <!-- v-if="privacyPolicy" -->
         <button
+          v-if="false"
           class="footer-item"
           @click="router.push({ name: 'PrivacyPolicy' })"
         >
-          سياية الخصوصية
+          {{ $t("privacy") }}
         </button>
         <button class="footer-item">
-          2024 جميع الحقوق محفوظة لـMOUNT WOLF
+          {{ $t("copyright") }}
         </button>
       </div>
     </div>
@@ -284,7 +302,9 @@ const { allContacts } = storeToRefs(useSettingsStore());
 import { useStaticPagesStore } from "@/stores/staticPages";
 import { usePackagesStore } from "@/stores/packagesStore";
 import { onMounted } from "vue";
-const { allServices } = storeToRefs(useStaticPagesStore());
+const { allServices, termsConditions, privacyPolicy } = storeToRefs(
+  useStaticPagesStore()
+);
 const { allPackages } = storeToRefs(usePackagesStore());
 onMounted(async () => {
   Promise.all([
@@ -297,7 +317,13 @@ onMounted(async () => {
 <style lang="scss" scoped>
 .first-footer {
   p {
-    cursor: pointer;
+    cursor: context-menu;
+  }
+  ul {
+    list-style: none;
+    li {
+      cursor: pointer;
+    }
   }
 }
 </style>

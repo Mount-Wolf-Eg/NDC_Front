@@ -1,10 +1,9 @@
 <template>
   <div class="partner-sec">
     <div class="partner">
-      <p class="partner-title">شركاء النجاح</p>
+      <p class="partner-title">{{ $t("partners") }}</p>
       <p class="partner-text w-50">
-        هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم
-        تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص.
+        {{ $t("partner-body") }}
       </p>
       <div
         class="partner-card my-5 d-flex align-items-center justify-content-center gap-5"
@@ -24,11 +23,8 @@
       </div>
     </div>
     <div class="supplies">
-      <p class="supplies-title">الموارد الرئيسية</p>
-      <p class="supplies-text">
-        سنعتمد على الموارد الرئيسية مثل: المستشارين الخبراء: ذوي المعرفة العميقه
-        عبر مختلف معايير الاعتماد، بما في ذلك على سبيل المثال:
-      </p>
+      <p class="supplies-title">{{ $t("main-resources") }}</p>
+      <p class="supplies-text">{{ $t("main-resource-body") }}:</p>
       <div class="supplies-slider container-cust">
         <div class="sup-carousel">
           <Carousel
