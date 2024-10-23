@@ -24,7 +24,7 @@ import App from "./App.vue";
 import router from "./router";
 
 const app = createApp(App);
-let lang = sessionStorage.getItem("lang");
+let lang = sessionStorage.getItem("lang") || "ar";
 const i18n = createI18n({
   locale: lang,
   messages: {

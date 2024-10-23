@@ -16,7 +16,7 @@
         >
           <img
             :src="partner.image"
-            style="width: auto; height: 100%"
+            style="width: 100%; height: auto"
             :alt="partner.Ifsah"
           />
         </div>
