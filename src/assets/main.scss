@@ -163,12 +163,13 @@ button {
   padding: 2rem 0;
   z-index: 999;
   width: 100%;
+  height: 100%;
 
   .nav-body {
     background-color: #00000073;
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
     overflow: auto;
@@ -181,13 +182,14 @@ button {
       display: flex;
       justify-content: center;
       padding: 5rem 0;
+
       .nav-list {
         transition: all 0.3s ease-in-out;
         width: 70%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         gap: 5rem;
         .nav-list-item {
           width: 100%;
@@ -222,42 +224,50 @@ button {
 }
 
 // footer
-.first-footer {
-  background-color: var(--col-blue-drk);
-
-  div {
-    color: #fff;
-  }
-  .footer-route {
-    color: #fff;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 3.6rem;
-    text-align: right;
-    // border-bottom: 3px solid #fff;
-    width: fit-content;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-  }
-  .footer-sub-route {
-    color: #fff;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 3.454rem;
+.footer-bar {
+  .first-footer {
+    background-color: var(--col-blue-drk);
+    .footer-list-head {
+      color: var(--col-white);
+      font-size: var(--fs-24);
+      font-weight: var(--fw-bold);
+      line-height: var(--line-h-37);
+      border-bottom: 3px solid #fff;
+      width: fit-content;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      width: 100%;
+      cursor: context-menu !important;
+    }
+    .footer-list-item {
+      color: var(--col-white);
+      font-size: var(--fs-18);
+      font-weight: var(--fw-normal);
+      line-height: var(--line-h-37);
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      display: inline-block;
+      cursor: pointer !important;
+      &.has-link {
+        &:hover {
+          padding: 0 0.7rem;
+          background-color: var(--col-blue-md);
+          color: var(--col-blue-lgt);
+          border-radius: var(--brd-r-sm);
+        }
+      }
+    }
   }
 }
-
 .sec-footer {
   background-color: #0477be;
-}
-
-.footer-item {
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 3.454rem;
-  text-align: right;
-  color: #fff;
-  padding: 0 3rem;
+  .footer-sec-item {
+    font-size: var(--fs-14);
+    font-weight: var(--fw-normal);
+    line-height: var(--line-h-28);
+    color: var(--col-white);
+    padding: 1rem 0;
+  }
 }
 
 .r-more-btn-c,

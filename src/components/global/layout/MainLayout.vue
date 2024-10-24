@@ -1,5 +1,12 @@
 <template>
-  <div style="display: flex; flex-direction: column; min-height: 100vh">
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    "
+  >
     <Header v-if="!showResponsiveHeader"></Header>
     <ResponsiveHeader v-if="showResponsiveHeader"></ResponsiveHeader>
     <div style="flex: 1">
@@ -18,12 +25,12 @@ import Footer from "./Footer.vue";
 const showResponsiveHeader = ref(false);
 
 onMounted(() => {
-  window.innerWidth <= 992
+  window.innerWidth <= 768
     ? (showResponsiveHeader.value = true)
     : (showResponsiveHeader.value = false);
 }),
   (window.onresize = () => {
-    window.innerWidth <= 992
+    window.innerWidth <= 768
       ? (showResponsiveHeader.value = true)
       : (showResponsiveHeader.value = false);
   });

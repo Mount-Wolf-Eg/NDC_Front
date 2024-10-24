@@ -1,6 +1,6 @@
 <template>
   <div
-    class="responsive-nav"
+    class="responsive-nav h-100"
     :style="{
       backgroundColor: route.name === 'home' ? '' : '#0477BE',
       position: route.name === 'home' ? 'absolute' : 'sticky',
