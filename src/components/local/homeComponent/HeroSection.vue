@@ -238,7 +238,6 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .slide-1 {
-  font-family: "Rubik", sans-serif !important;
   right: 15%;
   top: 20%;
   width: 25%;

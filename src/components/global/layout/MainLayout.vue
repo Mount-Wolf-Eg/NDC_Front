@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; min-height: 100vh; flex-direction: column">
+  <div style="display: flex; flex-direction: column; min-height: 100vh">
     <Header v-if="!showResponsiveHeader"></Header>
     <ResponsiveHeader v-if="showResponsiveHeader"></ResponsiveHeader>
     <div style="flex: 1">

@@ -5,23 +5,23 @@
       backgroundColor: route.name === 'home' ? '' : '#0477BE',
       position: route.name === 'home' ? 'absolute' : 'sticky',
     }"
-    style="z-index: 999; padding-top: 2rem; top: 0; left: 0; width: 100%"
   >
-    <div class="nav px-5">
+    <div class="nav row col-12 px-4" style="transition: all 0.3s ease-in-out">
       <div
-        class="flex-row justify-content-start"
+        class="col-3"
         style="margin-inline-end: auto"
         @click="router.push({ name: 'home' })"
       >
         <img
           :src="allContacts.logo"
           alt="website logo"
-          style="width: 20rem; height: 3.9rem"
+          style="width: auto; height: auto; max-width: 100%; max-height: 5rem"
         />
       </div>
-      <button @click="showNavMenu = !showNavMenu">
+
+      <button @click="showNavMenu = !showNavMenu" class="col-1">
         <svg
-          style="width: 5rem; height: 5rem"
+          style="max-width: 5rem; max-height: 5rem; height: 100%; width: auto"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +47,8 @@
         </svg>
       </button>
     </div>
+
+    <!-- menu -->
     <div class="nav-body" v-if="showNavMenu">
       <div class="h-100" style="position: relative">
         <svg
@@ -76,7 +78,7 @@
                 router.push({ name: 'home' }), (showNavMenu = !showNavMenu)
               "
             >
-              الرئيسية
+              {{ $t("home") }}
             </li>
             <li
               class="nav-list-item"
@@ -84,13 +86,13 @@
                 router.push({ name: 'about' }), (showNavMenu = !showNavMenu)
               "
             >
-              من نحن
+              {{ $t("about") }}
             </li>
             <li
               class="nav-list-item"
               @click="router.push({ name: 'packages' })"
             >
-              الباقات
+              {{ $t("packages") }}
             </li>
             <li
               class="nav-list-item"
@@ -98,7 +100,7 @@
                 router.push({ name: 'join' }), (showNavMenu = !showNavMenu)
               "
             >
-              توظيف
+              {{ $t("join") }}
             </li>
             <li
               class="nav-list-item"
@@ -106,7 +108,7 @@
                 router.push({ name: 'blog' }), (showNavMenu = !showNavMenu)
               "
             >
-              المدونة
+              {{ $t("blog") }}
             </li>
             <li class="nav-list-item">
               <ul class="nav-list d-flex flex-column gap-5">
@@ -116,7 +118,7 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#demo"
                 >
-                  الخدمات
+                  {{ $t("services") }}
                 </button>
                 <ul id="demo" class="collapse">
                   <li
@@ -134,6 +136,7 @@
                     {{ servic.name }}
                   </li>
                   <li
+                    v-if="allServices.length"
                     class="nav-sub-item pb-4 text-center fs-1"
                     @click="
                       router.push({
@@ -142,7 +145,10 @@
                         (showNavMenu = !showNavMenu)
                     "
                   >
-                    المزيد
+                    {{ $t("more") }}
+                  </li>
+                  <li v-else class="dropdown-item bg-info">
+                    {{ $t("no-data") }}
                   </li>
                 </ul>
               </ul>
@@ -154,18 +160,28 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#demo1"
               >
-                عربي
+                {{ $t("lang") }}
+                <svg
+                  fill="#fff"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  style="width: 4rem; height: 4rem"
+                >
+                  <path
+                    d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                  />
+                </svg>
               </button>
               <ul id="demo1" class="collapse">
                 <li
-                  @click="setLanguage('ar'), ($i18n.locale = `ar`)"
-                  class="nav-sub-item pb-4 text-center fs-1"
+                  @click="setLanguage('ar'), ($i18n.locale = 'ar')"
+                  class="nav-sub-item pb-2 text-center"
                 >
                   AR
                 </li>
                 <li
-                  @click="setLanguage('en'), ($i18n.locale = `en`)"
-                  class="nav-sub-item pb-4 text-center fs-1"
+                  @click="setLanguage('en'), ($i18n.locale = 'en')"
+                  class="nav-sub-item pb-2 text-center"
                 >
                   EN
                 </li>
@@ -195,14 +211,14 @@ const lang = ref("AR");
 
 const setLanguage = (lan) => {
   if (lan == "ar") {
-    document.querySelector("html").setAttribute("dir", "rtl"),
-      sessionStorage.setItem("lang", "ar");
     lang.value = "AR";
+    sessionStorage.setItem("lang", "ar");
+    document.querySelector("html").setAttribute("dir", "rtl");
     window.location.reload();
   } else {
-    document.querySelector("html").setAttribute("dir", "ltr"),
-      sessionStorage.setItem("lang", "en");
     lang.value = "EN";
+    sessionStorage.setItem("lang", "en");
+    document.querySelector("html").setAttribute("dir", "ltr");
     window.location.reload();
   }
 };
@@ -210,7 +226,6 @@ const setLanguage = (lan) => {
 const route = useRoute();
 const router = useRouter();
 const showNavMenu = ref(false);
-const show = ref(false);
 </script>
 
 <style lang="scss" scoped></style>

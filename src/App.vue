@@ -1,11 +1,11 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import MainLayout from "./components/layout/MainLayout.vue";
+import { RouterView } from "vue-router";
+import MainLayout from "@/components/global/layout/MainLayout.vue";
 import LoadingPage from "./views/LoadingPage.vue";
 import { onMounted, ref } from "vue";
-import { useSlidersStore } from "./stores/Sliders";
-import { storeToRefs } from "pinia";
+
 const start = ref(false);
+
 onMounted(() => {
   if (sessionStorage.getItem("lang") == null)
     sessionStorage.setItem("lang", "ar");
