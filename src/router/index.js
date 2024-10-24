@@ -101,14 +101,14 @@ const router = createRouter({
     //   },
     // },
 
-    // {
-    //   path: "/:pathMatch(.*)*",
-    //   name: "Not-found",
-    //   component: () => import("@/views/NotFound.vue"),
-    //   meta: {
-    //     title: "Not Found",
-    //   },
-    // },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "Not-found",
+      component: () => import("@/views/NotFound.vue"),
+      meta: {
+        title: "Not Found",
+      },
+    },
   ],
   scrollBehavior() {
     return { top: 0, behavior: "smooth" };
