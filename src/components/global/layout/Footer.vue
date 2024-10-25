@@ -4,7 +4,7 @@
     <div class="first-footer py-5 w-100">
       <div class="container-cust row mx-auto">
         <div
-          class="col-12 col-md-2 mt-5 px-3 mx-lg-3 flex-c justify-content-start"
+          class="col-12 col-sm-6 col-md-2 mt-5 px-3 mx-lg-3 flex-c justify-content-start"
         >
           <img
             @click="router.push({ name: 'home' })"
@@ -135,7 +135,7 @@
           </span>
         </div>
 
-        <div class="col-12 col-md">
+        <div class="col-12 col-sm-6 col-md">
           <p class="footer-list-head">
             {{ $t("packages-type") }}
           </p>
@@ -149,7 +149,7 @@
           </ul>
         </div>
 
-        <div class="col-12 col-md">
+        <div class="col-12 col-sm-6 col-md">
           <p class="footer-list-head">
             {{ $t("services") }}
           </p>
@@ -170,7 +170,7 @@
           </ul>
         </div>
 
-        <div class="col-12 col-md-2">
+        <div class="col-12 col-sm-6 col-md-2">
           <ul class="p-0">
             <li
               class="footer-list-head"
