@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="resp-tap">
-        <PackagesResponsive :packagesRes="allPackages"></PackagesResponsive>
+        <!-- <PackagesResponsive :packagesRes="allPackages"></PackagesResponsive> -->
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-import PackagesResponsive from "@/components/homeComponent/PackagesResponsive.vue";
+// import PackagesResponsive from "@/components/homeComponent/PackagesResponsive.vue";
 import { onMounted, watch } from "vue";
 import { storeToRefs } from "pinia";
 const router = useRouter();

@@ -4,6 +4,7 @@
       <h4 class="service-title">
         {{ $t("services") }}
       </h4>
+
       <div class="service-cards row">
         <div class="col-6 col-md-3" v-for="(serv, i) in services" :key="i">
           <div class="card flex-c justify-content-between">

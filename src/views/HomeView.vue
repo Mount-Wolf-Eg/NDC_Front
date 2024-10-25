@@ -2,7 +2,7 @@
   <main>
     <HeroSection :about="aboutUs" :hero="headerSliders"></HeroSection>
     <Services :services="allServices"></Services>
-    <!--  <Packages :packages="allPackages"></Packages>
+    <Packages :packages="allPackages"></Packages>
     <Customer
       :metrics="successMetrics"
       :testimonials="testimonialsSliders"
@@ -11,7 +11,7 @@
       :achievements="achievementsSliders"
       :questions="allQuestions"
     ></Questions>
-    <Partners :partners="partnersSliders" :resources="mainResources"></Partners> -->
+    <!--   <Partners :partners="partnersSliders" :resources="mainResources"></Partners> -->
   </main>
 </template>
 
@@ -19,9 +19,9 @@
 import { onMounted, ref } from "vue";
 import HeroSection from "@/components/local/homeComponent/HeroSection.vue";
 import Services from "@/components/local/homeComponent/Services.vue";
-// import Packages from "@/components/homeComponent/Packages.vue";
-// import Customer from "@/components/homeComponent/Customer.vue";
-// import Questions from "@/components/homeComponent/Questions.vue";
+import Packages from "@/components/local/homeComponent/Packages.vue";
+import Customer from "@/components/local/homeComponent/Customer.vue";
+import Questions from "@/components/local/homeComponent/Questions.vue";
 // import Partners from "@/components/homeComponent/Partners.vue";
 
 import { useSlidersStore } from "@/stores/Sliders";

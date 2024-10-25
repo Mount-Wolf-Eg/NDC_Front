@@ -45,6 +45,29 @@
       width: 95%;
     }
   }
+  // testimonial
+  .home-testimonial-sec {
+    .metrics-sec {
+      height: 70rem;
+    }
+  }
+  // questions
+  .home-question-sec {
+    .achiement-sec {
+      height: 85rem;
+      .achieve-box {
+        .achiv-lyout {
+          width: 98%;
+          .last:last-child {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .question-bg {
+      height: 30rem;
+    }
+  }
   // footer
   .footer-bar {
     .first-footer {
@@ -108,6 +131,25 @@
     padding-top: 55rem;
     .service-cards {
       width: 95%;
+    }
+  }
+  // testimonial
+  .home-testimonial-sec {
+    .metrics-sec {
+      height: 50rem;
+    }
+  }
+  .home-question-sec {
+    .achiement-sec {
+      height: 130rem;
+      .achieve-box {
+        .achiv-lyout {
+          width: 98%;
+          .last:last-child {
+            margin: 0 auto;
+          }
+        }
+      }
     }
   }
   //   footer
