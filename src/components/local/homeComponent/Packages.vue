@@ -58,14 +58,14 @@
       </div>
     </div>
     <div class="resp-tap">
-      <!-- <PackagesResponsive :packagesRes="props.packages"></PackagesResponsive> -->
+      <PackagesResponsive :packagesRes="props.packages"></PackagesResponsive>
     </div>
   </div>
 </template>
 
 <script setup>
 import { useRouter } from "vue-router";
-// import PackagesResponsive from "@/components/homeComponent/PackagesResponsive.vue";
+import PackagesResponsive from "./PackagesResponsive.vue";
 import { watch } from "vue";
 const router = useRouter();
 const props = defineProps({
@@ -77,10 +77,6 @@ const props = defineProps({
     Required: true,
   },
 });
-
-// const replaceData = (ser) => {
-//   return JSON.parse(ser.replace(/'/g, '"'));
-// };
 </script>
 
 <style lang="scss" scoped>

@@ -130,7 +130,6 @@ const props = defineProps({
 watch(
   () => props.questions,
   (newVal) => {
-    console.log(newVal);
     newVal ? (show.value = true) : (show.value = false);
   }
 );

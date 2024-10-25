@@ -11,7 +11,7 @@
       :achievements="achievementsSliders"
       :questions="allQuestions"
     ></Questions>
-    <!--   <Partners :partners="partnersSliders" :resources="mainResources"></Partners> -->
+    <Partners :partners="partnersSliders" :resources="mainResources"></Partners>
   </main>
 </template>
 
@@ -22,7 +22,7 @@ import Services from "@/components/local/homeComponent/Services.vue";
 import Packages from "@/components/local/homeComponent/Packages.vue";
 import Customer from "@/components/local/homeComponent/Customer.vue";
 import Questions from "@/components/local/homeComponent/Questions.vue";
-// import Partners from "@/components/homeComponent/Partners.vue";
+import Partners from "@/components/local/homeComponent/Partners.vue";
 
 import { useSlidersStore } from "@/stores/Sliders";
 import { useStaticPagesStore } from "@/stores/staticPages";

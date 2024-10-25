@@ -148,7 +148,7 @@
                   >
                     {{ $t("more") }}
                   </li>
-                  <li v-else class="dropdown-item bg-info">
+                  <li v-else class="dropdown-item">
                     {{ $t("no-data") }}
                   </li>
                 </ul>

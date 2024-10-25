@@ -4,7 +4,7 @@
     font-size: 23% !important;
   }
   body {
-    background-color: lightblue !important;
+    // background-color: lightblue !important;
   }
   //responsive header
   .responsive-nav {
@@ -68,6 +68,27 @@
       height: 30rem;
     }
   }
+  // partner
+  .home-partner-sec {
+    .partner-box {
+      .partner-text {
+        width: 75%;
+      }
+    }
+    .supplies-box {
+      width: 90% !important;
+      .supplies-text {
+        width: 90%;
+      }
+    }
+    .supplies-sec {
+      display: none !important;
+    }
+  }
+  .main-resource {
+    display: block !important;
+  }
+
   // footer
   .footer-bar {
     .first-footer {
@@ -87,7 +108,7 @@
     font-size: 28% !important;
   }
   body {
-    background-color: red !important;
+    // background-color: red !important;
   }
   //   responsive header
   .responsive-nav {
@@ -152,6 +173,21 @@
       }
     }
   }
+  // partner
+  .home-partner-sec {
+    .partner-box {
+      .partner-text {
+        width: 75%;
+      }
+    }
+    .supplies-sec {
+      display: none !important;
+    }
+  }
+  .main-resource {
+    display: block !important;
+  }
+
   //   footer
   .footer-bar {
     .first-footer {
@@ -172,7 +208,7 @@
     font-size: 28% !important;
   }
   body {
-    background-color: rgb(43, 255, 0) !important;
+    // background-color: rgb(43, 255, 0) !important;
   }
   // hero section
   .hero-sec {
@@ -199,7 +235,7 @@
     height: 60vh;
   }
   body {
-    background-color: rgb(208, 255, 0) !important;
+    // background-color: rgb(208, 255, 0) !important;
   }
 }
 
@@ -214,7 +250,7 @@
     height: 70vh;
   }
   body {
-    background-color: rgb(0, 4, 255) !important;
+    // background-color: rgb(0, 4, 255) !important;
   }
 }
 
@@ -229,6 +265,6 @@
     height: 95vh;
   }
   body {
-    background-color: rgba(204, 0, 255, 0.137) !important;
+    // background-color: rgba(204, 0, 255, 0.137) !important;
   }
 }

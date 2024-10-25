@@ -1,5 +1,5 @@
 <template>
-  <div class="main-resource">
+  <div class="main-resource" style="display: none; padding: 10rem 0">
     <div
       class="d-flex flex-row gap-5 flex-wrap justify-content-center align-items-center"
     >
@@ -7,7 +7,13 @@
         <img
           :src="img.image"
           class="resourc-img"
-          style="width: 100%; height: auto; max-width: 12rem"
+          style="
+            width: 10rem;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            max-height: 9rem;
+          "
           alt=""
         />
       </div>

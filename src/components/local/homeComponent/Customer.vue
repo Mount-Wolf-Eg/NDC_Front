@@ -67,7 +67,6 @@
         :Lazy="true"
       >
         <!-- testimonials -->
-        testimonials
         <swiper-slide v-for="(slide, i) in testimonials" :key="i">
           <div class="tetimonial-card w-100 h-100">
             <!-- loading placeholder -->
@@ -139,7 +138,6 @@ const props = defineProps({
 watch(
   () => props.testimonials,
   (newVal) => {
-    console.log(newVal);
     newVal ? (show.value = true) : (show.value = false);
   }
 );

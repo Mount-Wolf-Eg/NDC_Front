@@ -442,7 +442,6 @@ button {
 // question section
 .home-question-sec {
   position: relative;
-  margin-bottom: 20rem;
   .achiement-sec {
     height: 65rem;
     position: relative;
@@ -512,6 +511,72 @@ button {
         line-height: var(--line-h-37);
         color: var(--col-blk);
         font-size: var(--fs-16);
+      }
+    }
+  }
+}
+// partner
+
+.home-partner-sec {
+  padding: 10rem 0 0;
+  .partner-box {
+    background-image: url("/src/assets/images/Vector (2).png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+
+    .partner-title {
+      font-weight: var(--fw-bold);
+      font-size: var(--fs-32);
+      line-height: var(--line-h-49);
+      color: var(--col-blk);
+    }
+    .partner-text {
+      font-weight: var(--fw-bold);
+      font-size: var(--fs-24);
+      line-height: var(--line-h-37);
+      color: var(--col-text);
+      width: 50%;
+    }
+    .partner-card {
+      .card {
+        background-color: #f2f2f2;
+        border-radius: var(--brd-r-md);
+        box-shadow: var(--bx-shadow);
+        width: 40rem;
+        height: 16rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: 2rem;
+      }
+    }
+  }
+  .supplies-sec {
+    background-color: var(--col-bg);
+    padding: 5rem 0;
+    .supplies-box {
+      width: 80%;
+      .supplies-title {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-32);
+        line-height: var(--line-h-49);
+        color: var(--col-blk);
+      }
+      .supplies-text {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-24);
+        line-height: var(--line-h-37);
+        color: var(--col-text);
+        width: 50%;
+        padding: 1rem 0 2rem;
+      }
+      .supplies-swiper {
+        padding: 3rem 0;
       }
     }
   }

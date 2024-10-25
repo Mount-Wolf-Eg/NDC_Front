@@ -28,7 +28,7 @@
       :Lazy="true"
     >
       <swiper-slide v-for="(slide, i) in hero" :key="i" class="w-100 h-100">
-        <div class="hero-card bg-info w-100 h-100">
+        <div class="hero-card w-100 h-100">
           <!-- loading placeholder -->
           <div
             style="background-color: #868e96"
@@ -223,10 +223,6 @@ watch(
     newVal ? (show.value = true) : (show.value = false);
   }
 );
-
-onMounted(() => {
-  console.log(props.about);
-});
 </script>
 
 <style lang="scss" scoped>
