@@ -4,6 +4,9 @@
     font-size: 20% !important;
   }
 
+  .hero-carousel-image {
+    max-height: 50vh !important;
+  }
   // hero section
   .navigation-btns {
     display: none !important;
@@ -106,6 +109,9 @@
   html {
     font-size: 19% !important;
   }
+  .hero-carousel-image {
+    max-height: 50vh !important;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -113,6 +119,9 @@
 @media only screen and (min-width: 768px) {
   html {
     font-size: 35% !important;
+  }
+  .hero-carousel-image {
+    max-height: 100vh !important;
   }
 }
 

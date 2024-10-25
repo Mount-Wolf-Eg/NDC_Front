@@ -1,7 +1,7 @@
 <template>
   <div
     style="
-      min-height: 86.9rem;
+      min-height: 50%;
       background-color: #def1ff;
       display: flex;
       flex-direction: column;

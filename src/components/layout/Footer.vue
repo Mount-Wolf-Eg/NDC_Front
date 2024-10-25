@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="first-footer w-100 px-5">
+    <div class="first-footer w-100">
       <div
         class="container-cust d-flex footer-list gap-5"
         style="padding: 7rem 1rem; width: 100%"

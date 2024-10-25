@@ -1,205 +1,207 @@
 <template>
   <div style="height: auto; width: 100%; position: relative; overflow: hidden">
-    <carousel
-      :items-to-show="1"
-      :wrap-around="true"
-      :transition="500"
-      v-model="currentSlide"
-    >
-      <slide v-for="(slide, i) in hero" :key="i">
-        <div
-          class="hero-carousel-img"
-          style="
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            background-color: #def1ff;
-          "
-        >
-          <div style="border-bottom: 1.2rem solid #0477be">
-            <img
-              :src="slide.image"
-              style="width: 100%; height: 100%"
-              alt="slide image"
-            />
-          </div>
-          <div class="hero-carousel-text slide-1" style="position: absolute">
-            <p class="title">
-              {{ slide.title }}
-            </p>
-            <p class="bdy">{{ slide.description }}</p>
-          </div>
-        </div>
-      </slide>
-
-      <template #addons>
-        <pagination class="custom-pagination d-none d-sm-flex" />
-      </template>
-    </carousel>
-
-    <div class="navigation-btns" style="direction: rtl !important">
-      <button @click="next" style="position: relative; width: 50%">
-        <svg
-          class="arrow1"
-          fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 10px;
-          "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
-        >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-        <svg
-          class="arrow2"
-          fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 25px;
-          "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
-        >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-        <svg
-          class="arrow3"
-          fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 40px;
-          "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
-        >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-      </button>
-      <button
-        @click="prev"
-        style="
-          height: 4rem;
-          transform: scaleX(-1);
-          position: relative;
-          width: 50%;
-        "
+    <div class="hero-carousel-image">
+      <carousel
+        :items-to-show="1"
+        :wrap-around="true"
+        :transition="500"
+        v-model="currentSlide"
       >
-        <svg
-          class="arrow1"
-          fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 10px;
-          "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
-        >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+        <slide v-for="(slide, i) in hero" :key="i">
+          <div
+            class="hero-carousel-img"
+            style="
+              height: 100%;
+              width: 100%;
+              overflow: hidden;
+              background-color: #def1ff;
+            "
+          >
+            <div style="border-bottom: 1.2rem solid #0477be">
+              <img
+                :src="slide.image"
+                style="width: 100%; height: 100%"
+                alt="slide image"
+              />
+            </div>
+            <div class="hero-carousel-text slide-1" style="position: absolute">
+              <p class="title">
+                {{ slide.title }}
+              </p>
+              <p class="bdy">{{ slide.description }}</p>
+            </div>
+          </div>
+        </slide>
+
+        <template #addons>
+          <pagination class="custom-pagination d-none d-sm-flex" />
+        </template>
+      </carousel>
+
+      <div class="navigation-btns" style="direction: rtl !important">
+        <button @click="next" style="position: relative; width: 50%">
+          <svg
+            class="arrow1"
+            fill="#fff"
+            style="
+              height: 4rem;
+              width: 4rem;
+              position: absolute;
+              top: 0;
+              right: 10px;
+            "
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330 330"
+            xml:space="preserve"
+          >
+            <path
+              id="XMLID_222_"
+              d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+            c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
+	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
+	C255,161.018,253.42,157.202,250.606,154.389z"
+            />
+          </svg>
+          <svg
+            class="arrow2"
+            fill="#fff"
+            style="
+              height: 4rem;
+              width: 4rem;
+              position: absolute;
+              top: 0;
+              right: 25px;
+            "
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330 330"
+            xml:space="preserve"
+          >
+            <path
+              id="XMLID_222_"
+              d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
 	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
 	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
 	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-        <svg
-          class="arrow2"
-          fill="#fff"
+            />
+          </svg>
+          <svg
+            class="arrow3"
+            fill="#fff"
+            style="
+              height: 4rem;
+              width: 4rem;
+              position: absolute;
+              top: 0;
+              right: 40px;
+            "
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330 330"
+            xml:space="preserve"
+          >
+            <path
+              id="XMLID_222_"
+              d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+          c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
+          C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
+          C255,161.018,253.42,157.202,250.606,154.389z"
+            />
+          </svg>
+        </button>
+        <button
+          @click="prev"
           style="
             height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 25px;
+            transform: scaleX(-1);
+            position: relative;
+            width: 50%;
           "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
         >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+          <svg
+            class="arrow1"
+            fill="#fff"
+            style="
+              height: 4rem;
+              width: 4rem;
+              position: absolute;
+              top: 0;
+              right: 10px;
+            "
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330 330"
+            xml:space="preserve"
+          >
+            <path
+              id="XMLID_222_"
+              d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
 	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
 	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
 	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-        <svg
-          class="arrow3"
-          fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 40px;
-          "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
-        >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+            />
+          </svg>
+          <svg
+            class="arrow2"
+            fill="#fff"
+            style="
+              height: 4rem;
+              width: 4rem;
+              position: absolute;
+              top: 0;
+              right: 25px;
+            "
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330 330"
+            xml:space="preserve"
+          >
+            <path
+              id="XMLID_222_"
+              d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
 	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
 	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
 	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-      </button>
+            />
+          </svg>
+          <svg
+            class="arrow3"
+            fill="#fff"
+            style="
+              height: 4rem;
+              width: 4rem;
+              position: absolute;
+              top: 0;
+              right: 40px;
+            "
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330 330"
+            xml:space="preserve"
+          >
+            <path
+              id="XMLID_222_"
+              d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+            c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
+	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
+	C255,161.018,253.42,157.202,250.606,154.389z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </template>
