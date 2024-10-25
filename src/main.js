@@ -1,9 +1,13 @@
 import "./assets/main.scss";
 import "./assets/media-queries.scss";
-import "vue3-carousel/dist/carousel.css";
 
 // bootstrap
 import "bootstrap/dist/css/bootstrap.css";
+
+// swiper
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // language
 import { createI18n } from "vue-i18n";

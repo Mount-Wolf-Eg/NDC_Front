@@ -1,230 +1,206 @@
 <template>
-  <div style="height: auto; width: 100%; position: relative; overflow: hidden">
-    <carousel
-      :items-to-show="1"
-      :wrap-around="true"
-      :transition="500"
-      v-model="currentSlide"
+  <div class="hero-sec" style="position: relative">
+    <swiper
+      style="border-bottom: 1rem solid var(--col-blue-md)"
+      :autoplay="{
+        delay: 2500,
+        disableOnInteraction: false,
+      }"
+      class="w-100 h-100"
+      :modules="modules"
+      :pagination="{
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+      }"
+      :slides-per-view="1"
+      :Autoplay="{
+        delay: 1000,
+        disableOnInteraction: true,
+        waitForTransition: true,
+      }"
+      :space-between="50"
+      :navigation="{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }"
+      :preload-images="false"
+      :Lazy="true"
     >
-      <slide v-for="(slide, i) in hero" :key="i">
-        <div
-          class="hero-carousel-img"
-          style="
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            background-color: #def1ff;
-          "
-        >
-          <div style="border-bottom: 1.2rem solid #0477be">
+      <swiper-slide v-for="(slide, i) in hero" :key="i" class="w-100 h-100">
+        <div class="hero-card bg-info w-100 h-100">
+          <!-- loading placeholder -->
+          <div
+            style="background-color: #868e96"
+            class="w-100 h-100 flex-r gap-3"
+            v-if="!show"
+          >
+            <div class="spinner-grow text-dark" role="status"></div>
+            <div class="spinner-grow text-dark" role="status"></div>
+            <div class="spinner-grow text-dark" role="status"></div>
+            <div class="spinner-grow text-dark" role="status"></div>
+          </div>
+          <!-- images -->
+          <div
+            class="hero-card-image w-100 h-100"
+            style="position: relative"
+            v-else
+          >
             <img
+              style="
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover;
+                object-position: center;
+              "
               :src="slide.image"
-              style="width: 100%; height: 100%"
               alt="slide image"
             />
-          </div>
-          <div class="hero-carousel-text slide-1" style="position: absolute">
-            <p class="title">
-              {{ slide.title }}
-            </p>
-            <p class="bdy">{{ slide.description }}</p>
+            <div
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+              "
+              class="hero-text-box row mx-auto"
+            >
+              <div class="hero-card-text flex-c align-items-start col-6">
+                <div
+                  style="
+                    backdrop-filter: blur(3px);
+                    padding: 1rem;
+                    background-color: #3a3a3a1a;
+                  "
+                >
+                  <p class="title">
+                    {{ slide.title }}
+                  </p>
+                  <p class="body">{{ slide.description }}</p>
+                </div>
+              </div>
+              <div class="col-6"></div>
+            </div>
           </div>
         </div>
-      </slide>
-
-      <template #addons>
-        <pagination class="custom-pagination d-none d-sm-flex" />
-      </template>
-    </carousel>
-
-    <div class="navigation-btns" style="direction: rtl !important">
-      <button @click="next" style="position: relative; width: 50%">
+      </swiper-slide>
+      <div class="swiper-button-next" style="transform: scaleX(-1)">
         <svg
           class="arrow1"
           fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 10px;
-          "
-          version="1.1"
-          id="Layer_1"
+          style="height: 4rem; width: 4rem"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
+          viewBox="0 0 320 512"
         >
           <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
+            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
           />
         </svg>
         <svg
           class="arrow2"
           fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 25px;
-          "
-          version="1.1"
-          id="Layer_1"
+          style="height: 4rem; width: 4rem"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
+          viewBox="0 0 320 512"
         >
           <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
+            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
           />
         </svg>
         <svg
           class="arrow3"
           fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 40px;
-          "
-          version="1.1"
-          id="Layer_1"
+          style="height: 4rem; width: 4rem"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
+          viewBox="0 0 320 512"
         >
           <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
+            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
           />
         </svg>
-      </button>
-      <button
-        @click="prev"
-        style="
-          height: 4rem;
-          transform: scaleX(-1);
-          position: relative;
-          width: 50%;
-        "
+      </div>
+      <div class="swiper-button-prev">
+        <svg
+          class="arrow1"
+          fill="#fff"
+          style="height: 4rem; width: 4rem"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"
+        >
+          <path
+            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+          />
+        </svg>
+        <svg
+          class="arrow2"
+          fill="#fff"
+          style="height: 4rem; width: 4rem"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"
+        >
+          <path
+            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+          />
+        </svg>
+        <svg
+          class="arrow3"
+          fill="#fff"
+          style="height: 4rem; width: 4rem"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"
+        >
+          <path
+            d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+          />
+        </svg>
+      </div>
+      <div class="swiper-pagination"></div>
+    </swiper>
+
+    <div class="hero-about-us row">
+      <div
+        class="col-12 col-md-6 d-flex flex-column justify-content-between p-5 p-md-1 px-md-5"
       >
-        <svg
-          class="arrow1"
-          fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 10px;
-          "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
+        <h3 class="hero-about-title">
+          {{ about.title }}
+        </h3>
+
+        <p class="hero-about-text">
+          {{ about.description }}
+        </p>
+
+        <button
+          class="r-more-btn-c text-center"
+          style="width: fit-content"
+          @click="router.push({ name: 'about' })"
         >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-        <svg
-          class="arrow2"
-          fill="#fff"
+          {{ $t("see-more") }}
+        </button>
+      </div>
+      <div class="col-12 col-md-6 p-5 p-md-1 px-md-5">
+        <img
+          v-if="about.image"
+          :src="about.image"
+          alt="business img "
           style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 25px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
           "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
-        >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-        <svg
-          class="arrow3"
-          fill="#fff"
-          style="
-            height: 4rem;
-            width: 4rem;
-            position: absolute;
-            top: 0;
-            right: 40px;
-          "
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 330 330"
-          xml:space="preserve"
-        >
-          <path
-            id="XMLID_222_"
-            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-	C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-	C255,161.018,253.42,157.202,250.606,154.389z"
-          />
-        </svg>
-      </button>
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref, watch } from "vue";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-
-const currentSlide = ref(0);
-const next = () => {
-  if (currentSlide.value == props.hero.length - 1) {
-    currentSlide.value = 0;
-  } else {
-    currentSlide.value++;
-  }
-};
-
-const prev = () => {
-  if (currentSlide.value == 0) {
-    currentSlide.value = props.hero.length - 1;
-  } else {
-    currentSlide.value--;
-  }
-};
-
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+const modules = ref([Pagination, Navigation, Autoplay]);
+const show = ref(false);
 const props = defineProps({
   hero: {
     type: Object,
@@ -233,83 +209,99 @@ const props = defineProps({
     },
     Required: true,
   },
+  about: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: true,
+  },
+});
+watch(
+  () => props.hero,
+  (newVal) => {
+    newVal ? (show.value = true) : (show.value = false);
+  }
+);
+
+onMounted(() => {
+  console.log(props.about);
 });
 </script>
 
 <style lang="scss" scoped>
-.slide-1 {
-  right: 15%;
-  top: 20%;
-  width: 25%;
-
-  .title {
-    font-size: 4.8rem;
-    font-weight: 700;
-    line-height: 9.211rem;
-    text-align: right;
-    color: #fff;
-  }
-
-  .bdy {
-    font-size: 3.2rem;
-    font-weight: 700;
-    line-height: 4.9rem;
-    text-align: right;
-    color: #fff;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
+// swiper controls
+.swiper-button-next,
+.swiper-button-prev {
+  width: 6rem;
+  margin: 1rem;
+  &::after {
+    font-size: 0;
   }
 }
 
-.carousel__track {
-  transform-style: preserve-3d;
+.swiper-pagination-bullets {
+  bottom: 25%;
+  & * {
+    background-color: var(--col-white) !important;
+    width: 1.5rem;
+    height: 0.5rem;
+    border-radius: 0.2rem;
+  }
 }
 
-.carousel__slide--sliding {
-  transition: 0.5s;
+// slider buttons
+.arrow1 {
+  animation: moveArrow1 0.8s linear infinite;
 }
 
-.carousel__slide--active ~ .carousel__slide {
-  transform: rotateY(20deg) scale(0.9);
+.arrow2 {
+  animation: moveArrow2 0.8s linear infinite;
 }
 
-.carousel__slide--prev {
-  opacity: 1;
-  transform: rotateY(-10deg) scale(0.95);
+.arrow3 {
+  animation: moveArrow3 0.8s linear infinite;
 }
 
-.carousel__slide--next {
-  opacity: 1;
-  transform: rotateY(10deg) scale(0.95);
+@keyframes moveArrow1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.carousel__slide--active {
-  opacity: 1;
-  transform: rotateY(0) scale(1.1);
+@keyframes moveArrow2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.carousel__pagination {
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-}
+@keyframes moveArrow3 {
+  0% {
+    transform: translateX(0);
+  }
 
-// arrow icons test
-.navigation-btns {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5rem;
-  margin: 0 auto;
-  overflow: hidden;
+  50% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 </style>

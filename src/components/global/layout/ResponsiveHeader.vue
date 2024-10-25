@@ -1,9 +1,10 @@
 <template>
   <div
-    class="responsive-nav h-100"
+    class="responsive-nav"
     :style="{
       backgroundColor: route.name === 'home' ? '' : '#0477BE',
       position: route.name === 'home' ? 'absolute' : 'sticky',
+      height: showNavMenu ? '100%' : 'auto',
     }"
   >
     <div class="nav row col-12 px-4" style="transition: all 0.3s ease-in-out">

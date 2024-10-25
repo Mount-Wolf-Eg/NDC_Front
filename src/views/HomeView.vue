@@ -1,8 +1,8 @@
 <template>
   <main>
-    <!--    <HeroSection :hero="headerSliders"></HeroSection>
- <Services :about="aboutUs" :services="allServices"></Services>
-    <Packages :packages="allPackages"></Packages>
+    <HeroSection :about="aboutUs" :hero="headerSliders"></HeroSection>
+    <Services :services="allServices"></Services>
+    <!--  <Packages :packages="allPackages"></Packages>
     <Customer
       :metrics="successMetrics"
       :testimonials="testimonialsSliders"
@@ -18,7 +18,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import HeroSection from "@/components/local/homeComponent/HeroSection.vue";
-// import Services from "@/components/homeComponent/Services.vue";
+import Services from "@/components/local/homeComponent/Services.vue";
 // import Packages from "@/components/homeComponent/Packages.vue";
 // import Customer from "@/components/homeComponent/Customer.vue";
 // import Questions from "@/components/homeComponent/Questions.vue";
@@ -42,9 +42,7 @@ const {
 onMounted(async () => {
   Promise.all([
     await useSlidersStore().getAllSliders(),
-
     await useStaticPagesStore().getAllStatics(),
-
     await useStaticPagesStore().getAllServices(),
     await useSlidersStore().getAllQuestions(),
     await usePackagesStore().getAllPackages(),

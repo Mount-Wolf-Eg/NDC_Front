@@ -6,7 +6,7 @@
   body {
     background-color: lightblue !important;
   }
-  //   responsive header
+  //responsive header
   .responsive-nav {
     .nav-content {
       padding: 20rem 0 !important;
@@ -19,7 +19,33 @@
       }
     }
   }
-  //   footer
+  // hero section
+  .hero-sec {
+    height: 25vh;
+    .swiper-button-next,
+    .swiper-button-prev,
+    .swiper-pagination,
+    .hero-text-box {
+      display: none;
+    }
+    .hero-about-us {
+      width: 90%;
+      bottom: -75% !important;
+      flex-direction: column-reverse;
+      padding: 0rem;
+      .r-more-btn-c {
+        width: 100% !important;
+      }
+    }
+  }
+  // service
+  .home-services-sec {
+    padding-top: 55rem;
+    .service-cards {
+      width: 95%;
+    }
+  }
+  // footer
   .footer-bar {
     .first-footer {
       text-align: center;
@@ -32,7 +58,7 @@
   }
 }
 
-/* Extra small devices (phones, 600px and down) */
+// /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 350px) and (max-width: 767px) {
   html {
     font-size: 28% !important;
@@ -51,6 +77,37 @@
           font-size: 4rem !important;
         }
       }
+    }
+  }
+  // hero section
+  .hero-sec {
+    height: 25vh;
+    .swiper-button-next,
+    .swiper-button-prev,
+    .swiper-pagination,
+    .hero-text-box {
+      display: none;
+    }
+    .hero-about-us {
+      width: 90%;
+      bottom: -90% !important;
+      flex-direction: column-reverse;
+      padding: 0rem;
+      max-width: 70% !important;
+      img {
+        max-width: 100% !important;
+        max-height: 50rem !important;
+      }
+      .r-more-btn-c {
+        width: 100% !important;
+      }
+    }
+  }
+  // service
+  .home-services-sec {
+    padding-top: 55rem;
+    .service-cards {
+      width: 95%;
     }
   }
   //   footer
@@ -75,6 +132,10 @@
   body {
     background-color: rgb(43, 255, 0) !important;
   }
+  // hero section
+  .hero-sec {
+    height: 50vh;
+  }
   //   footer
   .footer-bar {
     .first-footer {
@@ -91,6 +152,10 @@
   html {
     font-size: 40% !important;
   }
+  // hero section
+  .hero-sec {
+    height: 60vh;
+  }
   body {
     background-color: rgb(208, 255, 0) !important;
   }
@@ -102,6 +167,10 @@
   html {
     font-size: 48% !important;
   }
+  // hero section
+  .hero-sec {
+    height: 70vh;
+  }
   body {
     background-color: rgb(0, 4, 255) !important;
   }
@@ -112,6 +181,10 @@
 @media only screen and (min-width: 1400px) {
   html {
     font-size: 62.5% !important;
+  }
+  // hero section
+  .hero-sec {
+    height: 95vh;
   }
   body {
     background-color: rgba(204, 0, 255, 0.137) !important;

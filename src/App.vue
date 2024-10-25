@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from "vue-router";
 import MainLayout from "@/components/global/layout/MainLayout.vue";
-import LoadingPage from "./views/LoadingPage.vue";
+import LoadingPage from "./components/global/helpers/LoadingPage.vue";
 import { onMounted, ref } from "vue";
 
 const start = ref(false);
