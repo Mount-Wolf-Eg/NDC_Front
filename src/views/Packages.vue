@@ -1,69 +1,71 @@
 <template>
-  <div>
-    <img
-      src="/src/assets/packages/package.jpg"
-      style="width: 100%"
-      alt="package image"
-    />
-    <div class="container-cust package-sec">
-      <h3 class="package-head">{{ $t("packages") }}</h3>
-      <p class="package-body">
+  <div class="home-packages-sec">
+    <div class="home-info text-center">
+      <h3 class="home-package-title">{{ $t("packages") }}</h3>
+      <p class="home-package-text">
         {{ $t("package-desc") }}
       </p>
+    </div>
 
-      <div class="package-card">
-        <div
-          class="package-info"
-          v-for="(packag, i) in allPackages"
-          :key="i"
-          :style="`${i % 2 === 0 ? 'flex-direction: row-reverse' : ''}`"
-        >
-          <span class="package-card-body w-100" style="flex: 1">
-            <p class="package-card-title">{{ packag.name }}</p>
-            <div
-              class="card d-flex flex-row justify-content-start align-items-start w-100"
-              style="gap: 4rem"
-            >
-              <span>
-                <p class="card-title">{{ $t("included-services") }} :</p>
-                <ul class="card-list">
-                  <li v-for="(ser, j) in packag.included_services" :key="j">
-                    {{ ser }}
-                  </li>
-                </ul>
-              </span>
-              <span>
-                <p class="card-title">{{ $t("target-group") }} :</p>
-                <ul class="card-list">
-                  <li v-for="(ser, j) in packag.target_group" :key="j">
-                    {{ ser }}
-                  </li>
-                </ul>
-              </span>
-            </div>
-          </span>
-          <div style="position: relative; flex: 1">
-            <img :src="packag.image" style="width: 100%" alt="package img" />
-            <button
-              @click="router.push({ name: 'contact' })"
-              class="r-more-btn-w"
-              style="position: absolute; left: 10px; bottom: 10px"
-            >
-              {{ $t("contact") }}
-            </button>
+    <div class="package-cards container-cust">
+      <div
+        v-for="(packag, i) in allPackages"
+        class="cards col-12 row"
+        :key="i"
+        :style="`${i % 2 === 0 ? 'flex-direction: row-reverse' : ''}`"
+      >
+        <div class="col-12 col-md-6 p-5">
+          <p class="card-title">{{ packag.name }}</p>
+          <div class="flex-r p-5">
+            <span class="card-lists" style="flex: 1">
+              <p>{{ $t("included-services") }}:</p>
+              <ul>
+                <li v-for="(ser, j) in packag.included_services" :key="j">
+                  {{ ser }}
+                </li>
+              </ul>
+            </span>
+
+            <span class="card-lists" style="flex: 1">
+              <p>{{ $t("target-group") }}:</p>
+              <ul>
+                <li v-for="(ser, j) in packag.target_group" :key="j">
+                  {{ ser }}
+                </li>
+              </ul>
+            </span>
           </div>
         </div>
+
+        <div class="col-12 col-md-6 p-0">
+          <img
+            :src="packag.image"
+            alt="package img"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            "
+          />
+          <button
+            @click="router.push({ name: 'contact' })"
+            class="r-more-btn-w"
+          >
+            {{ $t("contact") }}
+          </button>
+        </div>
       </div>
-      <div class="resp-tap">
-        <!-- <PackagesResponsive :packagesRes="allPackages"></PackagesResponsive> -->
-      </div>
+    </div>
+    <div class="package-resp-tap" style="display: none">
+      <PackagesResponsive :packagesRes="allPackages"></PackagesResponsive>
     </div>
   </div>
 </template>
 
 <script setup>
 import { useRouter } from "vue-router";
-// import PackagesResponsive from "@/components/homeComponent/PackagesResponsive.vue";
+import PackagesResponsive from "@/components/local/homeComponent/PackagesResponsive.vue";
 import { onMounted, watch } from "vue";
 import { storeToRefs } from "pinia";
 const router = useRouter();
@@ -74,16 +76,6 @@ const { allPackages } = storeToRefs(usePackagesStore());
 onMounted(async () => {
   await usePackagesStore().getAllPackages();
 });
-
-// const replaceData = (ser) => {
-//   return JSON.parse(ser.replace(/'/g, '"'));
-// };
 </script>
 
-<style lang="scss" scoped>
-ul {
-  li {
-    list-style: none !important;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

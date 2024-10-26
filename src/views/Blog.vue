@@ -57,6 +57,7 @@ watch(
 .blog {
   margin: 5rem 0 3rem;
   .blog-btn {
+    padding: 1rem !important;
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 3.6rem;
@@ -66,7 +67,7 @@ watch(
     width: fit-content;
     padding: 0 0.5rem;
     // height: 5.6rem;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;

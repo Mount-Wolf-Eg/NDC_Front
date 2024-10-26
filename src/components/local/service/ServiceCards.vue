@@ -1,12 +1,48 @@
 <template>
-  <div>
+  <div class="services-page m-0 p-0" style="background-color: var(--col-white)">
     <img
       src="/src/assets/about_image/aboutimg.jpg"
       style="width: 100%; height: auto"
       alt="service image"
       class="mb-5"
     />
-    <div
+    <div class="text-center" style="margin: 2rem 0 10rem 0">
+      <h4 class="service-title">
+        {{ $t("services") }}
+      </h4>
+
+      <div class="service-cards row" style="width: 90%">
+        <div
+          class="col-12 col-sm-6 col-md-3 my-5"
+          v-for="(serv, i) in allServices"
+          :key="i"
+        >
+          <div class="card flex-c justify-content-between">
+            <img
+              style="width: 10.4rem; height: 10.4rem"
+              :src="serv.image"
+              alt="service img"
+            />
+            <p class="card-title">{{ serv.name }}</p>
+            <p class="card-text">
+              {{ serv.description }}
+            </p>
+            <button
+              class="r-more-btn-w"
+              @click="
+                router.push({
+                  name: 'service',
+                  query: { service: serv.id },
+                })
+              "
+            >
+              {{ $t("see-more") }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div
       class="container-cust h-100 text-center"
       style="
         display: flex;
@@ -52,7 +88,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

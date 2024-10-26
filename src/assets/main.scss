@@ -214,7 +214,7 @@ button {
 
   .nav-body {
     background-color: #00000073;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -330,7 +330,8 @@ button {
 }
 
 // service section
-.home-services-sec {
+.home-services-sec,
+.services-page {
   background-color: var(--col-bg);
   padding-top: 25rem;
   padding-bottom: 10rem;
@@ -460,6 +461,7 @@ button {
     }
   }
 }
+
 // package responsive swiper
 .pack-res-swiper {
   .card-title {

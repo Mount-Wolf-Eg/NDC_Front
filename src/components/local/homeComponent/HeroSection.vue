@@ -85,7 +85,11 @@
           </div>
         </div>
       </swiper-slide>
-      <div class="swiper-button-next" style="transform: scaleX(-1)">
+      <div
+        class="swiper-button-next"
+        :class="`${direction == 'ltr' ? 'next' : ''}`"
+        style="transform: scaleX(-1)"
+      >
         <svg
           class="arrow1"
           fill="#fff"
@@ -120,7 +124,10 @@
           />
         </svg>
       </div>
-      <div class="swiper-button-prev">
+      <div
+        class="swiper-button-prev"
+        :class="`${direction == 'ltr' ? 'prev' : ''}`"
+      >
         <svg
           class="arrow1"
           fill="#fff"
@@ -201,6 +208,10 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 const modules = ref([Pagination, Navigation, Autoplay]);
 const show = ref(false);
+const direction = ref("rtl");
+onMounted(() => {
+  direction.value = document.querySelector("html").getAttribute("dir");
+});
 const props = defineProps({
   hero: {
     type: Object,
@@ -231,9 +242,17 @@ watch(
 .swiper-button-prev {
   width: 6rem;
   margin: 1rem;
+
   &::after {
     font-size: 0;
   }
+}
+
+.prev {
+  transform: scaleX(-1) !important;
+}
+.next {
+  transform: scaleX(1) !important;
 }
 
 .swiper-pagination-bullets {

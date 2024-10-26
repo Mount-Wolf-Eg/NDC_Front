@@ -64,7 +64,7 @@
                     style="width: 100%"
                     class="h-100 d-flex flex-column align-items-center justify-content-between gap-5"
                   >
-                    <div class="flex-r p-5" style="flex: 1 !important">
+                    <div class="flex-r p-5 h-100" style="flex: 1 !important">
                       <div class="card-lists" style="flex: 1">
                         <p class="res-box-title">
                           {{ $t("included-services") }}:
@@ -128,7 +128,6 @@ const props = defineProps({
 watch(
   () => props.packagesRes,
   (newVal) => {
-    console.log("thisi responsive pack", props.packagesRes);
     newVal ? (show.value = true) : (show.value = false);
   }
 );

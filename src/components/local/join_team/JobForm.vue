@@ -3,7 +3,14 @@
     <div class="flex-col my-5 mx-auto" style="width: 90%">
       <img
         :src="job.image"
-        style="width: 100%; max-height: 50rem; height: auto"
+        style="
+          width: 100%;
+          height: 100;
+          object-fit: cover;
+          object-position: center;
+          max-height: 50vh;
+          border-radius: var(--brd-r-md) !important;
+        "
         alt="blog iamge"
       />
       <div class="container-cust">
@@ -21,118 +28,108 @@
         class="join-form w-100"
       >
         <div class="contact-form mx-auto w-75">
-          <div class="flex-row gap-4">
-            <div class="flex-col gap-3" style="flex: 1">
-              <span class="w-100">
-                <InptField
-                  v-model="formData.name"
-                  :holder="'Name'"
-                  :appear="checkErrName(['name']) ? 'err-border' : ''"
-                ></InptField>
-                <span
-                  class="center-row justify-content-start"
-                  style="margin-top: -1rem; margin-bottom: 1rem"
-                  v-for="(err, i) in validationObj.$errors"
-                  :key="i"
-                  ><span v-if="err.$property == 'name'" class="err-msg">
-                    {{ err.$message }}
-                  </span></span
-                >
-              </span>
-              <span class="w-100">
-                <InptField
-                  v-model="formData.email"
-                  :holder="'Email'"
-                  :appear="checkErrName(['email']) ? 'err-border' : ''"
-                ></InptField>
-                <span
-                  class="center-row justify-content-start"
-                  style="margin-top: -1rem; margin-bottom: 1rem"
-                  v-for="(err, i) in validationObj.$errors"
-                  :key="i"
-                  ><span v-if="err.$property == 'email'" class="err-msg">
-                    {{ err.$message }}
-                  </span></span
-                >
-              </span>
-              <span class="w-100">
-                <InptField
-                  v-model="formData.graduationYear"
-                  :holder="'Graduation Year'"
-                  :appear="checkErrName(['graduationYear']) ? 'err-border' : ''"
-                ></InptField>
-                <span
-                  class="center-row justify-content-start"
-                  style="margin-top: -1rem; margin-bottom: 1rem"
-                  v-for="(err, i) in validationObj.$errors"
-                  :key="i"
-                  ><span
-                    v-if="err.$property == 'graduationYear'"
-                    class="err-msg"
-                  >
-                    {{ err.$message }}
-                  </span></span
-                >
-              </span>
-            </div>
+          <div class="row">
+            <span class="col-12 col-sm-6">
+              <InptField
+                v-model="formData.name"
+                :holder="'Name'"
+                :appear="checkErrName(['name']) ? 'err-border' : ''"
+              ></InptField>
+              <span
+                class="center-row justify-content-start"
+                style="margin-top: -1rem; margin-bottom: 1rem"
+                v-for="(err, i) in validationObj.$errors"
+                :key="i"
+                ><span v-if="err.$property == 'name'" class="err-msg">
+                  {{ err.$message }}
+                </span></span
+              >
+            </span>
+            <span class="col-12 col-sm-6">
+              <InptField
+                v-model="formData.email"
+                :holder="'Email'"
+                :appear="checkErrName(['email']) ? 'err-border' : ''"
+              ></InptField>
+              <span
+                class="center-row justify-content-start"
+                style="margin-top: -1rem; margin-bottom: 1rem"
+                v-for="(err, i) in validationObj.$errors"
+                :key="i"
+                ><span v-if="err.$property == 'email'" class="err-msg">
+                  {{ err.$message }}
+                </span></span
+              >
+            </span>
+            <span class="col-12 col-sm-6">
+              <InptField
+                v-model="formData.graduationYear"
+                :holder="'Graduation Year'"
+                :appear="checkErrName(['graduationYear']) ? 'err-border' : ''"
+              ></InptField>
+              <span
+                class="center-row justify-content-start"
+                style="margin-top: -1rem; margin-bottom: 1rem"
+                v-for="(err, i) in validationObj.$errors"
+                :key="i"
+                ><span v-if="err.$property == 'graduationYear'" class="err-msg">
+                  {{ err.$message }}
+                </span></span
+              >
+            </span>
 
-            <div class="flex-col gap-3" style="flex: 1">
-              <span class="w-100">
-                <InptField
-                  v-model="formData.qualification"
-                  :holder="'Qualification'"
-                  :appear="checkErrName(['qualification']) ? 'err-border' : ''"
-                ></InptField>
-                <span
-                  class="center-row justify-content-start"
-                  style="margin-top: -1rem; margin-bottom: 1rem"
-                  v-for="(err, i) in validationObj.$errors"
-                  :key="i"
-                  ><span
-                    v-if="err.$property == 'qualification'"
-                    class="err-msg"
-                  >
-                    {{ err.$message }}
-                  </span></span
-                >
-              </span>
-              <span class="w-100">
-                <InptField
-                  v-model="formData.phone"
-                  :holder="'phone'"
-                  :appear="checkErrName(['phone']) ? 'err-border' : ''"
-                ></InptField>
-                <span
-                  class="center-row justify-content-start"
-                  style="margin-top: -1rem; margin-bottom: 1rem"
-                  v-for="(err, i) in validationObj.$errors"
-                  :key="i"
-                  ><span v-if="err.$property == 'phone'" class="err-msg">
-                    {{ err.$message }}
-                  </span></span
-                >
-              </span>
-              <!-- role -->
-              <span class="w-100 mt-3">
-                <UploadeFile @fileData="formData.cvFile = $event"></UploadeFile>
-                <img
-                  v-if="formData.cvFile"
-                  class="mt-3"
-                  :src="formData.cvFile"
-                  alt=""
-                  style="max-width: 10rem; border-radius: 7px"
-                />
-                <span
-                  class="center-row justify-content-start"
-                  style="margin-top: -1rem; margin-bottom: 1rem"
-                  v-for="(err, i) in validationObj.$errors"
-                  :key="i"
-                  ><span v-if="err.$property == 'cvFile'" class="err-msg">
-                    {{ err.$message }}
-                  </span></span
-                >
-              </span>
-            </div>
+            <span class="col-12 col-sm-6">
+              <InptField
+                v-model="formData.qualification"
+                :holder="'Qualification'"
+                :appear="checkErrName(['qualification']) ? 'err-border' : ''"
+              ></InptField>
+              <span
+                class="center-row justify-content-start"
+                style="margin-top: -1rem; margin-bottom: 1rem"
+                v-for="(err, i) in validationObj.$errors"
+                :key="i"
+                ><span v-if="err.$property == 'qualification'" class="err-msg">
+                  {{ err.$message }}
+                </span></span
+              >
+            </span>
+            <span class="col-12 col-sm-6">
+              <InptField
+                v-model="formData.phone"
+                :holder="'phone'"
+                :appear="checkErrName(['phone']) ? 'err-border' : ''"
+              ></InptField>
+              <span
+                class="center-row justify-content-start"
+                style="margin-top: -1rem; margin-bottom: 1rem"
+                v-for="(err, i) in validationObj.$errors"
+                :key="i"
+                ><span v-if="err.$property == 'phone'" class="err-msg">
+                  {{ err.$message }}
+                </span></span
+              >
+            </span>
+            <!-- role -->
+            <span class="col-12 col-sm-6 mt-3">
+              <UploadeFile @fileData="formData.cvFile = $event"></UploadeFile>
+              <img
+                v-if="formData.cvFile"
+                class="mt-3"
+                :src="formData.cvFile"
+                alt=""
+                style="max-width: 10rem; border-radius: 0.7rem"
+              />
+              <span
+                class="center-row justify-content-start"
+                style="margin-top: -1rem; margin-bottom: 1rem"
+                v-for="(err, i) in validationObj.$errors"
+                :key="i"
+                ><span v-if="err.$property == 'cvFile'" class="err-msg">
+                  {{ err.$message }}
+                </span></span
+              >
+            </span>
           </div>
 
           <button v-if="!isLoading" type="submit" class="send-btn my-5 w-100">
@@ -254,7 +251,7 @@ const sendApplication = async () => {
     width: 27.2rem;
     height: 3.9rem;
     background-color: #def1ff;
-    border-radius: 9px;
+    border-radius: 0.9rem;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 3rem;
@@ -280,7 +277,7 @@ const sendApplication = async () => {
   .foot {
     width: 27.6rem;
     height: 2.7rem;
-    border-radius: 9px;
+    border-radius: 0.9rem;
     background-color: #def1ff;
     font-size: 1.4rem;
     font-weight: 400;
@@ -296,7 +293,7 @@ const sendApplication = async () => {
       border: 1px solid #0477be;
       height: 5rem;
       width: 100%;
-      border-radius: 9px;
+      border-radius: 0.9rem;
       font-size: 1.8rem;
       font-weight: 400;
       line-height: 3.454rem;
@@ -318,7 +315,7 @@ const sendApplication = async () => {
       text-align: right;
       color: #fff;
       text-align: center;
-      border-radius: 12px;
+      border-radius: 1.2rem;
     }
   }
 }

@@ -8,7 +8,7 @@
       />
 
       <div
-        class="service-btns w-100 py-5 px-4 flex-row justify-content-start flex-wrap gap-5"
+        class="service-btns w-100 py-5 px-4 flex-row justify-content-start flex-nowrap gap-5"
       >
         <button
           v-for="(service, i) in allServices"
@@ -66,6 +66,7 @@ watch(
 .service {
   margin: 5rem 0 3rem;
   .service-btns {
+    overflow: auto;
     background-color: #def1ff;
     border-radius: 15px;
     margin: 2rem 0;
@@ -76,6 +77,7 @@ watch(
       font-weight: 400;
       line-height: 3.454rem;
       text-align: center;
+      margin: 0 2rem;
     }
     .active {
       border: none;
