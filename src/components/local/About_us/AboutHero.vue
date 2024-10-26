@@ -1,164 +1,144 @@
 <template>
-  <div class="about-hero">
+  <div class="about-us" style="overflow: hidden">
     <img
+      style="
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      "
       src="/src/assets/about_image/aboutimg.jpg"
       alt="about us"
-      style="width: 100%; height: auto"
     />
+    <div class="about-us-page">
+      <div class="about-us-content row">
+        <div class="about-us-text col-12 col-sm-6 col-md-7">
+          <p class="about-head">
+            {{ $t("about-us") }}
+          </p>
+          <p class="about-title">
+            {{ aboutUs.title }}
+          </p>
+          <p class="about-body">
+            {{ aboutUs.content }}
+          </p>
+        </div>
 
-    <div
-      class="about-hint container-cust d-flex flex-column-reverse flex-column flex-sm-row justify-content-between align-items-start"
-    >
-      <div class="text-sec w-50">
-        <p
-          style="
-            font-size: 2.4rem;
-            font-weight: 700;
-            line-height: 3.6rem;
-            text-align: right;
-            background-color: #def1ff;
-            width: 27.2rem;
-            height: 5.6rem;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0 1rem;
-          "
-        >
-          {{ $t("about-us") }}
-        </p>
-        <p class="bdy">
-          {{ aboutUs.title }}
-        </p>
-        <p
-          style="
-            font-size: 1.8rem;
-            font-weight: 400;
-            line-height: 3.454rem;
-            text-align: right;
-            cursor: pointer;
-          "
-        >
-          {{ aboutUs.content }}
-        </p>
-      </div>
-      <div class="img-sec w-50">
-        <img
-          src="/src/assets/about_image/bgimg.png"
-          style="width: 100%; height: auto"
-          alt="bg image"
-        />
-        <img
-          :src="aboutUs.image"
-          alt="about img"
-          style="
-            position: absolute;
-            top: 0%;
-            left: 50%;
-            width: 100%;
-            height: auto;
-            transform: translatex(-50%);
-          "
-        />
-      </div>
-    </div>
-
-    <div class="vission flex-col gap-5 container-cust">
-      <div class="flex-row vission-card p-5 w-100">
-        <div
-          class="vission-img d-flex justify-content-center gap-5 align-items-center"
-          style="width: 100%"
-        >
+        <div class="about-us-img col-12 col-sm-6 col-md-5">
           <img
-            :src="ourVission.image"
-            alt="ourvission image"
-            style="width: 100%; height: auto; border-radius: 16px"
+            :src="aboutUs.image"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              padding: 3rem;
+            "
+            alt="about img"
           />
         </div>
+      </div>
+
+      <div class="our-vission-content row">
         <div
-          class="vission-text flex-col align-items-start"
-          style="width: 100%"
+          class="our-vission-img col-12 col-sm-6"
+          style="padding-inline-end: 3rem"
         >
-          <p class="v-text mx-5">{{ $t("vission") }}</p>
-          <p
-            class="v-text-body mx-5"
-            style="height: 50rem; overflow: auto; cursor: pointer"
-          >
+          <img
+            style="
+              width: 100%;
+              height: 100%;
+              max-height: 30rem;
+              object-fit: cover;
+              object-position: center;
+              border-radius: var(--brd-r-sm) !important;
+            "
+            :src="ourVission.image"
+            alt="ourvission image"
+          />
+        </div>
+        <div class="our-vission-text col-12 col-sm-6">
+          <p class="vission-head">{{ $t("vission") }}</p>
+          <p class="vission-body">
             {{ ourVission.content }}
           </p>
         </div>
       </div>
 
-      <div
-        class="flex-row flex-wrap flex-md-nowrap gap-5 w-100 d-flex flex-column flex-sm-row"
-      >
-        <div class="flex-col vission-card p-5 w-100">
-          <div
-            class="vission-text flex-col align-items-start w-100"
-            style="flex: 1"
-          >
-            <p class="v-text">{{ $t("mission") }}</p>
-            <p
-              class="v-text-body"
-              style="height: 50rem; overflow: auto; cursor: pointer"
-            >
+      <div class="mission-goals-content row p-3 gap-4">
+        <div
+          class="mission-goals col-12 col-sm d-flex flex-column justify-content-between"
+        >
+          <div class="mission-text">
+            <p class="mission-head">{{ $t("mission") }}</p>
+            <p class="mission-body">
               {{ ourMission.content }}
             </p>
           </div>
-          <div
-            class="vission-img d-flex justify-content-center align-items-center"
-            style="flex: 1"
-          >
+          <div class="mission-img">
             <img
+              style="
+                width: 100%;
+                height: 100%;
+                max-height: 30rem;
+                object-fit: cover;
+                object-position: center;
+                border-radius: var(--brd-r-sm) !important;
+              "
               :src="ourMission.image"
               alt="about image"
-              style="width: 100%"
             />
           </div>
         </div>
 
-        <div class="flex-col vission-card p-5 w-100">
-          <div
-            class="vission-text flex-col align-items-start w-100"
-            style="flex: 1"
-          >
-            <p class="v-text">{{ $t("goals") }}</p>
-            <p
-              class="v-text-body"
-              style="height: 50rem; overflow: auto; cursor: pointer"
-            >
+        <div
+          class="mission-goals col-12 col-sm d-flex flex-column justify-content-between"
+        >
+          <div class="mission-text">
+            <p class="mission-head">{{ $t("goals") }}</p>
+            <p class="mission-body">
               {{ ourGoals.content }}
             </p>
           </div>
-          <div
-            class="vission-img d-flex justify-content-center align-items-center"
-            style="flex: 1"
-          >
-            <img :src="ourGoals.image" alt="about image" style="width: 100%" />
+          <div class="mission-img">
+            <img
+              style="
+                width: 100%;
+                height: 100%;
+                max-height: 30rem;
+                object-fit: cover;
+                object-position: center;
+                border-radius: var(--brd-r-sm) !important;
+              "
+              :src="ourGoals.image"
+              alt="about image"
+            />
           </div>
         </div>
       </div>
     </div>
 
     <!-- our values -->
-    <div class="values">
-      <p class="v-text">{{ $t("values") }}</p>
-      <div class="value-sec container-cust w-100">
-        <!-- v -card  -->
+    <div class="our-values">
+      <p class="values-head">{{ $t("values") }}</p>
+
+      <div class="our-values-content flex-r flex-wrap">
         <div
-          style="border: 1px solid #0477be; border-radius: 16px"
+          class="values-card h-100"
           v-for="(val, i) in ourValues.slice(-6)"
           :key="i"
         >
-          <div class="value-card">
+          <div
+            class="values-content flex-c justify-content-betweeen align-items-center text-center"
+          >
             <img
               :src="val.image"
+              style="width: 5rem; height: 5rem"
               :alt="val.description"
-              style="width: 5.1rem; height: 5rem"
             />
 
-            <p class="value-title" style="cursor: pointer">{{ val.title }}</p>
-            <p class="value-body" style="cursor: pointer">
+            <p class="card-title">{{ val.title }}</p>
+            <p class="card-body">
               {{ val.description }}
             </p>
           </div>
@@ -185,112 +165,4 @@ onMounted(async () => {
 });
 </script>
 
-<style lang="scss" scoped>
-.about-hero {
-  .about-hint {
-    padding: 10rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    gap: 10rem;
-    .text-sec {
-      flex: 1;
-      .bdy {
-        font-size: 3.2rem;
-        font-weight: 700;
-        line-height: 4.9rem;
-        text-align: right;
-      }
-    }
-    .img-sec {
-      position: relative;
-    }
-  }
-
-  .vission {
-    .vission-card {
-      border-radius: 24px;
-      background-color: #def1ff;
-      .v-text {
-        width: 27.2rem;
-        height: 5.6rem;
-        padding: 10px 16px 10px 30px;
-        border-radius: 8px;
-        background-color: #fff;
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: #444444;
-        display: flex;
-        justify-content: center !important;
-        align-items: center;
-      }
-
-      .v-text-body {
-        font-size: 3.2rem;
-        font-weight: 700;
-        line-height: 5rem;
-        text-align: right;
-        margin: 2rem 0;
-      }
-    }
-  }
-
-  .values {
-    margin-top: 7rem;
-    background-color: #def1ff;
-    padding: 5rem;
-    .v-text {
-      cursor: pointer;
-      margin: 0 auto;
-      width: 27.2rem;
-      height: 5.6rem;
-      padding: 10px 16px 10px 30px;
-      border-radius: 8px;
-      background-color: #fff;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: #444444;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .value-sec {
-      gap: 3rem;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      margin: 5rem auto;
-
-      .value-card {
-        background-color: #fff;
-        border-radius: 16px;
-        margin: 1rem;
-        padding: 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        width: 42.8rem;
-        height: 23.8rem;
-
-        .value-title {
-          font-size: 2.4rem;
-          font-weight: 700;
-          line-height: 3.6rem;
-          text-align: center;
-        }
-        .value-body {
-          font-size: 1.6rem;
-          font-weight: 700;
-          line-height: 3rem;
-          text-align: center;
-        }
-      }
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

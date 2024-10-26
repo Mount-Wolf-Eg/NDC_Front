@@ -32,7 +32,7 @@
 <script setup>
 import { onMounted, ref, watch } from "vue";
 import { useBlogStore } from "@/stores/blogStore";
-import BlogTab from "@/components/blog/BlogTab.vue";
+import BlogTab from "@/components/local/blog/BlogTab.vue";
 import { storeToRefs } from "pinia";
 import { useRoute, useRouter } from "vue-router";
 const route = useRoute();

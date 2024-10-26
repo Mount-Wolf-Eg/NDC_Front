@@ -50,7 +50,7 @@
     </div>
 
     <!-- menu -->
-    <div class="nav-body" v-if="showNavMenu">
+    <div class="nav-body bg-info" v-if="showNavMenu">
       <div class="h-100" style="position: relative">
         <svg
           style="

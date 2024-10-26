@@ -40,7 +40,7 @@
 import { onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
-import singleServicePage from "@/components/service/singleServicePage.vue";
+import singleServicePage from "@/components/local/service/singleServicePage.vue";
 const currentSlide = ref(1);
 const route = useRoute();
 const router = useRouter();

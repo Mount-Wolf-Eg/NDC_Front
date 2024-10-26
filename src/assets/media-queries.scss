@@ -3,83 +3,102 @@
   html {
     font-size: 23% !important;
   }
+
   body {
     // background-color: lightblue !important;
   }
+
   //responsive header
   .responsive-nav {
     .nav-content {
       padding: 20rem 0 !important;
+
       .nav-list {
         justify-content: flex-start !important;
         gap: 5rem !important;
+
         .nav-list-item {
           font-size: 3rem !important;
         }
       }
     }
   }
+
   // hero section
   .hero-sec {
     height: 25vh;
+
     .swiper-button-next,
     .swiper-button-prev,
     .swiper-pagination,
     .hero-text-box {
       display: none;
     }
+
     .hero-about-us {
       width: 90%;
       bottom: -75% !important;
       flex-direction: column-reverse;
       padding: 0rem;
+
       .r-more-btn-c {
         width: 100% !important;
       }
     }
   }
+
   // service
   .home-services-sec {
     padding-top: 55rem;
+
     .service-cards {
       width: 95%;
     }
   }
+
   // packages
   .home-packages-sec {
     .home-info {
       width: 100%;
     }
+
     .package-cards {
       display: none !important;
     }
+
     .package-resp-tap {
       display: block !important;
     }
   }
+
   // testimonial
   .home-testimonial-sec {
     .metrics-sec {
       height: 70rem;
     }
   }
+
   // questions
   .home-question-sec {
     .achiement-sec {
       height: 85rem;
+
       .achieve-box {
         .achiv-lyout {
           width: 98%;
+
           .last:last-child {
             margin: 0 auto;
           }
         }
       }
     }
+
     .question-bg {
       height: 30rem;
     }
   }
+
   // partner
   .home-partner-sec {
     .partner-box {
@@ -87,24 +106,35 @@
         width: 100%;
       }
     }
+
     .supplies-box {
       width: 90% !important;
+
       .supplies-text {
         width: 90%;
       }
     }
+
     .supplies-sec {
       display: none !important;
     }
   }
+
   .main-resource {
     display: block !important;
   }
-
+  /*                                   views components                 */
+  // about us
+  .about-us {
+    .about-us-page {
+      width: 100%;
+    }
+  }
   // footer
   .footer-bar {
     .first-footer {
       text-align: center;
+
       .footer-list-head {
         width: 30%;
         margin: 3rem auto 1rem;
@@ -119,79 +149,97 @@
   html {
     font-size: 28% !important;
   }
+
   body {
     // background-color: red !important;
   }
+
   //   responsive header
   .responsive-nav {
     .nav-content {
       padding: 15rem 0 !important;
+
       .nav-list {
         justify-content: flex-start !important;
         gap: 7rem !important;
+
         .nav-list-item {
           font-size: 4rem !important;
         }
       }
     }
   }
+
   // hero section
   .hero-sec {
     height: 25vh;
+
     .swiper-button-next,
     .swiper-button-prev,
     .swiper-pagination,
     .hero-text-box {
       display: none;
     }
+
     .hero-about-us {
       width: 100%;
       bottom: -125% !important;
       flex-direction: column-reverse;
       padding: 0rem;
       max-width: 80% !important;
+
       img {
         max-width: 100% !important;
         max-height: 45rem !important;
         object-fit: cover !important;
         object-position: center !important;
       }
+
       .r-more-btn-c {
         width: 100% !important;
       }
     }
   }
+
   // service
   .home-services-sec {
     padding-top: 65rem;
+
     .service-cards {
       width: 95%;
     }
   }
+
   // packages
   .home-packages-sec {
     .home-info {
       width: 100%;
     }
+
     .package-cards {
       display: none !important;
     }
+
     .package-resp-tap {
       display: block !important;
     }
   }
+
   // testimonial
   .home-testimonial-sec {
     .metrics-sec {
       height: 50rem;
     }
   }
+
   .home-question-sec {
     .achiement-sec {
       height: 130rem;
+
       .achieve-box {
         .achiv-lyout {
           width: 98%;
+
           .last:last-child {
             margin: 0 auto;
           }
@@ -199,6 +247,7 @@
       }
     }
   }
+
   // partner
   .home-partner-sec {
     .partner-box {
@@ -206,18 +255,27 @@
         width: 100%;
       }
     }
+
     .supplies-sec {
       display: none !important;
     }
   }
+
   .main-resource {
     display: block !important;
   }
-
+  /*                                   views components                 */
+  // about us
+  .about-us {
+    .about-us-page {
+      width: 95%;
+    }
+  }
   //   footer
   .footer-bar {
     .first-footer {
       text-align: center;
+
       .footer-list-head {
         width: 35%;
         margin: 3rem auto 1rem;
@@ -233,13 +291,16 @@
   html {
     font-size: 28% !important;
   }
+
   body {
     // background-color: rgb(43, 255, 0) !important;
   }
+
   // hero section
   .hero-sec {
     height: 50vh;
   }
+
   //   footer
   .footer-bar {
     .first-footer {
@@ -256,10 +317,12 @@
   html {
     font-size: 40% !important;
   }
+
   // hero section
   .hero-sec {
     height: 60vh;
   }
+
   body {
     // background-color: rgb(208, 255, 0) !important;
   }
@@ -271,10 +334,12 @@
   html {
     font-size: 48% !important;
   }
+
   // hero section
   .hero-sec {
     height: 70vh;
   }
+
   body {
     // background-color: rgb(0, 4, 255) !important;
   }
@@ -286,10 +351,12 @@
   html {
     font-size: 62.5% !important;
   }
+
   // hero section
   .hero-sec {
     height: 95vh;
   }
+
   body {
     // background-color: rgba(204, 0, 255, 0.137) !important;
   }
