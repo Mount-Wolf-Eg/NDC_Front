@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="resp-tap">
+    <div class="package-resp-tap" style="display: none">
       <PackagesResponsive :packagesRes="props.packages"></PackagesResponsive>
     </div>
   </div>

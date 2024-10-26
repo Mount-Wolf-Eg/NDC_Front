@@ -45,6 +45,18 @@
       width: 95%;
     }
   }
+  // packages
+  .home-packages-sec {
+    .home-info {
+      width: 100%;
+    }
+    .package-cards {
+      display: none !important;
+    }
+    .package-resp-tap {
+      display: block !important;
+    }
+  }
   // testimonial
   .home-testimonial-sec {
     .metrics-sec {
@@ -72,7 +84,7 @@
   .home-partner-sec {
     .partner-box {
       .partner-text {
-        width: 75%;
+        width: 100%;
       }
     }
     .supplies-box {
@@ -133,14 +145,16 @@
       display: none;
     }
     .hero-about-us {
-      width: 90%;
-      bottom: -90% !important;
+      width: 100%;
+      bottom: -125% !important;
       flex-direction: column-reverse;
       padding: 0rem;
-      max-width: 70% !important;
+      max-width: 80% !important;
       img {
         max-width: 100% !important;
-        max-height: 50rem !important;
+        max-height: 45rem !important;
+        object-fit: cover !important;
+        object-position: center !important;
       }
       .r-more-btn-c {
         width: 100% !important;
@@ -149,9 +163,21 @@
   }
   // service
   .home-services-sec {
-    padding-top: 55rem;
+    padding-top: 65rem;
     .service-cards {
       width: 95%;
+    }
+  }
+  // packages
+  .home-packages-sec {
+    .home-info {
+      width: 100%;
+    }
+    .package-cards {
+      display: none !important;
+    }
+    .package-resp-tap {
+      display: block !important;
     }
   }
   // testimonial
@@ -177,7 +203,7 @@
   .home-partner-sec {
     .partner-box {
       .partner-text {
-        width: 75%;
+        width: 100%;
       }
     }
     .supplies-sec {

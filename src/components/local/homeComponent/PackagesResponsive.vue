@@ -1,5 +1,5 @@
 <template>
-  <div class="pack-res-swiper d-none" style="border-radius: 16px">
+  <div class="pack-res-swiper" style="border-radius: 16px">
     <div class="testimonial-swiper container-cust">
       <swiper
         :autoplay="{
@@ -13,13 +13,13 @@
           dynamicBullets: true,
           clickable: true,
         }"
-        :slides-per-view="1"
+        :slides-per-view="1.05"
         :Autoplay="{
           delay: 1000,
           disableOnInteraction: true,
           waitForTransition: true,
         }"
-        :space-between="10"
+        :space-between="20"
         :navigation="{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -45,37 +45,43 @@
             <div v-else>
               <div class="card-border">
                 <div class="package-info-respon h-100">
-                  <img
-                    :src="slide.image"
-                    alt="slide img"
-                    style="height: auto; width: 100%; margin-bottom: 2rem"
-                  />
+                  <div
+                    style="border-radius: 1.2rem !important; overflow: hidden"
+                  >
+                    <img
+                      :src="slide.image"
+                      alt="slide img"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                      "
+                    />
+                  </div>
 
                   <div
                     style="width: 100%"
                     class="h-100 d-flex flex-column align-items-center justify-content-between gap-5"
                   >
-                    <p class="res-head">{{ slide.name }}</p>
-
-                    <div class="w-100" style="flex: 1 !important">
-                      <div class="res-box">
+                    <div class="flex-r p-5" style="flex: 1 !important">
+                      <div class="card-lists" style="flex: 1">
                         <p class="res-box-title">
                           {{ $t("included-services") }}:
                         </p>
-                        <ul class="res-box-list">
+                        <ul>
                           <li
                             v-for="(ser, j) in slide.included_services"
                             :key="j"
-                            style="list-style: none"
                           >
                             {{ ser }}
                           </li>
                         </ul>
                       </div>
 
-                      <div class="res-box">
+                      <div class="card-lists" style="flex: 1">
                         <p class="res-box-title">{{ $t("target-group") }}:</p>
-                        <ul class="res-box-list" style="list-style: none">
+                        <ul>
                           <li v-for="(ser, j) in slide.target_group" :key="j">
                             {{ ser }}
                           </li>
@@ -85,7 +91,7 @@
 
                     <button
                       @click="router.push({ name: 'contact' })"
-                      class="r-more-btn-w w-75"
+                      class="r-more-btn-c w-100"
                     >
                       {{ $t("contact") }}
                     </button>
@@ -95,8 +101,6 @@
             </div>
           </div>
         </swiper-slide>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
       </swiper>
     </div>
   </div>
@@ -124,9 +128,17 @@ const props = defineProps({
 watch(
   () => props.packagesRes,
   (newVal) => {
+    console.log("thisi responsive pack", props.packagesRes);
     newVal ? (show.value = true) : (show.value = false);
   }
 );
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.swiper-button-next,
+.swiper-button-prev {
+  &::after {
+    font-size: 4rem;
+  }
+}
+</style>

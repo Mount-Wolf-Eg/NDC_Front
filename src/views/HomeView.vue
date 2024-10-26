@@ -23,6 +23,7 @@ import Packages from "@/components/local/homeComponent/Packages.vue";
 import Customer from "@/components/local/homeComponent/Customer.vue";
 import Questions from "@/components/local/homeComponent/Questions.vue";
 import Partners from "@/components/local/homeComponent/Partners.vue";
+import PackagesResponsive from "@/components/local/homeComponent/PackagesResponsive.vue";
 
 import { useSlidersStore } from "@/stores/Sliders";
 import { useStaticPagesStore } from "@/stores/staticPages";

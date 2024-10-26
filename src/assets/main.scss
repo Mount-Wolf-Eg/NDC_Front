@@ -388,6 +388,29 @@ button {
     }
   }
 }
+.pack-res-swiper {
+  .card-title {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-24);
+    line-height: var(--line-h-37);
+    color: var(--col-blk);
+  }
+  .card-lists {
+    p {
+      font-weight: var(--fw-bold);
+      font-size: var(--fs-18);
+      line-height: var(--line-h-37);
+      color: var(--col-blk);
+    }
+    li {
+      list-style: none;
+      font-weight: var(--fw-bold);
+      font-size: var(--fs-16);
+      line-height: var(--line-h-28);
+      color: var(--col-blk);
+    }
+  }
+}
 // testimonial section
 .home-testimonial-sec {
   border-top: 1rem solid var(--col-succes);
@@ -866,9 +889,6 @@ button {
 //   }
 // }
 
-.resp-tap {
-  display: none;
-}
 // responsive nav
 
 // customre
