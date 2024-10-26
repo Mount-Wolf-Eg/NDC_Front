@@ -120,7 +120,7 @@
 
     <!-- our values -->
     <div class="our-values">
-      <p class="values-head">{{ $t("values") }}</p>
+      <p class="values-head mx-auto">{{ $t("values") }}</p>
 
       <div class="our-values-content flex-r flex-wrap">
         <div

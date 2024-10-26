@@ -352,11 +352,11 @@ button {
       overflow: hidden;
       background-color: transparent;
       border: none;
-      padding: 1rem 3rem;
+      padding: 1rem 1rem;
       flex: 1;
       border-radius: var(--brd-r-lg);
       transition: all 0.8 ease-in-out;
-      height: 35rem;
+      height: 40rem;
 
       .card-title {
         transition: all 0.3 ease-in-out;
@@ -364,7 +364,7 @@ button {
         font-weight: var(--fw-bold);
         color: var(--col-dark);
         line-height: var(--line-h-37);
-        padding: 1rem 3rem;
+        padding: 0.5rem 3rem;
       }
 
       .card-text {

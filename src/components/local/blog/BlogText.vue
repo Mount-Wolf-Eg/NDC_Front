@@ -1,38 +1,52 @@
 <template>
   <div class="blog mx-auto">
-    <div class="flex-col mx-auto" style="width: 90%">
+    <div class="flex-c mx-auto" style="width: 90%">
       <div style="position: relative">
         <img
           src="/src/assets/blog/blogheader.jpg"
           alt="blog iamge"
           style="width: 100%; margin: 5rem 0"
         />
-        <div
-          class="blog-info flex-col align-items-center justify-content-between pt-5 pb-3"
-        >
+        <div class="blog-info flex-c justify-content-between pt-5 pb-3 w-75">
           <p class="blog-info-title text-center">{{ post.category?.name }}</p>
-          <p class="blog-info-body w-75">
+          <p class="blog-info-body mx-auto w-75">
             {{ post?.title }}
           </p>
-          <p class="blog-info-foot text-center">
+          <p class="blog-info-foot mx-auto text-center">
             {{ moment(new Date(post?.created_at)).format("DD-MM-YYYY") }}
           </p>
         </div>
       </div>
       <div
-        class="blog-text w-100 row px-3 d-flex flex-column-reverse flex-md-row align-items-center align-items-md-start"
+        class="blog-text w-100 row flex-column-reverse flex-sm-row"
         style="margin: 15rem auto 5rem"
       >
-        <div class="col blog-body px-3">{{ post.content }}</div>
-        <div class="col-3">
-          <img :src="post?.image" alt="blog image" style="width: 100%" />
+        <div class="col-12 col-sm-9 blog-body px-3">{{ post.content }}</div>
+        <div class="col-6 my-5 mx-auto col-sm-3">
+          <img
+            :src="post?.image"
+            alt="blog image"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              object-position: top;
+            "
+          />
         </div>
       </div>
-      <img
-        :src="post.category?.image"
-        alt="blog iamge"
-        style="width: auto; height: 100%; margin: 5rem 0"
-      />
+      <div class="row">
+        <img
+          :src="post.category?.image"
+          alt="blog iamge"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          "
+        />
+      </div>
       <!-- <img
         src="/src/assets/blog/blogheader.jpg"
         alt="blog iamge"
@@ -40,121 +54,104 @@
       /> -->
       <div class="blog-latest w-100">
         <p class="blog-latest-info">{{ $t("Recent-published") }}</p>
-        <div class="blog-slider">
-          <div class="d-flex flex-row align-items-center">
-            <button
-              class="nav-btn"
-              @click="next"
-              style="
-                border-radius: 50%;
-                background-color: #0477be;
-                width: 3.4rem;
-                height: 3.4rem;
-              "
-            >
-              <svg
-                style="width: 0.8rem; height: 1.2rem"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 -5.24537e-07L8 6L2 12L0.6 10.6L5.2 6L0.600001 1.4L2 -5.24537e-07Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
 
-            <div style="width: 90%; margin: 5rem">
-              <carousel
-                :wrap-around="true"
-                :autoplay="1000"
-                :transition="500"
-                v-model="currentCard"
-                :breakpoints="breakpoints"
+        <swiper
+          :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+          }"
+          class="w-100 h-100"
+          :modules="modules"
+          :pagination="{
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+            clickable: true,
+          }"
+          :slides-per-view="1"
+          :Autoplay="{
+            delay: 1000,
+            disableOnInteraction: true,
+            waitForTransition: true,
+          }"
+          :space-between="10"
+          :navigation="{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }"
+          :preload-images="false"
+          :breakpoints="breakpoints"
+          :Lazy="true"
+        >
+          <swiper-slide
+            v-for="(blog, i) in [
+              ...postsByBlog,
+              ...postsByBlog,
+              ...postsByBlog,
+              ...postsByBlog,
+              ...postsByBlog,
+              ...postsByBlog,
+              ...postsByBlog,
+              ...postsByBlog,
+            ]"
+            :key="i"
+          >
+            <div class="question-card">
+              <div
+                class="d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
               >
-                <slide v-for="(slide, i) in 20" :key="i">
+                <div
+                  class="join-card p-0"
+                  v-if="blog.category_posts"
+                  v-for="(post, j) in blog.category_posts"
+                  :key="j"
+                  @click="chagnePost(blog.id)"
+                >
                   <div
-                    v-for="(blog, i) in postsByBlog"
-                    :key="i"
-                    class="d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
+                    style="
+                      overflow: hidden;
+                      flex: 1;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: 100%;
+                    "
                   >
-                    <div
-                      class="join-card p-0"
-                      v-if="blog.category_posts"
-                      v-for="(post, j) in blog.category_posts"
-                      :key="j"
-                      @click="chagnePost(blog.id)"
-                    >
-                      <div
-                        style="
-                          overflow: hidden;
-                          flex: 1;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          width: 100%;
-                        "
-                      >
-                        <img
-                          alt="blog image"
-                          style="height: 100%"
-                          :src="post.image"
-                        />
-                      </div>
-                      <span
-                        class="w-75 mx-auto px-1 d-flex flex-column justify-content-between algin-items-start"
-                        style="flex: 1"
-                      >
-                        <p class="join-card-title" style="overflow: hidden">
-                          {{ post.title }}
-                        </p>
-                        <p class="join-card-text" style="overflow: hidden">
-                          {{ post.description }}
-                        </p>
-                        <p class="join-card-date">
-                          {{
-                            moment(new Date(post.created_at)).format(
-                              "DD-MM-YYYY"
-                            )
-                          }}
-                        </p>
-                      </span>
-                    </div>
+                    <img
+                      alt="blog image"
+                      style="
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        max-width: 75%;
+                      "
+                      :src="post.image"
+                    />
                   </div>
-                </slide>
-
-                <!-- <template #addons>
-                  <pagination class="custom-pagination" />
-                </template> -->
-              </carousel>
+                  <span
+                    class="w-75 mx-auto px-1 d-flex flex-column justify-content-between algin-items-start"
+                    style="flex: 1"
+                  >
+                    <p class="join-card-title" style="overflow: hidden">
+                      {{ post.title }}
+                    </p>
+                    <p class="join-card-text" style="overflow: hidden">
+                      {{ post.description }}
+                    </p>
+                    <p class="join-card-date">
+                      {{
+                        moment(new Date(post.created_at)).format("DD-MM-YYYY")
+                      }}
+                    </p>
+                  </span>
+                </div>
+              </div>
             </div>
-
-            <button
-              class="nav-btn"
-              @click="prev"
-              style="
-                border-radius: 50%;
-                width: 3.4rem;
-                height: 3.4rem;
-                transform: scaleX(-1);
-                background-color: #0477be;
-              "
-            >
-              <svg
-                style="width: 0.8rem; height: 1.2rem"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 -5.24537e-07L8 6L2 12L0.6 10.6L5.2 6L0.600001 1.4L2 -5.24537e-07Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+          </swiper-slide>
+          <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+          <div class="swiper-pagination"></div>
+        </swiper>
       </div>
     </div>
   </div>
@@ -162,7 +159,9 @@
 
 <script setup>
 import { onBeforeMount, onMounted, ref } from "vue";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+const modules = ref([Pagination, Navigation, Autoplay]);
 import { useBlogStore } from "@/stores/blogStore";
 import { useRoute, useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
@@ -174,30 +173,14 @@ const router = useRouter();
 const currentCard = ref(0);
 const { post, postsByBlog } = storeToRefs(useBlogStore());
 
+const show = ref(false);
 onBeforeMount(async () => {
   await useBlogStore().getPost({ id: route.query.post });
-  if (post.value.length == 0) router.push({ name: "blog" });
+  if (post.value.length == 0) {
+    router.push({ name: "blog" });
+    show.value = true;
+  }
   await useBlogStore().getPostsByCategory({ category_id: 1 });
-});
-
-const next = () => {
-  currentCard.value++;
-};
-const prev = () => {
-  currentCard.value--;
-};
-
-const breakpoints = ref({
-  // 700px and up
-  700: {
-    itemsToShow: 2,
-    snapAlign: "center",
-  },
-  // 1024 and up
-  1024: {
-    itemsToShow: 3,
-    snapAlign: "center",
-  },
 });
 
 const chagnePost = (id) => {
@@ -205,6 +188,24 @@ const chagnePost = (id) => {
     name: "blogDetails",
     query: { post: id },
   });
+};
+const breakpoints = {
+  0: {
+    slidesPerView: 1,
+    spaceBetween: 10,
+  },
+  375: {
+    slidesPerView: 2,
+    spaceBetween: 20,
+  },
+  575: {
+    slidesPerView: 3,
+    spaceBetween: 20,
+  },
+  800: {
+    slidesPerView: 5,
+    spaceBetween: 30,
+  },
 };
 </script>
 
@@ -258,43 +259,54 @@ const chagnePost = (id) => {
     padding-right: 1rem;
     line-height: 5.6rem;
   }
-  .join-card {
-    margin-bottom: 3rem;
-    border: 1px solid #444444;
-    border-radius: 24px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-    margin: 3rem 2rem;
-    .join-card-title {
-      height: 3.9rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 3rem;
-      background-color: #f6f7ff;
-      color: #0477be;
-      text-align: center;
-      line-height: 3.9rem;
-    }
-    .join-card-text {
-      font-size: 2.4rem;
-      font-weight: 700;
-      line-height: 3.6rem;
-      color: #181a2a;
-    }
-    .join-card-date {
-      font-size: 1.4rem;
-      font-weight: 400;
-      line-height: 2.673rem;
-      color: #444444;
-      height: 2.7rem;
-      border-radius: 8px;
-      background-color: #def1ff;
-      text-align: center;
-      line-height: 2.7rem;
-    }
+}
+.join-card {
+  margin-bottom: 3rem;
+  border: 1px solid #444444;
+  border-radius: 24px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  margin: 3rem 2rem;
+  .join-card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 3rem;
+    background-color: #f6f7ff;
+    color: #0477be;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 3.9rem;
+  }
+  .join-card-text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+    color: #181a2a;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .join-card-date {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.673rem;
+    color: #444444;
+    height: 2.7rem;
+    border-radius: 8px;
+    background-color: #def1ff;
+    text-align: center;
+    line-height: 2.7rem;
   }
 }
 </style>

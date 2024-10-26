@@ -69,7 +69,7 @@
         :breakpoints="breakpoints"
         :Lazy="true"
       >
-        <swiper-slide v-for="(slide, i) in testimonials" :key="i">
+        <swiper-slide v-for="(slide, i) in questi" :key="i">
           <div>
             <!-- loading placeholder -->
             <div
@@ -86,8 +86,7 @@
 
             <div class="question-card" v-else>
               <div>
-                <h3 class="questipon-card-title"></h3>
-                <p>{{ slide.title }}</p>
+                <h3 class="questipon-card-title">{{ slide.title }}</h3>
                 <p class="questipon-card-text">
                   {{ slide.description }}
                 </p>
@@ -95,8 +94,8 @@
             </div>
           </div>
         </swiper-slide>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
         <div class="swiper-pagination"></div>
       </swiper>
     </div>
@@ -127,9 +126,13 @@ const props = defineProps({
     Required: true,
   },
 });
+const questi = ref([]);
 watch(
   () => props.questions,
   (newVal) => {
+    newVal.length > 3
+      ? (questi.value = newVal)
+      : (questi.value = [...newVal, ...newVal, ...newVal]);
     newVal ? (show.value = true) : (show.value = false);
   }
 );

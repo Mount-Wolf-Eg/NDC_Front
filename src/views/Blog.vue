@@ -37,7 +37,7 @@ import { storeToRefs } from "pinia";
 import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
 const router = useRouter();
-const currentSlide = ref(1);
+const currentSlide = ref(0);
 const { allblogs, postsByBlog } = storeToRefs(useBlogStore());
 
 onMounted(async () => {

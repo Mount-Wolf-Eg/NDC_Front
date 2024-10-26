@@ -57,7 +57,7 @@
           disableOnInteraction: true,
           waitForTransition: true,
         }"
-        :space-between="10"
+        :space-between="50"
         :navigation="{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -67,7 +67,7 @@
         :Lazy="true"
       >
         <!-- testimonials -->
-        <swiper-slide v-for="(slide, i) in testimonials" :key="i">
+        <swiper-slide v-for="(slide, i) in testimonial" :key="i">
           <div class="tetimonial-card w-100 h-100">
             <!-- loading placeholder -->
             <div
@@ -106,8 +106,8 @@
             </div>
           </div>
         </swiper-slide>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
       </swiper>
     </div>
   </div>
@@ -135,9 +135,13 @@ const props = defineProps({
     Required: true,
   },
 });
+const testimonial = ref([]);
 watch(
   () => props.testimonials,
   (newVal) => {
+    newVal.length > 4
+      ? (testimonial.value = newVal)
+      : (testimonial.value = [...newVal, ...newVal, ...newVal]);
     newVal ? (show.value = true) : (show.value = false);
   }
 );
@@ -159,7 +163,7 @@ const breakpoints = {
     spaceBetween: 30,
   },
   1318: {
-    slidesPerView: 5,
+    slidesPerView: 4,
     spaceBetween: 30,
   },
 };
