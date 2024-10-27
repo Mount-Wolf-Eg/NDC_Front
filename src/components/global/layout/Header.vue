@@ -5,7 +5,13 @@
       position: route.name === 'home' ? 'absolute' : 'sticky',
     }"
     class="pt-3 pb-0 px-0 mb-0"
-    style="z-index: 99; top: 0; left: 0; width: 100%"
+    style="
+      z-index: 99;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backdrop-filter: brightness(0.7) blur(5px);
+    "
   >
     <nav
       class="navbar exp-nav navbar-expand-sm"

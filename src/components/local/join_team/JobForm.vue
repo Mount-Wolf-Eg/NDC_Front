@@ -32,7 +32,7 @@
             <span class="col-12 col-sm-6">
               <InptField
                 v-model="formData.name"
-                :holder="'Name'"
+                :holder="`${$t('name')}`"
                 :appear="checkErrName(['name']) ? 'err-border' : ''"
               ></InptField>
               <span
@@ -48,7 +48,7 @@
             <span class="col-12 col-sm-6">
               <InptField
                 v-model="formData.email"
-                :holder="'Email'"
+                :holder="`${$t('email')}`"
                 :appear="checkErrName(['email']) ? 'err-border' : ''"
               ></InptField>
               <span
@@ -64,7 +64,7 @@
             <span class="col-12 col-sm-6">
               <InptField
                 v-model="formData.graduationYear"
-                :holder="'Graduation Year'"
+                :holder="`${$t('graduation')}`"
                 :appear="checkErrName(['graduationYear']) ? 'err-border' : ''"
               ></InptField>
               <span
@@ -81,7 +81,7 @@
             <span class="col-12 col-sm-6">
               <InptField
                 v-model="formData.qualification"
-                :holder="'Qualification'"
+                :holder="`${$t('qualification')}`"
                 :appear="checkErrName(['qualification']) ? 'err-border' : ''"
               ></InptField>
               <span
@@ -97,7 +97,7 @@
             <span class="col-12 col-sm-6">
               <InptField
                 v-model="formData.phone"
-                :holder="'phone'"
+                :holder="`${$t('phone')}`"
                 :appear="checkErrName(['phone']) ? 'err-border' : ''"
               ></InptField>
               <span

@@ -3,16 +3,17 @@
     <img
       src="/src/assets//contact_us/contactUs.jpg"
       alt="contact us"
-      style="width: 100%"
+      style="
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+      "
     />
-    <div class="contact-sec container-cust flex-row">
-      <div
-        class="contact-text flex-col align-items-start justify-content-between"
-        style="width: 32%"
-      >
+    <div class="contact-sec container-cust row">
+      <div class="contact-text col-12 col-sm-4 d-flex flex-column">
         <span>
-          لمزيد من المعلومات حول خدماتنا أو لمناقشة كيف بإمكاننا مساعدة مؤسستك
-          في تحقيق أهداف الاعتماد، يرجى التواصل معنا:
+          {{ $t("communicate") }}
         </span>
 
         <a
@@ -21,8 +22,7 @@
           class="Blondie"
         >
           <svg
-            width="19"
-            height="19"
+            style="width: 1.9rem; height: 1.9rem"
             viewBox="0 0 19 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +42,7 @@
           :href="`tel:${allContacts.secondNumber}`"
         >
           <svg
-            width="19"
-            height="19"
+            style="width: 1.9rem; height: 1.9rem"
             viewBox="0 0 19 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +61,7 @@
           :href="`tel:${allContacts.thirdNumber}`"
         >
           <svg
-            width="19"
-            height="19"
+            style="width: 1.9rem; height: 1.9rem"
             viewBox="0 0 19 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +76,7 @@
 
         <a href="#"
           ><svg
-            width="14"
-            height="20"
+            style="width: 1.4rem; height: 2rem"
             viewBox="0 0 14 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +94,7 @@
         id="cont-form"
         action="#"
         @submit.prevent="contacForm()"
-        class="contact-form flex-col"
+        class="contact-form col-12 col-sm-6"
       >
         <span
           class="d-flex flex-column algin-items-center justify-content-center"
@@ -105,7 +102,7 @@
           <input
             class="form-inpt mb-4"
             type="text"
-            placeholder="الاسم"
+            :placeholder="`${$t('name')}`"
             v-model="formData.name"
             :appear="checkErrName(['name']) ? 'err-border' : ''"
           />
@@ -125,7 +122,7 @@
           <input
             class="form-inpt mb-4"
             type="text"
-            placeholder="اكتب البريد الاكتروني"
+            :placeholder="`${$t('email')}`"
             v-model="formData.email"
             :appear="checkErrName(['email']) ? 'err-border' : ''"
           />
@@ -147,7 +144,7 @@
             class="form-inpt mb-4"
             name="message"
             id="msg"
-            placeholder="اكتب رسالتك"
+            :placeholder="`${$t('message')}`"
             v-model="formData.message"
             :appear="checkErrName(['message']) ? 'err-border' : ''"
           ></textarea>
@@ -161,9 +158,11 @@
             </span></span
           >
         </span>
-        <button v-if="!isLoading" type="submit" class="send-btn">ارسال</button>
+        <button v-if="!isLoading" type="submit" class="send-btn w-100">
+          {{ $t("send") }}
+        </button>
 
-        <button v-else class="send-btn" disabled>
+        <button v-else class="send-btn w-100" disabled>
           <div class="spinner-grow me-3" role="status"></div>
           <span> Loading...</span>
         </button>
@@ -234,36 +233,27 @@ const contacForm = async () => {
       font-size: 2.4rem;
       font-weight: 700;
       line-height: 3.6rem;
-      text-align: right;
       gap: 1rem;
     }
     .contact-form {
       .form-inpt {
         border: 1px solid #0477be;
-        width: 69.6rem;
         height: 5rem;
         border-radius: 9px;
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 3.454rem;
-        text-align: right;
         background-color: #f4f3f3;
         padding: 0 15px;
       }
-      textarea {
-        width: 69.6rem !important;
-        height: 11.2rem !important;
-      }
+
       .send-btn {
-        width: 69.6rem;
         height: 5.9rem;
         background-color: #0477be;
         font-size: 2.4rem;
         font-weight: 500;
         line-height: 3.6rem;
-        text-align: right;
         color: #fff;
-        text-align: center;
         border-radius: 12px;
       }
     }
@@ -272,7 +262,6 @@ const contacForm = async () => {
     font-size: 18px;
     font-weight: 400;
     line-height: 34.54px;
-    text-align: right;
   }
 }
 </style>

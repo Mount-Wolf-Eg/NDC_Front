@@ -6,7 +6,7 @@
           class="center-row justify-content-between px-5 style-17"
           style="color: #464a61; font-size: 1.2rem; font-weight: bold"
         >
-          <span>Add photo</span>
+          <span>{{ $t("upload_file") }}</span>
         </div></label
       >
       <input

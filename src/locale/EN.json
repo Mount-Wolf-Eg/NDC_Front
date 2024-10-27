@@ -39,6 +39,15 @@
   "job-name": "Job Name",
   "send": "Send",
   "Recent-published": "Recently published",
-  "no-data":"No Data available",
-  "lang": "EN"
+  "no-data": "No Data available",
+  "lang": "EN",
+  "communicate": "For more information about our services or to discuss how we can help your organization achieve its accreditation goals, please contact us:",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "phone": "phone",
+  "graduation": "Graduation Year",
+  "qualification": "Qualification",
+  "upload_file": "Add Photo",
+  "choose-file": "Choose File"
 }

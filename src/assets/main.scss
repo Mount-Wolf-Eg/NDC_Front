@@ -54,8 +54,8 @@
   --f-st-norm: normal;
 
   // box shadow
-  --bx-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  --bx-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
   --bx-shadow-btn: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --bx-shadow-light: rgba(0, 0, 0, 0.3) 0px 3px 8px;
 }
@@ -357,6 +357,7 @@ button {
       border-radius: var(--brd-r-lg);
       transition: all 0.8 ease-in-out;
       height: 40rem;
+      margin: 5rem 0;
 
       .card-title {
         transition: all 0.3 ease-in-out;
@@ -493,6 +494,7 @@ button {
 .home-testimonial-sec {
   border-top: 1rem solid var(--col-succes);
   border-bottom: 1rem solid var(--col-succes);
+  background-color: var(--col-bg);
 
   .metrics-sec {
     height: 30rem;

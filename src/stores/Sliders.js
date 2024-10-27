@@ -20,7 +20,7 @@ export const useSlidersStore = defineStore("sliderStore", {
     // all admins
     async getAllSliders() {
       await axiosInstance
-        .get(`${mainStore().apiLink}/admin/slider/showSlidersTypes`)
+        .get(`${mainStore().apiLink}/admin/slider/showSlidersTypes`, {})
         .then((res) => {
           this.start = true;
           this.headerSliders = res.data.data.header_slider;

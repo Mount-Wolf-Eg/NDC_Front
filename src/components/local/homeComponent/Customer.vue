@@ -37,6 +37,7 @@
 
     <div
       class="testimonial-swiper container-cust"
+      style="position: relative; padding-bottom: 10rem !important"
       v-if="props.testimonials.length"
     >
       <swiper
@@ -44,7 +45,9 @@
           delay: 2500,
           disableOnInteraction: false,
         }"
-        class="w-100 h-100"
+        :loop="true"
+        class="w-100 h-100 py-2"
+        style="position: static"
         :modules="modules"
         :pagination="{
           el: '.swiper-pagination',
@@ -106,8 +109,8 @@
             </div>
           </div>
         </swiper-slide>
-        <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </swiper>
     </div>
   </div>
@@ -170,10 +173,28 @@ const breakpoints = {
 </script>
 
 <style lang="scss" scoped>
-.swiper-button-next,
-.swiper-button-prev {
+.swiper-button-next {
+  top: 93%;
+  left: 40%;
+  color: var(--col-blk);
+  background-color: var(--col-white);
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
   &::after {
-    font-size: 4rem;
+    font-size: 1rem;
+  }
+}
+.swiper-button-prev {
+  top: 93%;
+  right: 40%;
+  color: var(--col-blk);
+  background-color: var(--col-white);
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  &::after {
+    font-size: 1rem;
   }
 }
 </style>
