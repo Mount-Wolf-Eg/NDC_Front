@@ -142,10 +142,12 @@ const testimonial = ref([]);
 watch(
   () => props.testimonials,
   (newVal) => {
-    newVal.length > 4
-      ? (testimonial.value = newVal)
-      : (testimonial.value = [...newVal, ...newVal, ...newVal]);
-    newVal ? (show.value = true) : (show.value = false);
+    if (newVal.length > 0) {
+      newVal.length > 4
+        ? (testimonial.value = newVal)
+        : (testimonial.value = [...newVal, ...newVal, ...newVal]);
+      newVal ? (show.value = true) : (show.value = false);
+    }
   }
 );
 const breakpoints = {

@@ -17,12 +17,15 @@ export const useBlogStore = defineStore("blogStore", {
           this.allblogs = res.data.data;
         })
         .catch((err) => {
-          mainStore().showAlert(
-            Object.values(err.response.data.errors)[0][0]
-              ? Object.values(err.response.data.errors)[0][0]
-              : "Something went wrong, please try again",
-            2
-          );
+          let errorMessage = "Something went wrong, please try again";
+
+          if (err.response && err.response.data && err.response.data.errors) {
+            const errorArray = Object.values(err.response.data.errors);
+            if (errorArray.length > 0 && errorArray[0][0]) {
+              errorMessage = errorArray[0][0];
+            }
+          }
+          mainStore().showAlert(errorMessage, 2);
         });
     },
     async getPostsByCategory(data) {
@@ -32,12 +35,15 @@ export const useBlogStore = defineStore("blogStore", {
           this.postsByBlog = res.data.data;
         })
         .catch((err) => {
-          mainStore().showAlert(
-            Object.values(err.response.data.errors)[0][0]
-              ? Object.values(err.response.data.errors)[0][0]
-              : "Something went wrong, please try again",
-            2
-          );
+          let errorMessage = "Something went wrong, please try again";
+
+          if (err.response && err.response.data && err.response.data.errors) {
+            const errorArray = Object.values(err.response.data.errors);
+            if (errorArray.length > 0 && errorArray[0][0]) {
+              errorMessage = errorArray[0][0];
+            }
+          }
+          mainStore().showAlert(errorMessage, 2);
         });
     },
     async getPost(id) {
@@ -47,12 +53,15 @@ export const useBlogStore = defineStore("blogStore", {
           this.post = res.data.data;
         })
         .catch((err) => {
-          mainStore().showAlert(
-            Object.values(err.response.data.errors)[0][0]
-              ? Object.values(err.response.data.errors)[0][0]
-              : "Something went wrong, please try again",
-            2
-          );
+          let errorMessage = "Something went wrong, please try again";
+
+          if (err.response && err.response.data && err.response.data.errors) {
+            const errorArray = Object.values(err.response.data.errors);
+            if (errorArray.length > 0 && errorArray[0][0]) {
+              errorMessage = errorArray[0][0];
+            }
+          }
+          mainStore().showAlert(errorMessage, 2);
         });
     },
   },

@@ -1,11 +1,16 @@
 <template>
-  <div class="pack-res-swiper" style="border-radius: 16px">
+  <div class="pack-res-swiper h-100" style="border-radius: 16px">
     <div class="testimonial-swiper container-cust">
-      <swiper
+      <!-- :Autoplay="{
+          delay: 1000,
+          disableOnInteraction: true,
+          waitForTransition: true,
+        }"
         :autoplay="{
           delay: 2500,
           disableOnInteraction: false,
-        }"
+        }" -->
+      <swiper
         class="w-100 h-100"
         :modules="modules"
         :pagination="{
@@ -14,11 +19,6 @@
           clickable: true,
         }"
         :slides-per-view="1.05"
-        :Autoplay="{
-          delay: 1000,
-          disableOnInteraction: true,
-          waitForTransition: true,
-        }"
         :space-between="20"
         :navigation="{
           nextEl: '.swiper-button-next',
@@ -44,7 +44,9 @@
 
             <div v-else>
               <div class="card-border">
-                <div class="package-info-respon h-100">
+                <div
+                  class="package-info-respon d-flex flex-column justify-content-between h-100"
+                >
                   <div
                     style="border-radius: 1.2rem !important; overflow: hidden"
                   >
@@ -64,12 +66,15 @@
                     style="width: 100%"
                     class="h-100 d-flex flex-column align-items-center justify-content-between gap-5"
                   >
-                    <div class="flex-r p-5 h-100" style="flex: 1 !important">
+                    <div
+                      class="d-flex flex-row algin-items-start p-5"
+                      style="flex: 1 !important"
+                    >
                       <div class="card-lists" style="flex: 1">
                         <p class="res-box-title">
                           {{ $t("included-services") }}:
                         </p>
-                        <ul>
+                        <ul class="d-flex flex-column">
                           <li
                             v-for="(ser, j) in slide.included_services"
                             :key="j"
@@ -81,7 +86,7 @@
 
                       <div class="card-lists" style="flex: 1">
                         <p class="res-box-title">{{ $t("target-group") }}:</p>
-                        <ul>
+                        <ul class="d-flex flex-column">
                           <li v-for="(ser, j) in slide.target_group" :key="j">
                             {{ ser }}
                           </li>
