@@ -2,9 +2,9 @@ import { defineStore } from "pinia";
 import { useToast } from "vue-toastification";
 
 // testing url
-// const mainDomain = "https://ndc.mountwolfs.com/api";
+const mainDomain = "https://ndc.mountwolfs.com/api";
 // production url
-const mainDomain = "https://dashboard.ndc-sa.com/api";
+// const mainDomain = "https://dashboard.ndc-sa.com/api";
 
 export const mainStore = defineStore("mainStore", {
   state: () => ({

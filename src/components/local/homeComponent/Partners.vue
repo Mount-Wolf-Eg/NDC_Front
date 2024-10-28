@@ -81,8 +81,8 @@
                     <img
                       style="
                         width: 10rem;
-                        height: auto;
-                        object-fit: cover;
+                        height: 100%;
+                        object-fit: contain;
                         object-position: center;
                         max-height: 9rem;
                       "
@@ -154,65 +154,4 @@ const breakpoints = {
 };
 </script>
 
-<style lang="scss" scoped>
-// .partner-sec {
-//   .partner {
-//     background-color: #fff;
-//     background-image: url("/src/assets/images/Vector (2).png");
-//     background-repeat: no-repeat;
-//     background-position: center bottom;
-//     background-size: cover;
-//     padding: 10rem 0;
-//     margin-bottom: 5rem;
-//     .partner-title {
-//       font-size: 3.2rem;
-//       font-weight: 700;
-//       line-height: 4.9rem;
-//       text-align: center;
-//       color: #121212;
-//     }
-//     .partner-text {
-//       font-size: 2.4rem;
-//       font-weight: 700;
-//       line-height: 3.6rem;
-//       text-align: center;
-//       margin: 5rem auto;
-//       color: #444444;
-//     }
-//     .partner-card {
-//       .card {
-//         background-color: #f2f2f2;
-//         border-radius: 1.2rem;
-//         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-//         width: 30rem;
-//         height: 10rem;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         border: none;
-//         padding: 1rem;
-//       }
-//     }
-//   }
-//   .supplies {
-//     background-color: #def1ff;
-//     padding: 10rem 0;
-//     .supplies-title {
-//       font-size: 3.2rem;
-//       font-weight: 700;
-//       line-height: 4.9rem;
-//       text-align: center;
-//     }
-//     .supplies-text {
-//       font-size: 1.8rem;
-//       font-weight: 400;
-//       line-height: 3.454rem;
-//       text-align: center;
-//       color: #444444;
-//       width: 28%;
-//       text-align: center;
-//       margin: 2rem auto;
-//     }
-//   }
-// }
-</style>
+<style lang="scss" scoped></style>

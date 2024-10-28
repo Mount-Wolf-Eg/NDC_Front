@@ -640,16 +640,14 @@ button {
 
 // partner
 .home-partner-sec {
-  padding: 10rem 0 0;
-
   .partner-box {
     background-image: url("/src/assets/images/Vector (2).png");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    margin-bottom: 10rem;
+    padding: 10rem 0 20rem 0;
 
     .partner-title {
       font-weight: var(--fw-bold);
@@ -718,12 +716,13 @@ button {
     background-color: var(--col-blue-drk);
 
     .footer-list-head {
+      position: relative;
       color: var(--col-white);
       font-size: var(--fs-24);
       font-weight: var(--fw-bold);
       line-height: var(--line-h-37);
       border-bottom: 3px solid #fff;
-      width: fit-content;
+      width: 70% !important;
       padding-bottom: 1rem;
       margin-bottom: 2rem;
       width: 100%;

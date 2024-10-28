@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-6 p-0">
+        <div style="position: relative" class="col-12 col-md-6 p-0">
           <img
             :src="packag.image"
             alt="package img"
@@ -49,6 +49,7 @@
             "
           />
           <button
+            style="position: absolute; bottom: 1.5rem; right: 1.5rem"
             @click="router.push({ name: 'contact' })"
             class="r-more-btn-w"
           >

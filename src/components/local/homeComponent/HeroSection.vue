@@ -203,9 +203,11 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import { onMounted, ref, watch } from "vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+const router = useRouter();
 const modules = ref([Pagination, Navigation, Autoplay]);
 const show = ref(false);
 const direction = ref("rtl");
