@@ -523,13 +523,23 @@ button {
 
     .tetimonial-card {
       .card-border {
-        padding: 3rem;
+        transition: all 0.3s ease-in-out;
+        padding: 1rem;
         border-radius: var(--brd-r-md);
-        background-color: var(--col-white);
+        background-color: var(--col-bg);
         border: 0.2rem solid var(--col-blue-md);
+        height: 45.4rem;
 
         .card-body {
+          transition: all 0.3s ease-in-out;
+          height: 100%;
+          background-color: var(--col-white);
+          border-radius: var(--brd-r-md);
+          img {
+            transition: all 0.3s ease-in-out;
+          }
           .slide-card-title {
+            transition: all 0.3s ease-in-out;
             font-weight: var(--fw-bold);
             font-size: var(--fs-18);
             color: var(--col-blue-md);
@@ -537,11 +547,31 @@ button {
           }
 
           .slide-card-body {
+            transition: all 0.3s ease-in-out;
             font-weight: var(--fw-bold);
             font-size: var(--fs-16);
             color: var(--col-blk);
             line-height: var(--fs-32);
             padding: 0 1rem;
+          }
+        }
+        &:hover {
+          background-color: var(--col-blue-md);
+          transition: all 0.3s ease-in-out;
+          .card-body {
+            background-color: var(--col-blue-md);
+            img {
+              transition: all 0.3s ease-in-out;
+              display: none;
+            }
+            .slide-card-title {
+              transition: all 0.3s ease-in-out;
+              display: none;
+            }
+            .slide-card-body {
+              transition: all 0.3s ease-in-out;
+              color: var(--col-white);
+            }
           }
         }
       }
@@ -620,12 +650,17 @@ button {
       padding: 2rem;
       text-align: start;
       border-radius: var(--brd-r-md);
-
       .questipon-card-title {
         font-weight: var(--fw-bold);
         line-height: var(--fs-32);
         color: var(--col-blk);
         font-size: var(--fs-18);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .questipon-card-text {
@@ -633,6 +668,12 @@ button {
         line-height: var(--line-h-37);
         color: var(--col-blk);
         font-size: var(--fs-16);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

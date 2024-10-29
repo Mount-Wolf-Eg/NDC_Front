@@ -44,13 +44,13 @@
 
     <div class="container-cust question-sec" v-if="props.questions.length">
       <h3 class="question-sec-title mb-5">{{ $t("common-faq") }}</h3>
-      <div style="position: relative">
+      <div style="position: relative" class="h-100">
         <swiper
           :autoplay="{
             delay: 2500,
             disableOnInteraction: false,
           }"
-          class="w-100 h-100"
+          class="w-100 h-100 py-2"
           style="position: static"
           :modules="modules"
           :pagination="{
@@ -74,8 +74,8 @@
           :breakpoints="breakpoints"
           :Lazy="true"
         >
-          <swiper-slide v-for="(slide, i) in questi" :key="i">
-            <div>
+          <swiper-slide v-for="(slide, i) in questi" :key="i" class="h-100">
+            <div class="h-100 f-flex flex-column">
               <!-- loading placeholder -->
               <div
                 style="background-color: #868e96"
@@ -89,12 +89,27 @@
               </div>
               <!-- images -->
 
-              <div class="question-card" v-else>
-                <div>
+              <div class="question-card h-100" v-else>
+                <div
+                  class="h-100 d-flex flex-column justify-content-between"
+                  style="height: 22rem !important"
+                >
                   <h3 class="questipon-card-title">{{ slide.title }}</h3>
                   <p class="questipon-card-text">
                     {{ slide.description }}
                   </p>
+                  <button
+                    @click="
+                      qtitle = slide.title;
+                      qdescription = slide.description;
+                    "
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    class="r-more-btn-w text-center"
+                    style="width: fit-content"
+                  >
+                    {{ $t("see-more") }}
+                  </button>
                 </div>
               </div>
             </div>
@@ -106,6 +121,46 @@
       </div>
     </div>
     <div class="question-bg" v-if="props.questions.length"></div>
+    <div
+      class="modal fade m-0 p-0"
+      id="exampleModal"
+      style="width: 100vw"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog mx-auto">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel">
+              {{ $t("common-faq") }}
+            </h1>
+            <!-- <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button> -->
+          </div>
+          <div class="modal-body">
+            <h3 class="questipon-card-title">{{ qtitle }}</h3>
+            <p class="questipon-card-text">
+              {{ qdescription }}
+            </p>
+          </div>
+          <!-- <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -115,6 +170,8 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 const modules = ref([Pagination, Navigation, Autoplay]);
 const show = ref(false);
+const qtitle = ref("");
+const qdescription = ref("");
 
 const props = defineProps({
   achievements: {
@@ -174,7 +231,6 @@ const breakpoints = {
 }
 
 .swiper-button-next {
-  left: -5rem !important;
   color: white;
   background-color: var(--col-blue-md);
   width: 3.4rem;
@@ -185,7 +241,6 @@ const breakpoints = {
   }
 }
 .swiper-button-prev {
-  right: -5rem !important;
   color: white;
   background-color: var(--col-blue-md);
   width: 3.4rem;
@@ -193,6 +248,43 @@ const breakpoints = {
   border-radius: 50%;
   &::after {
     font-size: 1rem;
+  }
+}
+.modal-dialog {
+  width: auto;
+  height: auto;
+  margin: 20rem auto;
+  .modal-content {
+    background-color: var(--col-bg) !important;
+    border-radius: var(--brd-r-md) !important;
+    overflow: hidden;
+    .modal-title {
+      font-weight: var(--fw-bold);
+      font-size: var(--fs-24);
+      line-height: var(--fs-48);
+      margin: 0 auto;
+    }
+    .modal-body {
+      background-color: var(--col-bg);
+      width: 100% !important;
+      text-align: start;
+      padding: 2rem;
+
+      .questipon-card-title {
+        font-weight: var(--fw-bold);
+        line-height: var(--fs-32);
+        color: var(--col-blk);
+        font-size: var(--fs-20);
+        padding: 2rem 0;
+      }
+
+      .questipon-card-text {
+        font-weight: var(--fw-bold);
+        line-height: var(--line-h-37);
+        color: var(--col-blk);
+        font-size: var(--fs-16);
+      }
+    }
   }
 }
 </style>
