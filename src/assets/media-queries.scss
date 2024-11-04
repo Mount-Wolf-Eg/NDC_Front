@@ -27,12 +27,28 @@
   // hero section
   .hero-sec {
     height: 25vh;
-
     .swiper-button-next,
     .swiper-button-prev,
-    .swiper-pagination,
-    .hero-text-box {
+    .swiper-pagination {
       display: none;
+    }
+
+    .hero-card-text {
+      text-align: center;
+      color: var(--col-white);
+      padding: 10rem 5rem !important;
+
+      .title {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-32);
+        line-height: var(--line-h-37);
+      }
+
+      .body {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-20);
+        line-height: var(--line-h-37);
+      }
     }
 
     .hero-about-us {
@@ -173,14 +189,28 @@
   // hero section
   .hero-sec {
     height: 25vh;
-
     .swiper-button-next,
     .swiper-button-prev,
-    .swiper-pagination,
-    .hero-text-box {
+    .swiper-pagination {
       display: none;
     }
+    .hero-card-text {
+      text-align: center;
+      color: var(--col-white);
+      padding: 10rem 5rem !important;
 
+      .title {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-32);
+        line-height: var(--line-h-37);
+      }
+
+      .body {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-20);
+        line-height: var(--line-h-37);
+      }
+    }
     .hero-about-us {
       width: 100%;
       bottom: -125% !important;

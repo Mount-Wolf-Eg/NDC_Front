@@ -9,12 +9,12 @@
           <img
             @click="router.push({ name: 'home' })"
             class="footer-logo"
-            :src="allContacts.logo"
+            :src="allContacts.second_logo_src"
             alt="website logo"
             style="
               width: 100%;
               height: auto;
-              max-width: 30rem;
+              max-width: 15rem;
               cursor: pointer !important;
             "
           />
@@ -141,6 +141,7 @@
           </p>
           <ul class="p-0">
             <li
+              @click="router.push({ name: 'packages' })"
               class="footer-list-item"
               v-for="(pack, i) in allPackages.slice(0, 5)"
             >
@@ -178,7 +179,12 @@
             >
               {{ $t("explore") }}
             </li>
-            <li class="footer-list-item has-link">{{ $t("about") }}</li>
+            <li
+              @click="router.push({ name: 'about' })"
+              class="footer-list-item has-link"
+            >
+              {{ $t("about") }}
+            </li>
             <li
               class="footer-list-item has-link"
               @click="router.push({ name: 'blog' })"

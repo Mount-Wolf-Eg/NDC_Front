@@ -30,7 +30,7 @@
               "
             >
               <img
-                :src="allContacts.logo"
+                :src="allContacts.main_logo_src"
                 style="
                   width: auto;
                   height: auto;
@@ -160,7 +160,7 @@
                 :href="allContacts.facebook"
               >
                 <!-- fb -->
-                <a>
+                <a v-if="allContacts.facebook" :href="allContacts.facebook">
                   <svg
                     id="Group_1964"
                     data-name="Group 1964"
@@ -189,7 +189,7 @@
                 :href="allContacts.twitter"
               >
                 <!-- tw -->
-                <a>
+                <a v-if="allContacts.twitter" :href="allContacts.twitter">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 50 50"
@@ -214,7 +214,7 @@
                 :href="allContacts.whatsApp"
               >
                 <!-- whats -->
-                <a>
+                <a v-if="allContacts.whatsApp" :href="allContacts.whatsApp">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 32 32"
@@ -241,7 +241,7 @@
                 :href="allContacts.tikTok"
               >
                 <!-- tiktok -->
-                <a>
+                <a v-if="allContacts.tikTok" :href="allContacts.tikTok">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 50 50"
@@ -266,7 +266,7 @@
                 :href="allContacts.youtube"
               >
                 <!-- youtube -->
-                <a>
+                <a v-if="allContacts.youtube" :href="allContacts.youtube">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 50 50"
@@ -291,7 +291,7 @@
                 :href="allContacts.Snapchat"
               >
                 <!-- snap -->
-                <a>
+                <a v-if="allContacts.Snapchat" :href="allContacts.Snapchat">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 50 50"
@@ -316,7 +316,7 @@
                 :href="allContacts.instagram"
               >
                 <!-- instag -->
-                <a>
+                <a v-if="allContacts.instagram" :href="allContacts.instagram">
                   <svg
                     id="Group_1963"
                     data-name="Group 1963"

@@ -80,12 +80,13 @@ const props = defineProps({
     height: 50.2rem;
     .join-card-title {
       // width: 16.2rem;
-      width: fit-content;
+      width: 100%;
+      word-wrap: break-word;
+      white-space: normal;
+      font-weight: var(--fw-bold);
       padding: 0 0.5rem;
       height: 3.9rem;
-
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-size: var(--fs-16);
       line-height: 3rem;
       background-color: #f6f7ff;
       color: #0477be;

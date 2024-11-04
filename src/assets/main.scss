@@ -164,18 +164,22 @@ button {
 
 // header
 .dropdown-menu {
-  max-width: 30rem;
-  overflow: auto;
+  width: 30rem;
   margin-top: 1rem !important;
+  left: -100% !important;
 
   .dropdown-item {
-    width: fit-content;
-    color: var(--col-text);
-    padding: 1rem;
-    font-size: var(--fs-12);
     width: 100%;
+    word-wrap: break-word;
+    white-space: normal;
+    color: var(--col-text);
+    padding: 1.6rem;
+    font-size: var(--fs-18);
+    font-weight: bold;
     cursor: pointer;
-    padding: 0.2rem 0.5rem !important;
+    &:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
 
     &:hover {
       color: var(--col-succes);

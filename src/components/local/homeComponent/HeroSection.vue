@@ -66,17 +66,18 @@
               "
               class="hero-text-box row mx-auto"
             >
-              <div class="hero-card-text flex-c align-items-start col-6">
+              <div
+                class="hero-card-text flex-c align-items-start col-12 col-md-6"
+              >
                 <div
                   style="
+                    width: 100%;
                     backdrop-filter: blur(3px);
                     padding: 1rem;
                     background-color: #3a3a3a1a;
                   "
                 >
-                  <p class="title">
-                    {{ slide.title }}
-                  </p>
+                  <p class="title">{{ slide.title }}sdf</p>
                   <p class="body">{{ slide.description }}</p>
                 </div>
               </div>
