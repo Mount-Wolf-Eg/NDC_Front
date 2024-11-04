@@ -77,7 +77,7 @@
                     background-color: #3a3a3a1a;
                   "
                 >
-                  <p class="title">{{ slide.title }}sdf</p>
+                  <p class="title">{{ slide.title }}</p>
                   <p class="body">{{ slide.description }}</p>
                 </div>
               </div>
