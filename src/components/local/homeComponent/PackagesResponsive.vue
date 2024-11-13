@@ -27,7 +27,11 @@
         :preload-images="false"
         :Lazy="true"
       >
-        <swiper-slide v-for="(slide, i) in packagesRes" :key="i">
+        <swiper-slide
+          v-for="(slide, i) in packagesRes"
+          :key="i"
+          style="background-color: var(--col-bg)"
+        >
           <div class="tetimonial-card w-100 h-100">
             <!-- loading placeholder -->
             <div
@@ -96,9 +100,10 @@
 
                     <button
                       @click="router.push({ name: 'contact' })"
-                      class="r-more-btn-c w-100"
+                      class="r-more-btn-w mb-3"
+                      style="width: 90%"
                     >
-                      {{ $t("contact") }}
+                      {{ $t("contactu") }}
                     </button>
                   </div>
                 </div>

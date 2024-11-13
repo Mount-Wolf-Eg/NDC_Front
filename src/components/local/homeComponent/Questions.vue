@@ -105,7 +105,7 @@
                     "
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
-                    class="r-more-btn-w text-center"
+                    class="r-more-btn-w text-center mx-auto"
                     style="width: fit-content"
                   >
                     {{ $t("see-more") }}
@@ -114,8 +114,8 @@
               </div>
             </div>
           </swiper-slide>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swip-btns swiper-button-next"></div>
+          <div class="swip-btns swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
         </swiper>
       </div>
@@ -130,7 +130,7 @@
       aria-hidden="true"
     >
       <div class="modal-dialog mx-auto">
-        <div class="modal-content">
+        <div class="modal-content mx-auto" style="width: 80% !important">
           <div class="modal-header">
             <h1 class="modal-title" id="exampleModalLabel">
               {{ $t("common-faq") }}
@@ -204,14 +204,14 @@ const breakpoints = {
     slidesPerView: 1,
     spaceBetween: 10,
   },
-  375: {
+  // 375: {
+  //   slidesPerView: 2,
+  //   spaceBetween: 20,
+  // },
+  575: {
     slidesPerView: 2,
     spaceBetween: 20,
   },
-  // 575: {
-  //   slidesPerView: 3,
-  //   spaceBetween: 20,
-  // },
   800: {
     slidesPerView: 3,
     spaceBetween: 30,
