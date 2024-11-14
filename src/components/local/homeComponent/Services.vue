@@ -6,11 +6,7 @@
       </h4>
 
       <div class="service-cards row">
-        <div
-          class="col-12 col-sm-6 col-md-3"
-          v-for="(serv, i) in services"
-          :key="i"
-        >
+        <div class="col-6 col-md-3" v-for="(serv, i) in services" :key="i">
           <div class="card flex-c justify-content-between">
             <img
               style="width: 10.4rem; height: 10.4rem"
