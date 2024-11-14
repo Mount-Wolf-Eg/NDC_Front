@@ -17,7 +17,7 @@
       >
         <div class="row w-100 h-100">
           <div
-            class="col-6 col-md-3 flex-c algn-items-center justify-content-center"
+            class="met-item col-6 col-md-3 flex-c algn-items-center justify-content-center"
             v-for="(metric, j) in metrics.slice(-4)"
             :key="j"
           >

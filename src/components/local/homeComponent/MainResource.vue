@@ -1,18 +1,21 @@
 <template>
   <div class="main-resource" style="display: none; padding: 10rem 0">
+    <div class="partner-box text-center">
+      <p class="partner-title">{{ $t("main-resources") }}</p>
+      <p class="partner-text mx-auto">{{ $t("main-resource-body") }}:</p>
+    </div>
     <div
       class="d-flex flex-row gap-5 flex-wrap justify-content-center align-items-center"
     >
-      <div v-for="(img, j) in mainResources" :key="j">
+      <div v-for="(img, j) in mainResources" :key="j" class="res-box">
         <img
           :src="img.image"
           class="resourc-img"
           style="
-            width: 10rem;
+            width: 100%;
             height: auto;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
-            max-height: 9rem;
           "
           alt=""
         />

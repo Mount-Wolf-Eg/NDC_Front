@@ -1,5 +1,5 @@
 <template>
-  <div class="pack-res-swiper h-100" style="border-radius: 16px">
+  <div class="pack-res-swiper h-100">
     <div class="testimonial-swiper container-cust">
       <!-- :Autoplay="{
           delay: 1000,
@@ -18,8 +18,8 @@
           dynamicBullets: true,
           clickable: true,
         }"
-        :slides-per-view="1.05"
-        :space-between="20"
+        :slides-per-view="1.1"
+        :space-between="15"
         :navigation="{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -46,7 +46,7 @@
             </div>
             <!-- images -->
 
-            <div v-else>
+            <div class="card-res" v-else>
               <div class="card-border">
                 <div
                   class="package-info-respon d-flex flex-column justify-content-between h-100"
@@ -71,9 +71,10 @@
                     class="h-100 d-flex flex-column align-items-center justify-content-between gap-5"
                   >
                     <div
-                      class="d-flex flex-row algin-items-start p-5"
+                      class="d-flex flex-column algin-items-start p-5 w-100"
                       style="flex: 1 !important"
                     >
+                      <p class="res-head">الباقة المميزة للاعتماد</p>
                       <div class="card-lists" style="flex: 1">
                         <p class="res-box-title">
                           {{ $t("included-services") }}:
@@ -89,7 +90,9 @@
                       </div>
 
                       <div class="card-lists" style="flex: 1">
-                        <p class="res-box-title">{{ $t("target-group") }}:</p>
+                        <p class="res-box-title sec">
+                          {{ $t("target-group") }}:
+                        </p>
                         <ul class="d-flex flex-column">
                           <li v-for="(ser, j) in slide.target_group" :key="j">
                             {{ ser }}
@@ -101,7 +104,7 @@
                     <button
                       @click="router.push({ name: 'contact' })"
                       class="r-more-btn-w mb-3"
-                      style="width: 90%"
+                      style="width: 100%"
                     >
                       {{ $t("contactu") }}
                     </button>

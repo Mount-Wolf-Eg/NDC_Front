@@ -18,12 +18,15 @@
       >
         <div class="row achiv-lyout mx-auto h-100">
           <div
-            class="col-6 last col-md flex-c algn-items-start justify-content-start gap-5"
+            class="col-6 last col-md d-flex algn-items-start justify-content-center gap-5"
             v-for="(achiev, i) in achievements.slice(-5)"
             :key="i"
           >
-            <div class="text-center flex-c gap-4 p-5">
+            <div
+              class="ac-box text-center d-flex flex-column align-items-center justify-content-start gap-4 p-5"
+            >
               <img
+                class="achiev-icon"
                 style="width: 4.5rem; height: 4.5rem"
                 :src="achiev.image"
                 alt="achivement icon"
@@ -75,7 +78,7 @@
           :Lazy="true"
         >
           <swiper-slide v-for="(slide, i) in questi" :key="i" class="h-100">
-            <div class="h-100 f-flex flex-column">
+            <div class="h-100 d-flex flex-column">
               <!-- loading placeholder -->
               <div
                 style="background-color: #868e96"
@@ -91,8 +94,8 @@
 
               <div class="question-card h-100" v-else>
                 <div
-                  class="h-100 d-flex flex-column justify-content-between"
-                  style="height: 22rem !important"
+                  class="h-100 d-flex flex-column align-items-center justify-content-between"
+                  style="height: 22rem"
                 >
                   <h3 class="questipon-card-title">{{ slide.title }}</h3>
                   <p class="questipon-card-text">

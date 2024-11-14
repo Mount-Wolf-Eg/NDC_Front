@@ -23,6 +23,7 @@
             <!-- fb -->
             <a v-if="allContacts.facebook" :href="allContacts.facebook">
               <svg
+                class="log-icon"
                 style="width: 3rem; height: 3rem"
                 id="Group_1964"
                 data-name="Group 1964"
@@ -41,6 +42,7 @@
             <!-- tw -->
             <a v-if="allContacts.twitter" :href="allContacts.twitter">
               <svg
+                class="log-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"
                 style="width: 3.5rem; height: 3.5rem; stroke: #fff; fill: #fff"
@@ -53,6 +55,7 @@
             <!-- whats -->
             <a v-if="allContacts.whatsApp" :href="allContacts.whatsApp">
               <svg
+                class="log-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
                 style="width: 3.8rem; height: 3.8rem; stroke: #fff; fill: #fff"
@@ -67,6 +70,7 @@
             <!-- tiktok -->
             <a v-if="allContacts.tikTok" :href="allContacts.tikTok">
               <svg
+                class="log-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"
                 style="width: 3rem; height: 3rem; stroke: #fff; fill: #fff"
@@ -79,6 +83,7 @@
             <!-- youtube -->
             <a v-if="allContacts.youtube" :href="allContacts.youtube">
               <svg
+                class="log-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"
                 style="width: 3rem; height: 3rem; stroke: #fff; fill: #fff"
@@ -91,6 +96,7 @@
             <!-- snap -->
             <a v-if="allContacts.Snapchat" :href="allContacts.Snapchat">
               <svg
+                class="log-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"
                 style="width: 3rem; height: 3rem; stroke: #fff; fill: #fff"
@@ -103,6 +109,7 @@
             <!-- instag -->
             <a v-if="allContacts.instagram" :href="allContacts.instagram">
               <svg
+                class="log-icon"
                 id="Group_1963"
                 data-name="Group 1963"
                 xmlns="http://www.w3.org/2000/svg"

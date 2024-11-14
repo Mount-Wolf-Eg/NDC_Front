@@ -18,7 +18,7 @@
           <p class="card-title">{{ packag.name }}</p>
           <div class="d-flex flex-row algin-items-start gap-3 p-5">
             <span class="card-lists" style="flex: 1">
-              <p>{{ $t("included-services") }}:</p>
+              <p class="pack-titl">{{ $t("included-services") }}:</p>
               <ul class="d-flex flex-column">
                 <li v-for="(ser, j) in packag.included_services" :key="j">
                   {{ ser }}
@@ -27,7 +27,7 @@
             </span>
 
             <span class="card-lists" style="flex: 1">
-              <p>{{ $t("target-group") }}:</p>
+              <p class="pack-titl">{{ $t("target-group") }}:</p>
               <ul class="d-flex flex-column">
                 <li v-for="(ser, j) in packag.target_group" :key="j">
                   {{ ser }}

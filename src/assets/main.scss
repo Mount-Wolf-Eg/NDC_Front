@@ -637,7 +637,6 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%);
-
     background-color: var(--col-white);
     border-radius: var(--brd-r-md);
     padding: 2rem 7rem 7rem;
@@ -686,7 +685,8 @@ button {
 }
 
 // partner
-.home-partner-sec {
+.home-partner-sec,
+.main-resource {
   .partner-box {
     background-image: url("/src/assets/images/Vector (2).png");
     background-repeat: no-repeat;
