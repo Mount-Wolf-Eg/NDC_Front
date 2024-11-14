@@ -213,7 +213,7 @@ const breakpoints = {
 .blog {
   .blog-info {
     background-color: #def1ff;
-    border-radius: 16px;
+    border-radius: 1.6rem;
     width: 112.4rem;
     height: 31rem;
     position: absolute;
@@ -239,7 +239,7 @@ const breakpoints = {
       font-size: 1.4rem;
       font-weight: 400;
       line-height: 2.673rem;
-      border-radius: 8px;
+      border-radius: 0.8rem;
     }
   }
   .blog-body {
@@ -263,7 +263,7 @@ const breakpoints = {
 .join-card {
   margin-bottom: 3rem;
   border: 1px solid #444444;
-  border-radius: 24px;
+  border-radius: 2.4rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -303,7 +303,7 @@ const breakpoints = {
     line-height: 2.673rem;
     color: #444444;
     height: 2.7rem;
-    border-radius: 8px;
+    border-radius: 0.8rem;
     background-color: #def1ff;
     text-align: center;
     line-height: 2.7rem;

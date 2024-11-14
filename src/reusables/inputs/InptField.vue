@@ -63,7 +63,7 @@ const updateValue = (value) => {
   input {
     padding: 2rem 2rem;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     border: 1px solid #464a61;
   }
 }
@@ -79,7 +79,7 @@ const updateValue = (value) => {
   border: 1px solid #0477be !important;
   height: 5rem;
   width: 100%;
-  border-radius: 9px;
+  border-radius: 0.9rem;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 3.454rem;

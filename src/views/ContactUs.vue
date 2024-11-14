@@ -239,7 +239,7 @@ const contacForm = async () => {
       .form-inpt {
         border: 1px solid #0477be;
         height: 5rem;
-        border-radius: 9px;
+        border-radius: 0.9rem;
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 3.454rem;
@@ -254,7 +254,7 @@ const contacForm = async () => {
         font-weight: 500;
         line-height: 3.6rem;
         color: #fff;
-        border-radius: 12px;
+        border-radius: 1.2rem;
       }
     }
   }

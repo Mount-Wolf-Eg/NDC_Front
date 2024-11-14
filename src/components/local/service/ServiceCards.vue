@@ -113,11 +113,11 @@ const { allServices } = storeToRefs(useStaticPagesStore());
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     transition: all 0.2s step-start;
     &:hover {
       background-color: #fff;
-      border-radius: 12px;
+      border-radius: 1.2rem;
       height: 40rem;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }

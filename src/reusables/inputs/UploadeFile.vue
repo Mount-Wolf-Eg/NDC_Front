@@ -131,7 +131,7 @@ const removeFile = () => {
 .upload-field {
   margin: 1rem 0 0;
   position: relative;
-  border-radius: 12px;
+  border-radius: 1.2rem;
   border: 1px solid #464a61;
   padding: 0.5rem;
   background-color: white;
@@ -145,14 +145,14 @@ const removeFile = () => {
 
   input::file-selector-button {
     background-color: transparent;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     padding: 0.5rem 1rem;
     border: none;
     color: #464a61;
   }
 
   .img-field-st {
-    border-radius: 12px;
+    border-radius: 1.2rem;
     padding: 0.5rem 1rem;
   }
   label {

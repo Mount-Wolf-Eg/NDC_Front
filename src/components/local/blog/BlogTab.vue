@@ -107,7 +107,7 @@ const props = defineProps({
       color: #444444;
       width: 13.2rem;
       height: 2.7rem;
-      border-radius: 8px;
+      border-radius: 0 8rem;
       background-color: #def1ff;
       text-align: center;
       line-height: 2.7rem;
