@@ -23,7 +23,7 @@
 
       <button @click="showNavMenu = !showNavMenu" class="col-1">
         <svg
-          style="max-width: 5rem; max-height: 5rem; height: 100%; width: auto"
+          style="max-width: 3rem; max-height: 3rem; height: 100%; width: auto"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@
                     fill="#fff"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 448 512"
-                    style="width: 4rem; height: 4rem"
+                    style="width: 1.6rem; height: 1.6rem"
                   >
                     <path
                       d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
@@ -179,7 +179,7 @@
                   fill="#fff"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
-                  style="width: 4rem; height: 4rem"
+                  style="width: 1.6rem; height: 1.6rem"
                 >
                   <path
                     d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
