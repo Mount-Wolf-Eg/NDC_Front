@@ -29,7 +29,7 @@
 
   // hero section
   .hero-sec {
-    height: 380px;
+    height: 450px;
     .swiper-button-next,
     .swiper-button-prev,
     .swiper-pagination {
@@ -41,7 +41,7 @@
       text-align: center;
       color: var(--col-white);
       width: fit-content;
-      margin-top: 20px;
+      margin-top: 20%;
       .title {
         font-weight: var(--fw-bold);
         font-size: 16px !important;
@@ -89,7 +89,8 @@
 
   // service
   .home-services-sec {
-    padding-top: 235px;
+    padding-top: 280px;
+    padding-bottom: 20px;
     .service-title {
       font-size: 20px;
       line-height: 36px;
@@ -101,7 +102,7 @@
         margin: 10px 0 !important;
         padding: 5px 2px !important;
         min-height: 250px;
-        max-height: 300px !important;
+        max-height: 350px !important;
         display: flex !important;
         img {
           width: 71px !important;
@@ -211,7 +212,12 @@
     }
 
     .testimonial-swiper {
+      padding-bottom: 10px !important;
+      margin: 0 auto !important;
+
       .tetimonial-card {
+        width: 98% !important;
+        margin: 0 auto !important;
         .card-border {
           height: auto;
           .card-body {
@@ -298,6 +304,7 @@
         .questipon-card-text {
           font-size: 12px !important;
           line-height: 24px;
+          height: auto !important;
         }
         .r-more-btn-w {
           font-size: 14px !important;
@@ -480,7 +487,7 @@
 
   // hero section
   .hero-sec {
-    height: 330px;
+    height: 400px;
     .swiper-button-next,
     .swiper-button-prev,
     .swiper-pagination {
@@ -490,7 +497,7 @@
       text-align: center;
       color: var(--col-white);
       padding: 0 !important;
-      margin-top: 4%;
+      margin-top: 100px;
 
       .title {
         font-weight: var(--fw-bold);
@@ -510,19 +517,19 @@
       width: 100%;
       text-align: center;
       max-width: 92.5% !important;
-      bottom: -90% !important;
+      bottom: -80% !important;
       flex-direction: column-reverse;
       padding: 0;
 
       .hero-about-title {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 30.7px;
         font-weight: bold !important;
       }
       .hero-about-text {
-        font-size: 18px;
-        line-height: 20px;
-        padding: 15px 0;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 10px 0;
         font-weight: 700;
       }
 
@@ -545,6 +552,7 @@
   // service
   .home-services-sec {
     padding-top: 340px;
+    padding-bottom: 20px;
     .service-title {
       font-size: 26px;
       line-height: 36px;
@@ -552,8 +560,8 @@
     .service-cards {
       width: 100%;
       .card {
-        margin: 10px 0 !important;
-        padding: 5px 2px !important;
+        margin: 0 !important;
+        padding: 10px 2px !important;
         min-height: 250px;
         height: 100%;
         max-height: 350px !important;
@@ -563,7 +571,7 @@
           height: 71px !important;
         }
         .card-title {
-          font-size: 20px;
+          font-size: 18px;
           line-height: 28px;
           margin: 0 !important;
           padding: 0 8px !important;
@@ -571,6 +579,7 @@
         .card-text {
           font-size: 16px;
           line-height: 20px;
+          font-weight: normal;
         }
         .r-more-btn-w {
           width: 100% !important;
@@ -594,8 +603,8 @@
         line-height: 36px;
       }
       .home-package-text {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 16px;
+        line-height: 24px;
       }
     }
 
@@ -609,7 +618,7 @@
         .card-res {
           .card-border {
             .package-info-respon {
-              padding: 10px;
+              padding: 10px 5px;
               border-radius: 12px !important;
               .res-head {
                 font-size: 24px;
@@ -620,6 +629,7 @@
                 .res-box-title {
                   font-size: 20px;
                   line-height: 34px;
+                  font-weight: 600;
                   &.sec {
                     margin-top: 20px;
                   }
@@ -630,6 +640,7 @@
                     list-style-type: "-";
                     line-height: 30px;
                     font-size: 16px;
+                    font-weight: normal;
                   }
                 }
               }
@@ -772,16 +783,15 @@
   .home-partner-sec {
     padding: 10px 0 5px;
     .partner-box {
-      padding: 10px 0 10px;
+      padding: 20px 0 10px;
       .partner-title {
         font-size: 26px;
         line-height: 36px;
       }
       .partner-text {
         width: 100%;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 24px;
-        padding: 10px;
       }
       .card {
         border-radius: 12px !important;
@@ -874,7 +884,7 @@
   }
 
   .hero-sec {
-    height: 77rem;
+    height: 400px;
     .swiper-button-next,
     .swiper-button-prev,
     .swiper-pagination {
@@ -882,18 +892,19 @@
     }
     .hero-card-text {
       color: var(--col-white);
-      padding: 15rem 5rem !important;
+      padding: 0 20px !important;
+      margin-top: 100px;
 
       .title {
-        font-size: 7rem !important;
-        line-height: 8rem !important;
-        margin-bottom: 5rem !important;
+        font-size: 30px !important;
+        line-height: 32px !important;
+        margin-bottom: 20px !important;
       }
 
       .body {
         font-weight: var(--fw-bold) !important;
-        font-size: 5rem !important;
-        line-height: 5rem !important;
+        font-size: 20px !important;
+        line-height: 28px !important;
       }
     }
   }

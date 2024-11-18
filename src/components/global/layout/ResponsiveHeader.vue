@@ -10,14 +10,14 @@
   >
     <div class="nav row col-12 px-4" style="transition: all 0.3s ease-in-out">
       <div
-        class="col-3"
+        class="col-4"
         style="margin-inline-end: auto"
         @click="router.push({ name: 'home' })"
       >
         <img
           :src="allContacts.main_logo_src"
           alt="website logo"
-          style="width: auto; height: auto; max-width: 100%; max-height: 5rem"
+          style="width: auto; height: auto; max-width: 100%; max-height: 30px"
         />
       </div>
 
@@ -64,6 +64,8 @@
           style="
             width: 3.5rem;
             height: 3.5rem;
+            max-height: 20px;
+            max-width: 20px;
             position: absolute;
             top: 30px;
             left: 30px;

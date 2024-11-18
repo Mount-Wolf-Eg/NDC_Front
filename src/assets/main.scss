@@ -100,8 +100,8 @@ button {
 }
 
 .container-cust {
-  width: 85%;
-  margin: 0 auto;
+  width: 98%;
+  margin: 0 5px;
 }
 
 .flex-c {
@@ -393,7 +393,6 @@ button {
 
       &:hover {
         box-shadow: var(--bx-shadow);
-        transform: scale(1.1);
       }
 
       &:hover {

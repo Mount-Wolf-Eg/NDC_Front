@@ -18,8 +18,8 @@
           dynamicBullets: true,
           clickable: true,
         }"
-        :slides-per-view="1.1"
-        :space-between="15"
+        :slides-per-view="1.05"
+        :space-between="5"
         :navigation="{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -71,7 +71,7 @@
                     class="h-100 d-flex flex-column align-items-center justify-content-between gap-5"
                   >
                     <div
-                      class="d-flex flex-column algin-items-start p-5 w-100"
+                      class="d-flex flex-column algin-items-start py-5 px-3 w-100"
                       style="flex: 1 !important"
                     >
                       <p class="res-head">الباقة المميزة للاعتماد</p>
