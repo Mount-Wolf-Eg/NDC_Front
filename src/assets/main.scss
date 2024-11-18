@@ -654,6 +654,9 @@ button {
       padding: 2rem;
       text-align: start;
       border-radius: var(--brd-r-md);
+      & > div {
+        justify-content: space-between;
+      }
       .questipon-card-title {
         font-weight: var(--fw-bold);
         line-height: var(--fs-32);

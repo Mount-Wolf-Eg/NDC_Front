@@ -10,18 +10,22 @@
   >
     <div class="nav row col-12 px-4" style="transition: all 0.3s ease-in-out">
       <div
-        class="col-4"
+        class="col-5"
         style="margin-inline-end: auto"
         @click="router.push({ name: 'home' })"
       >
         <img
           :src="allContacts.main_logo_src"
           alt="website logo"
-          style="width: auto; height: auto; max-width: 100%; max-height: 30px"
+          style="width: auto; height: auto; max-width: 150px"
         />
       </div>
 
-      <button @click="showNavMenu = !showNavMenu" class="col-1">
+      <button
+        @click="showNavMenu = !showNavMenu"
+        class="col-1"
+        v-if="!showNavMenu"
+      >
         <svg
           style="
             max-width: 3.5rem;

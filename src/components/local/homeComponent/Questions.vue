@@ -94,7 +94,7 @@
 
               <div class="question-card h-100" v-else>
                 <div
-                  class="h-100 d-flex flex-column align-items-center justify-content-between"
+                  class="h-100 d-flex flex-column align-items-center"
                   style="height: 22rem"
                 >
                   <h3 class="questipon-card-title">{{ slide.title }}</h3>

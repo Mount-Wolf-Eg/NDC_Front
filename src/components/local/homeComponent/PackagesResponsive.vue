@@ -71,10 +71,10 @@
                     class="h-100 d-flex flex-column align-items-center justify-content-between gap-5"
                   >
                     <div
-                      class="d-flex flex-column algin-items-start py-5 px-3 w-100"
+                      class="d-flex flex-column algin-items-start py-5 px-2 w-100"
                       style="flex: 1 !important"
                     >
-                      <p class="res-head">الباقة المميزة للاعتماد</p>
+                      <p class="res-head">{{ $t("pack-main") }}</p>
                       <div class="card-lists" style="flex: 1">
                         <p class="res-box-title">
                           {{ $t("included-services") }}:

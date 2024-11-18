@@ -5,7 +5,7 @@
   }
 
   body {
-    // background-color: rgb(178, 230, 173) !important;
+    background-color: rgb(178, 230, 173) !important;
   }
 
   //responsive header
@@ -463,7 +463,7 @@
   }
 
   body {
-    // background-color: red !important;
+    background-color: red !important;
   }
 
   //   responsive header
@@ -501,13 +501,13 @@
 
       .title {
         font-weight: var(--fw-bold);
-        font-size: 20px !important;
+        font-size: 22px !important;
         line-height: 37px;
       }
 
       .body {
         font-weight: var(--fw-normal);
-        font-size: 14px !important;
+        font-size: 18px !important;
         line-height: 20px;
       }
     }
@@ -717,18 +717,21 @@
   // questions
   .home-question-sec {
     .achiement-sec {
-      height: 400px;
+      height: 450px;
+      margin: 0 auto;
 
       .achieve-box {
-        height: 95% !important;
-        padding: 30px 0 !important;
+        height: 90% !important;
+        padding: 0 !important;
         .achiv-lyout {
           width: 98%;
           .ac-box {
             width: 100%;
             padding: 0 !important;
+            margin: 20px 0;
+
             .achiev-icon {
-              width: 40px !important;
+              width: 60px !important;
               height: auto !important;
             }
             .achievment-count {
@@ -754,7 +757,7 @@
         margin: 15px 0;
       }
       .question-card {
-        height: 180px !important;
+        height: 200px !important;
         border-radius: 16px !important;
 
         .questipon-card-title {
@@ -764,6 +767,7 @@
         .questipon-card-text {
           font-size: 14px !important;
           line-height: 24px;
+          height: 100%;
         }
         .r-more-btn-w {
           font-size: 14px !important;
@@ -783,7 +787,7 @@
   .home-partner-sec {
     padding: 10px 0 5px;
     .partner-box {
-      padding: 20px 0 10px;
+      padding: 25px 0 10px;
       .partner-title {
         font-size: 26px;
         line-height: 36px;
@@ -880,7 +884,7 @@
   }
 
   body {
-    // background-color: rgb(43, 255, 0) !important;
+    background-color: rgb(43, 255, 0) !important;
   }
 
   .hero-sec {
@@ -1138,7 +1142,7 @@
   }
 
   body {
-    // background-color: rgb(208, 255, 0) !important;
+    background-color: rgb(208, 255, 0) !important;
   }
 }
 
@@ -1253,7 +1257,7 @@
   }
 
   body {
-    // background-color: rgb(0, 4, 255) !important;
+    background-color: rgb(0, 4, 255) !important;
   }
 }
 
@@ -1271,6 +1275,6 @@
   }
 
   body {
-    // background-color: rgba(204, 0, 255, 0.137) !important;
+    background-color: rgba(204, 0, 255, 0.137) !important;
   }
 }
