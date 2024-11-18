@@ -23,26 +23,33 @@
 
       <button @click="showNavMenu = !showNavMenu" class="col-1">
         <svg
-          style="max-width: 3rem; max-height: 3rem; height: 100%; width: auto"
+          style="
+            max-width: 3.5rem;
+            max-height: 3.5rem;
+            min-height: 2.5rem;
+            min-width: 2.5rem;
+            height: 100%;
+            width: auto;
+          "
           viewBox="0 0 24 24"
-          fill="none"
+          fill="#fff"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M4 18L20 18"
-            stroke="#000000"
+            stroke="#fff"
             stroke-width="2"
             stroke-linecap="round"
           />
           <path
             d="M4 12L20 12"
-            stroke="#000000"
+            stroke="#fff"
             stroke-width="2"
             stroke-linecap="round"
           />
           <path
             d="M4 6L20 6"
-            stroke="#000000"
+            stroke="#fff"
             stroke-width="2"
             stroke-linecap="round"
           />
@@ -55,8 +62,8 @@
       <div class="h-100" style="position: relative">
         <svg
           style="
-            width: 5rem;
-            height: 5rem;
+            width: 3.5rem;
+            height: 3.5rem;
             position: absolute;
             top: 30px;
             left: 30px;

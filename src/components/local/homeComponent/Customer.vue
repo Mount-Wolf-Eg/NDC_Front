@@ -182,9 +182,12 @@ const breakpoints = {
   background-color: var(--col-white);
   width: 3.4rem;
   height: 3.4rem;
+  min-width: 20px !important;
+  min-height: 20px !important;
   border-radius: 50%;
   &::after {
-    font-size: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
   }
 }
 .swiper-button-prev {
@@ -194,9 +197,12 @@ const breakpoints = {
   background-color: var(--col-white);
   width: 3.4rem;
   height: 3.4rem;
+  min-width: 20px !important;
+  min-height: 20px !important;
   border-radius: 50%;
   &::after {
-    font-size: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
   }
 }
 </style>

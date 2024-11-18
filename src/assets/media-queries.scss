@@ -37,9 +37,11 @@
     }
 
     .hero-card-text {
+      padding: 0 !important;
       text-align: center;
       color: var(--col-white);
-
+      width: fit-content;
+      margin-top: 20px;
       .title {
         font-weight: var(--fw-bold);
         font-size: 16px !important;
@@ -240,6 +242,10 @@
             }
           }
         }
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
       }
     }
   }
@@ -483,6 +489,8 @@
     .hero-card-text {
       text-align: center;
       color: var(--col-white);
+      padding: 0 !important;
+      margin-top: 4%;
 
       .title {
         font-weight: var(--fw-bold);
@@ -687,6 +695,10 @@
             }
           }
         }
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
       }
     }
   }
