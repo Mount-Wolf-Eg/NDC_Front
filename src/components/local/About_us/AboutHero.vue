@@ -131,7 +131,7 @@
           :key="i"
         >
           <div
-            class="values-content flex-c justify-content-between align-items-center text-center"
+            class="values-content flex-c justify-content-start align-items-center text-center"
           >
             <img
               :src="val.image"

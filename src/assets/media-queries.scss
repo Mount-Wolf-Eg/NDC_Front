@@ -1286,9 +1286,8 @@
           padding: 15px;
           .about-head {
             font-size: 20px !important;
-            line-height: 23px;
             font-weight: bold;
-            height: auto;
+            height: 30px !important;
             width: fit-content;
             padding: 2px 0;
             padding-inline-end: 50px;
@@ -1315,9 +1314,8 @@
           padding: 15px;
           .vission-head {
             font-size: 18px !important;
-            line-height: 23px;
             font-weight: bold;
-            height: auto;
+            height: 30px !important;
             width: fit-content;
             padding: 2px 0;
             padding-inline-end: 50px;
@@ -1341,9 +1339,8 @@
             padding: 15px;
             .mission-head {
               font-size: 18px !important;
-              line-height: 23px;
               font-weight: bold;
-              height: auto;
+              height: 30px !important;
               width: fit-content;
               padding: 2px 0;
               padding-inline-end: 50px;
@@ -1376,11 +1373,12 @@
         width: 100%;
         padding: 0 !important;
         .values-card {
+          background-color: #7aaf44;
           width: 100%;
+          height: 150px !important;
           .values-content {
             width: 100% !important;
-            // height: 170px !important;
-            height: auto !important;
+            height: 100% !important;
             background-color: orange;
             gap: 7px !important;
 
@@ -1522,13 +1520,14 @@
       }
     }
   }
+
   .join-cards {
     width: 98% !important;
     margin: 5px auto !important;
     height: 220px !important;
     .join-card {
       margin: 0 !important;
-      width: 45% !important;
+      width: 50% !important;
       height: 100% !important;
       .card-img {
         max-height: 100px;
