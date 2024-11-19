@@ -3,7 +3,13 @@
     <img
       src="/src/assets/joinUs/join-us.jpg"
       alt="join us"
-      style="width: 100%; height: auto"
+      style="
+        width: 100%;
+        height: auto;
+        max-height: 50vh;
+        object-fit: cover;
+        object-position: center;
+      "
     />
     <div class="join-sec mx-auto">
       <div class="container-cust">

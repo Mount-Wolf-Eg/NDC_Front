@@ -20,7 +20,7 @@
       <div class="container-cust">
         <span class="row p-0">
           <!-- navbar brand -->
-          <router-link to="/" class="navbar-brand col-2 m-0 p-0 flex-c">
+          <router-link to="/" class="navbar-brand col-2 m-0 p-0 px-1 flex-c">
             <div
               class="w-100"
               style="

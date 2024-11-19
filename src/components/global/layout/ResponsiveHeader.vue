@@ -4,7 +4,7 @@
     style="backdrop-filter: brightness(0.9) blur(2px)"
     :style="{
       position: route.name === 'home' ? 'fixed' : 'sticky',
-      backgroundColor: route.name === 'home' ? '#0477be73' : '#0477be73',
+      backgroundColor: route.name === 'home' ? '#0477be9a' : '#0477be9a',
       height: showNavMenu ? '100vh' : 'auto',
     }"
   >
