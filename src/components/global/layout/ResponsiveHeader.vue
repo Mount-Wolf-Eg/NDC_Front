@@ -3,8 +3,8 @@
     class="responsive-nav"
     style="backdrop-filter: brightness(0.9) blur(2px)"
     :style="{
-      backgroundColor: route.name === 'home' ? '' : '#0477BE',
-      position: route.name === 'home' ? 'absolute' : 'sticky',
+      position: route.name === 'home' ? 'fixed' : 'sticky',
+      backgroundColor: route.name === 'home' ? '#0477be73' : '#0477be73',
       height: showNavMenu ? '100vh' : 'auto',
     }"
   >

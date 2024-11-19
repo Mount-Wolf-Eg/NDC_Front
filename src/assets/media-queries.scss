@@ -121,7 +121,7 @@
           line-height: 20px;
         }
         .r-more-btn-w {
-          width: 100% !important;
+          width: 90% !important;
           font-size: 14px;
           padding: 10px 0;
         }
@@ -324,6 +324,7 @@
 
   // partner
   .home-partner-sec {
+    margin: 15px 0 0 !important;
     .partner-box {
       padding: 10px 0 5px;
       .partner-title {
@@ -360,6 +361,7 @@
   .main-resource {
     display: block !important;
     padding: 10px !important;
+    margin: 15px 0 !important;
     .res-box {
       width: 55px;
       height: 55px;
@@ -386,9 +388,12 @@
             font-weight: bold;
             height: auto;
             width: fit-content;
-            padding: 2px 0;
+            display: flex !important;
+            align-items: center;
+            justify-content: start;
+            padding: 5px 0;
+            padding-inline-start: 10px;
             padding-inline-end: 50px;
-            padding-inline-start: 5px;
           }
           .about-title {
             font-size: 16px;
@@ -415,9 +420,12 @@
             font-weight: bold;
             height: auto;
             width: fit-content;
-            padding: 2px 0;
+            display: flex !important;
+            align-items: center;
+            justify-content: start;
+            padding: 5px 0;
+            padding-inline-start: 10px;
             padding-inline-end: 50px;
-            padding-inline-start: 5px;
           }
 
           .vission-body {
@@ -441,9 +449,12 @@
               font-weight: bold;
               height: auto;
               width: fit-content;
-              padding: 2px 0;
+              display: flex !important;
+              align-items: center;
+              justify-content: start;
+              padding: 5px 0;
+              padding-inline-start: 10px;
               padding-inline-end: 50px;
-              padding-inline-start: 5px;
             }
 
             .mission-body {
@@ -475,7 +486,7 @@
           width: 100%;
           .values-content {
             width: 100% !important;
-            height: 35rem !important;
+            height: 160px !important;
             gap: 5px !important;
 
             img {
@@ -507,66 +518,22 @@
       }
       .join-text {
         font-size: 14px !important;
-        line-height: 20px !important;
+        line-height: 22px !important;
         margin: 0 0 15px !important;
-      }
-      .join-cards {
-        width: 100% !important;
-        .join-card {
-          margin: 0 !important;
-          width: 50%;
-          height: auto;
-          .join-card-title {
-            font-size: 12px;
-            width: fit-content !important;
-            max-width: 90%;
-          }
-          .join-card-text {
-            font-size: 10px;
-          }
-          .join-card-date {
-            max-width: 90%;
-            width: fit-content;
-            font-size: 12px;
-            height: auto;
-            padding: 2px;
-          }
-        }
       }
     }
   }
 
   .blog {
-    margin: 10px !important;
-    .blog-btns {
-      margin: 0 !important;
-      padding: 10px 0 !important;
-      .blog-btn {
-        font-size: 12px;
-        padding: 5px !important;
-      }
-    }
-
-    .join-cards {
+    margin: 0 !important;
+    .blog-box-b {
       width: 100% !important;
-      .join-card {
+      .blog-btns {
         margin: 0 !important;
-        width: 50%;
-        height: auto;
-        .join-card-title {
+        padding: 10px !important;
+        .blog-btn {
           font-size: 12px;
-          width: fit-content !important;
-          max-width: 90%;
-        }
-        .join-card-text {
-          font-size: 10px;
-        }
-        .join-card-date {
-          max-width: 90%;
-          width: fit-content;
-          font-size: 12px;
-          height: auto;
-          padding: 2px;
+          padding: 5px !important;
         }
       }
     }
@@ -613,29 +580,6 @@
       padding-inline-end: 50px;
       padding-inline-start: 5px;
     }
-    .join-cards {
-      width: 100% !important;
-      .join-card {
-        margin: 0 !important;
-        width: 50%;
-        height: auto;
-        .join-card-title {
-          font-size: 12px;
-          width: fit-content !important;
-          max-width: 90%;
-        }
-        .join-card-text {
-          font-size: 10px;
-        }
-        .join-card-date {
-          max-width: 90%;
-          width: fit-content;
-          font-size: 12px;
-          height: auto;
-          padding: 2px;
-        }
-      }
-    }
   }
 
   .service {
@@ -668,22 +612,74 @@
       .rehabilitation-sec-1,
       .rehabilitation-sec-2 {
         .reh-title {
-          line-height: 18px;
+          line-height: 20px;
           font-size: 16px !important;
           width: fit-content !important;
           max-width: 90%;
           font-weight: 600 !important;
         }
         .reh-text {
-          font-size: 12px;
-          line-height: 15px;
+          font-size: 14px;
+          line-height: 23px;
           margin: 15px 0 !important;
           font-weight: normal !important;
         }
       }
     }
   }
-
+  .join-cards {
+    width: 98% !important;
+    height: 200px !important;
+    margin: 5px auto !important;
+    .join-card {
+      height: 100% !important;
+      margin: 0 !important;
+      width: 100% !important;
+      .card-img {
+        max-height: 100px;
+      }
+      .card-sec {
+        height: 100%;
+        .join-card-title {
+          font-size: 14px !important ;
+          max-width: 90%;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 0px 10px !important;
+          max-width: 90% !important;
+          margin: 5px 0 !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .join-card-text {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 12px !important;
+        }
+        .join-card-date {
+          font-size: 12px !important;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 5px 10px !important;
+          max-width: 90% !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
   // footer
   .footer-bar {
     .first-footer {
@@ -823,8 +819,8 @@
           width: 100%;
           .values-content {
             width: 100% !important;
-            height: 35rem !important;
-            gap: 5px !important;
+            height: 150px !important;
+            gap: 7px !important;
 
             img {
               width: 50px !important;
@@ -840,6 +836,59 @@
               font-weight: 500 !important;
             }
           }
+        }
+      }
+    }
+  }
+  .join-cards {
+    width: 98% !important;
+    margin: 5px auto !important;
+    height: 200px !important;
+    .join-card {
+      height: 100% !important;
+      margin: 0 !important;
+      width: 100% !important;
+      .card-img {
+        max-height: 100px;
+      }
+      .card-sec {
+        height: 100%;
+        .join-card-title {
+          font-size: 14px !important ;
+          max-width: 90%;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 0px 10px !important;
+          max-width: 90% !important;
+          margin: 5px 0 !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .join-card-text {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 12px !important;
+        }
+        .join-card-date {
+          font-size: 12px !important;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 5px 10px !important;
+          max-width: 90% !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -973,7 +1022,7 @@
           font-weight: normal;
         }
         .r-more-btn-w {
-          width: 100% !important;
+          width: 90% !important;
           font-size: 14px;
           padding: 10px 0;
         }
@@ -1176,6 +1225,7 @@
   }
   // partner
   .home-partner-sec {
+    margin: 15px 0 0 !important;
     padding: 10px 0 5px;
     .partner-box {
       padding: 25px 0 10px;
@@ -1210,6 +1260,7 @@
   }
 
   .main-resource {
+    margin: 10px 0 !important;
     display: block !important;
     padding: 10px !important;
 
@@ -1326,9 +1377,9 @@
         .values-card {
           width: 100%;
           .values-content {
-            width: 100%;
-            height: 35rem !important;
-            gap: 5px !important;
+            width: 100% !important;
+            height: 170px !important;
+            gap: 7px !important;
 
             img {
               width: 50px !important;
@@ -1362,63 +1413,19 @@
         line-height: 20px !important;
         margin: 0 0 15px !important;
       }
-      .join-cards {
-        width: 100% !important;
-        .join-card {
-          margin: 0 !important;
-          width: 50%;
-          max-width: 250px;
-          height: auto;
-          .join-card-title {
-            font-size: 12px;
-            width: fit-content !important;
-            max-width: 90%;
-          }
-          .join-card-text {
-            font-size: 10px;
-          }
-          .join-card-date {
-            width: 50%;
-            font-size: 12px;
-            height: auto;
-            padding: 2px;
-          }
-        }
-      }
     }
   }
 
   .blog {
-    margin: 10px !important;
-    .blog-btns {
-      margin: 0 !important;
-      padding: 10px 0 !important;
-      .blog-btn {
-        font-size: 12px;
-        padding: 5px !important;
-      }
-    }
-
-    .join-cards {
+    margin: 0 10px 10px 10px !important;
+    .blog-box-b {
       width: 100% !important;
-      .join-card {
+      .blog-btns {
         margin: 0 !important;
-        width: 50%;
-        max-width: 250px;
-        height: auto;
-        .join-card-title {
+        padding: 10px !important;
+        .blog-btn {
           font-size: 12px;
-          width: fit-content !important;
-          max-width: 90%;
-        }
-        .join-card-text {
-          font-size: 10px;
-        }
-        .join-card-date {
-          width: 50%;
-          font-size: 12px;
-          height: auto;
-          padding: 2px;
+          padding: 5px !important;
         }
       }
     }
@@ -1465,29 +1472,6 @@
       padding-inline-end: 50px;
       padding-inline-start: 5px;
     }
-    .join-cards {
-      width: 100% !important;
-      .join-card {
-        margin: 0 !important;
-        width: 100%;
-        height: auto;
-        .join-card-title {
-          font-size: 12px;
-          width: fit-content !important;
-          max-width: 90%;
-        }
-        .join-card-text {
-          font-size: 10px;
-        }
-        .join-card-date {
-          max-width: 90%;
-          width: fit-content;
-          font-size: 12px;
-          height: auto;
-          padding: 2px;
-        }
-      }
-    }
   }
 
   .service {
@@ -1520,17 +1504,64 @@
       .rehabilitation-sec-1,
       .rehabilitation-sec-2 {
         .reh-title {
-          line-height: 18px;
+          line-height: 22px;
           font-size: 16px !important;
           width: fit-content !important;
           max-width: 90%;
           font-weight: 600 !important;
         }
         .reh-text {
-          font-size: 12px;
-          line-height: 15px;
+          font-size: 14px;
+          line-height: 23px;
           margin: 15px 0 !important;
           font-weight: normal !important;
+        }
+      }
+    }
+  }
+  .join-cards {
+    width: 98% !important;
+    margin: 5px auto !important;
+    height: 220px !important;
+    .join-card {
+      margin: 0 !important;
+      width: 45% !important;
+      height: 100% !important;
+      .card-img {
+        max-height: 100px;
+      }
+      .card-sec {
+        height: 100%;
+        .join-card-title {
+          font-size: 14px !important ;
+          max-width: 90%;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 0px 10px !important;
+          max-width: 90% !important;
+          margin: 5px 0 !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .join-card-text {
+          font-size: 12px !important;
+        }
+        .join-card-date {
+          font-size: 12px !important;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 5px 10px !important;
+          max-width: 90% !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -1637,7 +1668,7 @@
           line-height: 20px;
         }
         .r-more-btn-w {
-          width: 100% !important;
+          width: 90% !important;
           font-size: 12px;
           padding: 4rem 0;
         }
@@ -1816,8 +1847,8 @@
           width: 47%;
           .values-content {
             width: 100%;
-            height: 200px !important;
-            gap: 5px !important;
+            height: 180px !important;
+            gap: 7px !important;
 
             img {
               width: 50px !important;
@@ -1851,63 +1882,17 @@
         line-height: 20px !important;
         margin: 0 0 15px !important;
       }
-      .join-cards {
-        width: 100% !important;
-        .join-card {
-          margin: 0 !important;
-          width: 50%;
-          max-width: 250px;
-          height: auto;
-          .join-card-title {
-            font-size: 12px;
-            width: fit-content !important;
-            max-width: 90%;
-          }
-          .join-card-text {
-            font-size: 10px;
-          }
-          .join-card-date {
-            width: 50%;
-            font-size: 12px;
-            height: auto;
-            padding: 2px;
-          }
-        }
-      }
     }
   }
 
   .blog {
     margin: 10px !important;
-    .blog-btns {
-      margin: 0 !important;
-      padding: 10px 0 !important;
-      .blog-btn {
-        font-size: 12px;
-        padding: 5px !important;
-      }
-    }
-
-    .join-cards {
-      width: 100% !important;
-      .join-card {
-        margin: 0 !important;
-        width: 50%;
-        max-width: 250px;
-        height: auto;
-        .join-card-title {
+    .blog-box-b {
+      .blog-btns {
+        padding: 10px !important;
+        .blog-btn {
           font-size: 12px;
-          width: fit-content !important;
-          max-width: 90%;
-        }
-        .join-card-text {
-          font-size: 10px;
-        }
-        .join-card-date {
-          width: 50%;
-          font-size: 12px;
-          height: auto;
-          padding: 2px;
+          padding: 5px !important;
         }
       }
     }
@@ -1954,29 +1939,6 @@
       padding-inline-end: 50px;
       padding-inline-start: 5px;
     }
-    .join-cards {
-      width: 100% !important;
-      .join-card {
-        margin: 0 !important;
-        width: 100%;
-        height: auto;
-        .join-card-title {
-          font-size: 12px;
-          width: fit-content !important;
-          max-width: 90%;
-        }
-        .join-card-text {
-          font-size: 10px;
-        }
-        .join-card-date {
-          max-width: 90%;
-          width: fit-content;
-          font-size: 12px;
-          height: auto;
-          padding: 2px;
-        }
-      }
-    }
   }
 
   .service {
@@ -2009,17 +1971,63 @@
       .rehabilitation-sec-1,
       .rehabilitation-sec-2 {
         .reh-title {
-          line-height: 18px;
+          line-height: 20px;
           font-size: 16px !important;
           width: fit-content !important;
           max-width: 90%;
           font-weight: 600 !important;
         }
         .reh-text {
-          font-size: 12px;
-          line-height: 15px;
+          font-size: 14px;
+          line-height: 23px;
           margin: 15px 0 !important;
           font-weight: normal !important;
+        }
+      }
+    }
+  }
+  .join-cards {
+    width: 100% !important;
+    height: 220px !important;
+    .join-card {
+      margin: 0 !important;
+      width: 40% !important;
+      height: 100% !important;
+      .card-img {
+        max-height: 100px;
+      }
+      .card-sec {
+        height: 100%;
+        .join-card-title {
+          font-size: 14px !important ;
+          max-width: 90%;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 0px 10px !important;
+          max-width: 90% !important;
+          margin: 5px 0 !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .join-card-text {
+          font-size: 12px !important;
+        }
+        .join-card-date {
+          font-size: 12px !important;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 5px 10px !important;
+          max-width: 90% !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -2143,7 +2151,52 @@
       height: 50rem;
     }
   }
-
+  .join-cards {
+    width: 100% !important;
+    height: 260px !important;
+    .join-card {
+      height: 100%;
+      margin: 0 !important;
+      width: 40% !important;
+      .card-img {
+        max-height: 100px;
+      }
+      .card-sec {
+        height: 100%;
+        .join-card-title {
+          font-size: 14px !important ;
+          max-width: 90%;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 0px 10px !important;
+          max-width: 90% !important;
+          margin: 5px 0 !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .join-card-text {
+          font-size: 12px !important;
+        }
+        .join-card-date {
+          font-size: 12px !important;
+          height: fit-content !important;
+          width: fit-content !important;
+          padding: 5px 10px !important;
+          max-width: 90% !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
   body {
     // background-color: rgb(208, 255, 0) !important;
   }
@@ -2259,7 +2312,7 @@
   }
 
   body {
-    background-color: rgb(0, 4, 255) !important;
+    // background-color: rgb(0, 4, 255) !important;
   }
 }
 

@@ -125,12 +125,12 @@
 
       <div class="our-values-content flex-r flex-wrap">
         <div
-          class="values-card h-100"
+          class="values-card"
           v-for="(val, i) in ourValues.slice(-6)"
           :key="i"
         >
           <div
-            class="values-content flex-c justify-content-betweeen align-items-center text-center"
+            class="values-content flex-c justify-content-between align-items-center text-center"
           >
             <img
               :src="val.image"

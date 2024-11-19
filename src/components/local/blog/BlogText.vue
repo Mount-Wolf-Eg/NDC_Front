@@ -99,7 +99,7 @@
           >
             <div class="question-card">
               <div
-                class="join-cards d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
+                class="join-cards bg-info d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
               >
                 <div
                   class="join-card p-0"

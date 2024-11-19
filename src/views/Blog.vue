@@ -1,9 +1,16 @@
 <template>
   <div class="blog mx-auto">
-    <div class="flex-col mx-auto" style="width: 90%">
+    <div class="blog-box-b flex-col mx-auto" style="width: 90%">
       <img
+        class="d-none d-md-block"
         src="/src/assets/blog/blog.jpg"
         style="width: 100%; border-radius: 12px"
+        alt="blog iamge"
+      />
+      <img
+        class="d-block d-md-none"
+        src="/src/assets/blog/blogRes.jpg"
+        style="width: 100%"
         alt="blog iamge"
       />
       <div
@@ -21,9 +28,7 @@
         </button>
       </div>
       <div class="tabs w-100">
-        <transition name="fade">
-          <BlogTab :postCard="postsByBlog"></BlogTab>
-        </transition>
+        <BlogTab :postCard="postsByBlog"></BlogTab>
       </div>
     </div>
   </div>
@@ -54,12 +59,12 @@ watch(
 </script>
 
 <style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: opacity 0.5s;
+// }
+// .fade-enter,
+// .fade-leave-to {
+//   opacity: 0;
+// }
 </style>

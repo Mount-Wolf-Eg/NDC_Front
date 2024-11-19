@@ -21,13 +21,25 @@
           style="overflow: hidden"
           @click="router.push({ name: 'joinForm', query: { job: job.id } })"
         >
-          <img :src="job?.image" style="width: 100%; height: auto" alt="" />
-          <span class="p-3">
+          <img
+            :src="job?.image"
+            class="card-img"
+            style="
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+              object-position: center;
+            "
+            alt="job image"
+          />
+          <span
+            class="p-3 card-sec d-flex flex-column justify-content-between align-items-start"
+          >
             <p class="join-card-title" style="overflow: hidden">
-              {{ job.title }}
+              {{ $t("job-name") }}
             </p>
             <p class="join-card-text">
-              {{ job.description }}
+              {{ job.title }}
             </p>
             <p class="join-card-date">
               {{ moment(new Date(job?.created_at)).format("DD-MM-YYYY") }}
