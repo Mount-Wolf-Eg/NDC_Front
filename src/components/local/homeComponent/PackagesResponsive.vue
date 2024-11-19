@@ -30,7 +30,7 @@
         <swiper-slide
           v-for="(slide, i) in packagesRes"
           :key="i"
-          style="background-color: var(--col-bg)"
+          style="background-color: var(--col-bg); border-radius: 8"
         >
           <div class="tetimonial-card w-100 h-100">
             <!-- loading placeholder -->

@@ -5,7 +5,7 @@
   }
 
   body {
-    background-color: rgb(178, 230, 173) !important;
+    background-color: rgb(174, 173, 230) !important;
   }
 
   //responsive header
@@ -376,45 +376,121 @@
   .about-us {
     .about-us-page {
       width: 100%;
-    }
-
-    .about-us-content {
-      .about-us-text {
-        .about-head {
-          font-size: 12px !important;
+      margin-top: 10px;
+      .about-us-content {
+        .about-us-text {
+          padding: 0 10px;
+          .about-head {
+            font-size: 20px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+          .about-title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 10px 0;
+          }
+          .about-body {
+            font-size: 14px !important;
+            line-height: 20px;
+          }
         }
-        .about-title {
-        }
-        .about-body {
-          font-size: 9px !important;
+        .about-us-img {
+          padding: 0 !important;
+          margin: 0 !important;
         }
       }
-      .about-us-img {
+      .our-vission-content {
+        .our-vission-text {
+          padding: 10px 0;
+          .vission-head {
+            font-size: 18px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+
+          .vission-body {
+            font-size: 14px !important;
+            line-height: 20px;
+          }
+        }
+        .our-vission-img {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+
+      .mission-goals-content {
+        .mission-goals {
+          .mission-text {
+            padding: 10px 0;
+            .mission-head {
+              font-size: 18px !important;
+              line-height: 23px;
+              font-weight: bold;
+              height: auto;
+              width: fit-content;
+              padding: 2px 0;
+              padding-inline-end: 50px;
+              padding-inline-start: 5px;
+            }
+
+            .mission-body {
+              font-size: 14px !important;
+              line-height: 20px;
+            }
+          }
+          .mission-img {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+        }
       }
     }
-  }
+    .our-values {
+      .values-head {
+        font-size: 18px !important;
+        line-height: 23px;
+        font-weight: bold;
+        height: auto;
+        width: fit-content !important;
+        padding: 10px 50px;
+      }
+      .our-values-content {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        .values-card {
+          width: 100%;
+          .values-content {
+            width: 100% !important;
+            height: 35rem !important;
+            gap: 5px !important;
 
-  .our-values {
-    .values-head {
-    }
-    .our-values-content {
-      .values-card {
-        width: 90%;
-        .values-content {
-          width: 100% !important;
-          height: 35rem !important;
-          gap: 5px !important;
-
-          img {
-            width: 10rem !important;
-            height: 10rem !important;
-          }
-          .card-title {
-            font-size: 12px !important;
-          }
-          .card-body {
-            font-size: 9px !important;
-            line-height: 15px !important;
+            img {
+              width: 50px !important;
+              height: auto !important;
+            }
+            .card-title {
+              font-size: 14px !important;
+              font-weight: bold !important;
+            }
+            .card-body {
+              font-size: 12px !important;
+              line-height: 15px !important;
+              font-weight: 500 !important;
+            }
           }
         }
       }
@@ -451,6 +527,132 @@
       .footer-sec-item {
         font-size: 12px;
         padding: 12px 0;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 390px) and (max-width: 575px) {
+  // about us
+  .about-us {
+    .about-us-page {
+      width: 100%;
+      margin-top: 10px;
+      .about-us-content {
+        .about-us-text {
+          padding: 0 10px;
+          .about-head {
+            font-size: 20px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+          .about-title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 10px 0;
+          }
+          .about-body {
+            font-size: 14px !important;
+            line-height: 20px;
+          }
+        }
+        .about-us-img {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+      .our-vission-content {
+        .our-vission-text {
+          padding: 10px 0;
+          .vission-head {
+            font-size: 18px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+
+          .vission-body {
+            font-size: 14px !important;
+            line-height: 20px;
+          }
+        }
+        .our-vission-img {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+
+      .mission-goals-content {
+        .mission-goals {
+          .mission-text {
+            padding: 10px 0;
+            .mission-head {
+              font-size: 18px !important;
+              line-height: 23px;
+              font-weight: bold;
+              height: auto;
+              width: fit-content;
+              padding: 2px 0;
+              padding-inline-end: 50px;
+              padding-inline-start: 5px;
+            }
+
+            .mission-body {
+              font-size: 14px !important;
+              line-height: 20px;
+            }
+          }
+          .mission-img {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+    .our-values {
+      .values-head {
+        font-size: 18px !important;
+        line-height: 23px;
+        font-weight: bold;
+        height: auto;
+        width: fit-content !important;
+        padding: 10px 50px;
+      }
+      .our-values-content {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        .values-card {
+          width: 100%;
+          .values-content {
+            width: 100% !important;
+            height: 35rem !important;
+            gap: 5px !important;
+
+            img {
+              width: 50px !important;
+              height: auto !important;
+            }
+            .card-title {
+              font-size: 16px !important;
+              font-weight: bold !important;
+            }
+            .card-body {
+              font-size: 14px !important;
+              line-height: 15px !important;
+              font-weight: 500 !important;
+            }
+          }
+        }
       }
     }
   }
@@ -780,7 +982,7 @@
     }
 
     .question-bg {
-      height: 300px;
+      height: 320px;
     }
   }
   // partner
@@ -837,10 +1039,125 @@
   // about us
   .about-us {
     .about-us-page {
-      width: 100%;
+      margin-top: 10px;
+      .about-us-content {
+        .about-us-text {
+          padding: 0 10px;
+          .about-head {
+            font-size: 20px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+          .about-title {
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 10px 0;
+          }
+          .about-body {
+            font-size: 16px !important;
+            line-height: 20px;
+          }
+        }
+        .about-us-img {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+      .our-vission-content {
+        .our-vission-text {
+          padding: 10px;
+          .vission-head {
+            font-size: 18px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+
+          .vission-body {
+            font-size: 14px !important;
+            line-height: 20px;
+          }
+        }
+        .our-vission-img {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+
+      .mission-goals-content {
+        .mission-goals {
+          .mission-text {
+            padding: 10px;
+            .mission-head {
+              font-size: 18px !important;
+              line-height: 23px;
+              font-weight: bold;
+              height: auto;
+              width: fit-content;
+              padding: 2px 0;
+              padding-inline-end: 50px;
+              padding-inline-start: 5px;
+            }
+
+            .mission-body {
+              font-size: 14px !important;
+              line-height: 20px;
+            }
+          }
+          .mission-img {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+    .our-values {
+      .values-head {
+        font-size: 18px !important;
+        line-height: 23px;
+        font-weight: bold;
+        height: auto;
+        width: fit-content !important;
+        padding: 10px 50px;
+      }
+      .our-values-content {
+        width: 100%;
+        padding: 0 !important;
+        .values-card {
+          width: 40%;
+          .values-content {
+            width: 100%;
+            height: 35rem !important;
+            gap: 5px !important;
+
+            img {
+              width: 50px !important;
+              height: auto !important;
+            }
+            .card-title {
+              font-size: 16px !important;
+              font-weight: bold !important;
+            }
+            .card-body {
+              font-size: 14px !important;
+              line-height: 15px !important;
+              font-weight: 500 !important;
+            }
+          }
+        }
+      }
     }
   }
-
   // footer
   .footer-bar {
     .first-footer {

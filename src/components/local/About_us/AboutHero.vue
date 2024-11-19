@@ -33,6 +33,7 @@
               object-fit: cover;
               object-position: center;
               padding: 3rem;
+              border-radius: 25px !important;
             "
             alt="about img"
           />

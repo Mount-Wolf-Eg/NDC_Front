@@ -53,7 +53,7 @@
             @click="router.push({ name: 'contact' })"
             class="r-more-btn-w"
           >
-            {{ $t("contact") }}
+            {{ $t("contactu") }}
           </button>
         </div>
       </div>
