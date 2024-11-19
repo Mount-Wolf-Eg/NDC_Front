@@ -33,7 +33,7 @@
               object-fit: cover;
               object-position: center;
               padding: 3rem;
-              border-radius: 25px !important;
+              border-radius: 12px !important;
             "
             alt="about img"
           />
@@ -52,7 +52,7 @@
               max-height: 30rem;
               object-fit: cover;
               object-position: center;
-              border-radius: var(--brd-r-sm) !important;
+              border-radius: 12px !important;
             "
             :src="ourVission.image"
             alt="ourvission image"
@@ -84,7 +84,7 @@
                 max-height: 30rem;
                 object-fit: cover;
                 object-position: center;
-                border-radius: var(--brd-r-sm) !important;
+                border-radius: 12px !important;
               "
               :src="ourMission.image"
               alt="about image"
@@ -109,7 +109,7 @@
                 max-height: 30rem;
                 object-fit: cover;
                 object-position: center;
-                border-radius: var(--brd-r-sm) !important;
+                border-radius: 12px !important;
               "
               :src="ourGoals.image"
               alt="about image"

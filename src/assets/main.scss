@@ -958,204 +958,246 @@ button {
   }
 }
 
-// about us
+.join-us {
+  .join-sec {
+    margin: 5rem 0;
+    .join-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 4.9rem;
+      text-align: center;
+    }
+    .join-text {
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 3.454rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .join-cards {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      .join-card {
+        margin-bottom: 3rem;
+        border: 1px solid #444444;
+        border-radius: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        width: 41.4rem;
+        height: 50.2rem;
+        .join-card-title {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 3rem;
+          background-color: #f6f7ff;
+          color: #0477be;
+          max-width: 70%;
+          height: 3.9rem;
+          text-align: center;
+          line-height: 3.9rem;
+        }
+        .join-card-text {
+          font-size: 2.4rem;
+          font-weight: 700;
+          line-height: 3.6rem;
+          color: #181a2a;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .join-card-date {
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 2.673rem;
+          color: #444444;
+          width: 13.2rem;
+          height: 2.7rem;
+          border-radius: 0.8rem;
+          background-color: #def1ff;
+          text-align: center;
+          line-height: 2.7rem;
+        }
+      }
+    }
+  }
+}
 
-// app content
-// service section
-// .float-info {
-//   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   border-radius: 1.2rem;
-//   padding: 3rem;
-//   gap: 5rem;
-//   width: 70%;
-//   background-color: white;
-//   position: absolute;
-//   left: 50%;
-//   bottom: 30%;
-//   transform: translateX(-50%);
-//   .float-head {
-//     font-size: 3.2rem;
-//     font-weight: 700;
-//     line-height: 4.9rem;
-//     text-align: right;
-//   }
-//   .float-body {
-//     font-size: 2rem;
-//     font-weight: 700;
-//     line-height: 3.6rem;
-//     text-align: right;
-//   }
-// }
+.blog {
+  margin: 5rem 0 3rem;
+  .blog-btn {
+    padding: 1rem !important;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+    text-align: right;
+    color: #121212;
+    width: fit-content;
+    padding: 0 0.5rem;
+    border-radius: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .active {
+    background-color: #def1ff;
+    border: none;
+  }
+}
+.blog-txt {
+  .blog-info {
+    background-color: #def1ff;
+    border-radius: 1.6rem;
+    width: 112.4rem;
+    height: 31rem;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
 
-// .serv-card {
-//   min-height: 40rem;
-//   .serv-card-item {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: center;
-//     flex-wrap: wrap;
-//     .s-card {
-//       min-height: 45rem;
-//       padding: 2.8rem 3rem;
-//       opacity: 0px;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       justify-content: space-between;
-//       border-radius: 1.2rem;
-//       transition: all 0.2s step-start;
-//       flex-wrap: wrap;
-//       &:hover {
-//         background-color: #fff;
-//         border-radius: 1.2rem;
-//         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-//       }
+    .blog-info-title {
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: 3.6rem;
+    }
+    .blog-info-body {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 4.9rem;
+      text-align: center;
+    }
+    .blog-info-foot {
+      width: 13.2rem;
+      height: 2.7rem;
+      background-color: #fff;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 2.673rem;
+      border-radius: 0.8rem;
+    }
+  }
+  .blog-body {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3.454rem;
+    text-align: right;
+  }
+  .blog-latest-info {
+    width: 27.2rem;
+    height: 5.6rem;
+    background-color: #def1ff;
+    color: #444444;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+    padding-right: 1rem;
+    line-height: 5.6rem;
+  }
+  .join-card {
+    margin-bottom: 3rem;
+    border: 1px solid #444444;
+    border-radius: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 41.4rem;
+    height: 50.2rem;
+    .join-card-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 3rem;
+      background-color: #f6f7ff;
+      color: #0477be;
+      max-width: 70%;
+      height: 3.9rem;
+      text-align: center;
+      line-height: 3.9rem;
+    }
+    .join-card-text {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 3.6rem;
+      color: #181a2a;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .join-card-date {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 2.673rem;
+      color: #444444;
+      width: 13.2rem;
+      height: 2.7rem;
+      border-radius: 0.8rem;
+      background-color: #def1ff;
+      text-align: center;
+      line-height: 2.7rem;
+    }
+  }
+}
 
-//
-//     }
-//   }
+.service {
+  margin: 5rem 0 3rem;
+  .service-btns {
+    overflow: auto;
+    background-color: #def1ff;
+    border-radius: 1.5rem;
+    margin: 2rem 0;
 
-//   .serv-head {
-//     font-size: clamp(0.8rem, -0.343rem + 3.048vw, 2.4rem);
-//     font-weight: 700;
-//     line-height: 3.6rem;
-//     text-align: center;
-//   }
-//   .serv-body {
-//     font-size: clamp(0.4rem, -0.457rem + 2.286vw, 1.6rem);
-//     font-weight: 700;
-//     line-height: 3.07rem;
-//     text-align: center;
-//     display: -webkit-box;
-//     -webkit-box-orient: vertical;
-//     -webkit-line-clamp: 2;
-//     line-clamp: 2;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//   }
-// }
-
-// package
-// .package-sec {
-//   padding: 5rem 0;
-
-//   .package-head {
-//     font-size: 3.2rem;
-//     font-weight: 700;
-//     line-height: 4.9rem;
-//     text-align: center;
-//   }
-
-//   .package-body {
-//     font-size: 2.4rem;
-//     font-weight: 700;
-//     line-height: 3.6rem;
-//     text-align: center;
-//     width: 50%;
-//     margin: 2rem auto;
-//     padding-bottom: 3rem;
-//   }
-
-//   .package-card {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 2rem;
-
-//     .package-info {
-//       overflow: hidden;
-//       background-color: #def1ff;
-//       border-radius: 1.2rem;
-//       display: flex;
-//       flex-direction: row;
-//       justify-content: space-between;
-//       align-items: center;
-//       flex-wrap: wrap;
-//       .package-card-body {
-//         padding: 2rem 5rem;
-
-//         .package-card-title {
-//           font-size: 2.4rem;
-//           font-weight: 700;
-//           line-height: 3.6rem;
-//           text-align: right;
-//         }
-
-//         .card {
-//           background-color: transparent;
-//           border: none;
-
-//           span {
-//             width: 50%;
-//             .card-title {
-//               font-size: 1.8rem;
-//               font-weight: 700;
-//               line-height: 3.454rem;
-//               text-align: right;
-//             }
-
-//             .card-list {
-//               padding: 0 1rem;
-//               width: 100%;
-//               font-size: 1.6rem;
-//               font-weight: 700;
-//               line-height: 3.07rem;
-//               text-align: right;
-
-//               li {
-//                 list-style-type: "-  ";
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .package-info-respon {
-//   display: none;
-//   background-color: #def1ff;
-//   border-radius: 1.6rem;
-//   padding: 2.5rem;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   margin: 0 2rem;
-//   width: 100%;
-//   img {
-//     border-radius: 1.6rem;
-//   }
-//   .res-head {
-//     font-size: 2.4rem;
-//     font-weight: 700;
-//     line-height: 3.6rem;
-//     text-align: center;
-//   }
-//   .res-box {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     margin-bottom: 4rem;
-//     .res-box-title {
-//       font-size: 1.8rem;
-//       font-weight: 700;
-//       line-height: 3.454rem;
-//     }
-//     .res-box-list {
-//       li {
-//         font-size: 1.6rem;
-//         font-weight: 700;
-//         line-height: 3.07rem;
-//         text-align: right;
-//       }
-//     }
-//   }
-// }
+    .service-btn {
+      color: #121212;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 3.454rem;
+      text-align: center;
+      margin: 0 2rem;
+    }
+    .active {
+      border: none;
+      color: #0477be;
+    }
+  }
+  .rehabilitation {
+    .rehabilitation-title {
+      font-size: 3.2rem;
+      font-weight: 500;
+      padding: 1rem 2rem;
+      line-height: 4.9rem;
+      text-align: right;
+      background-color: #7aaf44;
+      color: #fff;
+      border-inline-start: 3rem solid #0477be;
+      width: fit-content;
+    }
+    .rehabilitation-sec-1,
+    .rehabilitation-sec-2 {
+      .reh-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 3.6rem;
+        text-align: right;
+        color: #444444;
+      }
+      .reh-text {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 3.454rem;
+        text-align: right;
+        color: #121212;
+      }
+    }
+  }
+}

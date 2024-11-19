@@ -18,12 +18,12 @@
       >
         <div class="row achiv-lyout mx-auto h-100">
           <div
-            class="col-6 last col-md d-flex algn-items-start justify-content-center gap-5"
+            class="col-6 last bg- col-md d-flex algn-items-start justify-content-start gap-5"
             v-for="(achiev, i) in achievements.slice(-4)"
             :key="i"
           >
             <div
-              class="ac-box text-center d-flex flex-column align-items-center justify-content-start gap-4 p-5"
+              class="ac-box text-center d-flex flex-column align-items-center justify-content-start gap-2 p-5"
             >
               <img
                 class="achiev-icon"
@@ -94,11 +94,11 @@
 
               <div class="question-card h-100" v-else>
                 <div
-                  class="h-100 d-flex flex-column align-items-center"
+                  class="h-100 d-flex flex-column align-items-center justify-content-start"
                   style="height: 22rem"
                 >
                   <h3 class="questipon-card-title">{{ slide.title }}</h3>
-                  <p class="questipon-card-text">
+                  <p class="questipon-card-text my-auto">
                     {{ slide.description }}
                   </p>
                   <button
@@ -109,7 +109,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     class="r-more-btn-w text-center mx-auto"
-                    style="width: fit-content"
+                    style="width: fit-content; margin-top: auto"
                   >
                     {{ $t("see-more") }}
                   </button>

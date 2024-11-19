@@ -15,7 +15,7 @@
       <div
         style="position: absolute; left: 0; top: 0; width: 100%; height: 100%"
       >
-        <div class="row w-100 h-100">
+        <div class="row w-100 h-100 mx-auto">
           <div
             class="met-item col-6 col-md-3 flex-c algn-items-center justify-content-center"
             v-for="(metric, j) in metrics.slice(-4)"
@@ -36,7 +36,7 @@
     </div>
 
     <div
-      class="testimonial-swiper container-cust"
+      class="testimonial-swiper mx-auto container-cust"
       style="position: relative; padding-bottom: 10rem !important"
       v-if="props.testimonials.length"
     >

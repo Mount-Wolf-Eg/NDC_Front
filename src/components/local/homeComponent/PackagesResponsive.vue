@@ -1,6 +1,6 @@
 <template>
   <div class="pack-res-swiper h-100">
-    <div class="testimonial-swiper container-cust">
+    <div class="testimonial-swiper container-cust mx-auto">
       <!-- :Autoplay="{
           delay: 1000,
           disableOnInteraction: true,
@@ -18,7 +18,7 @@
           dynamicBullets: true,
           clickable: true,
         }"
-        :slides-per-view="1.05"
+        :slides-per-view="1"
         :space-between="5"
         :navigation="{
           nextEl: '.swiper-button-next',
@@ -30,7 +30,7 @@
         <swiper-slide
           v-for="(slide, i) in packagesRes"
           :key="i"
-          style="background-color: var(--col-bg); border-radius: 8"
+          style="background-color: var(--col-bg); border-radius: 8px"
         >
           <div class="tetimonial-card w-100 h-100">
             <!-- loading placeholder -->

@@ -5,7 +5,7 @@
   }
 
   body {
-    background-color: rgb(174, 173, 230) !important;
+    // background-color: rgb(174, 173, 230) !important;
   }
 
   //responsive header
@@ -88,7 +88,8 @@
   }
 
   // service
-  .home-services-sec {
+  .home-services-sec,
+  .services-page {
     padding-top: 280px;
     padding-bottom: 20px;
     .service-title {
@@ -286,8 +287,9 @@
       }
     }
     .question-sec {
+      margin: 0 auto;
       width: 98%;
-      top: 55%;
+      top: 420px;
       border-radius: 16px;
       padding: 0 10px 25px !important;
       .question-sec-title {
@@ -295,7 +297,6 @@
         margin: 15px 0;
       }
       .question-card {
-        height: 180px !important;
         border-radius: 16px !important;
         .questipon-card-title {
           font-size: 14px !important;
@@ -371,7 +372,6 @@
     }
   }
 
-  /*                                   views components                 */
   // about us
   .about-us {
     .about-us-page {
@@ -497,6 +497,193 @@
     }
   }
 
+  .join-us {
+    .join-sec {
+      margin: 20px 10px !important;
+      .join-title {
+        font-size: 20px !important;
+        line-height: 36px;
+        font-weight: 700 !important;
+      }
+      .join-text {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        margin: 0 0 15px !important;
+      }
+      .join-cards {
+        width: 100% !important;
+        .join-card {
+          margin: 0 !important;
+          width: 50%;
+          height: auto;
+          .join-card-title {
+            font-size: 12px;
+            width: fit-content !important;
+            max-width: 90%;
+          }
+          .join-card-text {
+            font-size: 10px;
+          }
+          .join-card-date {
+            max-width: 90%;
+            width: fit-content;
+            font-size: 12px;
+            height: auto;
+            padding: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .blog {
+    margin: 10px !important;
+    .blog-btns {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+      .blog-btn {
+        font-size: 12px;
+        padding: 5px !important;
+      }
+    }
+
+    .join-cards {
+      width: 100% !important;
+      .join-card {
+        margin: 0 !important;
+        width: 50%;
+        height: auto;
+        .join-card-title {
+          font-size: 12px;
+          width: fit-content !important;
+          max-width: 90%;
+        }
+        .join-card-text {
+          font-size: 10px;
+        }
+        .join-card-date {
+          max-width: 90%;
+          width: fit-content;
+          font-size: 12px;
+          height: auto;
+          padding: 2px;
+        }
+      }
+    }
+  }
+
+  .blog-txt {
+    margin: 10px !important;
+    .m-img {
+      margin: 10px 0 !important;
+    }
+    .mid-img {
+      margin: 10px 0 !important;
+    }
+    .blog-info {
+      .blog-info-title {
+        font-size: 14px !important;
+        font-weight: bold;
+      }
+      .blog-info-body {
+        font-size: 12px !important;
+        font-weight: bold;
+      }
+      .blog-info-foot {
+        font-size: 10px !important;
+        font-weight: bold;
+        width: fit-content;
+        padding: 3px 10px;
+
+        height: auto;
+      }
+    }
+    .blog-body {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .blog-latest-info {
+      font-size: 20px !important;
+      line-height: 23px;
+      font-weight: bold;
+      height: auto;
+      width: fit-content;
+      padding: 2px 0;
+      margin: 10px 0;
+      padding-inline-end: 50px;
+      padding-inline-start: 5px;
+    }
+    .join-cards {
+      width: 100% !important;
+      .join-card {
+        margin: 0 !important;
+        width: 50%;
+        height: auto;
+        .join-card-title {
+          font-size: 12px;
+          width: fit-content !important;
+          max-width: 90%;
+        }
+        .join-card-text {
+          font-size: 10px;
+        }
+        .join-card-date {
+          max-width: 90%;
+          width: fit-content;
+          font-size: 12px;
+          height: auto;
+          padding: 2px;
+        }
+      }
+    }
+  }
+
+  .service {
+    margin: 10px !important;
+
+    .service-btns {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+      background-color: transparent !important;
+      .service-btn {
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+
+    .rehabilitation {
+      .rehabilitation-title {
+        background-color: transparent;
+        border-color: transparent;
+        color: #7aaf44;
+        border-width: 0;
+        margin: 10px 0;
+        padding: 0;
+        font-size: 18px !important;
+        width: fit-content !important;
+        max-width: 90%;
+        font-weight: bold !important;
+        line-height: 24px;
+      }
+      .rehabilitation-sec-1,
+      .rehabilitation-sec-2 {
+        .reh-title {
+          line-height: 18px;
+          font-size: 16px !important;
+          width: fit-content !important;
+          max-width: 90%;
+          font-weight: 600 !important;
+        }
+        .reh-text {
+          font-size: 12px;
+          line-height: 15px;
+          margin: 15px 0 !important;
+          font-weight: normal !important;
+        }
+      }
+    }
+  }
+
   // footer
   .footer-bar {
     .first-footer {
@@ -531,6 +718,7 @@
     }
   }
 }
+
 @media only screen and (min-width: 390px) and (max-width: 575px) {
   // about us
   .about-us {
@@ -665,7 +853,7 @@
   }
 
   body {
-    background-color: red !important;
+    // background-color: red !important;
   }
 
   //   responsive header
@@ -752,7 +940,8 @@
   }
 
   // service
-  .home-services-sec {
+  .home-services-sec,
+  .services-page {
     padding-top: 340px;
     padding-bottom: 20px;
     .service-title {
@@ -949,10 +1138,11 @@
       }
     }
     .question-sec {
-      top: 55%;
+      top: 430px;
       width: 98%;
       border-radius: 16px;
       padding: 0 10px 25px !important;
+      margin: 0 auto;
 
       .question-sec-title {
         font-size: 22px;
@@ -969,7 +1159,6 @@
         .questipon-card-text {
           font-size: 14px !important;
           line-height: 24px;
-          height: 100%;
         }
         .r-more-btn-w {
           font-size: 14px !important;
@@ -1042,7 +1231,7 @@
       margin-top: 10px;
       .about-us-content {
         .about-us-text {
-          padding: 0 10px;
+          padding: 15px;
           .about-head {
             font-size: 20px !important;
             line-height: 23px;
@@ -1071,7 +1260,7 @@
       }
       .our-vission-content {
         .our-vission-text {
-          padding: 10px;
+          padding: 15px;
           .vission-head {
             font-size: 18px !important;
             line-height: 23px;
@@ -1097,7 +1286,7 @@
       .mission-goals-content {
         .mission-goals {
           .mission-text {
-            padding: 10px;
+            padding: 15px;
             .mission-head {
               font-size: 18px !important;
               line-height: 23px;
@@ -1122,6 +1311,7 @@
       }
     }
     .our-values {
+      padding: 15px !important;
       .values-head {
         font-size: 18px !important;
         line-height: 23px;
@@ -1134,7 +1324,7 @@
         width: 100%;
         padding: 0 !important;
         .values-card {
-          width: 40%;
+          width: 100%;
           .values-content {
             width: 100%;
             height: 35rem !important;
@@ -1154,6 +1344,193 @@
               font-weight: 500 !important;
             }
           }
+        }
+      }
+    }
+  }
+
+  .join-us {
+    .join-sec {
+      margin: 20px 10px !important;
+      .join-title {
+        font-size: 20px !important;
+        line-height: 36px;
+        font-weight: 700 !important;
+      }
+      .join-text {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        margin: 0 0 15px !important;
+      }
+      .join-cards {
+        width: 100% !important;
+        .join-card {
+          margin: 0 !important;
+          width: 50%;
+          max-width: 250px;
+          height: auto;
+          .join-card-title {
+            font-size: 12px;
+            width: fit-content !important;
+            max-width: 90%;
+          }
+          .join-card-text {
+            font-size: 10px;
+          }
+          .join-card-date {
+            width: 50%;
+            font-size: 12px;
+            height: auto;
+            padding: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .blog {
+    margin: 10px !important;
+    .blog-btns {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+      .blog-btn {
+        font-size: 12px;
+        padding: 5px !important;
+      }
+    }
+
+    .join-cards {
+      width: 100% !important;
+      .join-card {
+        margin: 0 !important;
+        width: 50%;
+        max-width: 250px;
+        height: auto;
+        .join-card-title {
+          font-size: 12px;
+          width: fit-content !important;
+          max-width: 90%;
+        }
+        .join-card-text {
+          font-size: 10px;
+        }
+        .join-card-date {
+          width: 50%;
+          font-size: 12px;
+          height: auto;
+          padding: 2px;
+        }
+      }
+    }
+  }
+
+  .blog-txt {
+    margin: 10px !important;
+    .m-img {
+      margin: 10px 0 !important;
+    }
+    .mid-img {
+      margin: 10px 0 !important;
+    }
+    .blog-info {
+      .blog-info-title {
+        font-size: 14px !important;
+        font-weight: bold;
+      }
+      .blog-info-body {
+        font-size: 12px !important;
+        font-weight: bold;
+      }
+      .blog-info-foot {
+        font-size: 10px !important;
+        font-weight: bold;
+        width: fit-content;
+        padding: 3px 10px;
+
+        height: auto;
+      }
+    }
+    .blog-body {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .blog-latest-info {
+      font-size: 20px !important;
+      line-height: 23px;
+      font-weight: bold;
+      height: auto;
+      width: fit-content;
+      padding: 2px 0;
+      margin: 10px 0;
+      padding-inline-end: 50px;
+      padding-inline-start: 5px;
+    }
+    .join-cards {
+      width: 100% !important;
+      .join-card {
+        margin: 0 !important;
+        width: 100%;
+        height: auto;
+        .join-card-title {
+          font-size: 12px;
+          width: fit-content !important;
+          max-width: 90%;
+        }
+        .join-card-text {
+          font-size: 10px;
+        }
+        .join-card-date {
+          max-width: 90%;
+          width: fit-content;
+          font-size: 12px;
+          height: auto;
+          padding: 2px;
+        }
+      }
+    }
+  }
+
+  .service {
+    margin: 10px !important;
+
+    .service-btns {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+      background-color: transparent !important;
+      .service-btn {
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+
+    .rehabilitation {
+      .rehabilitation-title {
+        background-color: transparent;
+        border-color: transparent;
+        color: #7aaf44;
+        border-width: 0;
+        margin: 10px 0;
+        padding: 0;
+        font-size: 18px !important;
+        width: fit-content !important;
+        max-width: 90%;
+        font-weight: bold !important;
+        line-height: 24px;
+      }
+      .rehabilitation-sec-1,
+      .rehabilitation-sec-2 {
+        .reh-title {
+          line-height: 18px;
+          font-size: 16px !important;
+          width: fit-content !important;
+          max-width: 90%;
+          font-weight: 600 !important;
+        }
+        .reh-text {
+          font-size: 12px;
+          line-height: 15px;
+          margin: 15px 0 !important;
+          font-weight: normal !important;
         }
       }
     }
@@ -1194,14 +1571,13 @@
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   html {
     font-size: 28% !important;
   }
 
   body {
-    background-color: rgb(43, 255, 0) !important;
+    // background-color: rgb(43, 255, 0) !important;
   }
 
   .hero-sec {
@@ -1230,7 +1606,8 @@
     }
   }
   // service
-  .home-services-sec {
+  .home-services-sec,
+  .services-page {
     // padding-top: 70rem;
     .service-title {
       font-size: 24px;
@@ -1338,6 +1715,315 @@
     }
   }
 
+  // about us
+  .about-us {
+    .about-us-page {
+      margin-top: 10px;
+      .about-us-content {
+        .about-us-text {
+          padding: 15px;
+          .about-head {
+            font-size: 20px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+          .about-title {
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 10px 0;
+          }
+          .about-body {
+            font-size: 16px !important;
+            line-height: 20px;
+          }
+        }
+        .about-us-img {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+      .our-vission-content {
+        .our-vission-text {
+          padding: 15px;
+          .vission-head {
+            font-size: 18px !important;
+            line-height: 23px;
+            font-weight: bold;
+            height: auto;
+            width: fit-content;
+            padding: 2px 0;
+            padding-inline-end: 50px;
+            padding-inline-start: 5px;
+          }
+
+          .vission-body {
+            font-size: 14px !important;
+            line-height: 20px;
+          }
+        }
+        .our-vission-img {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+
+      .mission-goals-content {
+        .mission-goals {
+          .mission-text {
+            padding: 15px;
+            .mission-head {
+              font-size: 18px !important;
+              line-height: 23px;
+              font-weight: bold;
+              height: auto;
+              width: fit-content;
+              padding: 2px 0;
+              padding-inline-end: 50px;
+              padding-inline-start: 5px;
+            }
+
+            .mission-body {
+              font-size: 14px !important;
+              line-height: 20px;
+            }
+          }
+          .mission-img {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+    .our-values {
+      padding: 15px !important;
+      .values-head {
+        font-size: 18px !important;
+        line-height: 23px;
+        font-weight: bold;
+        height: auto;
+        width: fit-content !important;
+        padding: 10px 50px;
+      }
+      .our-values-content {
+        padding: 0 !important;
+        .values-card {
+          width: 47%;
+          .values-content {
+            width: 100%;
+            height: 200px !important;
+            gap: 5px !important;
+
+            img {
+              width: 50px !important;
+              height: auto !important;
+            }
+            .card-title {
+              font-size: 16px !important;
+              font-weight: bold !important;
+            }
+            .card-body {
+              font-size: 14px !important;
+              line-height: 15px !important;
+              font-weight: 500 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .join-us {
+    .join-sec {
+      margin: 20px 10px !important;
+      .join-title {
+        font-size: 20px !important;
+        line-height: 36px;
+        font-weight: 700 !important;
+      }
+      .join-text {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        margin: 0 0 15px !important;
+      }
+      .join-cards {
+        width: 100% !important;
+        .join-card {
+          margin: 0 !important;
+          width: 50%;
+          max-width: 250px;
+          height: auto;
+          .join-card-title {
+            font-size: 12px;
+            width: fit-content !important;
+            max-width: 90%;
+          }
+          .join-card-text {
+            font-size: 10px;
+          }
+          .join-card-date {
+            width: 50%;
+            font-size: 12px;
+            height: auto;
+            padding: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .blog {
+    margin: 10px !important;
+    .blog-btns {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+      .blog-btn {
+        font-size: 12px;
+        padding: 5px !important;
+      }
+    }
+
+    .join-cards {
+      width: 100% !important;
+      .join-card {
+        margin: 0 !important;
+        width: 50%;
+        max-width: 250px;
+        height: auto;
+        .join-card-title {
+          font-size: 12px;
+          width: fit-content !important;
+          max-width: 90%;
+        }
+        .join-card-text {
+          font-size: 10px;
+        }
+        .join-card-date {
+          width: 50%;
+          font-size: 12px;
+          height: auto;
+          padding: 2px;
+        }
+      }
+    }
+  }
+
+  .blog-txt {
+    margin: 10px !important;
+    .m-img {
+      margin: 10px 0 !important;
+    }
+    .mid-img {
+      margin: 10px 0 !important;
+    }
+    .blog-info {
+      .blog-info-title {
+        font-size: 14px !important;
+        font-weight: bold;
+      }
+      .blog-info-body {
+        font-size: 12px !important;
+        font-weight: bold;
+      }
+      .blog-info-foot {
+        font-size: 10px !important;
+        font-weight: bold;
+        width: fit-content;
+        padding: 3px 10px;
+
+        height: auto;
+      }
+    }
+    .blog-body {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .blog-latest-info {
+      font-size: 20px !important;
+      line-height: 23px;
+      font-weight: bold;
+      height: auto;
+      width: fit-content;
+      padding: 2px 0;
+      margin: 10px 0;
+      padding-inline-end: 50px;
+      padding-inline-start: 5px;
+    }
+    .join-cards {
+      width: 100% !important;
+      .join-card {
+        margin: 0 !important;
+        width: 100%;
+        height: auto;
+        .join-card-title {
+          font-size: 12px;
+          width: fit-content !important;
+          max-width: 90%;
+        }
+        .join-card-text {
+          font-size: 10px;
+        }
+        .join-card-date {
+          max-width: 90%;
+          width: fit-content;
+          font-size: 12px;
+          height: auto;
+          padding: 2px;
+        }
+      }
+    }
+  }
+
+  .service {
+    margin: 10px !important;
+
+    .service-btns {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+      background-color: transparent !important;
+      .service-btn {
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+
+    .rehabilitation {
+      .rehabilitation-title {
+        background-color: transparent;
+        border-color: transparent;
+        color: #7aaf44;
+        border-width: 0;
+        margin: 10px 0;
+        padding: 0;
+        font-size: 18px !important;
+        width: fit-content !important;
+        max-width: 90%;
+        font-weight: bold !important;
+        line-height: 24px;
+      }
+      .rehabilitation-sec-1,
+      .rehabilitation-sec-2 {
+        .reh-title {
+          line-height: 18px;
+          font-size: 16px !important;
+          width: fit-content !important;
+          max-width: 90%;
+          font-weight: 600 !important;
+        }
+        .reh-text {
+          font-size: 12px;
+          line-height: 15px;
+          margin: 15px 0 !important;
+          font-weight: normal !important;
+        }
+      }
+    }
+  }
   //   footer
   .footer-bar {
     .first-footer {
@@ -1459,12 +2145,11 @@
   }
 
   body {
-    background-color: rgb(208, 255, 0) !important;
+    // background-color: rgb(208, 255, 0) !important;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   html {
     font-size: 48% !important;
@@ -1579,7 +2264,6 @@
 }
 
 /* Extra large devices (large laptops and desktops, 1400px and up) */
-
 @media only screen and (min-width: 1400px) {
   html {
     font-size: 62.5% !important;
@@ -1592,6 +2276,6 @@
   }
 
   body {
-    background-color: rgba(204, 0, 255, 0.137) !important;
+    // background-color: rgba(204, 0, 255, 0.137) !important;
   }
 }

@@ -35,7 +35,15 @@
           <p class="join-card-text" style="overflow: hidden">
             {{ post.description }}
           </p>
-          <p class="join-card-date">
+          <p
+            class="join-card-date"
+            style="
+              border-radius: 100px !important;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
             {{ moment(new Date(post.created_at)).format("DD-MM-YYYY") }}
           </p>
         </span>

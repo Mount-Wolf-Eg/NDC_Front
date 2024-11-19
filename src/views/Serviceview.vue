@@ -3,7 +3,7 @@
     <div class="flex-col mx-auto" style="width: 90%">
       <img
         src="/src/assets/blog/blog.jpg"
-        style="width: 100%"
+        style="width: 100%; border-radius: 12px !important"
         alt="blog iamge"
       />
 
@@ -64,29 +64,6 @@ watch(
 </script>
 
 <style lang="scss" scoped>
-.service {
-  margin: 5rem 0 3rem;
-  .service-btns {
-    overflow: auto;
-    background-color: #def1ff;
-    border-radius: 1.5rem;
-    margin: 2rem 0;
-
-    .service-btn {
-      color: #121212;
-      font-size: 1.8rem;
-      font-weight: 400;
-      line-height: 3.454rem;
-      text-align: center;
-      margin: 0 2rem;
-    }
-    .active {
-      border: none;
-      color: #0477be;
-    }
-  }
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;

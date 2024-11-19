@@ -1,11 +1,12 @@
 <template>
-  <div class="blog mx-auto">
+  <div class="blog-txt mx-auto">
     <div class="flex-c mx-auto" style="width: 90%">
       <div style="position: relative">
         <img
+          class="m-img"
           src="/src/assets/blog/blogheader.jpg"
           alt="blog iamge"
-          style="width: 100%; margin: 5rem 0"
+          style="width: 100%; margin: 5rem 0; border-radius: 12px"
         />
         <div class="blog-info flex-c justify-content-between pt-5 pb-3 w-75">
           <p class="blog-info-title text-center">{{ post.category?.name }}</p>
@@ -24,6 +25,7 @@
         <div class="col-12 col-sm-9 blog-body px-3">{{ post.content }}</div>
         <div class="col-6 my-5 mx-auto col-sm-3">
           <img
+            class="mid-img"
             :src="post?.image"
             alt="blog image"
             style="
@@ -97,7 +99,7 @@
           >
             <div class="question-card">
               <div
-                class="d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
+                class="join-cards d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
               >
                 <div
                   class="join-card p-0"
@@ -150,7 +152,7 @@
           </swiper-slide>
           <!-- <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div> -->
-          <div class="swiper-pagination"></div>
+          <!-- <div class="swiper-pagination"></div> -->
         </swiper>
       </div>
     </div>
@@ -202,111 +204,11 @@ const breakpoints = {
     slidesPerView: 3,
     spaceBetween: 20,
   },
-  800: {
-    slidesPerView: 5,
+  1000: {
+    slidesPerView: 4,
     spaceBetween: 30,
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.blog {
-  .blog-info {
-    background-color: #def1ff;
-    border-radius: 1.6rem;
-    width: 112.4rem;
-    height: 31rem;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    .blog-info-title {
-      font-size: 2.4rem;
-      font-weight: 500;
-      line-height: 3.6rem;
-    }
-    .blog-info-body {
-      font-size: 3.2rem;
-      font-weight: 700;
-      line-height: 4.9rem;
-      text-align: center;
-    }
-    .blog-info-foot {
-      width: 13.2rem;
-      height: 2.7rem;
-      background-color: #fff;
-      font-size: 1.4rem;
-      font-weight: 400;
-      line-height: 2.673rem;
-      border-radius: 0.8rem;
-    }
-  }
-  .blog-body {
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 3.454rem;
-    text-align: right;
-  }
-  .blog-latest-info {
-    width: 27.2rem;
-    height: 5.6rem;
-    background-color: #def1ff;
-    color: #444444;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 3.6rem;
-    padding-right: 1rem;
-    line-height: 5.6rem;
-  }
-}
-.join-card {
-  margin-bottom: 3rem;
-  border: 1px solid #444444;
-  border-radius: 2.4rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  margin: 3rem 2rem;
-  .join-card-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 3rem;
-    background-color: #f6f7ff;
-    color: #0477be;
-    text-align: center;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 3.9rem;
-  }
-  .join-card-text {
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 3.6rem;
-    color: #181a2a;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .join-card-date {
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 2.673rem;
-    color: #444444;
-    height: 2.7rem;
-    border-radius: 0.8rem;
-    background-color: #def1ff;
-    text-align: center;
-    line-height: 2.7rem;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

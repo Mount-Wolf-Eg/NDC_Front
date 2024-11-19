@@ -1,5 +1,5 @@
 <template>
-  <div class="services-page m-0 p-0" style="background-color: var(--col-white)">
+  <div class="services-page m-0 p-0">
     <img
       src="/src/assets/about_image/aboutimg.jpg"
       style="width: 100%; height: auto"

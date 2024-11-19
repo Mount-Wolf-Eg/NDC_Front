@@ -3,7 +3,7 @@
     <div class="flex-col mx-auto" style="width: 90%">
       <img
         src="/src/assets/blog/blog.jpg"
-        style="width: 100%"
+        style="width: 100%; border-radius: 12px"
         alt="blog iamge"
       />
       <div
@@ -54,32 +54,6 @@ watch(
 </script>
 
 <style lang="scss" scoped>
-.blog {
-  margin: 5rem 0 3rem;
-  .blog-btn {
-    padding: 1rem !important;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 3.6rem;
-    text-align: right;
-    color: #121212;
-    // width: 27.2rem;
-    width: fit-content;
-    padding: 0 0.5rem;
-    // height: 5.6rem;
-    border-radius: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // border: 1px solid #0477be;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  }
-  .active {
-    background-color: #def1ff;
-    border: none;
-  }
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
