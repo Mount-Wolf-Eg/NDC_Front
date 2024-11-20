@@ -27,9 +27,7 @@
           {{ blog.name }}
         </button>
       </div>
-      <div class="tabs w-100">
-        <BlogTab :postCard="postsByBlog"></BlogTab>
-      </div>
+      <BlogTab :postCard="postsByBlog"></BlogTab>
     </div>
   </div>
 </template>

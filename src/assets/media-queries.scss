@@ -651,104 +651,30 @@
     }
   }
 
-  // .join-cards {
-  //   background-color: yellow !important;
-  //   width: 98% !important;
-  //   min-height: 250px;
-  //   margin: 5px auto !important;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   .join-card {
-  //     flex: 1;
-  //     height: 100% !important;
-  //     margin: 0 !important;
-  //     width: 100% !important;
-
-  //     .card-img {
-  //       max-height: 120px;
-  //     }
-  //     .card-sec {
-  //       flex: 1;
-  //       height: 100%;
-  //       display: flex;
-  //       flex-direction: column;
-  //       align-items: center;
-  //       justify-content: space-between;
-  //       .join-card-title {
-  //         font-size: 14px !important ;
-  //         max-width: 90%;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 0px 10px !important;
-  //         max-width: 90% !important;
-  //         margin: 5px 0 !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //         display: -webkit-box;
-  //         -webkit-box-orient: vertical;
-  //         -webkit-line-clamp: 2;
-  //         line-clamp: 2;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //       }
-  //       .join-card-text {
-  //         display: -webkit-box;
-  //         -webkit-box-orient: vertical;
-  //         -webkit-line-clamp: 2;
-  //         line-clamp: 2;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //         font-size: 12px !important;
-  //       }
-  //       .join-card-date {
-  //         font-size: 12px !important;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 5px 10px !important;
-  //         max-width: 90% !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //       }
-  //     }
-  //   }
-  // }
   .join-cards {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
+    .join-card {
+      width: 100%;
+      height: 250px;
+      .card-img {
+        height: 30%;
+        img {
+        }
+      }
+      .card-sec {
+        .join-card-title {
+          font-size: 12px;
+          width: 100% !important;
+        }
+        .join-card-text {
+          font-size: 14px;
+        }
+        .join-card-date {
+          font-size: 12px;
+        }
+      }
+    }
   }
 
-  .join-card {
-    width: 90%; /* Make the card responsive and take up more width */
-    min-height: 20rem; /* Reduce minimum height */
-    margin-bottom: 2rem;
-    max-height: none; /* Remove max height to allow flexibility */
-  }
-
-  .card-img {
-    max-height: 30%; /* Reduce image height */
-  }
-
-  .card-sec {
-    padding: 0.8rem; /* Adjust padding for smaller screens */
-  }
-
-  .join-card-title {
-    font-size: 1.4rem; /* Make title smaller for small screens */
-    width: 100%; /* Make title take up full width */
-  }
-
-  .join-card-text {
-    font-size: 1.6rem; /* Adjust text size */
-  }
-
-  .join-card-date {
-    font-size: 1.2rem; /* Adjust date size */
-    width: 100%; /* Make date section take full width */
-  }
   // join form
   .join {
     margin-top: 0;
@@ -998,59 +924,6 @@
       }
     }
   }
-  // .join-cards {
-  //   width: 98% !important;
-  //   margin: 5px auto !important;
-  //   height: 220px;
-  //   .join-card {
-  //     height: 100% !important;
-  //     margin: 0 !important;
-  //     width: 100% !important;
-  //     .card-img {
-  //       max-height: 100px;
-  //     }
-  //     .card-sec {
-  //       height: 100%;
-  //       .join-card-title {
-  //         font-size: 14px !important ;
-  //         max-width: 90%;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 0px 10px !important;
-  //         max-width: 90% !important;
-  //         margin: 5px 0 !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //         display: -webkit-box;
-  //         -webkit-box-orient: vertical;
-  //         -webkit-line-clamp: 2;
-  //         line-clamp: 2;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //       }
-  //       .join-card-text {
-  //         display: -webkit-box;
-  //         -webkit-box-orient: vertical;
-  //         -webkit-line-clamp: 2;
-  //         line-clamp: 2;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //         font-size: 12px !important;
-  //       }
-  //       .join-card-date {
-  //         font-size: 12px !important;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 5px 10px !important;
-  //         max-width: 90% !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 // /* Extra small devices (phones, 600px and down) */
@@ -1616,10 +1489,9 @@
       margin-bottom: 20px !important;
     }
     .blog-info {
-      background-color: green;
       width: 90% !important;
       height: fit-content;
-      top: 80%;
+      // top: 80%;
       .blog-info-title {
         font-size: 16px !important;
         font-weight: bold;
@@ -1703,53 +1575,33 @@
     }
   }
 
-  // .join-cards {
-  //   width: 98% !important;
-  //   margin: 5px auto !important;
-  //   height: 230px;
-  //   .join-card {
-  //     margin: 0 !important;
-  //     width: 50% !important;
-  //     height: 100% !important;
-  //     .card-img {
-  //       max-height: 100px;
-  //     }
-  //     .card-sec {
-  //       height: 100%;
-  //       .join-card-title {
-  //         font-size: 14px !important ;
-  //         max-width: 90%;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 0px 10px !important;
-  //         max-width: 90% !important;
-  //         margin: 5px 0 !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //         display: -webkit-box;
-  //         -webkit-box-orient: vertical;
-  //         -webkit-line-clamp: 1;
-  //         line-clamp: 1;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //       }
-  //       .join-card-text {
-  //         font-size: 12px !important;
-  //       }
-  //       .join-card-date {
-  //         font-size: 12px !important;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 5px 10px !important;
-  //         max-width: 90% !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //       }
-  //     }
-  //   }
-  // }
+  .join-cards {
+    width: 100% !important;
+    justify-content: center !important;
+    .join-card {
+      width: 49%;
+      height: 250px;
+      .card-img {
+        height: 30%;
+        background-color: #fff;
+        img {
+        }
+      }
+      .card-sec {
+        .join-card-title {
+          width: 100% !important;
+
+          font-size: 12px;
+        }
+        .join-card-text {
+          font-size: 14px;
+        }
+        .join-card-date {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 
   .join {
     margin-top: 0;
@@ -2262,52 +2114,29 @@
       }
     }
   }
-  // .join-cards {
-  //   width: 100% !important;
-  //   height: 270px;
-  //   .join-card {
-  //     margin: 0 !important;
-  //     width: 40% !important;
-  //     height: 100% !important;
-  //     .card-img {
-  //       max-height: 100px;
-  //     }
-  //     .card-sec {
-  //       height: 100%;
-  //       .join-card-title {
-  //         font-size: 14px !important ;
-  //         max-width: 90%;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 0px 10px !important;
-  //         max-width: 90% !important;
-  //         margin: 5px 0 !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //         display: -webkit-box;
-  //         -webkit-box-orient: vertical;
-  //         -webkit-line-clamp: 2;
-  //         line-clamp: 2;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //       }
-  //       .join-card-text {
-  //         font-size: 12px !important;
-  //       }
-  //       .join-card-date {
-  //         font-size: 12px !important;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 5px 10px !important;
-  //         max-width: 90% !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //       }
-  //     }
-  //   }
-  // }
+  .join-cards {
+    .join-card {
+      height: 250px;
+      width: 30%;
+      .card-img {
+        height: 30%;
+        img {
+        }
+      }
+      .card-sec {
+        .join-card-title {
+          font-size: 12px;
+          width: 100% !important;
+        }
+        .join-card-text {
+          font-size: 14px;
+        }
+        .join-card-date {
+          font-size: 12px;
+        }
+      }
+    }
+  }
   .join {
     .join-col {
       .head {
@@ -2504,52 +2333,7 @@
       height: 50rem;
     }
   }
-  // .join-cards {
-  //   width: 100% !important;
-  //   height: 270px;
-  //   .join-card {
-  //     height: 100%;
-  //     margin: 0 !important;
-  //     width: 40% !important;
-  //     .card-img {
-  //       max-height: 100px;
-  //     }
-  //     .card-sec {
-  //       height: 100%;
-  //       .join-card-title {
-  //         font-size: 14px !important ;
-  //         max-width: 90%;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 0px 10px !important;
-  //         max-width: 90% !important;
-  //         margin: 5px 0 !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //         display: -webkit-box;
-  //         -webkit-box-orient: vertical;
-  //         -webkit-line-clamp: 2;
-  //         line-clamp: 2;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //       }
-  //       .join-card-text {
-  //         font-size: 12px !important;
-  //       }
-  //       .join-card-date {
-  //         font-size: 12px !important;
-  //         height: fit-content !important;
-  //         width: fit-content !important;
-  //         padding: 5px 10px !important;
-  //         max-width: 90% !important;
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-  //       }
-  //     }
-  //   }
-  // }
+
   .join {
     .join-col {
       .head {

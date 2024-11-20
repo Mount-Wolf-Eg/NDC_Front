@@ -19,7 +19,7 @@
         </p>
       </div>
 
-      <div class="join-cards" style="width: 88%; margin: 0 auto">
+      <div class="join-cards gap-4" style="width: 90%; margin: 0 auto">
         <div
           v-for="(job, i) in allCareers"
           :key="i"
@@ -27,20 +27,11 @@
           style="overflow: hidden"
           @click="router.push({ name: 'joinForm', query: { job: job.id } })"
         >
-          <img
-            :src="job?.image"
-            class="card-img"
-            style="
-              width: 100%;
-              height: auto;
-              object-fit: cover;
-              object-position: center;
-            "
-            alt="job image"
-          />
-          <span
-            class="p-3 card-sec d-flex flex-column justify-content-between align-items-start"
-          >
+          <div class="card-img">
+            <img :src="job?.image" alt="job image" />
+          </div>
+
+          <div class="card-sec">
             <p class="join-card-title" style="overflow: hidden">
               {{ $t("job-name") }}
             </p>
@@ -50,7 +41,7 @@
             <p class="join-card-date">
               {{ moment(new Date(job?.created_at)).format("DD-MM-YYYY") }}
             </p>
-          </span>
+          </div>
         </div>
       </div>
     </div>

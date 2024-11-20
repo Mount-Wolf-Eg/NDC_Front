@@ -14,9 +14,9 @@
           alt="blog iamge"
           style="width: 100%; margin: 0; border-radius: 0"
         />
-        <div class="blog-info flex-c justify-content-between pt-5 pb-3 w-75">
+        <div class="blog-info flex-c justify-content-between pb-3 w-75 p-3">
           <p class="blog-info-title text-center">{{ post.category?.name }}</p>
-          <p class="blog-info-body mx-auto w-75">
+          <p class="blog-info-body mx-auto">
             {{ post?.title }}
           </p>
           <p class="blog-info-foot mx-auto text-center">
@@ -70,7 +70,7 @@
             delay: 2500,
             disableOnInteraction: false,
           }"
-          class="w-100 h-100"
+          class="w-100 h-100 px-4 mx-auto"
           :modules="modules"
           :pagination="{
             el: '.swiper-pagination',
@@ -93,75 +93,34 @@
           :Lazy="true"
         >
           <swiper-slide
-            v-for="(blog, i) in [
-              ...postsByBlog,
-              ...postsByBlog,
-              ...postsByBlog,
-              ...postsByBlog,
-              ...postsByBlog,
-              ...postsByBlog,
-              ...postsByBlog,
-              ...postsByBlog,
-            ]"
+            v-for="(blog, i) in postsByBlog[0].category_posts"
             :key="i"
+            class="join-cards gap-4"
           >
-            <div class="question-card">
-              <div
-                class="join-cards d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
-              >
-                <div
-                  class="join-card p-0"
-                  style="width: 100% !important"
-                  v-if="blog.category_posts"
-                  v-for="(post, j) in blog.category_posts"
-                  :key="j"
-                  @click="chagnePost(blog.id)"
-                >
-                  <div
-                    style="
-                      overflow: hidden;
-                      flex: 1;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      width: 100%;
-                    "
-                  >
-                    <img
-                      alt="blog image"
-                      style="
-                        height: 100%;
-                        width: 100%;
-                        object-fit: cover;
-                        object-position: center;
-                        max-width: 75%;
-                        border-radius: 12px;
-                      "
-                      :src="post.image"
-                    />
-                  </div>
-                  <span
-                    class="w-75 mx-auto px-1 d-flex flex-column justify-content-between algin-items-start"
-                    style="flex: 1"
-                  >
-                    <p class="join-card-title" style="overflow: hidden">
-                      {{ post.title }}
-                    </p>
-                    <p class="join-card-text" style="overflow: hidden">
-                      {{ post.description }}
-                    </p>
-                    <p class="join-card-date">
-                      {{
-                        moment(new Date(post.created_at)).format("DD-MM-YYYY")
-                      }}
-                    </p>
-                  </span>
-                </div>
+            <div
+              class="join-card"
+              style="width: 100%"
+              @click="chagnePost(blog.id)"
+            >
+              <div class="card-img">
+                <img :src="post.image" alt="job image" />
+              </div>
+
+              <div class="card-sec">
+                <p class="join-card-title" style="overflow: hidden">
+                  {{ post.title }}
+                </p>
+                <p class="join-card-text">
+                  {{ post.description }}
+                </p>
+                <p class="join-card-date">
+                  {{ moment(new Date(post.created_at)).format("DD-MM-YYYY") }}
+                </p>
               </div>
             </div>
           </swiper-slide>
           <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
+          <div class="swiper-button-prev"></div> -->
           <!-- <div class="swiper-pagination"></div> -->
         </swiper>
       </div>
@@ -193,6 +152,7 @@ onBeforeMount(async () => {
     show.value = true;
   }
   await useBlogStore().getPostsByCategory({ category_id: 1 });
+  console.log(postsByBlog.value);
 });
 
 const chagnePost = (id) => {
