@@ -93,7 +93,7 @@
           :Lazy="true"
         >
           <swiper-slide
-            v-for="(blog, i) in postsByBlog[0].category_posts"
+            v-for="(blog, i) in postsByBlog[0]?.category_posts"
             :key="i"
             class="join-cards gap-4"
           >
@@ -152,7 +152,6 @@ onBeforeMount(async () => {
     show.value = true;
   }
   await useBlogStore().getPostsByCategory({ category_id: 1 });
-  console.log(postsByBlog.value);
 });
 
 const chagnePost = (id) => {
