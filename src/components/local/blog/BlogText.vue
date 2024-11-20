@@ -1,12 +1,18 @@
 <template>
   <div class="blog-txt mx-auto">
-    <div class="flex-c mx-auto" style="width: 90%">
+    <div class="blog-box flex-c mx-auto" style="width: 90%">
       <div style="position: relative">
         <img
-          class="m-img"
+          class="m-img d-none d-md-block"
           src="/src/assets/blog/blogheader.jpg"
           alt="blog iamge"
           style="width: 100%; margin: 5rem 0; border-radius: 12px"
+        />
+        <img
+          class="m-img d-block d-md-none"
+          src="/src/assets/blog/blogheader.jpg"
+          alt="blog iamge"
+          style="width: 100%; margin: 0; border-radius: 0"
         />
         <div class="blog-info flex-c justify-content-between pt-5 pb-3 w-75">
           <p class="blog-info-title text-center">{{ post.category?.name }}</p>
@@ -22,8 +28,8 @@
         class="blog-text w-100 row flex-column-reverse flex-sm-row"
         style="margin: 15rem auto 5rem"
       >
-        <div class="col-12 col-sm-9 blog-body px-3">{{ post.content }}</div>
-        <div class="col-6 my-5 mx-auto col-sm-3">
+        <div class="col-12 col-sm blog-body px-3">{{ post.content }}</div>
+        <div class="col-8 col-sm-3 my-5 mx-auto">
           <img
             class="mid-img"
             :src="post?.image"
@@ -99,10 +105,11 @@
           >
             <div class="question-card">
               <div
-                class="join-cards bg-info d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
+                class="join-cards d-flex flex-row flex-wrap gap-4 align-items-center justify-content-center"
               >
                 <div
                   class="join-card p-0"
+                  style="width: 100% !important"
                   v-if="blog.category_posts"
                   v-for="(post, j) in blog.category_posts"
                   :key="j"

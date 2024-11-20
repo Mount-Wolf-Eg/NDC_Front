@@ -12,7 +12,7 @@
     />
     <div class="contact-sec container-cust row">
       <div class="contact-text col-12 col-sm-4 d-flex flex-column">
-        <span>
+        <span class="contact-title">
           {{ $t("communicate") }}
         </span>
 
@@ -22,7 +22,12 @@
           class="Blondie"
         >
           <svg
-            style="width: 1.9rem; height: 1.9rem"
+            style="
+              width: 1.9rem;
+              min-width: 12px;
+              min-height: 12px;
+              height: 1.9rem;
+            "
             viewBox="0 0 19 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +47,12 @@
           :href="`tel:${allContacts.secondNumber}`"
         >
           <svg
-            style="width: 1.9rem; height: 1.9rem"
+            style="
+              width: 1.9rem;
+              min-width: 12px;
+              min-height: 12px;
+              height: 1.9rem;
+            "
             viewBox="0 0 19 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +71,12 @@
           :href="`tel:${allContacts.thirdNumber}`"
         >
           <svg
-            style="width: 1.9rem; height: 1.9rem"
+            style="
+              width: 1.9rem;
+              min-width: 12px;
+              min-height: 12px;
+              height: 1.9rem;
+            "
             viewBox="0 0 19 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +91,12 @@
 
         <a href="#"
           ><svg
-            style="width: 1.4rem; height: 2rem"
+            style="
+              width: 1.4rem;
+              min-width: 12px;
+              min-height: 12px;
+              height: 2rem;
+            "
             viewBox="0 0 14 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -224,44 +244,4 @@ const contacForm = async () => {
 };
 </script>
 
-<style lang="scss" scoped>
-.contact-us {
-  .contact-sec {
-    margin: 5rem auto;
-    justify-content: space-between;
-    .contact-text {
-      font-size: 2.4rem;
-      font-weight: 700;
-      line-height: 3.6rem;
-      gap: 1rem;
-    }
-    .contact-form {
-      .form-inpt {
-        border: 1px solid #0477be;
-        height: 5rem;
-        border-radius: 0.9rem;
-        font-size: 1.8rem;
-        font-weight: 400;
-        line-height: 3.454rem;
-        background-color: #f4f3f3;
-        padding: 0 15px;
-      }
-
-      .send-btn {
-        height: 5.9rem;
-        background-color: #0477be;
-        font-size: 2.4rem;
-        font-weight: 500;
-        line-height: 3.6rem;
-        color: #fff;
-        border-radius: 1.2rem;
-      }
-    }
-  }
-  a {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 34.54px;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

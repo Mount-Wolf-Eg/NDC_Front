@@ -1,17 +1,39 @@
 <template>
   <div class="join">
-    <div class="flex-col my-5 mx-auto" style="width: 90%">
+    <div
+      class="join-col flex-col mx-auto"
+      style="
+        width: 90%;
+        border-top-left-radius: 12px !important;
+        border-top-right-radius: 12px !important;
+        overflow: hidden;
+      "
+    >
       <img
         :src="job.image"
         style="
           width: 100%;
-          height: 100;
+          height: auto;
           object-fit: cover;
           object-position: center;
           max-height: 50vh;
-          border-radius: var(--brd-r-md) !important;
+          border-radius: 12px !important;
+        "
+        class="d-none d-md-block"
+        alt="blog iamge"
+      />
+      <img
+        :src="job.image"
+        style="
+          width: 100%;
+          height: auto;
+          max-height: 50vh;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 0 !important;
         "
         alt="blog iamge"
+        class="d-block d-md-none"
       />
       <div class="container-cust">
         <p class="head">{{ $t("job-name") }}</p>
@@ -243,81 +265,5 @@ const sendApplication = async () => {
 };
 </script>
 
-<style lang="scss" scoped>
-.join {
-  margin: 5rem 0 3rem;
-
-  .head {
-    width: 27.2rem;
-    height: 3.9rem;
-    background-color: #def1ff;
-    border-radius: 0.9rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 3rem;
-    text-align: center;
-    line-height: 3.9rem;
-    margin: 5rem auto 2rem;
-  }
-  .job-title {
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 3.6rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .job-desc {
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 3.454rem;
-    text-align: center;
-    width: 70%;
-    margin: 0 auto;
-  }
-  .foot {
-    width: 27.6rem;
-    height: 2.7rem;
-    border-radius: 0.9rem;
-    background-color: #def1ff;
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 2.673rem;
-    text-align: left;
-    text-align: center;
-    line-height: 2.7rem;
-    margin: 3rem auto 5rem;
-  }
-
-  .contact-form {
-    .form-inpt {
-      border: 1px solid #0477be;
-      height: 5rem;
-      width: 100%;
-      border-radius: 0.9rem;
-      font-size: 1.8rem;
-      font-weight: 400;
-      line-height: 3.454rem;
-      text-align: right;
-      background-color: #f4f3f3;
-      padding: 0 15px;
-    }
-    textarea {
-      width: 69.6rem !important;
-      height: 11.2rem !important;
-    }
-    .send-btn {
-      width: 69.6rem;
-      height: 5.9rem;
-      background-color: #0477be;
-      font-size: 2.4rem;
-      font-weight: 500;
-      line-height: 3.6rem;
-      text-align: right;
-      color: #fff;
-      text-align: center;
-      border-radius: 1.2rem;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>
 <!-- v1 -->

@@ -151,7 +151,7 @@
                   <li
                     v-for="(servic, j) in allServices.slice(-3)"
                     :key="j"
-                    class="nav-sub-item pb-4 text-center fs-1"
+                    class="nav-sub-item pb-4 text-center"
                     @click="
                       router.push({
                         name: 'service',
@@ -164,7 +164,7 @@
                   </li>
                   <li
                     v-if="allServices.length"
-                    class="nav-sub-item pb-4 text-center fs-1"
+                    class="nav-sub-item pb-4 text-center"
                     @click="
                       router.push({
                         name: 'serviceCards',
