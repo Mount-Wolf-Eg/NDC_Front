@@ -4,7 +4,7 @@
       <div
         v-if="blog.category_posts"
         v-for="(post, j) in blog.category_posts"
-        class="join-card"
+        class="join-card d-flex flex-column justify-content-start align-items-center"
         style="overflow: hidden"
         :key="j"
         @click="router.push({ name: 'blogDetails', query: { post: blog.id } })"
@@ -16,14 +16,12 @@
             width: 100%;
             height: auto;
             object-fit: cover;
-            object-position: center;
+            object-position: top;
           "
           :src="post.image"
         />
 
-        <span
-          class="p-3 card-sec d-flex flex-column justify-content-between align-items-start"
-        >
+        <div style="flex: 1" class="card-sec">
           <p class="join-card-title" style="overflow: hidden">
             {{ post.title }}
           </p>
@@ -33,7 +31,7 @@
           <p class="join-card-date">
             {{ moment(new Date(post.created_at)).format("DD-MM-YYYY") }}
           </p>
-        </span>
+        </div>
       </div>
     </div>
   </div>

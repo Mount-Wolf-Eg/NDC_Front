@@ -25,7 +25,7 @@
         </div>
       </div>
       <div
-        class="blog-text w-100 row flex-column-reverse flex-sm-row"
+        class="blog-text row flex-column-reverse flex-sm-row"
         style="margin: 15rem auto 5rem"
       >
         <div class="col-12 col-sm blog-body px-3">{{ post.content }}</div>
@@ -38,7 +38,8 @@
               width: 100%;
               height: 100%;
               object-fit: contain;
-              object-position: top;
+              object-position: center;
+              border-radius: 12px;
             "
           />
         </div>
@@ -52,6 +53,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            border-radius: 12px;
           "
         />
       </div>
@@ -133,6 +135,7 @@
                         object-fit: cover;
                         object-position: center;
                         max-width: 75%;
+                        border-radius: 12px;
                       "
                       :src="post.image"
                     />

@@ -222,7 +222,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useSettingsStore } from "@/stores/settings";
 import { storeToRefs } from "pinia";
@@ -233,7 +233,9 @@ const { allServices } = storeToRefs(useStaticPagesStore());
 onMounted(async () => {
   await useSettingsStore().getAllContacts();
 });
-
+const route = useRoute();
+const router = useRouter();
+const showNavMenu = ref(false);
 const lang = ref("AR");
 
 const setLanguage = (lan) => {
@@ -250,9 +252,13 @@ const setLanguage = (lan) => {
   }
 };
 
-const route = useRoute();
-const router = useRouter();
-const showNavMenu = ref(false);
+watch(showNavMenu, (newValue) => {
+  if (newValue) {
+    document.body.classList.add("no-scroll");
+  } else {
+    document.body.classList.remove("no-scroll");
+  }
+});
 </script>
 
 <style lang="scss" scoped></style>
