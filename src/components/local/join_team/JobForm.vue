@@ -50,8 +50,10 @@
         class="join-form w-100"
       >
         <div class="contact-form mx-auto w-75">
-          <div class="row">
-            <span class="col-12 col-sm-6">
+          <div
+            class="frm row d-flex flex-row gap-md-0 flex-wrap align-items-center justify-content-center"
+          >
+            <span class="col-12 col-sm-6 p-3">
               <InptField
                 v-model="formData.name"
                 :holder="`${$t('name')}`"
@@ -67,7 +69,7 @@
                 </span></span
               >
             </span>
-            <span class="col-12 col-sm-6">
+            <span class="col-12 col-sm-6 p-3">
               <InptField
                 v-model="formData.email"
                 :holder="`${$t('email')}`"
@@ -83,7 +85,7 @@
                 </span></span
               >
             </span>
-            <span class="col-12 col-sm-6">
+            <span class="col-12 col-sm-6 p-3">
               <InptField
                 v-model="formData.graduationYear"
                 :holder="`${$t('graduation')}`"
@@ -100,7 +102,7 @@
               >
             </span>
 
-            <span class="col-12 col-sm-6">
+            <span class="col-12 col-sm-6 p-3">
               <InptField
                 v-model="formData.qualification"
                 :holder="`${$t('qualification')}`"
@@ -116,7 +118,7 @@
                 </span></span
               >
             </span>
-            <span class="col-12 col-sm-6">
+            <span class="col-12 col-sm-6 p-3">
               <InptField
                 v-model="formData.phone"
                 :holder="`${$t('phone')}`"
@@ -133,7 +135,7 @@
               >
             </span>
             <!-- role -->
-            <span class="col-12 col-sm-6 mt-3">
+            <span class="col-12 col-sm-6 p-3">
               <UploadeFile @fileData="formData.cvFile = $event"></UploadeFile>
               <img
                 v-if="formData.cvFile"

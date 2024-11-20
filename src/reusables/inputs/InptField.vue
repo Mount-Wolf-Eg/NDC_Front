@@ -59,7 +59,6 @@ const updateValue = (value) => {
 
 <style lang="scss" scoped>
 .inpt-box {
-  margin: 2rem 0;
   input {
     padding: 2rem 2rem;
     width: 100%;

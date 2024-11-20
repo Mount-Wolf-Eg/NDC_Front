@@ -708,10 +708,17 @@
 
       .contact-form {
         width: 90% !important;
+        .frm {
+          gap: 10px;
+        }
+        input {
+          font-size: 6px;
+          padding: 5px !important;
+        }
         .form-inpt {
           padding: 5px !important;
           font-size: 12px;
-          height: 25px !important;
+          height: auto;
         }
         textarea {
           font-size: 12px;
@@ -736,22 +743,21 @@
           font-size: 12px;
         }
       }
-      .contact-form {
-        .form-inpt {
-          padding: 5px !important;
-          font-size: 12px;
-          height: 25px !important;
-        }
-        textarea {
-          font-size: 12px;
-          min-height: 40px !important;
-        }
-        .send-btn {
-          font-size: 14px;
-          height: fit-content;
-          padding: 5px;
-        }
-      }
+      // .contact-form {
+      //   .form-inpt {
+      //     padding: 5px !important;
+      //     font-size: 12px;
+      //   }
+      //   textarea {
+      //     font-size: 12px;
+      //     min-height: 40px !important;
+      //   }
+      //   .send-btn {
+      //     font-size: 14px;
+      //     height: fit-content;
+      //     padding: 5px;
+      //   }
+      // }
     }
   }
   // footer
@@ -1635,10 +1641,13 @@
 
       .contact-form {
         width: 90% !important;
+        .frm {
+          gap: 10px;
+        }
         .form-inpt {
-          padding: 5px !important;
-          font-size: 12px;
-          height: 25px !important;
+          padding: 7px !important;
+          font-size: 14px;
+          height: auto !important;
         }
         textarea {
           font-size: 12px;
@@ -1664,10 +1673,13 @@
         }
       }
       .contact-form {
+        .frm {
+          gap: 10px;
+        }
         .form-inpt {
           padding: 5px !important;
           font-size: 12px;
-          height: 25px !important;
+          height: auto !important;
         }
         textarea {
           font-size: 12px;
@@ -2167,10 +2179,13 @@
 
       .contact-form {
         width: 90% !important;
+        .frm {
+          gap: 10px;
+        }
         .form-inpt {
           padding: 5px !important;
           font-size: 12px;
-          height: 25px !important;
+          height: auto !important;
         }
         textarea {
           font-size: 12px;
@@ -2196,10 +2211,13 @@
         }
       }
       .contact-form {
+        .frm {
+          gap: 10px;
+        }
         .form-inpt {
           padding: 5px !important;
           font-size: 12px;
-          height: 25px !important;
+          height: auto !important;
         }
         textarea {
           font-size: 12px;
@@ -2362,6 +2380,9 @@
 
       .contact-form {
         width: 90% !important;
+        .frm {
+          gap: 10px;
+        }
         .form-inpt {
           font-size: 12px;
         }
