@@ -831,11 +831,12 @@ button {
           background-color: var(--col-bg);
           font-weight: var(--fw-bold);
           font-size: var(--fs-24);
-          line-height: var(--line-h-37);
+          // line-height: var(--line-h-37);
           width: 27.2rem;
           height: 5.6rem;
           border-radius: var(--brd-r-sm);
           display: flex;
+          justify-content: flex-start;
           align-items: center;
           padding-inline-start: 2rem;
         }
@@ -871,12 +872,13 @@ button {
           background-color: var(--col-white);
           font-weight: var(--fw-bold);
           font-size: var(--fs-24);
-          line-height: var(--line-h-37);
+          // line-height: var(--line-h-37);
           width: 27.2rem;
           height: 5.6rem;
           border-radius: var(--brd-r-sm);
           display: flex;
           align-items: center;
+          justify-content: flex-start;
           padding-inline-start: 2rem;
         }
         .vission-body {
@@ -897,12 +899,14 @@ button {
             background-color: var(--col-white);
             font-weight: var(--fw-bold);
             font-size: var(--fs-24);
-            line-height: var(--line-h-37);
+
+            // line-height: var(--line-h-37);
             width: 27.2rem;
             height: 5.6rem;
             border-radius: var(--brd-r-sm);
             display: flex;
             align-items: center;
+            justify-content: flex-start;
             padding-inline-start: 2rem;
           }
           .mission-body {
@@ -924,7 +928,7 @@ button {
       background-color: var(--col-white);
       font-weight: var(--fw-bold);
       font-size: var(--fs-24);
-      line-height: var(--line-h-37);
+      // line-height: var(--line-h-37);
       width: 27.2rem;
       height: 5.6rem;
       border-radius: var(--brd-r-sm);
@@ -943,8 +947,6 @@ button {
         margin: 1rem;
         .values-content {
           width: 42.8rem;
-          // height: 23.8rem;
-          height: auto !important;
           padding: 3rem;
           border-radius: var(--brd-r-md);
           background-color: var(--col-white);
