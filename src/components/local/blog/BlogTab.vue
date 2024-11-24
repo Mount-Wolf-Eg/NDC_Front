@@ -9,7 +9,7 @@
       @click="router.push({ name: 'blogDetails', query: { post: blog.id } })"
     >
       <div class="card-img">
-        <img alt="blog image" style="" :src="post.image" />
+        <img alt="blog image" :src="post.image" />
       </div>
 
       <div class="card-sec">

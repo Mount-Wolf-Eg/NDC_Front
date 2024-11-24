@@ -255,7 +255,7 @@ const breakpoints = {
 }
 .modal-dialog {
   width: 100%;
-  height: 250px;
+  height: 500px;
   overflow: auto;
   margin: 20rem auto;
   .modal-content {
