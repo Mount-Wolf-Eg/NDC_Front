@@ -18,7 +18,7 @@
       >
         <div class="row achiv-lyout mx-auto h-100">
           <div
-            class="col-6 last bg- col-md d-flex algn-items-start justify-content-start gap-5"
+            class="col-6 last col-md d-flex algn-items-start justify-content-center gap-5"
             v-for="(achiev, i) in achievements.slice(-4)"
             :key="i"
           >
