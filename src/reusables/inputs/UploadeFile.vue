@@ -3,7 +3,7 @@
     <div class="upload-field center-row justify-content-between">
       <label :for="`img-field-${props.for}`">
         <div
-          class="center-row justify-content-between px-5 style-17"
+          class="center-row justify-content-between text-center px-5 style-17"
           style="color: #464a61; font-size: 1.2rem; font-weight: bold"
         >
           <span>{{ $t("upload_file") }}</span>
@@ -132,14 +132,14 @@ const removeFile = () => {
   margin: 1rem 0 0;
   position: relative;
   border-radius: 1.2rem;
-  border: 1px solid #464a61;
+  border: 1px solid #0477be;
   padding: 0.5rem;
-  background-color: white;
+  background-color: #f4f3f3;
   input {
-    background-color: white;
     width: 25% !important;
+    background-color: #f4f3f3;
     color: transparent;
-    border: 1px solid #464a61;
+    border: 1px solid #0477be;
     font-size: 0.8rem;
   }
 
@@ -162,7 +162,7 @@ const removeFile = () => {
   }
   svg {
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
   }

@@ -6,9 +6,9 @@
       style="
         width: 100%;
         height: auto;
-        max-height: 50vh;
         object-fit: cover;
         object-position: center;
+        max-height: 50vh;
       "
     />
     <div class="join-sec mx-auto">

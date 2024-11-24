@@ -329,6 +329,25 @@
     .question-bg {
       height: 200px;
     }
+    .ques-dialog {
+      .modal-content {
+        .modal-title {
+          font-size: 20px !important;
+          margin: 12px auto !important;
+        }
+        .modal-body {
+          .questipon-card-title {
+            font-size: 14px !important;
+          }
+
+          .questipon-card-text {
+            margin: 15px 0;
+            font-size: 12px !important;
+            line-height: 20px !important;
+          }
+        }
+      }
+    }
   }
 
   // partner
@@ -588,9 +607,9 @@
     }
     .blog-body {
       width: 95%;
-      margin: 0 auto;
+      margin: 10px auto;
       font-size: 14px;
-      line-height: 18px;
+      line-height: 20px;
     }
     .blog-latest-info {
       font-size: 20px !important;
@@ -736,6 +755,7 @@
   }
   .contact-us {
     .contact-sec {
+      padding: 10px;
       .contact-text {
         margin: 10px 0;
         .contact-title {
@@ -1269,6 +1289,25 @@
     .question-bg {
       height: 320px;
     }
+    .ques-dialog {
+      .modal-content {
+        .modal-title {
+          font-size: 20px !important;
+          margin: 12px auto !important;
+        }
+        .modal-body {
+          .questipon-card-title {
+            font-size: 14px !important;
+          }
+
+          .questipon-card-text {
+            margin: 15px 0;
+            font-size: 12px !important;
+            line-height: 20px !important;
+          }
+        }
+      }
+    }
   }
   // partner
   .home-partner-sec {
@@ -1666,6 +1705,7 @@
   }
   .contact-us {
     .contact-sec {
+      padding: 10px;
       .contact-text {
         margin: 10px 0;
         .contact-title {
@@ -2204,6 +2244,7 @@
   }
   .contact-us {
     .contact-sec {
+      padding: 10px;
       .contact-text {
         margin: 10px 0;
         .contact-title {
@@ -2234,6 +2275,25 @@
       }
     }
   }
+  .ques-dialog {
+    .modal-content {
+      .modal-title {
+        font-size: 20px !important;
+        margin: 12px auto !important;
+      }
+      .modal-body {
+        .questipon-card-title {
+          font-size: 14px !important;
+        }
+
+        .questipon-card-text {
+          margin: 15px 0;
+          font-size: 12px !important;
+          line-height: 20px !important;
+        }
+      }
+    }
+  }
   //   footer
   .footer-bar {
     .first-footer {
@@ -2254,7 +2314,6 @@
 
   // hero section
   .hero-sec {
-    // height: 60vh;
     height: 80rem;
   }
 
@@ -2353,6 +2412,25 @@
     .question-bg {
       height: 50rem;
     }
+    .ques-dialog {
+      .modal-content {
+        .modal-title {
+          font-size: 20px !important;
+          margin: 12px auto !important;
+        }
+        .modal-body {
+          .questipon-card-title {
+            font-size: 14px !important;
+          }
+
+          .questipon-card-text {
+            margin: 15px 0;
+            font-size: 12px !important;
+            line-height: 20px !important;
+          }
+        }
+      }
+    }
   }
 
   .join {
@@ -2437,7 +2515,6 @@
 
   // hero section
   .hero-sec {
-    // height: 50vh;
     height: 85rem;
   }
 
@@ -2536,6 +2613,25 @@
     .question-bg {
       height: 35rem;
     }
+    .ques-dialog {
+      .modal-content {
+        .modal-title {
+          font-size: 20px !important;
+          margin: 12px auto !important;
+        }
+        .modal-body {
+          .questipon-card-title {
+            font-size: 14px !important;
+          }
+
+          .questipon-card-text {
+            margin: 15px 0;
+            font-size: 12px !important;
+            line-height: 20px !important;
+          }
+        }
+      }
+    }
   }
 
   body {
@@ -2551,7 +2647,6 @@
 
   // hero section
   .hero-sec {
-    // height: 95vh;
     height: 85rem;
   }
 

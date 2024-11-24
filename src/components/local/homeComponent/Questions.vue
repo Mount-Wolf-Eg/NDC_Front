@@ -127,12 +127,12 @@
     <div
       class="modal fade m-0 p-0"
       id="exampleModal"
-      style="width: 100vw"
+      style="width: 100vw; height: 100vh; overflow: hidden"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog mx-auto">
+      <div class="modal-dialog mx-auto ques-dialog">
         <div class="modal-content mx-auto" style="width: 80% !important">
           <div class="modal-header">
             <h1 class="modal-title" id="exampleModalLabel">
@@ -254,13 +254,16 @@ const breakpoints = {
   }
 }
 .modal-dialog {
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 250px;
+  overflow: auto;
   margin: 20rem auto;
   .modal-content {
     background-color: var(--col-bg) !important;
     border-radius: var(--brd-r-md) !important;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
     .modal-title {
       font-weight: var(--fw-bold);
       font-size: var(--fs-24);
