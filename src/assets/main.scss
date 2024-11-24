@@ -1016,15 +1016,25 @@ button {
   }
 }
 .blog-txt {
+  margin: 5rem 0;
+
+  .m-img {
+    width: 100%;
+    border-radius: 12px;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .blog-info {
     background-color: #def1ff;
     border-radius: 1.6rem;
     width: 112.4rem;
-    // height: 31rem;
     position: absolute;
-    top: 70%;
+    top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    height: 300px;
 
     .blog-info-title {
       font-size: 2.4rem;
@@ -1036,6 +1046,7 @@ button {
       font-weight: 700;
       line-height: 4.9rem;
       text-align: center;
+      width: 50%;
     }
     .blog-info-foot {
       width: 13.2rem;
@@ -1047,11 +1058,20 @@ button {
       border-radius: 0.8rem;
     }
   }
-  .blog-body {
-    font-size: 1.8rem;
-    font-weight: 400;
-    // line-height: 3.454rem;
-    text-align: right;
+  .blog-text-sm {
+    padding: 0 15px;
+    margin: 170px 0 0;
+    .blog-body {
+      padding-inline-end: 20px !important;
+      font-size: 1.8rem;
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+  .img-review {
+    width: 25%;
+    height: 200px;
+    overflow: hidden;
   }
   .blog-latest-info {
     width: 27.2rem;
@@ -1064,52 +1084,6 @@ button {
     padding-right: 1rem;
     line-height: 5.6rem;
   }
-  // .join-card {
-  //   margin-bottom: 3rem;
-  //   border: 1px solid #444444;
-  //   border-radius: 2.4rem;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: start;
-  //   justify-content: space-between;
-  //   width: 41.4rem;
-  //   height: 50.2rem;
-  //   .join-card-title {
-  //     font-size: 1.6rem;
-  //     font-weight: 700;
-  //     line-height: 3rem;
-  //     background-color: #f6f7ff;
-  //     color: #0477be;
-  //     max-width: 70%;
-  //     height: 3.9rem;
-  //     text-align: center;
-  //     line-height: 3.9rem;
-  //   }
-  //   .join-card-text {
-  //     font-size: 2.4rem;
-  //     font-weight: 700;
-  //     line-height: 3.6rem;
-  //     color: #181a2a;
-  //     display: -webkit-box;
-  //     -webkit-box-orient: vertical;
-  //     -webkit-line-clamp: 3;
-  //     line-clamp: 3;
-  //     overflow: hidden;
-  //     text-overflow: ellipsis;
-  //   }
-  //   .join-card-date {
-  //     font-size: 1.4rem;
-  //     font-weight: 400;
-  //     line-height: 2.673rem;
-  //     color: #444444;
-  //     width: 13.2rem;
-  //     height: 2.7rem;
-  //     border-radius: 0.8rem;
-  //     background-color: #def1ff;
-  //     text-align: center;
-  //     line-height: 2.7rem;
-  //   }
-  // }
 }
 
 .service {

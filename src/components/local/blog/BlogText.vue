@@ -1,12 +1,11 @@
 <template>
   <div class="blog-txt mx-auto">
-    <div class="blog-box flex-c mx-auto" style="width: 90%">
-      <div style="position: relative">
+    <div class="blog-box flex-c mx-auto" style="width: 85%">
+      <div style="position: relative" class="w-100">
         <img
           class="m-img d-none d-md-block"
           src="/src/assets/blog/blogheader.jpg"
           alt="blog iamge"
-          style="width: 100%; margin: 5rem 0; border-radius: 12px"
         />
         <img
           class="m-img d-block d-md-none"
@@ -14,9 +13,11 @@
           alt="blog iamge"
           style="width: 100%; margin: 0; border-radius: 0"
         />
-        <div class="blog-info flex-c justify-content-between pb-3 w-75 p-3">
-          <p class="blog-info-title text-center">{{ post.category?.name }}</p>
-          <p class="blog-info-body mx-auto">
+        <div class="blog-info flex-c justify-content-between w-75 p-5">
+          <p class="blog-info-title p-0 m-0 text-center">
+            {{ post.category?.name }}
+          </p>
+          <p class="blog-info-body p-0 m-0 mx-auto">
             {{ post?.title }}
           </p>
           <p class="blog-info-foot mx-auto text-center">
@@ -24,10 +25,8 @@
           </p>
         </div>
       </div>
-      <div
-        class="blog-text row flex-column-reverse flex-sm-row"
-        style="margin: 15rem auto 5rem"
-      >
+
+      <div class="blog-text-sm row flex-column-reverse flex-sm-row">
         <div class="col-12 col-sm blog-body px-3">{{ post.content }}</div>
         <div class="col-8 col-sm-3 my-5 mx-auto">
           <img
@@ -44,14 +43,15 @@
           />
         </div>
       </div>
-      <div class="row">
+
+      <div class="row img-review">
         <img
           :src="post.category?.image"
           alt="blog iamge"
           style="
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
             border-radius: 12px;
           "
