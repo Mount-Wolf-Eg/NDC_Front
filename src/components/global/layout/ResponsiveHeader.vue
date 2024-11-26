@@ -30,8 +30,8 @@
           style="
             max-width: 3.5rem;
             max-height: 3.5rem;
-            min-height: 2.5rem;
-            min-width: 2.5rem;
+            min-height: 20px;
+            min-width: 20px;
             height: 100%;
             width: auto;
           "

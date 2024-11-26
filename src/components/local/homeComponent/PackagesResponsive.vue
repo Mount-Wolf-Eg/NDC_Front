@@ -114,6 +114,7 @@
             </div>
           </div>
         </swiper-slide>
+        <div class="swiper-pagination"></div>
       </swiper>
     </div>
   </div>

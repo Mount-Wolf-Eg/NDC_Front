@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="upload-field center-row justify-content-between">
-      <label :for="`img-field-${props.for}`">
+      <label class="up-label p-0" :for="`img-field-${props.for}`">
         <div
-          class="center-row justify-content-between text-center px-5 style-17"
+          class="d-flex justify-content-between text-center px-5"
           style="color: #464a61; font-size: 1.2rem; font-weight: bold"
         >
-          <span>{{ $t("upload_file") }}</span>
+          <div>{{ $t("upload_file") }}</div>
         </div></label
       >
       <input
@@ -136,7 +136,7 @@ const removeFile = () => {
   padding: 0.5rem;
   background-color: #f4f3f3;
   input {
-    width: 25% !important;
+    width: 35% !important;
     background-color: #f4f3f3;
     color: transparent;
     border: 1px solid #0477be;
@@ -156,7 +156,7 @@ const removeFile = () => {
     padding: 0.5rem 1rem;
   }
   label {
-    width: 75% !important;
+    width: 65% !important;
     cursor: pointer;
     padding: 1rem 0;
   }

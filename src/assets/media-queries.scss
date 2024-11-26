@@ -38,23 +38,34 @@
     .swiper-pagination {
       display: none;
     }
-
+    .hero-card-image {
+      img {
+        filter: blur(2px) brightness(80%);
+      }
+    }
     .hero-card-text {
       padding: 0 !important;
       text-align: center;
       color: var(--col-white);
-      width: fit-content;
+      width: 100vw;
       margin-top: 20%;
-      .title {
-        font-weight: var(--fw-bold);
-        font-size: 16px !important;
-        line-height: 37px;
-      }
+      .hero-inner {
+        padding: 0 !important;
+        width: 95vw !important;
+        background-color: transparent !important;
+        backdrop-filter: blur(0px) !important;
+        margin: 0 auto;
+        .title {
+          font-weight: var(--fw-bold);
+          font-size: 16px !important;
+          line-height: 37px;
+        }
 
-      .body {
-        font-weight: var(--fw-normal);
-        font-size: 12px !important;
-        line-height: 20px;
+        .body {
+          font-weight: var(--fw-normal);
+          font-size: 12px !important;
+          line-height: 20px;
+        }
       }
     }
 
@@ -647,9 +658,9 @@
     margin: 10px !important;
 
     .service-btns {
-      margin: 0 !important;
-      padding: 10px 0 !important;
-      background-color: transparent !important;
+      margin: 10px 0 !important;
+      padding: 10px 5px !important;
+      // background-color: transparent !important;
       .service-btn {
         font-size: 12px;
         margin: 0;
@@ -751,23 +762,35 @@
         .frm {
           gap: 10px;
         }
-        input {
-          font-size: 6px;
-          padding: 5px !important;
-        }
+
         .form-inpt {
           padding: 5px !important;
-          font-size: 12px;
+          font-size: 12px !important;
           height: auto;
         }
         textarea {
-          font-size: 12px;
+          font-size: 12px !important;
           min-height: 40px !important;
         }
+
+        .upload-field {
+          padding: 5px !important;
+
+          input::file-selector-button {
+            font-size: 8px !important;
+          }
+
+          .up-label {
+            div {
+              font-size: 12px !important;
+            }
+          }
+        }
+
         .send-btn {
-          font-size: 14px;
-          height: fit-content;
-          padding: 5px;
+          font-size: 14px !important;
+          height: fit-content !important;
+          padding: 5px !important;
         }
       }
     }
@@ -784,21 +807,6 @@
           font-size: 12px;
         }
       }
-      // .contact-form {
-      //   .form-inpt {
-      //     padding: 5px !important;
-      //     font-size: 12px;
-      //   }
-      //   textarea {
-      //     font-size: 12px;
-      //     min-height: 40px !important;
-      //   }
-      //   .send-btn {
-      //     font-size: 14px;
-      //     height: fit-content;
-      //     padding: 5px;
-      //   }
-      // }
     }
   }
   // footer
@@ -1082,22 +1090,33 @@
     .swiper-pagination {
       display: none;
     }
+    .hero-card-image {
+      img {
+        filter: blur(2px) brightness(80%);
+      }
+    }
     .hero-card-text {
       text-align: center;
       color: var(--col-white);
       padding: 0 !important;
       margin-top: 100px;
+      .hero-inner {
+        padding: 0 !important;
+        width: 85vw !important;
+        background-color: transparent !important;
+        backdrop-filter: blur(0px) !important;
+        margin: 0 auto;
+        .title {
+          font-weight: var(--fw-bold);
+          font-size: 22px !important;
+          line-height: 37px;
+        }
 
-      .title {
-        font-weight: var(--fw-bold);
-        font-size: 22px !important;
-        line-height: 37px;
-      }
-
-      .body {
-        font-weight: var(--fw-normal);
-        font-size: 18px !important;
-        line-height: 20px;
+        .body {
+          font-weight: var(--fw-normal);
+          font-size: 18px !important;
+          line-height: 20px;
+        }
       }
     }
     .hero-about-us {
@@ -1307,7 +1326,7 @@
   // questions
   .home-question-sec {
     .achiement-sec {
-      height: 450px;
+      height: 490px;
       margin: 0 auto;
 
       .achieve-box {
@@ -1348,7 +1367,7 @@
         margin: 15px 0;
       }
       .question-card {
-        height: 200px !important;
+        height: 230px !important;
         border-radius: 16px !important;
 
         .questipon-card-title {
@@ -1687,8 +1706,8 @@
     margin: 10px !important;
 
     .service-btns {
-      margin: 0 !important;
-      padding: 10px 0 !important;
+      margin: 10px 0 !important;
+      padding: 10px 5px !important;
       background-color: transparent !important;
       .service-btn {
         font-size: 12px;
@@ -1802,6 +1821,19 @@
           font-size: 12px;
           min-height: 40px !important;
         }
+        .upload-field {
+          padding: 5px !important;
+
+          input::file-selector-button {
+            font-size: 8px !important;
+          }
+
+          .up-label {
+            div {
+              font-size: 12px !important;
+            }
+          }
+        }
         .send-btn {
           font-size: 14px;
           height: fit-content;
@@ -1834,6 +1866,19 @@
         textarea {
           font-size: 12px;
           min-height: 40px !important;
+        }
+        .upload-field {
+          padding: 5px !important;
+
+          input::file-selector-button {
+            font-size: 8px !important;
+          }
+
+          .up-label {
+            div {
+              font-size: 12px !important;
+            }
+          }
         }
         .send-btn {
           font-size: 14px;
@@ -2304,8 +2349,8 @@
     margin: 10px !important;
 
     .service-btns {
-      margin: 0 !important;
-      padding: 10px 0 !important;
+      margin: 10px 0 !important;
+      padding: 10px 5px !important;
       background-color: transparent !important;
       .service-btn {
         font-size: 14px;
@@ -2410,6 +2455,19 @@
           font-size: 12px;
           min-height: 40px !important;
         }
+        .upload-field {
+          padding: 5px !important;
+
+          input::file-selector-button {
+            font-size: 8px !important;
+          }
+
+          .up-label {
+            div {
+              font-size: 12px !important;
+            }
+          }
+        }
         .send-btn {
           font-size: 14px;
           height: fit-content;
@@ -2442,6 +2500,19 @@
         textarea {
           font-size: 12px;
           min-height: 40px !important;
+        }
+        .upload-field {
+          padding: 5px !important;
+
+          input::file-selector-button {
+            font-size: 8px !important;
+          }
+
+          .up-label {
+            div {
+              font-size: 12px !important;
+            }
+          }
         }
         .send-btn {
           font-size: 14px;
@@ -2647,6 +2718,19 @@
           font-size: 12px;
           min-height: 40px !important;
         }
+        .upload-field {
+          padding: 5px !important;
+
+          input::file-selector-button {
+            font-size: 8px !important;
+          }
+
+          .up-label {
+            div {
+              font-size: 12px !important;
+            }
+          }
+        }
         .send-btn {
           font-size: 14px;
         }
@@ -2671,6 +2755,19 @@
         textarea {
           font-size: 12px;
           min-height: 40px !important;
+        }
+        .upload-field {
+          padding: 5px !important;
+
+          input::file-selector-button {
+            font-size: 8px !important;
+          }
+
+          .up-label {
+            div {
+              font-size: 12px !important;
+            }
+          }
         }
         .send-btn {
           font-size: 14px;

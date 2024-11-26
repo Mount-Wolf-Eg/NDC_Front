@@ -70,6 +70,7 @@
                 class="hero-card-text flex-c align-items-start col-12 col-md-6"
               >
                 <div
+                  class="hero-inner"
                   style="
                     width: 100%;
                     backdrop-filter: blur(3px);
