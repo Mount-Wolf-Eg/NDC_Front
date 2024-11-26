@@ -67,7 +67,8 @@
               class="hero-text-box row mx-auto"
             >
               <div
-                class="hero-card-text flex-c align-items-start col-12 col-md-6"
+                style="width: 95vw"
+                class="hero-card-text flex-c align-items-start mx-auto col-12 col-lg-6"
               >
                 <div
                   class="hero-inner"
