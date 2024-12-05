@@ -1940,6 +1940,11 @@
     .swiper-pagination {
       display: none;
     }
+    .hero-card-image {
+      img {
+        filter: blur(2px) brightness(80%);
+      }
+    }
     .hero-card-text {
       color: var(--col-white);
       padding: 0 20px !important;
@@ -2562,6 +2567,11 @@
   // hero section
   .hero-sec {
     height: 80rem;
+    .hero-card-image {
+      img {
+        filter: blur(2px) brightness(80%);
+      }
+    }
   }
 
   // testimonial
@@ -2859,6 +2869,11 @@
   // hero section
   .hero-sec {
     height: 85rem;
+    .hero-card-image {
+      img {
+        filter: blur(2px) brightness(80%);
+      }
+    }
   }
 
   // testimonial
@@ -2992,6 +3007,11 @@
   // hero section
   .hero-sec {
     height: 85rem;
+    .hero-card-image {
+      img {
+        filter: blur(2px) brightness(80%);
+      }
+    }
   }
 
   body {
