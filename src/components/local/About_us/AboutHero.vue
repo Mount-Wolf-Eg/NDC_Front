@@ -20,9 +20,11 @@
           <p class="about-title">
             {{ aboutUs.title }}
           </p>
-          <p class="about-body">
+          <div class="about-body" v-html="aboutUs.content"></div>
+          {{ aboutUs.content }}
+          <!-- <p class="about-body">
             {{ aboutUs.content }}
-          </p>
+          </p> -->
         </div>
 
         <div class="about-us-img col-12 col-sm-6 col-md-5">
