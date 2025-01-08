@@ -104,7 +104,8 @@
 <script setup>
 import { ref, watch } from "vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper";
+
 const modules = ref([Pagination, Navigation, Autoplay]);
 import MainResource from "./MainResource.vue";
 const show = ref(false);

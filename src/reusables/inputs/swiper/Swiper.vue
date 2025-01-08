@@ -1,6 +1,7 @@
 <script setup>
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper";
+
 const modules = ref([Pagination, Navigation, Autoplay]);
 const breakpoints = {
   0: {

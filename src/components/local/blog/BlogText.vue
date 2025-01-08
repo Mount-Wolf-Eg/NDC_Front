@@ -131,7 +131,8 @@
 <script setup>
 import { onBeforeMount, onMounted, ref } from "vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper";
+
 const modules = ref([Pagination, Navigation, Autoplay]);
 import { useBlogStore } from "@/stores/blogStore";
 import { useRoute, useRouter } from "vue-router";

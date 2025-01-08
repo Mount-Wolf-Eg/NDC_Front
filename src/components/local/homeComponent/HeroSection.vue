@@ -201,7 +201,8 @@
 import { useRouter } from "vue-router";
 import { onMounted, ref, watch } from "vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper";
+
 const router = useRouter();
 const modules = [Pagination, Navigation, Autoplay];
 const show = ref(false);
