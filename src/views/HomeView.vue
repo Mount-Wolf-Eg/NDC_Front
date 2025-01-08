@@ -50,7 +50,6 @@ onMounted(async () => {
     await useStaticPagesStore().getAllServices(),
     await useSlidersStore().getAllQuestions(),
     await usePackagesStore().getAllPackages(),
-    console.log(allServices.value.filter((el) => el.deleted_at == null)),
   ]);
 });
 </script>

@@ -21,7 +21,6 @@
             {{ aboutUs.title }}
           </p>
           <div class="about-body" v-html="aboutUs.content"></div>
-          {{ aboutUs.content }}
           <!-- <p class="about-body">
             {{ aboutUs.content }}
           </p> -->
