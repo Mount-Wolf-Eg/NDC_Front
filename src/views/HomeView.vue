@@ -1,7 +1,11 @@
 <template>
   <main>
     <HeroSection :about="aboutUs" :hero="headerSliders"></HeroSection>
-    <Services :services="allServices"></Services>
+    <Services
+      :services="
+        allServices?.filter((el) => el.deleted_at == null)?.slice(0, 4)
+      "
+    ></Services>
     <Packages :packages="allPackages"></Packages>
     <Customer
       :metrics="successMetrics"
@@ -46,6 +50,7 @@ onMounted(async () => {
     await useStaticPagesStore().getAllServices(),
     await useSlidersStore().getAllQuestions(),
     await usePackagesStore().getAllPackages(),
+    console.log(allServices.value.filter((el) => el.deleted_at == null)),
   ]);
 });
 </script>
